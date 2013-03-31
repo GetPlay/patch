@@ -1,0 +1,1 @@
+INSERT INTO `trinity_string` (`entry`, `content_default`) VALUES (11002, 'Player can\'t speak with you now. Mute time remaining: %s');
