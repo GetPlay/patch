@@ -1,9 +1,3 @@
--- # Portal Master
--- # By Rochet2
--- # Downloaded from http://projectcode.zzl.org/
--- # Bugs and contact with E-mail: Rochet2@post.com
--- # Start
-
 -- -----------------------------------------------------------------------------------------------------------------------------
 -- # Defining what the entries and numbers are. Change if something overwrites something in your database
 
@@ -440,9 +434,3 @@ INSERT INTO creature_template_addon (entry,mount,bytes1,bytes2,emote,path_id,aur
 VALUES (@TELENPC,0,0,0,0,0,'35766 0');
 
 -- -----------------------------------------------------------------------------------------------------------------------------
-
--- # Portal Master
--- # By Rochet2
--- # Downloaded from http://projectcode.zzl.org/
--- # Bugs and contact with E-mail: Rochet2@post.com
--- # Start
