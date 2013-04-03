@@ -1,21 +1,15 @@
-# Delete code (For re running)
-
 DELETE FROM creature_template WHERE entry=300000;
 DELETE FROM gossip_menu WHERE entry=30000 OR entry=30001 OR entry=30002 OR entry=30003 OR entry=30004 OR entry=30005 OR entry=30006 OR entry=30007 OR entry=30008;
 DELETE FROM gossip_menu_option WHERE menu_id=30000 OR menu_id=30001 OR menu_id=30002 OR menu_id=30003 OR menu_id=30004 OR menu_id=30005 OR menu_id=30006 OR menu_id=30007 OR menu_id=30008;
-DELETE FROM smart_scripts WHERE entryorguid = '30000';
+DELETE FROM smart_scripts WHERE entryorguid = '300000';
 DELETE FROM npc_text WHERE ID=300000 OR ID=300001 OR ID=300002 OR ID=300003 OR ID=300004;
 DELETE FROM conditions WHERE SourceTypeOrReferenceId=15 AND SourceGroup>=30000 AND SourceGroup<=30006 AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
 DELETE FROM conditions WHERE SourceTypeOrReferenceId=14 AND SourceGroup=30000 AND (SourceEntry=300001 OR SourceEntry=300000) AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
-DELETE FROM creature_template_addon WHERE Entry = 300000 ;
-DELETE FROM creature WHERE id = 300000 ;
-
-# TeleNPC
+DELETE FROM creature_template_addon WHERE Entry = 300000;
+DELETE FROM creature WHERE id = 300000;
 
 INSERT INTO creature_template (entry,difficulty_entry_1,modelid1,name,IconName,gossip_menu_id,minlevel,maxlevel,Health_mod,Mana_mod,Armor_mod,faction_A,faction_H,npcflag,speed_walk,speed_run,scale,rank,dmg_multiplier,unit_class,unit_flags,type,type_flags,AIName,InhabitType,RegenHealth,flags_extra) 
 VALUES (300000,21563,21572,'Portal Master','Directions',30000,71,71,1.56,1.56,1.56,35,35,3,1,1.14286,1.25,1,1,1,2,7,138936390,'SmartAI',3,1,2);
-
-# Linking texts to the menus
 
 INSERT INTO gossip_menu (entry, text_id) 
 VALUES (30004, 300003),
@@ -28,8 +22,6 @@ VALUES (30004, 300003),
 (30005, 300004),
 (30000, 300001),
 (30000, 300000);
-
-# Gossip and gossip menu conditions
 
 INSERT INTO `conditions` VALUES ('15', '30000', '1', '0', '0', '6', '0', '469', '0', '0', '0', '0', '0', '', 'Stormwind'),
 ('15', '30005', '2', '0', '0', '6', '0', '67', '0', '0', '0', '0', '0', '', 'Dun Morogh'),
@@ -68,9 +60,6 @@ INSERT INTO `conditions` VALUES ('15', '30000', '1', '0', '0', '6', '0', '469', 
 ('14', '30000', '300001', '0', '0', '6', '0', '469', '0', '0', '0', '0', '0', '', 'For the Alliance'),
 ('14', '30000', '300000', '0', '0', '6', '0', '67', '0', '0', '0', '0', '0', '', 'For the Horde'),
 ('15', '30000', '10', '0', '0', '6', '0', '469', '0', '0', '0', '0', '0', '', 'Стальгорн');
-
-# Gossip options
-
 
 INSERT INTO `gossip_menu_option` VALUES ('30000', '1', '2', 'Штормград  ', '1', '1', '30000', '0', '0', '0', 'Are you sure,that you want to go to Stormwind?'),
 ('30000', '2', '2', 'Оргриммар  ', '1', '1', '30000', '0', '0', '0', 'Are you sure,that you want to go to Orgrimmar?'),
@@ -220,17 +209,12 @@ INSERT INTO `gossip_menu_option` VALUES ('30000', '1', '2', 'Штормград 
 ('30008', '10', '2', 'Озеро Ледяных Оков', '1', '1', '0', '0', '0', '0', 'Are you sure,that you want to go to Wintergrasp?'),
 ('30008', '11', '7', 'Назад...', '1', '1', '30000', '0', '0', '0', null);
 
-# Text shown in the menus
-
 INSERT INTO npc_text (ID, text0_0, em0_1) 
 VALUES (300004, '$BWhere would you like to be ported?$B', 0),
 (300003, '$BBe careful with choosing raids,I wont be there if you wipe.$B', 0),
 (300002, '$BUp for some dungeon exploring?$B', 0),
 (300001, '$B For The Alliance!$B', 6),
 (300000, '$B For the Horde!$B', 6);
-
-# Porting scripts
-
 
 INSERT INTO `smart_scripts` VALUES ('300000', '0', '1', '0', '62', '0', '100', '0', '30000', '1', '0', '0', '62', '0', '0', '0', '0', '0', '0', '0', '8', '0', '0', '-8842', '626', '94', '4', 'Teleporter script'),
 ('300000', '0', '2', '0', '62', '0', '100', '0', '30000', '2', '0', '0', '62', '1', '0', '0', '0', '0', '0', '0', '8', '0', '0', '1601', '-4379', '10', '2', 'Teleporter script'),
@@ -364,8 +348,6 @@ INSERT INTO `smart_scripts` VALUES ('300000', '0', '1', '0', '62', '0', '100', '
 ('300000', '0', '134', '0', '62', '0', '100', '0', '30008', '9', '0', '0', '62', '571', '0', '0', '0', '0', '0', '0', '8', '0', '0', '8323', '2764', '655', '3', 'Teleporter script'),
 ('300000', '0', '135', '0', '62', '0', '100', '0', '30008', '10', '0', '0', '62', '571', '0', '0', '0', '0', '0', '0', '8', '0', '0', '4522', '2828', '390', '0', 'Teleporter script');
 
-# TeleNPC spawns
-
 ALTER TABLE creature AUTO_INCREMENT=200000;
 INSERT INTO `creature` VALUES ('205283', '300000', '1', '1', '1', '0', '0', '1599.15', '-4376.49', '10.0955', '5.34972', '300', '0', '0', '6494', '0', '0', '0', '0', '0'),
 ('205709', '300000', '0', '1', '1', '0', '0', '-14280.1', '553.156', '8.9015', '3.37583', '300', '0', '0', '6494', '0', '0', '0', '0', '0'),
@@ -496,9 +478,6 @@ INSERT INTO `creature` VALUES ('205283', '300000', '1', '1', '1', '0', '0', '159
 ('212820', '300000', '0', '1', '1', '0', '0', '-394.234', '-784.005', '54.9365', '6.01084', '300', '0', '0', '6494', '0', '0', '0', '0', '0'),
 ('212821', '300000', '530', '1', '1', '0', '0', '-1887.44', '5359.35', '-12.4276', '1.17257', '300', '0', '0', '6494', '0', '0', '0', '0', '0'),
 ('212822', '300000', '0', '1', '1', '0', '0', '-8845.12', '624.057', '94.2256', '0.391093', '300', '0', '0', '6494', '0', '0', '0', '0', '0');
-
-
-# If you want the npc to *cast* the spell, use these as values: VALUES (300000,0,0,0,0,0,'30540 0');
 
 INSERT INTO creature_template_addon (entry,mount,bytes1,bytes2,emote,path_id,auras) 
 VALUES (300000,0,0,0,0,0,'35766 0');
