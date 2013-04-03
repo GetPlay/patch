@@ -15,6 +15,8 @@ DELETE FROM smart_scripts WHERE entryorguid = '30000';
 DELETE FROM npc_text WHERE ID=300000 OR ID=300001 OR ID=300002 OR ID=300003 OR ID=300004;
 DELETE FROM conditions WHERE SourceTypeOrReferenceId=15 AND SourceGroup>=30000 AND SourceGroup<=30006 AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
 DELETE FROM conditions WHERE SourceTypeOrReferenceId=14 AND SourceGroup=30000 AND (SourceEntry=30001 OR SourceEntry=300000) AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
+DELETE FROM creature_template_addon WHERE Entry = 300000 ;
+DELETE FROM creature WHERE id = 300000 ;
 
 # TeleNPC
 
@@ -507,6 +509,5 @@ INSERT INTO `creature` VALUES ('205283', '300000', '1', '1', '1', '0', '0', '159
 
 # If you want the npc to *cast* the spell, use these as values: VALUES (300000,0,0,0,0,0,'30540 0');
 
-DELETE FROM creature_template_addon WHERE Entry = 300000 ;
 INSERT INTO creature_template_addon (entry,mount,bytes1,bytes2,emote,path_id,auras) 
 VALUES (300000,0,0,0,0,0,'35766 0');
