@@ -10,7 +10,7 @@ SET @NPCTXT := 300000; -- # (5)
 
 DELETE FROM creature_template WHERE entry=300000;
 DELETE FROM gossip_menu WHERE entry=30000 OR entry=30001 OR entry=30002 OR entry=30003 OR entry=30004 OR entry=30005 OR entry=30006 OR entry=30007 OR entry=30008;
-DELETE FROM gossip_menu_option WHERE menu_id=30000 OR menu_id=30001 OR menu_id=30001 OR menu_id=30003 OR menu_id=30004 OR menu_id=30005 OR menu_id=30006 OR menu_id=30007 OR menu_id=30008;
+DELETE FROM gossip_menu_option WHERE menu_id=30000 OR menu_id=30001 OR menu_id=30002 OR menu_id=30003 OR menu_id=30004 OR menu_id=30005 OR menu_id=30006 OR menu_id=30007 OR menu_id=30008;
 DELETE FROM smart_scripts WHERE entryorguid = '30000';
 DELETE FROM npc_text WHERE ID=300000 OR ID=300001 OR ID=300002 OR ID=300003 OR ID=300004;
 DELETE FROM conditions WHERE SourceTypeOrReferenceId=15 AND SourceGroup>=30000 AND SourceGroup<=30006 AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
