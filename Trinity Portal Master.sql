@@ -19,19 +19,17 @@ SET @NPCTXT := 300000; -- # (5)
 DELETE FROM creature_template WHERE entry=@TELENPC;
 DELETE FROM gossip_menu WHERE entry=@GMENU OR entry=@GMENU+1 OR entry=@GMENU+2 OR entry=@GMENU+3 OR entry=@GMENU+4 OR entry=@GMENU+5 OR entry=@GMENU+6 OR entry=@GMENU+7 OR entry=@GMENU+8;
 DELETE FROM gossip_menu_option WHERE menu_id=@GOPTION OR menu_id=@GOPTION+1 OR menu_id=@GOPTION+2 OR menu_id=@GOPTION+3 OR menu_id=@GOPTION+4 OR menu_id=@GOPTION+5 OR menu_id=@GOPTION+6 OR menu_id=@GOPTION+7 OR menu_id=@GOPTION+8;
-DELETE FROM gossip_scripts WHERE id>@GSCRIPT-1 AND id<@GSCRIPT+135;
+DELETE FROM smart_scripts WHERE entryorguid = '@GSCRIPT';
 DELETE FROM npc_text WHERE ID=@NPCTXT OR ID=@NPCTXT+1 OR ID=@NPCTXT+2 OR ID=@NPCTXT+3 OR ID=@NPCTXT+4;
 DELETE FROM conditions WHERE SourceTypeOrReferenceId=15 AND SourceGroup>=@GOPTION AND SourceGroup<=@GOPTION+6 AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
 DELETE FROM conditions WHERE SourceTypeOrReferenceId=14 AND SourceGroup=@GMENU AND (SourceEntry=@NPCTXT+1 OR SourceEntry=@NPCTXT) AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
 
--- -----------------------------------------------------------------------------------------------------------------------------
--- # TeleNPC
+# TeleNPC
 
-INSERT INTO creature_template (entry,modelid1,name,IconName,gossip_menu_id,minlevel,maxlevel,Health_mod,Mana_mod,Armor_mod,faction_A,faction_H,npcflag,speed_walk,speed_run,scale,rank,dmg_multiplier,unit_class,unit_flags,type,type_flags,InhabitType,RegenHealth,flags_extra) 
-VALUES (@TELENPC,21572,'Portal Master','Directions',@GMENU,71,71,1.56,1.56,1.56,35,35,3,1,1.14286,1.25,1,1,1,2,7,138936390,3,1,2);
+INSERT INTO creature_template (entry,difficulty_entry_1,modelid1,name,IconName,gossip_menu_id,minlevel,maxlevel,Health_mod,Mana_mod,Armor_mod,faction_A,faction_H,npcflag,speed_walk,speed_run,scale,rank,dmg_multiplier,unit_class,unit_flags,type,type_flags,AIName,InhabitType,RegenHealth,flags_extra) 
+VALUES (@TELENPC,21563,21572,'Portal Master','Directions',@GMENU,71,71,1.56,1.56,1.56,35,35,3,1,1.14286,1.25,1,1,1,2,7,138936390,'SmartAI',3,1,2);
 
--- -----------------------------------------------------------------------------------------------------------------------------
--- # Linking texts to the menus
+# Linking texts to the menus
 
 INSERT INTO gossip_menu (entry, text_id) 
 VALUES (@GMENU+4, @NPCTXT+3),
