@@ -1,0 +1,21 @@
+src\server\game\Entities\Object\Object.cpp
+стр. 226-243
+
+{
+            switch (ToGameObject()->GetGoType())
+            {
+                case GAMEOBJECT_TYPE_TRAP:
+                case GAMEOBJECT_TYPE_DUEL_ARBITER:
+                case GAMEOBJECT_TYPE_FLAGSTAND:
+                case GAMEOBJECT_TYPE_FLAGDROP:
+                    updateType = UPDATETYPE_CREATE_OBJECT2;
+                    break;
+                case GAMEOBJECT_TYPE_TRANSPORT:
+                    flags |= UPDATEFLAG_TRANSPORT;
+                    break;
+                default:
+                    if (((GameObject*)this)->GetOwner())
+                        updateType = UPDATETYPE_CREATE_OBJECT2;
+                    break;
+            }
+        }
