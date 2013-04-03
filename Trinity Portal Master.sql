@@ -1,11 +1,3 @@
-# Defining what the entries and numbers are. Change if something overwrites something in your database
-
-SET @TELENPC := 300000; -- # (1)
-SET @GOPTION := 30000; -- # (9)
-SET @GMENU := @GOPTION; -- # (9) Changes as Goption changes
-SET @GSCRIPT := 30000; -- # (130)
-SET @NPCTXT := 300000; -- # (5)
-
 # Delete code (For re running)
 
 DELETE FROM creature_template WHERE entry=300000;
