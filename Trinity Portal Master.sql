@@ -6,7 +6,7 @@ DELETE FROM gossip_menu_option WHERE menu_id=30000 OR menu_id=30001 OR menu_id=3
 DELETE FROM smart_scripts WHERE entryorguid = '30000';
 DELETE FROM npc_text WHERE ID=300000 OR ID=300001 OR ID=300002 OR ID=300003 OR ID=300004;
 DELETE FROM conditions WHERE SourceTypeOrReferenceId=15 AND SourceGroup>=30000 AND SourceGroup<=30006 AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
-DELETE FROM conditions WHERE SourceTypeOrReferenceId=14 AND SourceGroup=30000 AND (SourceEntry=30001 OR SourceEntry=300000) AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
+DELETE FROM conditions WHERE SourceTypeOrReferenceId=14 AND SourceGroup=30000 AND (SourceEntry=300001 OR SourceEntry=300000) AND ConditionTypeOrReference=6 AND (ConditionValue1=469 OR ConditionValue1=67);
 DELETE FROM creature_template_addon WHERE Entry = 300000 ;
 DELETE FROM creature WHERE id = 300000 ;
 
