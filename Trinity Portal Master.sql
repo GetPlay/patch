@@ -223,11 +223,11 @@ INSERT INTO `gossip_menu_option` VALUES ('30000', '1', '2', 'Штормград 
 # Text shown in the menus
 
 INSERT INTO npc_text (ID, text0_0, em0_1) 
-VALUES (@NPCTXT+4, '$BWhere would you like to be ported?$B', 0),
-(@NPCTXT+3, '$BBe careful with choosing raids,I wont be there if you wipe.$B', 0),
-(@NPCTXT+2, '$BUp for some dungeon exploring?$B', 0),
-(@NPCTXT+1, '$B For The Alliance!$B', 6),
-(@NPCTXT, '$B For the Horde!$B', 6);
+VALUES (300004, '$BWhere would you like to be ported?$B', 0),
+(300003, '$BBe careful with choosing raids,I wont be there if you wipe.$B', 0),
+(300002, '$BUp for some dungeon exploring?$B', 0),
+(300001, '$B For The Alliance!$B', 6),
+(300000, '$B For the Horde!$B', 6);
 
 # Porting scripts
 
@@ -366,7 +366,6 @@ INSERT INTO `smart_scripts` VALUES ('300000', '0', '1', '0', '62', '0', '100', '
 
 # TeleNPC spawns
 
-DELETE FROM creature WHERE ID = 300000 ;
 ALTER TABLE creature AUTO_INCREMENT=200000;
 INSERT INTO `creature` VALUES ('205283', '300000', '1', '1', '1', '0', '0', '1599.15', '-4376.49', '10.0955', '5.34972', '300', '0', '0', '6494', '0', '0', '0', '0', '0'),
 ('205709', '300000', '0', '1', '1', '0', '0', '-14280.1', '553.156', '8.9015', '3.37583', '300', '0', '0', '6494', '0', '0', '0', '0', '0'),
