@@ -71,37 +71,37 @@ $('#checkall').toggleClass('clicked');
       </div>
     <!--Content Start-->
     <div id="content">
+		  
       <div class="messages">
       <?php
-        if(isset($_GET['id'])){
+        if(isset($_GET['id']) && isset($_GET['action'])){
           mysql_select_db($server_db);
-          $media = mysql_fetch_assoc(mysql_query("SELECT * FROM media WHERE id = '".mysql_real_escape_string($_GET['id'])."'"));
-          $del = mysql_query("DELETE FROM media WHERE id = '".mysql_real_escape_string($_GET['id'])."'");
-          $del_c = mysql_query("DELETE FROM media_comments WHERE id = '".mysql_real_escape_string($_GET['id'])."'");
-          if ($del == true && $del_c == true && $media['type'] != '0'){
-          //If not a video delete file, overwrite $del var for detect errors
-            $del = unlink('../images/wallpapers/'.$media['id_url']);
+          if ($_GET['action'] == 'add'){
+            $sql = mysql_query("UPDATE media SET visible='1' WHERE id = '".mysql_real_escape_string($_GET['id'])."'");
+          }                                      //We could set get_action to 0/1 and set it on the sql query
+          elseif($_GET['action'] == 'un'){
+            $sql = mysql_query("UPDATE media SET visible='0' WHERE id = '".mysql_real_escape_string($_GET['id'])."'");  
           }
         }
-        if($del == true){
-          echo '<div class="messages">
-		  <div><img src="images/success.png" alt="" />
-                  <p>‘а…л удален!</p>
-                </div></div>
-            ';
+        if($sql == true && $_GET['action'] == 'add'){
+          echo '
+            <div><img src="images/success.png" alt="" />
+              <p>The media file has been approved succesfully! Now it will be visible for all users.</p>
+            </div>';
+        }
+        elseif($sql == true && $_GET['action'] == 'un'){
+          echo '
+            <div><img src="images/success.png" alt="" />
+              <p>The media file has been unapproved! Now it will be not visible.</p>
+            </div>';
         }
         else{
-          echo'<div class="messages">
-		  <center><div><img src="images/errorIco.png" alt="" />
-                  <p>ќшибка!‘аил не удалось удалить!.</p>
-                </div><center>
-				<div class="2"><center><img src="images/infoIcon.png" alt="" /></center>
-                <ul><li><p>We apologise for the inconvinience but something has gone Wrong!</p></li> <li><p>Please recheck your Options that you have done lately and the changes.</p></li> <li><p>Also please re-view the Version of the website and the SQL version that you are using.</p></li></ul>
-                </div></div>
-				
-            ';
+          echo'
+            <div align="center"><img src="images/errorIco.png" alt="" />
+              <p>An error has ocurred while approving/unpproving the media file</p>
+            </div>';
         }
-        echo '<meta http-equiv="refresh" content="3;url='.$_SERVER['HTTP_REFERER'].'"/>';
+        echo '<meta http-equiv="refresh" content="1;url='.$_SERVER['HTTP_REFERER'].'"/>';
       ?>
       </div>
     </div>

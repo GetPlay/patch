@@ -1,6 +1,5 @@
 <?php
 include("../configs.php");
-ini_set("default_charset", "iso-8859-1" ); 
 
 	mysql_select_db($server_adb);
 	$check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
@@ -11,13 +10,14 @@ ini_set("default_charset", "iso-8859-1" );
 <meta http-equiv="refresh" content="2;url=GTFO.php"/>
 		');
 	}
+
   //To show the images pop-up
-  $path = "../news/";       //The images path
+  $path = "../images/slideshows/";       //The images path
   $dir = opendir($path);   //Open path
   $img_total=0;
   while ($elemento = readdir($dir))   //read content
   {
-    if (substr($elemento, strlen($elemento)-11,11)=='_header.jpg') //if a valid picture then show it
+    if (substr($elemento, strlen($elemento)-11,11)=='.jpg') //if a valid picture then show it
     {
       $img_array[$img_total]=$elemento;    //Save the pictures in array
       $img_total++;
@@ -25,46 +25,27 @@ ini_set("default_charset", "iso-8859-1" );
   } 
   //End image pop-up
   
-  if (isset($_GET['id'])){
-  mysql_select_db($server_db);
-  $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,image,content FROM news WHERE id = '".$_GET['id']."'"));
-  if (!$new['id']){
-    $error = true;
-  }
-  }else{
-    $error = true;
-  }
-  
-//Begin Post
   if (isset($_POST['save'])){
     $title = mysql_real_escape_string($_POST['title']);
     $image = mysql_real_escape_string($_POST['image']);
-    $content = $_POST['content'];
-    $content = trim($content);
-    if ($_POST['author']){
-      $author = $login['id'];
-      }else{
-        $author = $new['author'];
-      }
-    if ($_POST['date']){
-      $date = date ("Y-m-d H:i:s", time()); 
-    }else{
-      $date = $new['date'];
-    }
-    $emptyContent = strip_tags($content);
-    if (empty($emptyContent)){                          //Check if content is empty, title will never be empty
-      echo '<font color="red">You have to write something!</font>';
+    $link = mysql_real_escape_string($_POST['link']);
+    $description = $_POST['description'];
+    $description = trim($description);
+
+    $emptydescription = strip_tags($description);
+    if (empty($emptydescription)){                          //Check if content is empty, title will never be empty
+      echo '<font color="red">Заполнены не все поля!</font>';
     }else{
       mysql_select_db($server_db);
-      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content = '".$content."', date = '".$date."' WHERE id = '".$_POST['id']."'");
-      if ($change_new == true){
-        echo '<div class="alert-page" align="center"> The article has been updated successfully!</div>';
-        echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
+      $save_new = mysql_query("INSERT INTO slideshows (title, description, image, link) VALUES ('".$title."','".$description."','".$image.".jpg','".$link."');") or die(mysql_error());
+      if ($save_new == true){
+        echo '<div class="alert-page" align="center"> Объявление успешно добавлено!</div>';
+        echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
       }
       else{
-        echo '<div class="errors" align="center"><font color="red"> An ERROR has occured while saving the article!</font></div>';
+        echo '<div class="errors" align="center"><font color="red"> Произошла ошибка при сохранении поста в базу данных!</font></div>';
       }
-    }  
+    }
   }
 ?>      
 
@@ -126,27 +107,22 @@ function pop(action){
   if (action=='open')
   {
     vis.display = 'block';               //show/hidde the image select pop-up
-    frm_element.focus();
-  }
-  else if(action == 'blur'){
-    if(document.activeElement.name != 'pop'){
-      vis.display = 'none';
-    }
   }
   else
   {
-      vis.display = 'none';
+    vis.display = 'none';
   }
 }
 function changeVal(val){
   var  frm_element = document.getElementById('image'); //change the image input box value
   frm_element.value = val;                            //And the preview image
   var imgL = document.getElementById('imgLoad');
-  imgL.src = '../news/' + val + '.jpg';
+  imgL.style.display = '';
+  imgL.src = '../images/slideshows/' + val + '.jpg';
 }
 
 function preview(img,event){
-  var div = document.getElementById('preview');      //To show preview images
+  var div = document.getElementById('preview');      //To show preview image
   div = div.style;
   var imgP = document.getElementById('imgP');
   if (event == 'on'){
@@ -169,28 +145,26 @@ function preview(img,event){
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Edit News: <?php if($error){die ('<font color="red">Sorry an error has ocurred!</font>');} ?><?php echo $new['title']; ?></h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+          <h2>&#1044;&#1086;&#1073;&#1072;&#1074;&#1083;&#1077;&#1085;&#1080;&#1077; объявления</h2>
+
         </div>
-        <h3>Head</h3>
+        <h3></h3>
         <form method="post" action="" class="styleForm">
-        <input type="hidden" name="id" value="<?php echo $new['id']; ?>" />
-          <p>Title<br />
-            <input name="title" type="text" value="<?php echo $new['title']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['title']; ?>'" />
+          <p>&#1047;&#1072;&#1075;&#1086;&#1083;&#1086;&#1074;&#1086;&#1082;<br />
+            <input name="title" type="text" value="" class="reg" onfocus="if(this.value=='Enter Title')this.value=''" onblur="if(this.value=='')this.value='Enter Title'" />
+          </p> 
+          <p>Ссылка<br />
+            <input name="link" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
           </p> 
           <div class="folder">
-          <div class="folder">
             <p>&#1048;&#1079;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1077;<br />
-            <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
+            <input id="image" name="image" type="text" value="" class="reg" onfocus="pop('open');" />
             </p>
-            <img src="<?php echo '../news/'.$new['image'].'.jpg'; ?>" id="imgLoad" />
+            <img src="" id="imgLoad" style="display:none;"/>
             <div  class="pop-image" id="pop">
               <div class="note">
                 <table border=0>
-                <?php       
+                <?php
                 for ($i=0;$i<$img_total; $i++)      //show images in table
                 {
                   $imagen = $img_array[$i];
@@ -202,25 +176,22 @@ function preview(img,event){
                   echo "</tr>";
                 }
                 ?>
+
                 </table>
               </div>
             </div>
             <div  id="preview" style="display:none; float:right; position:absolute;left:450px;top:-50px;">
-              <img src="" alt="img" id="imgP" />   
+              <img src="../news/staff.jpg" alt="img" id="imgP" />   
             </div>   
-          </div> 
-          <p>   
-            <input class="chkl" type="checkbox" name="date" value="checkbox" />Change date to current time
-          </p>
-          <p>   
-            <input class="chkl" type="checkbox" name="author" value="checkbox" />Set me as Author
-          </p>
-          <h3>Content</h3>
-          <div class="txt">
-            <textarea id="input" name="content"><?php echo $new['content']; ?></textarea>
+
           </div>
-          <input name="save" type="submit" value="Save Changes" />
-          <a href="viewnews.php"><input name="reset" type="reset" value="Cancel" /></a>
+          
+          <h3>&#1042;&#1072;&#1096; &#1090;&#1077;&#1082;&#1089;&#1090;</h3>
+          <div class="txt">
+            <textarea id="input" name="description"></textarea>
+          </div>
+          <input name="save" type="submit" value="&#1057;&#1086;&#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1100; &#1080; &#1076;&#1086;&#1073;&#1072;&#1074;&#1080;&#1090;&#1100;" />
+          <input name="reset" type="reset" value="&#1054;&#1090;&#1084;&#1077;&#1085;&#1080;&#1090;&#1100;" />
         </form>
       </div>
     </div>

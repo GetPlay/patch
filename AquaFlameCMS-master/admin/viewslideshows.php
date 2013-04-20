@@ -1,7 +1,8 @@
 <?php
 include("../configs.php");
+
 	mysql_select_db($server_adb);
-	$check_query = mysql_query("SELECT gmlevel from account inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
+	$check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
     $login = mysql_fetch_assoc($check_query);
 	if($login['gmlevel'] < 3)
 	{
@@ -11,7 +12,7 @@ include("../configs.php");
 	}
 	
   mysql_select_db($server_db) or die (mysql_error());
-  $sql = mysql_query("SELECT id FROM news");
+  $sql = mysql_query("SELECT id FROM slideshows");
   //PAGINATION BEGIN
   $size=10; 
   $num_r = mysql_num_rows($sql);
@@ -76,7 +77,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
 			});
   $('#checkall').click(function(){
 
- $('span').toggleClass('checked
+ $('span').toggleClass('checked');
 $('#checkall').toggleClass('clicked');
 
  }); 
@@ -84,7 +85,7 @@ $('#checkall').toggleClass('clicked');
 	</script>
 </head>
 <body class="bgc">
-	<div id="admin">');
+	<div id="admin">
     <div id="wrap">
       <div id="head">
         <?php include('header.php'); ?>
@@ -94,7 +95,7 @@ $('#checkall').toggleClass('clicked');
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2>Изменение/удаление новостей</h2>
+        <h2>Изменение/удаление Объявлений</h2>
         <select name="sort">
           <option>Сортировать по</option>
         </select> 
@@ -102,11 +103,11 @@ $('#checkall').toggleClass('clicked');
       <div class="pagination">
         <?php
           if ($num_p > 1){
-         if ($page > 1){echo '<a href="viewnews.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
-         if ($page > 2){echo '<a href="viewnews.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
+         if ($page > 1){echo '<a href="viewslideshows.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
+         if ($page > 2){echo '<a href="viewslideshows.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
          echo $page;
-         if ($page < $num_p-1){echo '...<a href="viewnews.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
-         if ($page < $num_p){echo '|<a href="viewnews.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
+         if ($page < $num_p-1){echo '...<a href="viewslideshows.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
+         if ($page < $num_p){echo '|<a href="viewslideshows.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
          echo'
           <form method="get" action="">
             <input type="hidden" name="sort" value="'.$_GET['sort'].'">
@@ -127,7 +128,7 @@ $('#checkall').toggleClass('clicked');
         </li>
            <?php
             mysql_select_db($server_db) or die (mysql_error());
-            $result = mysql_query("SELECT id,title,content,comments FROM news ORDER BY date DESC LIMIT $start,$size");
+            $result = mysql_query("SELECT id,title FROM slideshows");
             while ($new = mysql_fetch_assoc($result)){
               echo'
             <li>
@@ -136,10 +137,8 @@ $('#checkall').toggleClass('clicked');
                 <input class="chkl" type="checkbox" name="chk" value="checkbox" />
               </label>
             </div>
-            <p class="edit"><a href="editnews.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
+            <p class="edit"><a href="editslideshows.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deleteslideshows.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
             <p class="title">'.$new['title'].'</p>
-            <p class="descrip">'.substr(strip_tags($new['content']),0,90).'</p>
-            <p class="inc">'.$new['comments'].'</p>
             </li>';
             }?>
       </ul>

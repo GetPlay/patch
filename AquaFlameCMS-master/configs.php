@@ -5,13 +5,13 @@ if(!isset($_SESSION)) session_start();
 
 if(isset($_GET['Local'])) $lang = $_GET['Local'];
 else if(isset($_SESSION['Local'])) $lang = $_SESSION['Local'];
-if(empty($lang)) $lang = 'en-us';
+if(empty($lang)) $lang = 'ru-ru';
 
 
 $language = $lang;
 $langs = Array("en-us" => null, "ro-ro" => null, "en-gb" => null, "it-it" => null, "de-de" => null, "es-es" => null, "bu-bg" => null , "es-mx" => null, "gr-gr" => null, "ru-ru" => null, "zh-cn" => null, "zh-tw" => null, "fr-fr" => null);
 if(array_key_exists($lang,$langs))require_once("lang/".$lang.".php");
-else require_once("/lang/en-us.php");
+else require_once("/lang/ru-ru.php");
 $_SESSION['Local'] = $language;
 ######################
 
@@ -20,18 +20,18 @@ $_SESSION['Local'] = $language;
 
 $serveraddress = "127.0.0.1"; // Connection addres for MySQL (default: 127.0.0.1)
 $serveruser = "root";        // MySQL Username
-$serverpass = "password";     // MySQL password
+$serverpass = "";     // MySQL password
 $serverport	= "3306";         // MySQL port (default: 3306)
 
 $server_db = "website";       // website Database name
-$server_cdb = "characters";   // characters Database name
-$server_wdb = "world";        // world Database name
+$server_cdb = "charactersbeta";   // characters Database name
+$server_wdb = "worldbeta";        // world Database name
 
 $authaddress = "127.0.0.1";   // Connection address for MySQL. Can be the same as $serveraddress. This is for auth\realmd database
 $authuser = "root";           // MySQL Username
-$authpass = "password";       // MySQL password
+$authpass = "";       // MySQL password
 $authport	= "3306";         // MySQL port (default: 3306)
-$server_adb = "auth";         // auth\realmd Database name
+$server_adb = "authbeta";         // auth\realmd Database name
 
 
 
@@ -41,7 +41,7 @@ $server_adb = "auth";         // auth\realmd Database name
 # Extra ################
 
 $website['realm'] = "Set Realmlist Your_Realmlist";
-$mysql_cod = 'cp1251';
+$mysql_cod = 'utf-8';
 
 # Comunity Links ############
 

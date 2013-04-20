@@ -1,6 +1,5 @@
 <?php
 include("../configs.php");
-ini_set("default_charset", "iso-8859-1" ); 
 
 	mysql_select_db($server_adb);
 	$check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
@@ -11,23 +10,11 @@ ini_set("default_charset", "iso-8859-1" );
 <meta http-equiv="refresh" content="2;url=GTFO.php"/>
 		');
 	}
-  //To show the images pop-up
-  $path = "../news/";       //The images path
-  $dir = opendir($path);   //Open path
-  $img_total=0;
-  while ($elemento = readdir($dir))   //read content
-  {
-    if (substr($elemento, strlen($elemento)-11,11)=='_header.jpg') //if a valid picture then show it
-    {
-      $img_array[$img_total]=$elemento;    //Save the pictures in array
-      $img_total++;
-    }
-  } 
-  //End image pop-up
+
   
   if (isset($_GET['id'])){
   mysql_select_db($server_db);
-  $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,image,content FROM news WHERE id = '".$_GET['id']."'"));
+  $new = mysql_fetch_assoc(mysql_query("SELECT id,name,content,replies FROM forum_threads WHERE id = '".$_GET['id']."'"));
   if (!$new['id']){
     $error = true;
   }
@@ -37,29 +24,21 @@ ini_set("default_charset", "iso-8859-1" );
   
 //Begin Post
   if (isset($_POST['save'])){
-    $title = mysql_real_escape_string($_POST['title']);
+    $admin = mysql_real_escape_string($_POST['admin']);
+    $title = mysql_real_escape_string($_POST['name']);
     $image = mysql_real_escape_string($_POST['image']);
     $content = $_POST['content'];
     $content = trim($content);
-    if ($_POST['author']){
-      $author = $login['id'];
-      }else{
-        $author = $new['author'];
-      }
-    if ($_POST['date']){
-      $date = date ("Y-m-d H:i:s", time()); 
-    }else{
-      $date = $new['date'];
-    }
+
     $emptyContent = strip_tags($content);
     if (empty($emptyContent)){                          //Check if content is empty, title will never be empty
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content = '".$content."', date = '".$date."' WHERE id = '".$_POST['id']."'");
+      $change_new = mysql_query("UPDATE forum_threads SET name = '".$title."' , content = '".$content." -----(Отредактированно администратором: )-----' WHERE id = '".$_POST['id']."'");
       if ($change_new == true){
         echo '<div class="alert-page" align="center"> The article has been updated successfully!</div>';
-        echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
+        echo '<meta http-equiv="refresh" content="3;url=forumposts.php"/>';
       }
       else{
         echo '<div class="errors" align="center"><font color="red"> An ERROR has occured while saving the article!</font></div>';
@@ -119,44 +98,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
 			}
 							 );
       });
-//This functions to work the pop-up image select
-function pop(action){
-  var frm_element = document.getElementById('pop');
-  var vis = frm_element.style;
-  if (action=='open')
-  {
-    vis.display = 'block';               //show/hidde the image select pop-up
-    frm_element.focus();
-  }
-  else if(action == 'blur'){
-    if(document.activeElement.name != 'pop'){
-      vis.display = 'none';
-    }
-  }
-  else
-  {
-      vis.display = 'none';
-  }
-}
-function changeVal(val){
-  var  frm_element = document.getElementById('image'); //change the image input box value
-  frm_element.value = val;                            //And the preview image
-  var imgL = document.getElementById('imgLoad');
-  imgL.src = '../news/' + val + '.jpg';
-}
 
-function preview(img,event){
-  var div = document.getElementById('preview');      //To show preview images
-  div = div.style;
-  var imgP = document.getElementById('imgP');
-  if (event == 'on'){
-    div.display = 'block';
-    imgP.src= img;
-  }
-  else{
-    div.display = 'none';
-  }
-  }
 </script>
 </head>
 <body class="bgc">
@@ -169,58 +111,28 @@ function preview(img,event){
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Edit News: <?php if($error){die ('<font color="red">Sorry an error has ocurred!</font>');} ?><?php echo $new['title']; ?></h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+          <h2>Редактирование темы: <?php if($error){die ('<font color="red">Sorry an error has ocurred!</font>');} ?><?php echo $new['name']; ?></h2>
+
         </div>
-        <h3>Head</h3>
         <form method="post" action="" class="styleForm">
         <input type="hidden" name="id" value="<?php echo $new['id']; ?>" />
-          <p>Title<br />
-            <input name="title" type="text" value="<?php echo $new['title']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['title']; ?>'" />
+          <p>Название темы<br />
+            <input name="name" type="text" value="<?php echo $new['name']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['name']; ?>'" />
           </p> 
           <div class="folder">
-          <div class="folder">
-            <p>&#1048;&#1079;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1077;<br />
-            <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
-            </p>
-            <img src="<?php echo '../news/'.$new['image'].'.jpg'; ?>" id="imgLoad" />
-            <div  class="pop-image" id="pop">
-              <div class="note">
-                <table border=0>
-                <?php       
-                for ($i=0;$i<$img_total; $i++)      //show images in table
-                {
-                  $imagen = $img_array[$i];
-                  $pathimagen=$path.$imagen;
-                  $nombre = substr($imagen,0,strlen($imagen)-11); //get the name for the db
-                  echo "<tr>"; // para empezar una nueva linea
-                  echo "<td><a href='javascript:;' onclick=changeVal('".$nombre."');pop('close');>
-                  <img src='$pathimagen' width='160px' border=0 onmouseover=preview('".$pathimagen."','on'); onmouseout=preview('".$pathiamgen."','out');></a></td>";  //Clik on it and the name appear on the textbox
-                  echo "</tr>";
-                }
-                ?>
-                </table>
-              </div>
-            </div>
+
+
             <div  id="preview" style="display:none; float:right; position:absolute;left:450px;top:-50px;">
               <img src="" alt="img" id="imgP" />   
             </div>   
           </div> 
-          <p>   
-            <input class="chkl" type="checkbox" name="date" value="checkbox" />Change date to current time
-          </p>
-          <p>   
-            <input class="chkl" type="checkbox" name="author" value="checkbox" />Set me as Author
-          </p>
-          <h3>Content</h3>
+
+          <h3>Сообщение</h3>
           <div class="txt">
             <textarea id="input" name="content"><?php echo $new['content']; ?></textarea>
           </div>
-          <input name="save" type="submit" value="Save Changes" />
-          <a href="viewnews.php"><input name="reset" type="reset" value="Cancel" /></a>
+          <input name="save" type="submit" value="Сохранить" />
+          <a href="forumposts.php"><input name="reset" type="reset" value="Выйти" /></a>
         </form>
       </div>
     </div>

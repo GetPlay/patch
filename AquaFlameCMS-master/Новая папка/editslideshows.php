@@ -11,13 +11,14 @@ ini_set("default_charset", "iso-8859-1" );
 <meta http-equiv="refresh" content="2;url=GTFO.php"/>
 		');
 	}
+
   //To show the images pop-up
-  $path = "../news/";       //The images path
+  $path = "../images/slideshows/";       //The images path
   $dir = opendir($path);   //Open path
   $img_total=0;
   while ($elemento = readdir($dir))   //read content
   {
-    if (substr($elemento, strlen($elemento)-11,11)=='_header.jpg') //if a valid picture then show it
+    if (substr($elemento, strlen($elemento)-11,11)=='.jpg') //if a valid picture then show it
     {
       $img_array[$img_total]=$elemento;    //Save the pictures in array
       $img_total++;
@@ -27,7 +28,7 @@ ini_set("default_charset", "iso-8859-1" );
   
   if (isset($_GET['id'])){
   mysql_select_db($server_db);
-  $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,image,content FROM news WHERE id = '".$_GET['id']."'"));
+  $new = mysql_fetch_assoc(mysql_query("SELECT id,title,description,image FROM slideshows WHERE id = '".$_GET['id']."'"));
   if (!$new['id']){
     $error = true;
   }
@@ -39,27 +40,21 @@ ini_set("default_charset", "iso-8859-1" );
   if (isset($_POST['save'])){
     $title = mysql_real_escape_string($_POST['title']);
     $image = mysql_real_escape_string($_POST['image']);
-    $content = $_POST['content'];
-    $content = trim($content);
+    $link = mysql_real_escape_string($_POST['link']);
+    $description = $_POST['description'];
+    $description = trim($description);
     if ($_POST['author']){
       $author = $login['id'];
-      }else{
-        $author = $new['author'];
       }
-    if ($_POST['date']){
-      $date = date ("Y-m-d H:i:s", time()); 
-    }else{
-      $date = $new['date'];
-    }
-    $emptyContent = strip_tags($content);
-    if (empty($emptyContent)){                          //Check if content is empty, title will never be empty
+    $emptydescription = strip_tags($description);
+    if (empty($emptydescription)){                          //Check if content is empty, title will never be empty
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content = '".$content."', date = '".$date."' WHERE id = '".$_POST['id']."'");
+      $change_new = mysql_query("UPDATE slideshows SET title = '".$title."' , image = '".$image.".jpg', description = '".$description."', link = '".$link."' WHERE id = '".$_POST['id']."'");
       if ($change_new == true){
         echo '<div class="alert-page" align="center"> The article has been updated successfully!</div>';
-        echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
+        echo '<meta http-equiv="refresh" content="3;url=viewslideshows.php"/>';
       }
       else{
         echo '<div class="errors" align="center"><font color="red"> An ERROR has occured while saving the article!</font></div>';
@@ -142,7 +137,7 @@ function changeVal(val){
   var  frm_element = document.getElementById('image'); //change the image input box value
   frm_element.value = val;                            //And the preview image
   var imgL = document.getElementById('imgLoad');
-  imgL.src = '../news/' + val + '.jpg';
+  imgL.src = '../images/slideshows/' + val + '.jpg';
 }
 
 function preview(img,event){
@@ -181,7 +176,9 @@ function preview(img,event){
           <p>Title<br />
             <input name="title" type="text" value="<?php echo $new['title']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['title']; ?>'" />
           </p> 
-          <div class="folder">
+          <p>—сылка<br />
+            <input name="link" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+          </p> 
           <div class="folder">
             <p>&#1048;&#1079;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1077;<br />
             <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
@@ -209,15 +206,10 @@ function preview(img,event){
               <img src="" alt="img" id="imgP" />   
             </div>   
           </div> 
-          <p>   
-            <input class="chkl" type="checkbox" name="date" value="checkbox" />Change date to current time
-          </p>
-          <p>   
-            <input class="chkl" type="checkbox" name="author" value="checkbox" />Set me as Author
-          </p>
+
           <h3>Content</h3>
           <div class="txt">
-            <textarea id="input" name="content"><?php echo $new['content']; ?></textarea>
+            <textarea id="input" name="description"><?php echo $new['description']; ?></textarea>
           </div>
           <input name="save" type="submit" value="Save Changes" />
           <a href="viewnews.php"><input name="reset" type="reset" value="Cancel" /></a>

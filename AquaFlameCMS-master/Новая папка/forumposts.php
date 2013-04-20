@@ -94,7 +94,7 @@ $('#checkall').toggleClass('clicked');
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2>Изменение/удаление новостей</h2>
+        <h2>Изменение/удаление сообщений форума</h2>
         <select name="sort">
           <option>Сортировать по</option>
         </select> 
@@ -102,11 +102,11 @@ $('#checkall').toggleClass('clicked');
       <div class="pagination">
         <?php
           if ($num_p > 1){
-         if ($page > 1){echo '<a href="viewnews.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
-         if ($page > 2){echo '<a href="viewnews.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
+         if ($page > 1){echo '<a href="forumposts.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
+         if ($page > 2){echo '<a href="forumposts.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
          echo $page;
-         if ($page < $num_p-1){echo '...<a href="viewnews.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
-         if ($page < $num_p){echo '|<a href="viewnews.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
+         if ($page < $num_p-1){echo '...<a href="forumposts.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
+         if ($page < $num_p){echo '|<a href="forumposts.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
          echo'
           <form method="get" action="">
             <input type="hidden" name="sort" value="'.$_GET['sort'].'">
@@ -127,7 +127,7 @@ $('#checkall').toggleClass('clicked');
         </li>
            <?php
             mysql_select_db($server_db) or die (mysql_error());
-            $result = mysql_query("SELECT id,title,content,comments FROM news ORDER BY date DESC LIMIT $start,$size");
+            $result = mysql_query("SELECT id,content,name FROM forum_replies ORDER BY date DESC LIMIT $start,$size");
             while ($new = mysql_fetch_assoc($result)){
               echo'
             <li>
@@ -136,10 +136,10 @@ $('#checkall').toggleClass('clicked');
                 <input class="chkl" type="checkbox" name="chk" value="checkbox" />
               </label>
             </div>
-            <p class="edit"><a href="editnews.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.$new['title'].'</p>
+            <p class="edit"><a href="editposts.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deleteposts.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
+            <p class="title">'.$new['name'].'</p>
             <p class="descrip">'.substr(strip_tags($new['content']),0,90).'</p>
-            <p class="inc">'.$new['comments'].'</p>
+            <p class="inc">'.$new['replies'].'</p>
             </li>';
             }?>
       </ul>

@@ -28,15 +28,16 @@
               <div class='left_scroll'><img src='images/leftArrow.png' alt="" /></div>
               <div class='carousel_inner'>
               <ul class='carousel_ul'>
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Write News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico1" href='writenews.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>View/Edit News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
-			         	<li><span rel="tooltip" title="<strong style='color:#00B6FF'>Manage Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico10" href='mediaall.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Unapproved Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icom2" href='mediaun.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Forums</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icof" href='fcategory.php'></a></span></li>                   
-						    
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>View the Website</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico4" href='viewwebsite.php'></a></span></li>
-						    <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Connectivity</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico2" href='#'></a></span></li>
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Information</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico9" href='info.php'></a></span></li>
+                  
+                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Добавить новость</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico1" href='writenews.php'></a></span></li>
+				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Редактирование новостей</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
+                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Добавить Объявление</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico1" href='writeslideshows.php'></a></span></li>
+				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Редактировать Объявление</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewslideshows.php'></a></span></li>
+			         	<li><span rel="tooltip" title="<strong style='color:#00B6FF'>Одобренные к просмотру медиа-файлы</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico10" href='mediaall.php'></a></span></li>
+				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Ожидающие одобрения медиа-файлы</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icom2" href='mediaun.php'></a></span></li>  		    
+                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Просмотр сайта</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico4" href='viewwebsite.php'></a></span></li>
+
+
               </ul>
               </div>
               <div class='right_scroll'><img src='images/rightArrow.png' alt="" /></div>

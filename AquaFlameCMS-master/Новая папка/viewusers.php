@@ -94,19 +94,17 @@ $('#checkall').toggleClass('clicked');
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2>Изменение/удаление новостей</h2>
-        <select name="sort">
-          <option>Сортировать по</option>
-        </select> 
+        <h2>Удаление пользователей</h2>
+
       </div>
       <div class="pagination">
         <?php
           if ($num_p > 1){
-         if ($page > 1){echo '<a href="viewnews.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
-         if ($page > 2){echo '<a href="viewnews.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
+         if ($page > 1){echo '<a href="viewusers.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
+         if ($page > 2){echo '<a href="viewusers.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
          echo $page;
-         if ($page < $num_p-1){echo '...<a href="viewnews.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
-         if ($page < $num_p){echo '|<a href="viewnews.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
+         if ($page < $num_p-1){echo '...<a href="viewusers.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
+         if ($page < $num_p){echo '|<a href="viewusers.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
          echo'
           <form method="get" action="">
             <input type="hidden" name="sort" value="'.$_GET['sort'].'">
@@ -120,14 +118,14 @@ $('#checkall').toggleClass('clicked');
       <ul id="lst">
         <li>
           <div class="chk"><a id="checkall"></a> </div>
-			    <p class="editHead"><strong>Измен./Удал.</strong></p>
-          <p class="title"><strong>Заголовок</strong></p>
-          <p class="descripHead">Текст</p>
-          <p class="incHead">Коментарии</p>
+			    <p class="editHead"><strong>Удалить</strong></p>
+          <p class="title"><strong>Логин</strong></p>
+          <p class="descripHead">Ник персонажа</p>
         </li>
            <?php
             mysql_select_db($server_db) or die (mysql_error());
-            $result = mysql_query("SELECT id,title,content,comments FROM news ORDER BY date DESC LIMIT $start,$size");
+            $result = mysql_query("SELECT U.id,U.firstName, username FROM users U, $server_adb.account A 
+            WHERE A.id = U.id ORDER BY id DESC LIMIT $start,$size");
             while ($new = mysql_fetch_assoc($result)){
               echo'
             <li>
@@ -136,10 +134,9 @@ $('#checkall').toggleClass('clicked');
                 <input class="chkl" type="checkbox" name="chk" value="checkbox" />
               </label>
             </div>
-            <p class="edit"><a href="editnews.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.$new['title'].'</p>
-            <p class="descrip">'.substr(strip_tags($new['content']),0,90).'</p>
-            <p class="inc">'.$new['comments'].'</p>
+            <p class="edit"> <a href="deleteusers.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
+            <p class="title">'.$new['username'].'</p>
+            <p class="inc">'.$new['firstName'].'</p>
             </li>';
             }?>
       </ul>

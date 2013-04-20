@@ -1,6 +1,5 @@
 <?php
 include("../configs.php");
-ini_set("default_charset", "iso-8859-1" );    //For special chars
 
 	mysql_select_db($server_adb);
 	$check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
@@ -34,11 +33,11 @@ ini_set("default_charset", "iso-8859-1" );    //For special chars
     $date = date ("Y-m-d H:i:s", time()); 
 
     $emptyContent = strip_tags($content1);
+    $emptyContent2 = strip_tags($content2);
     if (empty($emptyContent)){                          //Check if content is empty, title will never be empty
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-    $emptyContent2 = strip_tags($content2);
       $save_new = mysql_query("INSERT INTO news (author, date, content1, content2, title, image) VALUES ('".$login['id']."','".$date."','".addslashes($content1)."','".addslashes($content2)."','".$title."','".$image."');") or die(mysql_error());
       if ($save_new == true){
         echo '<div class="alert-page" align="center"> The new has been created successfully!</div>';
@@ -89,6 +88,10 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
       $(function(){
         $("input, select, button").uniform();
       });
+    <script type="text/javascript" charset="utf-8">
+      $(function2(){
+        $("input2, select2, button2").uniform();
+      });
     </script>
     <link rel="stylesheet" href="css/uniform.defaultstyle2.css" type="text/css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/jquery.cleditor.css" />
@@ -109,16 +112,10 @@ function pop(action){
   if (action=='open')
   {
     vis.display = 'block';               //show/hidde the image select pop-up
-    frm_element.focus();
-  }
-  else if(action == 'blur'){
-    if(document.activeElement.name != 'pop'){
-      vis.display = 'none';
-    }
   }
   else
   {
-      vis.display = 'none';
+    vis.display = 'none';
   }
 }
 function changeVal(val){
@@ -153,23 +150,19 @@ function preview(img,event){
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Write News</h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+          <h2>Добавление новости</h2>
         </div>
-        <h3>Head</h3>
+        <h3></h3>
         <form method="post" action="" class="styleForm">
-          <p>Title<br />
-            <input name="title" id="title" type="text" value="Enter Title" class="reg" onfocus="if(this.value=='Enter Title')this.value=''" onblur="if(this.value=='')this.value='Enter Title'" />
+          <p>Заголовок<br />
+            <input name="title" type="text" value="Enter Title" class="reg" onfocus="if(this.value=='Enter Title')this.value=''" onblur="if(this.value=='')this.value='Enter Title'" />
           </p> 
           <div class="folder">
-            <p>Image<br />
+            <p>Изображение<br />
             <input id="image" name="image" type="text" value="" class="reg" onfocus="pop('open');" />
             </p>
             <img src="" id="imgLoad" style="display:none;"/>
-            <div  class="pop-image" id="pop" name="pop" onblur="pop('blur');" tabindex="1">
+            <div  class="pop-image" id="pop">
               <div class="note">
                 <table border=0>
                 <?php
@@ -179,7 +172,7 @@ function preview(img,event){
                   $pathimagen=$path.$imagen;
                   $nombre = substr($imagen,0,strlen($imagen)-11); //get the name for the db
                   echo "<tr>"; // para empezar una nueva linea
-                  echo "<td><a href='javascript:;' name='pop' onclick=changeVal('".$nombre."');pop('close');>
+                  echo "<td><a href='javascript:;' onclick=changeVal('".$nombre."');pop('close');>
                   <img src='$pathimagen' width='160px' border=0 onmouseover=preview('".$pathimagen."','on'); onmouseout=preview('".$pathiamgen."','out');></a></td>";  //Clik on it and the name appear on the textbox
                   echo "</tr>";
                 }
@@ -192,16 +185,18 @@ function preview(img,event){
             </div>   
           </div>
           
-          <h3>Content1</h3>
-          <div class="txt">
-            <textarea id="input" name="content1"></textarea>
-          </div>
-          <h3>Content2</h3>
+          <h3>Сообщение 1 (основное)</h3>
           <div class="txt">
             <textarea id="input" name="content2"></textarea>
           </div>
-          <input name="save" type="submit" value="Save Changes" />
-          <input name="reset" type="reset" value="Cancel" />
+
+          <h3>Сообщение 2 (отображение на главной странице сайта)</h3>
+          <div class="txt">
+            <textarea id="input" name="content1"></textarea>
+          </div>
+
+          <input name="save" type="submit" value="Сохранить и добавить" />
+          <input name="reset" type="reset" value="Отмена" />
         </form>
       </div>
     </div>

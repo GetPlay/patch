@@ -1,21 +1,11 @@
 <?php
 include("../configs.php");
 
-	mysql_select_db($server_adb);
-	$check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
-    $login = mysql_fetch_assoc($check_query);
-	if($login['gmlevel'] < 3)
-	{
-		die('
-<meta http-equiv="refresh" content="2;url=GTFO.php"/>
-		');
-	}
-  
+
   if (isset($_POST['delete'])){
     mysql_select_db($server_db);
-    $delete_new = mysql_query("DELETE FROM news WHERE id = '".$_POST['id']."'");
-    $delete_com = mysql_query("DELETE FROM comments WHERE newsid = '".$_POST['id']."'");
-    if ($delete_new == true && $delete_com == true){
+    $delete_new = mysql_query("DELETE FROM slideshows WHERE id = '".$_POST['id']."'");
+    if ($delete_new == true){
       echo '<div class="alert-page" align="center"> The article has been deleted successfully!</div>';
       echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
     }
@@ -97,7 +87,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
         <?php
           if (isset($_GET['id'])){
             mysql_select_db($server_db);
-            $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,comments,content FROM news WHERE id = '".$_GET['id']."'"));
+            $new = mysql_fetch_assoc(mysql_query("SELECT id,title,description,image,link FROM slideshows WHERE id = '".$_GET['id']."'"));
             if (!$new['id']){
               $error = true;
             }
@@ -118,10 +108,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
               <a href="dashboard.php"><button name="reset" type="reset" value="Cancel"><span>Отменить</span></button></a></p>
             </td>
           </tr>
-          <tr><td><p><strong>Автор: </strong>'.$new['author'].'</p></td></tr>
-          <tr><td><p><strong>Дата: </strong>'.$new['date'].'</p></td></tr>
-          <tr><td><p><strong>Коментарии: </strong>'.$new['comments'].'</p></td></tr> 
-          <tr><td colspan="2"><h3>Текст:</h3><p>'.$new['content'].'</p></td></tr>
+          <tr><td colspan="2"><h3>Текст:</h3><p>'.$new['description'].'</p></td></tr>
         </table>
         </form></div>';
           }elseif ($delete_new == false){ //just show error if we have not deleted am article

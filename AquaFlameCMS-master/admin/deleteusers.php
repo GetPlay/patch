@@ -88,7 +88,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Удаление новости</h2>
+          <h2>Удаление пользователя</h2>
           <form class="search" method="get" action="#">
             <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
             <input name="" type="submit" value="" />
@@ -97,7 +97,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
         <?php
           if (isset($_GET['id'])){
             mysql_select_db($server_db);
-            $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,comments,content FROM news WHERE id = '".$_GET['id']."'"));
+            $new = mysql_fetch_assoc(mysql_query("SELECT U.id,U.firstName, username FROM users U, $server_adb.account A WHERE A.id = U.id"));
             if (!$new['id']){
               $error = true;
             }
@@ -110,18 +110,13 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
         <form method="post" action="" class="styleForm">
         <table>
           <tr>
-            <td width="65%"><p><strong>Заголовок: </strong>'.$new['title'].'</p></td>
             <td rowspan="4" style="vertical-align:middle;">
-              <p align="center"><strong>Вы действительно хотите удалить эту новость?</strong></p>
+              <p align="center"><strong>Вы действительно хотите удалить этого пользователя?</strong></p>
               <input type="hidden" name="id" value="'.$new['id'].'" />
               <p align="center"><button type="submit" name="delete" onclick="Form.submit(this)"><span>Удалить</span></button>
               <a href="dashboard.php"><button name="reset" type="reset" value="Cancel"><span>Отменить</span></button></a></p>
             </td>
           </tr>
-          <tr><td><p><strong>Автор: </strong>'.$new['author'].'</p></td></tr>
-          <tr><td><p><strong>Дата: </strong>'.$new['date'].'</p></td></tr>
-          <tr><td><p><strong>Коментарии: </strong>'.$new['comments'].'</p></td></tr> 
-          <tr><td colspan="2"><h3>Текст:</h3><p>'.$new['content'].'</p></td></tr>
         </table>
         </form></div>';
           }elseif ($delete_new == false){ //just show error if we have not deleted am article

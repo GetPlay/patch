@@ -13,14 +13,13 @@ include("../configs.php");
   
   if (isset($_POST['delete'])){
     mysql_select_db($server_db);
-    $delete_new = mysql_query("DELETE FROM news WHERE id = '".$_POST['id']."'");
-    $delete_com = mysql_query("DELETE FROM comments WHERE newsid = '".$_POST['id']."'");
-    if ($delete_new == true && $delete_com == true){
-      echo '<div class="alert-page" align="center"> The article has been deleted successfully!</div>';
+    $delete_new = mysql_query("DELETE FROM forum_threads WHERE id = '".$_POST['id']."'");
+    if ($delete_new == true){
+      echo '<div class="alert-page" align="center"> Сообщение было удалено!</div>';
       echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
     }
     else{
-      echo '<div class="errors" align="center"><font color="red"> An ERROR has occured while deleting the article!</font></div>';
+      echo '<div class="errors" align="center"><font color="red"> Ошибка!Сообщение не было удалено!!</font></div>';
     }
   }
 ?>      
@@ -89,15 +88,12 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
       <div class="forms">
         <div class="heading">
           <h2>Удаление новости</h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+
         </div>
         <?php
           if (isset($_GET['id'])){
             mysql_select_db($server_db);
-            $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,comments,content FROM news WHERE id = '".$_GET['id']."'"));
+            $new = mysql_fetch_assoc(mysql_query("SELECT id,forumid,author,replies,views,date,content,locked,has_blizz,prefix,last_date,edited,editedby FROM forum_threads WHERE id = '".$_GET['id']."'"));
             if (!$new['id']){
               $error = true;
             }
@@ -106,11 +102,9 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
           }
           if (!$error) {
           echo'
-        <h3>Информация</h3>
         <form method="post" action="" class="styleForm">
         <table>
           <tr>
-            <td width="65%"><p><strong>Заголовок: </strong>'.$new['title'].'</p></td>
             <td rowspan="4" style="vertical-align:middle;">
               <p align="center"><strong>Вы действительно хотите удалить эту новость?</strong></p>
               <input type="hidden" name="id" value="'.$new['id'].'" />
@@ -118,10 +112,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
               <a href="dashboard.php"><button name="reset" type="reset" value="Cancel"><span>Отменить</span></button></a></p>
             </td>
           </tr>
-          <tr><td><p><strong>Автор: </strong>'.$new['author'].'</p></td></tr>
-          <tr><td><p><strong>Дата: </strong>'.$new['date'].'</p></td></tr>
-          <tr><td><p><strong>Коментарии: </strong>'.$new['comments'].'</p></td></tr> 
-          <tr><td colspan="2"><h3>Текст:</h3><p>'.$new['content'].'</p></td></tr>
+
         </table>
         </form></div>';
           }elseif ($delete_new == false){ //just show error if we have not deleted am article

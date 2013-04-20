@@ -1,4 +1,4 @@
-﻿-- --------------------------------------------------------
+-- --------------------------------------------------------
 -- Host:                         127.0.0.1
 -- Server version:               5.5.27 - MySQL Community Server (GPL)
 -- Server OS:                    Win64
@@ -273,18 +273,17 @@ DELETE FROM `messages`;
 
 -- Dumping structure for table website.news
 DROP TABLE IF EXISTS `news`;
-CREATE TABLE `news` (
+CREATE TABLE IF NOT EXISTS `news` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `author` int(10) NOT NULL DEFAULT '0',
   `date` datetime NOT NULL,
-  `content1` text,
-  `content2` text,
-  `contentlnk` text CHARACTER SET latin1,
+  `content` text,
+  `contentlnk` text,
   `title` text,
   `comments` int(10) DEFAULT '0',
-  `image` varchar(255) CHARACTER SET latin1 DEFAULT 'staff',
+  `image` varchar(255) DEFAULT 'staff',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.news: 0 rows
 DELETE FROM `news`;
