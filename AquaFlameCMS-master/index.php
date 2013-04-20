@@ -159,7 +159,7 @@ $page_cat = "home";
 								
 								echo'
 									<div class="by-line">
-									'.$Index['By'].' <a href="#">'.$posterInfo['firstName'].'</a><span class="spacer"> // </span> '.ago(strtotime($news['date'])).'
+									 <a href="#">'.$posterInfo['firstName'].'</a><span class="spacer"> </span> '.ago(strtotime($news['date'])).'
 									<a href="news.php?id='.$news['id'].'#comments" class="comments-link">'.$news['comments'].'</a>
 									</div>
 									
@@ -169,7 +169,7 @@ $page_cat = "home";
 
 									<div class="article-right">
 										<div class="article-summary">
-										<p>'. substr(strip_tags($news['content']),0,310)."...".'</p>'; //Needed striptags for not closed tags
+										<p>'. substr(strip_tags($news['content1']),0).'</p>'; //Needed striptags for not closed tags
 										
 										if($news['contentlnk'] != NULL)
 											echo '<a href="'.$news['contentlnk'].'" class="more">'.$More['More'].'</a>';

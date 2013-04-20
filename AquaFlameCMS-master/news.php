@@ -162,7 +162,7 @@ _gaq.push(['_trackPageview']);
 										<h3 class="blog-title">'.$news['title'].'</h3>
 										<div class="byline">
 											<div class="blog-info">
-											by <a href="#">'.$posterInfo['firstName'].'</a><span>//</span> '.$news['date'].'
+											 <a href="#">'.$posterInfo['firstName'].'</a><span></span> '.$news['date'].'
 											</div>
 											<a class="comments-link" href="#comments">'.$news['comments'].'</a>
 											<span class="clear"><!-- --></span>
@@ -173,7 +173,8 @@ _gaq.push(['_trackPageview']);
 										</div>
 
 										<div class="detail">
-											<div>'.$news['content'].'</div>
+											<div>'.$news['content1'].'</div>
+					                                                <div>'.$news['content2'].'</div>
 										</div>
 										
 										<div class="community-share">
