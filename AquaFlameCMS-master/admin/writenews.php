@@ -28,16 +28,18 @@ ini_set("default_charset", "iso-8859-1" );    //For special chars
   if (isset($_POST['save'])){
     $title = mysql_real_escape_string($_POST['title']);
     $image = mysql_real_escape_string($_POST['image']);
-    $content = $_POST['content'];
+    $content1 = $_POST['content1'];
+    $content2 = $_POST['content2'];
     $content = trim($content);
     $date = date ("Y-m-d H:i:s", time()); 
 
-    $emptyContent = strip_tags($content);
+    $emptyContent = strip_tags($content1);
     if (empty($emptyContent)){                          //Check if content is empty, title will never be empty
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $save_new = mysql_query("INSERT INTO news (author, date, content, title, image) VALUES ('".$login['id']."','".$date."','".addslashes($content)."','".$title."','".$image."');") or die(mysql_error());
+    $emptyContent2 = strip_tags($content2);
+      $save_new = mysql_query("INSERT INTO news (author, date, content1, content2, title, image) VALUES ('".$login['id']."','".$date."','".addslashes($content1)."','".addslashes($content2)."','".$title."','".$image."');") or die(mysql_error());
       if ($save_new == true){
         echo '<div class="alert-page" align="center"> The new has been created successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
@@ -190,9 +192,13 @@ function preview(img,event){
             </div>   
           </div>
           
-          <h3>Content</h3>
+          <h3>Content1</h3>
           <div class="txt">
-            <textarea id="input" name="content"></textarea>
+            <textarea id="input" name="content1"></textarea>
+          </div>
+          <h3>Content2</h3>
+          <div class="txt">
+            <textarea id="input" name="content2"></textarea>
           </div>
           <input name="save" type="submit" value="Save Changes" />
           <input name="reset" type="reset" value="Cancel" />
