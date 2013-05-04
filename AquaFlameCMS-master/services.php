@@ -105,10 +105,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 								</div>
 								<ul>
 								<li><a href="ban-list.php" class="c3-l6"><span><?php echo $Serv['Serv5']; ?></span></a></li>
-								<li><a href="javascript:;" class="c1-l1"><span><?php echo $Account6['Account6']; ?></span></a></li>
-								<li><a href="javascript:;" class="c1-l2"><span><?php echo $Account5['Account5']; ?></span></a></li>
-										<!--<li><a href="javascript:;" class="c1-l3"><span>Add an Authenticator</span></a></li>
-										<li><a href="javascript:;" class="c1-l4"><span>Authenticator FAQ</span></a></li>-->
+
 								</ul>					
 							</div>
 							<div class="sub-services-section">
@@ -116,7 +113,6 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 									<span><?php echo $Serv['Serv17']; ?></span>
 								</div>
 								<ul>
-										<li><a href="javascript:;" class="c4-l1"><span><?php echo $Friends['Keepthem']; ?></span></a></li>
 										<!--<li><a href="javascript:;" class="c4-l2"><span>World of Warcraft Magazine</span></a></li>-->
 										<li><a href="javascript:;" class="c4-l3"><span><?php echo $Serv['Serv18']; ?></span></a></li>
 								</ul>					
@@ -130,7 +126,6 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 										<li><a href="javascript:;" class="c3-l2"><span><?php echo $Serv['Serv21']; ?></span></a></li>
 										<li><a href="javascript:;" class="c3-l3"><span><?php echo $Serv['Serv22']; ?></span></a></li>
 										<li><a href="javascript:;" class="c3-l4"><span><?php echo $Serv['Serv23']; ?></span></a></li>
-										<li><a href="javascript:;" class="c3-l5"><span><?php echo $Serv['Serv24']; ?></span></a></li>
 										<!--<li><a href="javascript:;" class="c3-l6"><span>Free Character Migration</span></a></li>-->
 										<!--<li><a href="javascript:;" class="c3-l7"><span>Public Test Realm</span></a></li>-->
 								</ul>					
@@ -140,10 +135,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 									<span><?php echo $Serv['Serv25']; ?></span>
 								</div>
 								<ul>
-								<li><a href="javascript:;" class="c2-l1"><span><?php echo $Serv['Serv26']; ?></span></a></li>
 								<li><a href="services.php?ref=avatar" class="c4-20"><span><?php echo $Serv['Serv27']; ?></span></a></li>
-								<li><a href="javascript:;" class="c2-l2"><span><?php echo $Serv['Serv28']; ?></span></a></li>
-								<li><a href="javascript:;" class="c2-l3"><span><?php echo $Serv['Serv29']; ?></span></a></li>
 								<li><a href="game_client.php" class="c2-l4"><span><?php echo $Serv['Serv30']; ?></span></a></li>
 										<!--<li><a href="javascript:;" class="c2-l5"><span>Download Language Pack</span></a></li>-->
 								</ul>

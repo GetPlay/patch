@@ -66,7 +66,7 @@ _gaq.push(['_trackPageview']);
 				<h2 class="header "><?php echo $Status['RealmStat']; ?></h2>
 
 
-		<div class="desc"><?php echo $Status['Stat1']; ?><a href="forum/category/?f=27"><?php echo $Status['ServStat']; ?></a><?php echo $Status['Stat2']; ?></div>
+		<div class="desc"><?php echo $Status['Stat1']; ?><?php echo $Status['Stat2']; ?><a href="forum/category/?f=27"><?php echo $Status['ServStat']; ?></a></div>
 	<span class="clear"><!-- --></span>
 	</div>
 
@@ -132,14 +132,13 @@ _gaq.push(['_trackPageview']);
 				</div>
 
 				<div class="filter">
-					<label for="filter-locale">Locale</label>
+					<label for="filter-locale"><?php echo $Status['Locale']; ?></label>
 
 					<select id="filter-locale" class="input select" data-column="4" data-filter="column">
-						<option value=""><?php echo $Status['Locale']; ?></option>
+						<option value=""><?php echo $Status['Locale1']; ?></option>
 							<option value="spanish"><?php echo $Status['spanish']; ?></option>
 							<option value="german"><?php echo $Status['german']; ?></option>
 							<option value="french"><?php echo $Status['french']; ?></option>
-							<option value="tournament"><?php echo $Status['tournament']; ?></option>
 							<option value="russian"><?php echo $Status['russian']; ?></option>
 							<option value="english"><?php echo $Status['english']; ?></option>
 					</select>
@@ -207,7 +206,7 @@ _gaq.push(['_trackPageview']);
 							
 					$timezone = array(
                         0 => 'Europe',
-						1 => 'Development',
+						1 => 'Все',
 						2 => 'United States',
 						3 => 'Oceanic',
 						4 => 'Latin America',
@@ -218,7 +217,7 @@ _gaq.push(['_trackPageview']);
 						9 => 'German',
 						10 => 'French',
 						11 => 'Spanish',
-						12 => 'Russian',
+						12 => 'Русский',
 						13 => 'Tournament',
 						14 => 'Taiwan',
 						15 => 'Tournament',

@@ -237,7 +237,7 @@ $realm_count = mysql_num_rows($realms);
 <div class="content-bot">
 <span class="clear"><!-- --></span><div class="content-header">
 <h2 class="header "><?php echo $Status['RlmStat']; ?></h2></div>
-<div class="desc" style="padding: 10px;"><?php echo $Status['Stat5']; ?><?php echo $realm['name']; ?><?php echo $Status['Stat6']; ?><a href="forum/category/?f=27"><?php echo $Status['Stat7']; ?></a><?php echo $Status['Stat8']; ?></div>
+<div class="desc" style="padding: 10px;"><?php echo $Status['Stat5']; ?><?php echo $realm['name']; ?><?php echo $Status['Stat6']; ?><a href="forum/category/?f=27"><?php echo $Status['Stat7']; ?></a></div>
 	
 
 
@@ -452,7 +452,7 @@ $realm_count = mysql_num_rows($realms);
 				 <br>";}
 ?>
 
-<div class="mb_top" style="padding: 10px;"><?php echo @$str[$lang]['59'];?> <strong><?php echo $realm['name'];?></strong> Realm</div>
+
 <div class="mb_main">
 	<?php echo $statistics_page;?>
 </div>

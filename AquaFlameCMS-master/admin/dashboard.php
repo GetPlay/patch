@@ -179,6 +179,7 @@ $('#checkall').toggleClass('clicked');
                   <input class="chkl" type="checkbox" name="chk" value="checkbox" />
                 </label>
               </div>
+            <p class="edit"><a href="users_edit.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
               <p class="edit">'.$usercheck['username'].'</p>
 	      <p class="title">'.$usercheck['firstName'].'</p>
 

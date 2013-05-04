@@ -88,7 +88,7 @@ _gaq.push(['_trackPageview']);
 									<span class="video-info">
 									<span class="video-title"><?php echo substr($video1['title'],0,50); ?></span>
 									<span class="video-desc"><?php echo substr(strip_tags($video1['description']),0,50); ?>...</span>
-									<span class="date-added">Date Added: <?php echo date('d/m/Y', strtotime($video1['date'])); ?></span>
+									<span class="date-added">Дата добавления: <?php echo date('d/m/Y', strtotime($video1['date'])); ?></span>
 									</span>
 									<span class="thumb-bg"; style="background-image: url('http://img.youtube.com/vi/<?php echo $video1['id_url']; ?>/0.jpg'); background-size: 188px 118px">
 									<span class="thumb-frame"></span>
@@ -104,7 +104,7 @@ _gaq.push(['_trackPageview']);
 							<div class="media-index-section float-right">
 							
 								<a class="gallery-title screenshots" href="media/images_index.php?type=2">
-								<span class="view-all"><span class="arrow"></span>All Screenshots</span>
+								<span class="view-all"><span class="arrow"></span>Все скриншоты</span>
 								<?php
                   $screen_all = mysql_query("SELECT * FROM media WHERE visible = '1' AND type = '2'");
                   $screen_total = mysql_num_rows($screen_all);
@@ -127,7 +127,7 @@ _gaq.push(['_trackPageview']);
 									<span class="thumb-bg" style="background-image:url(<?php echo 'images/wallpapers/'.$screen['id_url'];  ?>);background-size: 189px 118px">
 									<span class="thumb-frame"></span>
 									</span>
-									<span class="date-added">Date Added: <?php echo date('d/m/Y', strtotime($screen['date'])); ?></span>
+									<span class="date-added">Дата добавления: <?php echo date('d/m/Y', strtotime($screen['date'])); ?></span>
 									</a>
 								<?php } ?>
 									<span class="clear"><!-- --></span>
@@ -144,7 +144,7 @@ _gaq.push(['_trackPageview']);
                   $art_total = mysql_num_rows($art_all);
                 ?>
 								<a class="gallery-title artwork" href="media/images_index.php?type=3">
-								<span class="view-all"><span class="arrow"></span>All Artwork</span>
+								<span class="view-all"><span class="arrow"></span>Все Artwork</span>
 								<span class="gallery-icon"></span>
 								Artwork <span class="total">(<?php echo $art_total; ?>)</span></a>
 								
@@ -162,7 +162,7 @@ _gaq.push(['_trackPageview']);
 									<span class="thumb-bg" style="background-image:url(<?php echo 'images/wallpapers/'.$art['id_url'];  ?>);background-size: 189px 118px">
 									<span class="thumb-frame"></span>
 									</span>
-									<span class="date-added">Date Added: <?php echo date('d/m/Y', strtotime($art['date'])); ?></span>
+									<span class="date-added">Дата добавления: <?php echo date('d/m/Y', strtotime($art['date'])); ?></span>
 									</a>
 								<?php } ?>
 									<span class="clear"><!-- --></span>
@@ -177,7 +177,7 @@ _gaq.push(['_trackPageview']);
                 $wall_total = mysql_num_rows($wall_all);
               ?>
 								<a class="gallery-title wallpapers" href="media/images_index.php?type=1">
-								<span class="view-all"><span class="arrow"></span>All Wallpapers</span>
+								<span class="view-all"><span class="arrow"></span>Все обои</span>
 								<span class="gallery-icon"></span>
 								Wallpapers <span class="total">(<?php echo $wall_total; ?>)</span>
 								</a>
@@ -196,7 +196,7 @@ _gaq.push(['_trackPageview']);
 									<span class="thumb-bg" style="background-image:url(<?php echo 'images/wallpapers/'.$wall['id_url'];  ?>);background-size: 189px 118px">
 									<span class="thumb-frame"></span>
 									</span>
-									<span class="date-added">Date Added: <?php echo date('d/m/Y', strtotime($wall['date'])); ?></span>
+									<span class="date-added">Дата добавления: <?php echo date('d/m/Y', strtotime($wall['date'])); ?></span>
 									</a>
 								<?php } ?>
 									<span class="clear"><!-- --></span>
@@ -211,7 +211,7 @@ _gaq.push(['_trackPageview']);
                 $wall_total = mysql_num_rows($wall_all);
               ?>
 								<a class="gallery-title comics" href="media/images_index.php?type=4">
-								<span class="view-all"><span class="arrow"></span>All Comics</span>
+								<span class="view-all"><span class="arrow"></span>Все комиксы</span>
 
 								<span class="gallery-icon"></span>
 								Comics <span class="total">(<?php echo $wall_total; ?>)</span>
@@ -230,7 +230,7 @@ _gaq.push(['_trackPageview']);
 									<span class="thumb-bg" style="background-image:url(<?php echo 'images/wallpapers/'.$wall['id_url'];  ?>);background-size: 189px 118px">
 									<span class="thumb-frame"></span>
 									</span>
-									<span class="date-added">Date Added: <?php echo date('d/m/Y', strtotime($wall['date'])); ?></span>
+									<span class="date-added">дата добавления: <?php echo date('d/m/Y', strtotime($wall['date'])); ?></span>
 									</a>
 								<?php } ?>
 									<span class="clear"><!-- --></span>
