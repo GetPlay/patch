@@ -164,10 +164,16 @@ $i++;
 						<span class="clear"><!-- --></span>
 						
 						<div class="inside-section fanart">
-							<a href="javascript:;" class="main-link" style="background-image:url('wow/static/images/community/thumbnails/thumb-fanart.jpg');">
+
+                                <?php
+								$consulta0 = mysql_query(" SELECT * FROM media WHERE visible = 1 AND type = '3'");
+								$totalSql = mysql_num_rows($consulta0);
+								?>
+
+							<a href="media/images_index.php?type=3" class="main-link" style="background-image:url('wow/static/images/community/thumbnails/thumb-fanart.jpg');">
 								<span class="panel">
 									<span class="wrapper">
-										<span class="banner-title"><?php echo $Community['FanArt']; ?></span>
+										<span class="banner-title"><?php echo $Community['FanArt']; ?><em><span class="total">(<?php echo $totalSql; ?>)</span></em></span>
 										<span class="view-all"><?php echo $View_all['View_all']; ?><?php echo $Community['FanArt']; ?></span>
 									</span>
 								</span>
@@ -175,11 +181,19 @@ $i++;
 								<a href="media/send_media.php" class="tosubmit external"><?php echo $Community['comm5']; ?></a>
 						</div>
 						
+
+
+
 						<div class="inside-section comics">
-							<a href="media.php" class="main-link" style="background-image:url('wow/static/images/community/thumbnails/thumb-comics.jpg');">
+							<a href="media/images_index.php?type=4" class="main-link" style="background-image:url('wow/static/images/community/thumbnails/thumb-comics.jpg');">
+
+                                <?php
+								$consulta0 = mysql_query(" SELECT * FROM media WHERE visible = 1 AND type = '4'");
+								$totalSql = mysql_num_rows($consulta0);
+								?>
 								<span class="panel">
 									<span class="wrapper">
-										<span class="banner-title"><?php echo $Media['Comics']; ?> <em>(0)</em></span>
+										<span class="banner-title"><?php echo $Media['Comics']; ?> <em><span class="total">(<?php echo $totalSql; ?>)</span></em></span>
 										<span class="view-all"><?php echo $View_all['View_all']; ?><?php echo $Media['Comics']; ?></span>
 									</span>
 								</span>
@@ -190,10 +204,16 @@ $i++;
 						<span class="clear"><!-- --></span>
 						
 						<div class="inside-section screenshot">
-							<a href="javascript:;" class="main-link" style="background-image:url('wow/static/images/community/thumbnails/thumb-screenshot.jpg');">
+							<a href="media/images_index.php?type=2" class="main-link" style="background-image:url('wow/static/images/community/thumbnails/thumb-screenshot.jpg');">
 								<span class="panel">
 									<span class="wrapper">
-										<span class="banner-title"><?php echo $Community['Screenshots']; ?> <em>(1)</em></span>
+
+                                <?php
+								$consulta0 = mysql_query(" SELECT * FROM media WHERE visible = 1 AND type = '2'");
+								$totalSql = mysql_num_rows($consulta0);
+								?>
+
+										<span class="banner-title"><?php echo $Community['Screenshots']; ?> <em><span class="total">(<?php echo $totalSql; ?>)</span></em></span>
 										<span class="view-all"><?php echo $View_all['View_all']; ?><?php echo $Community['Screenshots']; ?></span>
 									</span>
 								</span>
@@ -202,10 +222,15 @@ $i++;
 						</div>
 						
 						<div class="inside-section wallpaper">
-							<a href="javascript:;" class="main-link" style="background-image:url('wow/static/images/community/thumbnails/thumb-wallpaper.jpg');">
+							<a href="media/images_index.php?type=1" class="main-link" style="background-image:url('wow/static/images/community/thumbnails/thumb-wallpaper.jpg');">
 								<span class="panel">
 									<span class="wrapper">
-										<span class="banner-title"><?php echo $Community['Wallpap']; ?> <em>(0)</em></span>
+                                <?php
+								$consulta0 = mysql_query(" SELECT * FROM media WHERE visible = 1 AND type = '1'");
+								$totalSql = mysql_num_rows($consulta0);
+								?>
+
+										<span class="banner-title"><?php echo $Community['Wallpap']; ?> <em><span class="total">(<?php echo $totalSql; ?>)</span></em></span>
 										<span class="view-all"><?php echo $View_all['View_all']; ?><?php echo $Community['Wallpap']; ?></span>
 									</span>
 								</span>
