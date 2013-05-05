@@ -46,8 +46,9 @@ $mysql_cod = 'utf-8';
 # Comunity Links ############
 
 $comun_link['Facebook'] = "http://www.facebook.com/";          // Your adress of Facebook comunity
-$comun_link['Twitter'] = "http://twitter.com//";               // Your adress of Twitter comunity
+$comun_link['Twitter'] = "http://twitter.com/";               // Your adress of Twitter comunity
 $comun_link['Youtube'] = "http://www.youtube.com/";            // Your adress of Youtube comunity
+$comun_link['vk'] = "http://vk.com/";            // Your adress of VK comunity
 
 # Important #############
 
