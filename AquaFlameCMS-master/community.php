@@ -70,11 +70,11 @@ include("header.php");
 				<?php
 				$query = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 4");
 				$i=0;
-				while($slideshow = mysql_fetch_array($query)){
+				while($slideshows = mysql_fetch_array($query)){
 					if($i==0){
-					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/slideshows/'.$slideshow['image'].'\'); opacity: 0.997084;"></div>';
+					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/slideshows/'.$slideshows['image'].'\'); opacity: 0.997084;"></div>';
 					}else{
-					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/slideshows/'.$slideshow['image'].'\'); display: none; "></div>';
+					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/slideshows/'.$slideshows['image'].'\'); display: none; "></div>';
 					}
 					$i++;
 				}
@@ -98,7 +98,7 @@ include("header.php");
 		<?php
 		$query3 = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 1");
 		$slideshowsz = mysql_fetch_assoc($query3);
-		echo '<div class="caption" style="display: block;"><h3><a href="#" class="link"> '.$slideshows['title'].'</a></h3>'.$slideshowsz['description'].'</div>';
+		echo '<div class="caption" style="display: block;"><h3><a href="#" class="link"> '.$slideshowsz['title'].'</a></h3>'.$slideshowsz['description'].'</div>';
 		?>
 		<div class="preview" style="display: none;"></div>
 		<div class="mask"></div>
