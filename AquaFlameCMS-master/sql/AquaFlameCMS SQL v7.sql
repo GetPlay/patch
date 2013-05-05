@@ -1,4 +1,4 @@
--- --------------------------------------------------------
+﻿-- --------------------------------------------------------
 -- Host:                         127.0.0.1
 -- Server version:               5.5.27 - MySQL Community Server (GPL)
 -- Server OS:                    Win64
@@ -26,29 +26,6 @@ CREATE TABLE IF NOT EXISTS `comments` (
 DELETE FROM `comments`;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
-
-
--- Dumping structure for table website.community_slides
-DROP TABLE IF EXISTS `community_slides`;
-CREATE TABLE IF NOT EXISTS `community_slides` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `desc` text NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `url` varchar(255) NOT NULL DEFAULT '#',
-  `date` date NOT NULL,
-  `image` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
--- Dumping data for table website.community_slides: ~4 rows (approximately)
-DELETE FROM `community_slides`;
-/*!40000 ALTER TABLE `community_slides` DISABLE KEYS */;
-INSERT INTO `community_slides` (`id`, `desc`, `title`, `url`, `date`, `image`) VALUES
-	(1, 'Testing WoWFailureCMS at maximum capacity.', 'Testing WoWFailureCMS', '#', '2011-04-20', '4ZONJ2G8H02S1291403588642.jpg'),
-	(2, 'Find us on WoWFailureCore.org.', 'Where to find us?', '#', '2011-04-20', '3A016YGNDN971281040709386.jpg'),
-	(3, 'Check The Forum for the latest updates.', 'WoWFailureCMS Forum', '#', '2011-04-20', 'HXW8I6KL6MRK1290045863003.jpg'),
-	(4, 'test', 'test', '#', '2011-04-20', 'TE943VAV1IVZ1290560963083.jpg');
-/*!40000 ALTER TABLE `community_slides` ENABLE KEYS */;
 
 
 -- Dumping structure for table website.contacts

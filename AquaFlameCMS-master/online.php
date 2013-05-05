@@ -65,14 +65,16 @@ $realm_extra = mysql_fetch_assoc(mysql_query("SELECT * FROM realms WHERE id = '"
 if(!$realm_extra) $realm_extra = mysql_fetch_assoc(mysql_query("SELECT * FROM realms WHERE id = '1'"));
 $realm = mysql_fetch_assoc(mysql_query("SELECT * FROM $server_adb.realmlist WHERE id = '".$realm_extra['realmid']."'"));
 echo $realm['name']; 
-?></a></li>
+?>
+</a></li>
 </ol>
 </div>
+
 <div class="content-bot">
 	<div class="content-header">
-				<h2 class="header "><?php 	require_once("configs.php");
+				<h2 class="header "><?php echo $status['status1']; ?> <?php 	require_once("configs.php");
 									echo $realm['name']; 
-									?> <?php echo $status['status']; ?></h2>
+									?> </h2>
 
 		<div class="desc"><?php echo $Status['Stat3']; ?><?php 	require_once("configs.php");
 									echo $realm['name'];
