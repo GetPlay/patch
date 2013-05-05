@@ -206,7 +206,7 @@ _gaq.push(['_trackPageview']);
 							
 					$timezone = array(
                         0 => 'Europe',
-						1 => 'Все',
+						1 => $Status['All'],
 						2 => 'United States',
 						3 => 'Oceanic',
 						4 => 'Latin America',
@@ -217,7 +217,7 @@ _gaq.push(['_trackPageview']);
 						9 => 'German',
 						10 => 'French',
 						11 => 'Spanish',
-						12 => 'Русский',
+						12 => $Status['russian'],
 						13 => 'Tournament',
 						14 => 'Taiwan',
 						15 => 'Tournament',

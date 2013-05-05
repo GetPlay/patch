@@ -234,7 +234,7 @@ $i++;
 								<li><a href="<?php echo $comun_link['Facebook']; ?>" class="facebook" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm16']; ?></span><span class="content-desc"><?php echo $Community['comm10']; ?></span></a></li>
 								<li><a href="<?php echo $comun_link['Twitter']; ?>" class="Twitter" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm17']; ?></span><span class="content-desc"><?php echo $Community['comm11']; ?></span></a></li>
 								<li><a href="<?php echo $comun_link['Youtube']; ?>" class="Youtube" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm18']; ?></span><span class="content-desc"><?php echo $Community['comm12']; ?></span></a></li>
-								<li><a href="<?php echo $comun_link['vk']; ?>" class="vk" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm15']; ?><span class="content-desc"><?php echo $Community['comm14']; ?></span></a></li>
+								<li><a href="<?php echo $comun_link['vk']; ?>" class="vk" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm15']; ?></span><span class="content-desc"><?php echo $Community['comm14']; ?></span></a></li>
 								
 								
 						</div>

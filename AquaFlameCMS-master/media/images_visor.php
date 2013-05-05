@@ -62,10 +62,10 @@ Media
 <a href="images_index.php?type=<?php echo $type; ?>" rel="np">
 <?php
   switch($type){
-    case 1: echo 'Wallpapers'; break;
-    case 2: echo 'Screenshots'; break;
-    case 3: echo 'Art Work'; break;    
-    case 4: echo 'Comic'; break;  
+    case 1: echo $Media['Wallpapers']; break;
+    case 2: echo $Media['Screenshots']; break; 
+    case 3: echo $Media['Artwork']; break;    
+    case 4: echo $Media['Comics']; break;  
   }
 ?>
 </a>

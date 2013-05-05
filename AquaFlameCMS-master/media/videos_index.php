@@ -108,7 +108,7 @@ _gaq.push(['_trackPageview']);
 							<?php } ?>
 
 							<span class="page-counter">
-							P�gina <span id='start-page'><?php echo $pagActual; ?></span> de <?php echo $pagTotal; ?>
+							<?php echo $Media['page']; ?> <span id='start-page'><?php echo $pagActual; ?></span> <?php echo $Media['from']; ?> <?php echo $pagTotal; ?>
 							</span>
 
 							<?php 

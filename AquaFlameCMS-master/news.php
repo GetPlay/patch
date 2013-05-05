@@ -399,7 +399,7 @@ ended
 												
 													<div class="portrait-c ajax-update">
 														<div class="avatar-interior">
-															<a href="#"><img height="64" width="64" src="images/avatars/2d/<?php echo $user['avatar']; ?>" alt="" /></a>
+															<a href="#"><img height="64" width="64" src="/images/avatars/2d/<?php echo $user['avatar']; ?>" alt="" /></a>
 														</div>
 													</div>
 													
@@ -575,7 +575,7 @@ ended
 											    <div class="comment <?php echo $type; ?>" id="c-<?php echo $replyQ['id'];?>">
 												  <div class="avatar portrait-b">
 												    <a href="#">
-												      <img height="64" width="64" src="images/avatars/2d/<?php echo $userInfo['avatar']; ?>" alt="" />
+												    <img height="64" width="64" src="images/avatars/2d/<?php echo $userInfo['avatar']; ?>" alt="" />
 												    </a>
 												  </div>                       
 												  <div class="comment-interior">

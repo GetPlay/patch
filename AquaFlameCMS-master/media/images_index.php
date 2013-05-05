@@ -65,10 +65,10 @@ _gaq.push(['_trackPageview']);
         <li class="last childless"><a href="images_index.php?type=<?php echo $type; ?>" rel="np">
 <?php
   switch($type){
-    case 1: echo 'Wallpapers'; break;
-    case 2: echo 'Screenshots'; break;
-    case 3: echo 'Art Work'; break;    
-    case 4: echo 'Comic'; break;  
+    case 1: echo $Media['Wallpapers']; break;
+    case 2: echo $Media['Screenshots']; break; 
+    case 3: echo $Media['Artwork']; break;    
+    case 4: echo $Media['Comics']; break;  
   }
 ?>
                 </a></li>
@@ -125,7 +125,7 @@ class="view-link float-right"></a>
 							<?php } ?>
 
 							<span class="page-counter">
-							Página <span id='start-page'><?php echo $pagActual; ?></span> de <?php echo $pagTotal; ?>
+							<?php echo $Media['page']; ?> <span id='start-page'><?php echo $pagActual; ?></span> <?php echo $Media['from']; ?> <?php echo $pagTotal; ?>
 							</span>
 
 							<?php 
