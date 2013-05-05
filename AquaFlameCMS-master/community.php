@@ -1,9 +1,10 @@
 <?php
 require_once("configs.php");
+$page_cat = "community";
 ?>
-<html>
+<HTML>
 <head>
-<title><?php echo $website['title']; ?> - <?php $Community['Community']; ?></title>
+<title><?php echo $website['title']; ?> - <?php echo $Community['Community']; ?></title>
 <link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
 <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-gb/data/opensearch" title="Battle.net Search" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css?v15" />
@@ -48,7 +49,6 @@ Flash.ratingImage = 'http://eu.media.blizzard.com/wow/player/rating-pegi.jpg';
 
 <div id="wrapper">
 <?php
-$page_cat = "community";
 include("header.php");
 ?>
 <div id="content">
@@ -56,7 +56,7 @@ include("header.php");
 <div class="content-trail">
 <ol class="ui-breadcrumb">
 <li><a href="index.php" rel="np"><?php echo $website['title']; ?></a></li>
-<li class="last"><a href="community.php" rel="np"><?php $Community['Community']; ?></a></li>
+<li class="last"><a href="community.php" rel="np"><?php echo $Community['Community']; ?></a></li>
 </ol>
 </div>
 <div class="content-bot">			
@@ -68,13 +68,13 @@ include("header.php");
         <div class="slideshow">
         
 				<?php
-				$query = mysql_query("SELECT * FROM community_slides ORDER BY id DESC LIMIT 4");
+				$query = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 4");
 				$i=0;
-				while($community = mysql_fetch_array($query)){
+				while($slideshow = mysql_fetch_array($query)){
 					if($i==0){
-					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/community/'.$community['image'].'\'); opacity: 0.997084;"></div>';
+					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/slideshows/'.$slideshow['image'].'\'); opacity: 0.997084;"></div>';
 					}else{
-					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/community/'.$community['image'].'\'); display: none; "></div>';
+					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/slideshows/'.$slideshow['image'].'\'); display: none; "></div>';
 					}
 					$i++;
 				}
@@ -83,71 +83,56 @@ include("header.php");
 
 			<div class="paging">
 			<?php
-				$query2 = mysql_query("SELECT * FROM community_slides ORDER BY id DESC LIMIT 4");
+				$query2 = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 4");
 				$i=0;
-				while($communityx = mysql_fetch_assoc($query2)){
+				while($slideshows = mysql_fetch_assoc($query2)){
 					echo '<a href="javascript:;" id="paging-'.$i.'" onclick="Slideshow.jump('.$i.', this);"';
 					if($i==0){ print 'class="curent"'; }else if($i==3){ print 'class="last-slide"'; }else { print 'class=""'; } echo'>
-					<span class="paging-title">'.$communityx['title'].' </span>
-					<span class="paging-date">'.$communityx['date'].'</span></a>';
+				<span class="paging-title">'.$slideshows['title'].' </span>
+				<span class="paging-date">'.$slideshows['date'].'</span></a>';
 					$i++;
 				}
 			?>
-					<a href="javascript:;" id="paging-0" onclick="Slideshow.jump(0, this);" class="">
-							<span class="paging-title">Leader of the Alliance and Horde Part 2: Genn Greymane</span>
-							<span class="paging-date">01/24/11</span>
-					</a>
-					<a href="javascript:;" id="paging-1" onclick="Slideshow.jump(1, this);" class="current">
-							<span class="paging-title">New Fan Art </span>
-							<span class="paging-date">12/10/10</span>
-					</a>
-					<a href="javascript:;" id="paging-2" onclick="Slideshow.jump(2, this);" class="">
-							<span class="paging-title">Leaders of the Alliance and Horde Part 1 - Garrosh</span>
-							<span class="paging-date">12/10/10</span>
-					</a>
-					<a href="javascript:;" id="paging-3" onclick="Slideshow.jump(3, this);" class="last-slide">
-							<span class="paging-title">Get into the Warcraft community!</span>
-							<span class="paging-date">12/10/10</span>
-					</a>
+
 			</div>
 		<?php
-		$query3 = mysql_query("SELECT * FROM community_slides ORDER BY id DESC LIMIT 1");
-		$communityz = mysql_fetch_assoc($query3);
-		echo '<div class="caption" style="display: block;"><h3><a href="#" class="link"> '.$communityz['title'].'</a></h3>'.$communityz['desc'].'</div>';
+		$query3 = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 1");
+		$slideshowsz = mysql_fetch_assoc($query3);
+		echo '<div class="caption" style="display: block;"><h3><a href="#" class="link"> '.$slideshows['title'].'</a></h3>'.$slideshowsz['description'].'</div>';
 		?>
 		<div class="preview" style="display: none;"></div>
 		<div class="mask"></div>
     </div>
 
 	<script type="text/javascript">
-	//<![CDATA[
-        $(function() {
-            Slideshow.initialize('#slideshow', [
-				<?php
-				$getting_lastq = mysql_query("SELECT * FROM community_slides ORDER BY id DESC");
-				$getting_last = mysql_fetch_assoc($getting_lastq);
-				$last=$getting_last['id']-4;
-				$query = mysql_query("SELECT * FROM community_slides WHERE id >= '".$last."' ORDER BY id DESC LIMIT 4");
-				$i=0;
-				while($community2 = mysql_fetch_assoc($query)){
-					echo '
-					{
-					image: "'.$community2['image'].'",
-					desc: "'.$community2['desc'].'",
-                    title: "'.$community2['title'].'",
-                    url: "'.$community2['url'].'",
-					id: "'.$community2['id'].'"
-					}';
-					if($i!=3) echo ',';
-					$i++;
-				}
-				?>
-            ]);
+//<![CDATA[
+$(function() {
+Slideshow.initialize('#slideshow', [
+<?php
+$getting_lastq = mysql_query("SELECT * FROM slideshows ORDER BY id DESC");
+$getting_last = mysql_fetch_assoc($getting_lastq);
+$last=$getting_last['id']-4;
+$query = mysql_query("SELECT * FROM slideshows WHERE id >= '".$last."' ORDER BY id DESC LIMIT 4");
+$i=0;
+while($slideshows = mysql_fetch_assoc($query)){
+echo '
+{
+image: "'.$slideshows['image'].'",
+desc: "'.$slideshows['description'].'",
+title: "'.$slideshows['title'].'",
+url: "'.$slideshows['url'].'",
+id: "'.$slideshows['id'].'"
+}';
+if($i!=3) echo ',';
+$i++;
+}
+?>
+]);
 
-        });
-	//]]>
-	</script>
-	</div>
+});
+//]]>
+</script>
+</div>
 	
 	<div class="community-content-body">
 		<div class="body-wrapper">
