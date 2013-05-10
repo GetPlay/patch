@@ -21,9 +21,9 @@ $Forum['reply'] = "Ответить";
 $click['click'] = " Нажмите ";
 $code_forum['code_forum']= " для просмотра Правил пользования.";
 $here['here'] = "здесь";
-$Account['Account'] = "Аккаунт";
+$Account['Account'] = "Учетная запись";
 $Account1['Account1'] = "Не можете войти?";
-$Account3['Account3'] = "Регистрация";
+$Account3['Account3'] = "создайте новую запись";
 $Account4['Account4'] = "";
 $Account5['Account5'] = ""; 
 $Account7['Account7'] = "Бан Лист";
@@ -34,10 +34,10 @@ $Support3['Support3'] = "Создать тикет";
 $Support4['Support4'] = "Помогите, меня взломали!";
 $Support5['Support5'] = "Просмотреть сообщения для тех. поддржки";
 $Support6['Support6'] = "Создать новый тикет";
-$Support7['Support7'] = "Просмотр активных тикетов.";
+$Support7['Support7'] = "Все ваши запросы в службу поддержки (требуется авторизация)";
 $Support8['Support8'] = "&#1041;&#1072;&#1079;&#1072; &#1079;&#1085;&#1072;&#1085;&#1080;&#1081;";
-$Support9['Support9'] = "Ask a Question";
-$Support10['Support10'] = "Your Support Tickets";
+$Support9['Support9'] = "Вопросы и ответы";
+$Support10['Support10'] = "Запросы";
 $Support11['Support11'] = "Get Support and explore the knowledgebase.";
 
 $Games['Games'] = "Игры";
@@ -72,7 +72,7 @@ $copyright4['copyright4'] = "Resources are in Blizzard Entertainment Property.";
 
 $Welcome['Welcome'] ="Привет, ";
 $logout['logout'] = "Выход";
-$login['login'] = "Войти" ;
+$login['login'] = "Авторизуйтесь" ;
 
 $Donate1['Donate1'] = "Пожертвовать для"; 
 $Donate['Donate'] = "Пожертвовать";
@@ -428,7 +428,7 @@ $Ind['Ind3'] = "Реклама";
 $Ind['Ind4'] = "Информация о сервере: ";
 $Ind['Ind5'] = " Realmlist : ";
 $Ind['Ind6'] = " Версия игры : ";
-$Ind['Ind7'] = " Аккаунт : ";
+$Ind['Ind7'] = " Созданных аккаунтов : ";
 $Ind['Ind8'] = "Регистрация";
 $Ind['Ind9'] = " Персонажи: ";
 $Ind['Ind10'] = " Созданные персонажи";
@@ -569,7 +569,7 @@ $Forum['Forum80'] = "в";
 // Finishing the Forum Translation
 
 //userplate
-$uplate['login'] = "<strong>Авторизируйтесь</strong>, и перед вами будет еще больше возможностей!";
+$uplate['login'] = "<strong>Авторизуйтесь</strong>, и перед вами будет еще больше возможностей!";
 $uplate['profile'] = "Профиль";
 $uplate['post'] = "Просмотр моих сообщений";
 $uplate['auction'] = "Просмотр моего аукциона";
@@ -966,4 +966,13 @@ $Media['Multimedia'] = "Мультимедиа";
 $Media['page'] = "Страница";
 $Media['from'] = "из";
 //Finish Media
+
+//erors
+$erors['Oops'] = "ай-ай-ай";
+$erors['Pagenotfound'] = "Страница не найдена";
+$erors['There'] = "Здесь была";
+$erors['page'] = " страница.";
+$erors['gonenow'] = "Была, да сплыла.";
+$erors['whatelse'] = "(А что еще случается с непослушными страницами?)";
+//Finish erors
 ?>

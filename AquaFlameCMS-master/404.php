@@ -51,10 +51,10 @@ World of Warcraft
 </div>
 <div class="content-bot">
 	<div id="server-error">
-		<h2 class="http">Four,<br /> oh: four.</h2>
-		<h3>Page Not Found</h3>
+		<h2 class="http">404,<br /><?php echo $erors['Oops']; ?></h2>
+		<h3><?php echo $erors['Pagenotfound']; ?></h3>
 
-		<p>There was<br /> a <strong>PAGE</strong><br /> here.<br />It's gone now.<br /><br /><em>(Is this what happens to pages that wander into the forest?)</em></p>
+		<p><?php echo $erors['There']; ?><br /><strong><?php echo $erors['page']; ?></strong><br /><?php echo $erors['gonenow']; ?><br /><br /><em><?php echo $erors['whatelse']; ?></em></p>
 
 
 		<!-- http : 404 -->
