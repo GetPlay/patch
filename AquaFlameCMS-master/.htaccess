@@ -2,9 +2,6 @@ AddHandler application/x-httpd-php .php .htm .html
 
 ErrorDocument 404 /404.php
 
-<FilesMatch "\.(htm|html|css|js)$">
-AddDefaultCharset UTF-8
-</FilesMatch>
-
 Options -Indexes
 
+AddDefaultCharset UTF-8
