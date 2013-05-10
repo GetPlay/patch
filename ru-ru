@@ -1,10 +1,6 @@
 <?php
-$lang['adb'] = "&#1053;&#1077;&#1074;&#1086;&#1101;&#1084;&#1086;&#1078;&#1085;&#1086; 
-
-&#1055;&#1086;&#1076;&#1082;&#1083;&#1102;&#1095;&#1085;&#1090;&#1100;&#1089;&#1103; &#1082; Account Database.";
-$lang['db'] = "&#1053;&#1077;&#1074;&#1086;&#1101;&#1084;&#1086;&#1078;&#1085;&#1086; 
-
-&#1055;&#1086;&#1076;&#1082;&#1083;&#1102;&#1095;&#1085;&#1090;&#1100;&#1089;&#1103; &#1082; Website Database.";
+$lang['adb'] = "&#1053;&#1077;&#1074;&#1086;&#1101;&#1084;&#1086;&#1078;&#1085;&#1086; &#1055;&#1086;&#1076;&#1082;&#1083;&#1102;&#1095;&#1085;&#1090;&#1100;&#1089;&#1103; &#1082; Account Database.";
+$lang['db'] = "&#1053;&#1077;&#1074;&#1086;&#1101;&#1084;&#1086;&#1078;&#1085;&#1086; &#1055;&#1086;&#1076;&#1082;&#1083;&#1102;&#1095;&#1085;&#1090;&#1100;&#1089;&#1103; &#1082; Website Database.";
 $home['home'] = "Главная";
 $status['status'] = "Статус миров";
 $status['status1'] = "Статус игрового мира ";
@@ -25,25 +21,23 @@ $Forum['reply'] = "Ответить";
 $click['click'] = " Нажмите ";
 $code_forum['code_forum']= " для просмотра Правил пользования.";
 $here['here'] = "здесь";
-$Account['Account'] = "Аккаунт";
+$Account['Account'] = "Учетная запись";
 $Account1['Account1'] = "Не можете войти?";
-$Account3['Account3'] = "Регистрация";
+$Account3['Account3'] = "создайте новую запись";
 $Account4['Account4'] = "";
 $Account5['Account5'] = ""; 
 $Account7['Account7'] = "Бан Лист";
-$Friends['Keepthem'] = "&#1044;&#1077;&#1088;&#1078;&#1080;&#1090;&#1077; &#1089;&#1074;&#1086;&#1080;&#1093; 
-
-&#1076;&#1088;&#1091;&#1079;&#1077;&#1081; &#1074; &#1080;&#1075;&#1088;&#1091;";
+$Friends['Keepthem'] = "&#1044;&#1077;&#1088;&#1078;&#1080;&#1090;&#1077; &#1089;&#1074;&#1086;&#1080;&#1093; &#1076;&#1088;&#1091;&#1079;&#1077;&#1081; &#1074; &#1080;&#1075;&#1088;&#1091;";
 
 $Support['Support'] = "Поддержка";
 $Support3['Support3'] = "Создать тикет";
 $Support4['Support4'] = "Помогите, меня взломали!";
 $Support5['Support5'] = "Просмотреть сообщения для тех. поддржки";
 $Support6['Support6'] = "Создать новый тикет";
-$Support7['Support7'] = "Просмотр активных тикетов.";
+$Support7['Support7'] = "Все ваши запросы в службу поддержки (требуется авторизация)";
 $Support8['Support8'] = "&#1041;&#1072;&#1079;&#1072; &#1079;&#1085;&#1072;&#1085;&#1080;&#1081;";
-$Support9['Support9'] = "Ask a Question";
-$Support10['Support10'] = "Your Support Tickets";
+$Support9['Support9'] = "Вопросы и ответы";
+$Support10['Support10'] = "Запросы";
 $Support11['Support11'] = "Get Support and explore the knowledgebase.";
 
 $Games['Games'] = "Игры";
@@ -78,7 +72,7 @@ $copyright4['copyright4'] = "Resources are in Blizzard Entertainment Property.";
 
 $Welcome['Welcome'] ="Привет, ";
 $logout['logout'] = "Выход";
-$login['login'] = "Войти" ;
+$login['login'] = "Авторизуйтесь" ;
 
 $Donate1['Donate1'] = "Пожертвовать для"; 
 $Donate['Donate'] = "Пожертвовать";
@@ -147,9 +141,7 @@ $re['re9'] = "Фамилия:";
 $re['re10'] = "E-mail:";
 $re['re11'] = "Логин:";
 $re['re12'] = "Пароль:";
-$re['re13'] = "For your security, we highly recommend that you choose a unique password that you don't use for any other 
-
-online account.";
+$re['re13'] = "For your security, we highly recommend that you choose a unique password that you don't use for any other online account.";
 $re['re14'] = "Password Strength:";
 $re['re15'] = "Your password must be between 8-16 characters in length.";
 $re['re16'] = "Your password must contain at least one alphabetic character and one numeric character.";
@@ -169,20 +161,12 @@ $re['re29'] = "Your favorite sports team?";
 $re['re30'] = "Your first employer (company name)?";
 $re['re31'] = "This information is used for account security related issues such as resetting your password.";
 $re['re32'] = "Chat Agreement:";
-$re['re33'] = "In order to provide Free Gaming, we will monitor and/or review your text chat, including private, or 
-
-'whisper' chat, in the event of complaints from other users or violations of the rules. By clicking the check box below, 
-
-you agree with the rule of allowing us to review your chat Conversations ingame, to investigate potential violations of 
-
-the rules. We will not use the information for any reason other than pursuing such violations.";
+$re['re33'] = "In order to provide Free Gaming, we will monitor and/or review your text chat, including private, or 'whisper' chat, in the event of complaints from other users or violations of the rules. By clicking the check box below, you agree with the rule of allowing us to review your chat Conversations ingame, to investigate potential violations of the rules. We will not use the information for any reason other than pursuing such violations.";
 $re['re34'] = "I consent to ";
 $re['re35'] = " monitoring and/or reviewing my personal messages.";
 $re['re36'] = "I accept the ";
 $re['re37'] = "Terms of Use ";
-$re['re38'] = " applicable to my country of residence and if under 18 years old, agree and acknowledge that my parent or 
-
-guardian has also reviewed and accepted the Terms of Use on my behalf.";
+$re['re38'] = " applicable to my country of residence and if under 18 years old, agree and acknowledge that my parent or guardian has also reviewed and accepted the Terms of Use on my behalf.";
 $re['re39'] = "Create Free Account";
 $re['re40'] = "Cancel";
 $re['mr'] = "М";
@@ -196,9 +180,7 @@ $re['re45'] = "Type the Account Name";
 $re['re46'] = "Type your Password";
 $re['re47'] = "Confirm your Password";
 $re['re48'] = "Answer";
-$re['error1'] = "An error has ocurred during your account registration, please try again and if the problem persists 
-
-please contact with the adminsitration.";
+$re['error1'] = "An error has ocurred during your account registration, please try again and if the problem persists please contact with the adminsitration.";
 $re['error2']="The password doesn't match!";
 $re['error3']="You must type a FirstName";
 $re['error4']="You must type a Lastname";
@@ -223,9 +205,7 @@ $Reg['Reg1'] = "Учетная запись";
 $Reg['Reg2'] = "Изменить пароль";
 $Reg['Reg3'] = "Вы ";
 $Reg['Reg4'] = "должны";
-$Reg['Reg5'] = " быть не в сети для успешного использования этой функции.Используйте эту функцию, что бы изменить свой 
-
-пароль.";
+$Reg['Reg5'] = " быть не в сети для успешного использования этой функции.Используйте эту функцию, что бы изменить свой пароль.";
 $Reg['Reg6'] = "Ошибка:";
 $Reg['Reg7'] = "Новый пароль и его потверждение должны совпадать!";
 $Reg['Reg8'] = "Пожалуйста, вернитесь назад и попробуйте снова.";
@@ -412,14 +392,10 @@ $Uns['Uns'] = " - Character Unstuck";
 $Uns['Uns1'] = "Progress 100%";
 $Uns['Uns2'] = " [Step 1 of 1]";
 $Uns['Uns3'] = "Game Region Warning";
-$Uns['Uns4'] = "You should change your country to Korea, republic of and verify your Personal Residence Number to use 
-
-Korean games.";
+$Uns['Uns4'] = "You should change your country to Korea, republic of and verify your Personal Residence Number to use Korean games.";
 $Uns['Uns5'] = "Game Region Warning";
 $Uns['Uns6'] = "The World of Warcraft account merge process is not yet available in your region.";
-$Uns['Uns7'] = "If you lost your authenticator, please detach it before proceeding. (Security card service ended 
-
-8/13/2010 and was automatically detached.) ";
+$Uns['Uns7'] = "If you lost your authenticator, please detach it before proceeding. (Security card service ended 8/13/2010 and was automatically detached.) ";
 $Uns['Uns8'] = "If you use Phone Lock: please unlock your World of Warcraft account before\A0merging.";
 $Uns['Uns9'] = "Taiwan: 0800-303-585";
 $Uns['Uns10'] = "(Not available 10\9611AM every first Wed of the month)";
@@ -427,11 +403,7 @@ $Uns['Uns11'] = "Hong Kong &amp; Macau: 396-54666";
 $Uns['Uns12'] = " Required";
 $Uns['Uns13'] = "Game Management";
 $Uns['Uns14'] = "Unstuck your World of Warcraft Character";
-$Uns['Uns15'] = "Enter the username and password of the World of Warcraft account and the Character you wish to transfer 
-
-from the stucked area. You will have the opportunity to move or to continue your journey ingame. You must be offline from 
-
-your account to let this succeed.";
+$Uns['Uns15'] = "Enter the username and password of the World of Warcraft account and the Character you wish to transfer from the stucked area. You will have the opportunity to move or to continue your journey ingame. You must be offline from your account to let this succeed.";
 $Uns['Uns16'] = "World of Warcraft Account Name:";
 $Uns['Uns17'] = "World of Warcraft Account Character:";
 $Uns['Uns18'] = "World of Warcraft Account Password:";
@@ -456,7 +428,7 @@ $Ind['Ind3'] = "Реклама";
 $Ind['Ind4'] = "Информация о сервере: ";
 $Ind['Ind5'] = " Realmlist : ";
 $Ind['Ind6'] = " Версия игры : ";
-$Ind['Ind7'] = " Аккаунт : ";
+$Ind['Ind7'] = " Созданных аккаунтов : ";
 $Ind['Ind8'] = "Регистрация";
 $Ind['Ind9'] = " Персонажи: ";
 $Ind['Ind10'] = " Созданные персонажи";
@@ -478,9 +450,7 @@ $Ind['Ind23'] = "Зарегестрируйся сейчас!";
 // Starting Services
 $Serv['Serv'] = "Услуги";
 $Serv['Serv1'] = " услуги для учетной записи";
-$Serv['Serv2'] = "Используйте доступные вам услуги, доступные в World of Warcraft, что бы легко обновить игру, 
-
-моментально просматривать персонажа и многое другое.";
+$Serv['Serv2'] = "Используйте доступные вам услуги, доступные в World of Warcraft, что бы легко обновить игру, моментально просматривать персонажа и многое другое.";
 $Serv['Serv3'] = "Управление счетом";
 $Serv['Serv4'] = "Просмотр и изменение вашей учетной записи, параметров безопасности и многое другое.";
 $Serv['Serv5'] = "Бан Лист";
@@ -543,9 +513,7 @@ $Forum['Forum24'] = "Пожалуйста, сообщите нам о любой
 $Forum['Forum25'] = "Угрозы насилия. ";
 $Forum['Forum26'] = "Мы относимся к ним серьезно и будем оповещать соответствующие органы.";
 $Forum['Forum27'] = "Сообщения, содержащие личную информацию о других игроков. ";
-$Forum['Forum28'] = "Это включает в себя физические адреса, адреса электронной почты, номера телефонов фотографии и/или 
-
-видео.";
+$Forum['Forum28'] = "Это включает в себя физические адреса, адреса электронной почты, номера телефонов фотографии и/или видео.";
 $Forum['Forum29'] = "Оскорбительным и дискриминационным языком. ";
 $Forum['Forum30'] = "Это не Допускается.";
 $Forum['Forum31'] = "Нажмите ";
@@ -559,7 +527,7 @@ $Forum['Forum38'] = "Расширенный";
 $Forum['Forum39'] = "Простой";
 $Forum['Forum40'] = "Создать тему";
 $Forum['Forum41'] = "Ответы";
-$Forum['Forum42'] = "Мнения";
+$Forum['Forum42'] = "Просмотров";
 $Forum['Forum43'] = "Автор посл. сообщения";
 $Forum['Forum44'] = "В этом форуме еще нет тем.";
 $Forum['Forum45'] = "Последняя страница";
@@ -601,7 +569,7 @@ $Forum['Forum80'] = "в";
 // Finishing the Forum Translation
 
 //userplate
-$uplate['login'] = "<strong>Авторизируйтесь</strong>, и перед вами будет еще больше возможностей!";
+$uplate['login'] = "<strong>Авторизуйтесь</strong>, и перед вами будет еще больше возможностей!";
 $uplate['profile'] = "Профиль";
 $uplate['post'] = "Просмотр моих сообщений";
 $uplate['auction'] = "Просмотр моего аукциона";
@@ -837,19 +805,22 @@ $GameCli['Game16'] = "(Требуется полный Европейский к
 //Community
 $Community['comm1'] = "Конкурсы";
 $Community['comm2'] = "Прошедшие и наступающие конкурсы!";
-$Community['comm3'] = "Get in touch with other ";
-$Community['comm4'] = " gamers via the official World of Warcraft forums.";
-$Community['comm5'] = "Submit Fan Art";
-$Community['comm6'] = "Submit Media";
-$Community['comm7'] = "Submit Screenshots";
-$Community['comm8'] = "Submit Wallpapers";
-$Community['comm9'] = "Social Media";
-$Community['comm10'] = "Follow us on Facebook.";
-$Community['comm11'] = "Tweet us on Twitter.";
-$Community['comm12'] = "Subscribe on Youtube.";
-$Community['comm13'] = "Community Links";
-$Community['comm14'] = "Join our community.";
-$Community['FanArt'] = "Fan Art";
+$Community['comm3'] = "Вы можете связаться с другими игроками ";
+$Community['comm4'] = " на нашем официальном форуме.";
+$Community['comm5'] = "Добавить Фан-Арт";
+$Community['comm6'] = "Добавить комикс";
+$Community['comm7'] = "Добавить скриншот";
+$Community['comm8'] = "Добавить обои";
+$Community['comm9'] = "Социальные сети";
+$Community['comm10'] = "Мы на Facebook.";
+$Community['comm11'] = "Мы в Twitter.";
+$Community['comm12'] = "Мы на Youtube.";
+$Community['comm14'] = "Мы ВКонтакте.";
+$Community['comm15'] = "ВКонтакте";
+$Community['comm16'] = "Facebook";
+$Community['comm17'] = "Twitter";
+$Community['comm18'] = "Youtube";
+$Community['FanArt'] = "Фан-Арт";
 $Community['Screenshots'] = "Скриншоты";
 $Community['Wallpap'] = "Обои";
 $Community['Media'] = "Медиа";
@@ -857,9 +828,7 @@ $Community['Media'] = "Медиа";
 
 //Status
 $Status['RealmStat'] = "Статус игровых миров";
-$Status['Stat1'] = "Эта страница показывает все доступные World of Warcraft игровые миры, а так же статус каждой 
-
-отдельно. ";
+$Status['Stat1'] = "Эта страница показывает все доступные World of Warcraft игровые миры, а так же статус каждой отдельно. ";
 $Status['Stat2'] = "Если проводятся плановые тех. работы, то об этом будет сообщено ";
 $Status['ServStat'] = "на форуме.";
 $Status['Status'] = "Статус";
@@ -942,9 +911,7 @@ $Status['Northrend'] = "Нордскол";
 $Status['NotConected'] = "Есть игроки, которые On-Line.";
 $Status['RlmStat'] = "Статистика игровых миров";
 $Status['Stat5'] = "Эта страница показывает всю доступную информацию для игроков - персонажи, созданные на ";
-$Status['Stat6'] = " мире, а также статус каждой. Мир может иметь неограниченное количество игроков и может принять более 
-
-5000 игроков. Сообщения, относящиеся к состоянию мира и плановому обслуживанию будут опубликованы на";
+$Status['Stat6'] = " мире, а также статус каждой. Мир может иметь неограниченное количество игроков и может принять более 5000 игроков. Сообщения, относящиеся к состоянию мира и плановому обслуживанию будут опубликованы на";
 $Status['Stat7'] = " форуме.";
 $Status['Stat8'] = "";
 $Status['CharCreat'] = " Созданные персонажи - ";
@@ -960,7 +927,7 @@ $Status['PandNoAval'] = "Пандарены НЕ поддерживаются н
 $Media['SendMedia'] = "Отправить мультимедию";
 $Media['SendWallp'] = "Отправить обои";
 $Media['SendScreensh'] = "Отправить скриншот";
-$Media['SendArt'] = "Отправить рисунок";
+$Media['SendArt'] = "Отправить Фан-Арт";
 $Media['SendComic'] = "Отправить комикс";
 $Media['SendVideo'] = "Отправить видео";
 $Media['Media'] = "Медиа";
@@ -970,21 +937,25 @@ $Media['ErrorSend'] = "Произошла ошибка во время сохр�
 $Media['SendVideo2'] = "Отправить";
 $Media['ChooseMediaSend'] = "Выберите содержимое для отправки:";
 $Media['Videos'] = "Видео";
+$Media['AllVideos'] = "Все видео";
+$Media['AllWallpapers'] = "Все обои";
+$Media['AllScreenshots'] = "Все скриншоты";
+$Media['AllArtwork'] = "Все Фан-Арт";
+$Media['AllComics'] = "Все комиксы";
 $Media['Wallpapers'] = "Обои";
 $Media['Screenshots'] = "Скриншоты";
-$Media['Artwork'] = "Artwork";
+$Media['dataadd'] = "Дата добавления: ";
+$Media['Artwork'] = "Фан-Арт";
 $Media['Comics'] = "Комиксы";
 $Media['AllFildRequiered'] = "Все поля обязательны для заполнения!.";
-$Media['LargeText'] = "Для отправки файлы Вы должны зарегестрироватсья или войти в существующую учетную запись.После 
-
-отправки файла мультимедии, модератор его проверит в течении ~ 24 часов.";
+$Media['LargeText'] = "Для отправки файлы Вы должны зарегестрироватсья или войти в существующую учетную запись.После отправки файла мультимедии, модератор его проверит в течении ~ 24 часов.";
 $Media['TitleVideo'] = "Название видео:";
 $Media['LinkVideo'] = "Ссылка";
 $Media['Description'] = "Описание: ";
 $Media['SendVideo'] = "Отправить";
 $Media['DelFields'] = "Очистить поля";
-$Media['Previous'] = "Anterior";
-$Media['Next'] = "Siguiente";
+$Media['Previous'] = "Назад";
+$Media['Next'] = "Далее";
 $Media['Cancel'] = "Закрыть";
 $Media['CommentPosted'] = "Добавить комментарий";
 $Media['NotPostComment'] = "Комментарий не добавлен!";
@@ -992,5 +963,16 @@ $Media['SendCorrect'] = "Успешно";
 $Media['Title'] = "Название";
 $Media['File'] = "Файл";
 $Media['Multimedia'] = "Мультимедиа";
+$Media['page'] = "Страница";
+$Media['from'] = "из";
 //Finish Media
+
+//erors
+$erors['Oops'] = "ай-ай-ай";
+$erors['Pagenotfound'] = "Страница не найдена";
+$erors['There'] = "Здесь была";
+$erors['page'] = " страница.";
+$erors['gonenow'] = "Была, да сплыла.";
+$erors['whatelse'] = "(А что еще случается с непослушными страницами?)";
+//Finish erors
 ?>
