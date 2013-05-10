@@ -12,8 +12,7 @@
 		$acct_sql = mysql_query("SELECT COUNT(*) FROM $server_adb.account");
 		$acc = mysql_result($acct_sql,0,0);
 		echo ("<font color='#FF0000'>$acc</font>");
-		?>
-		<?php echo $Ind['Ind8']; ?></span><br />
+		?></span><br />
 </div>
 
 <?php

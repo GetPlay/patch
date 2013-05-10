@@ -1,6 +1,6 @@
 <div class="sidebar-module " id="sidebar-expansion" style="">
 <div class="sidebar-title">
-<h3 class="category title-expansion"><a href="vote.php">Vote Panel</a></h3>
+<h3 class="category title-expansion"><a href="vote.php"><?php echo $Vote['VotePanel']; ?></a></h3>
 </div>
 <div class="sidebar-content">
 <a class="mop-preview"></a>
