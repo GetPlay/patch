@@ -77,12 +77,12 @@ $login['login'] = "Авторизуйтесь" ;
 $Donate1['Donate1'] = "Пожертвовать для"; 
 $Donate['Donate'] = "Пожертвовать";
 
-$website['explore'] = "Explore";
-$More['More'] = "Далее";
-$Retrieve['Retrieve'] = "Retrieve Lost Account";
-$Find['Find'] = "Find us on the Map!";
-$or['or'] = "or";
-$search['text_bar'] = "Search characters, items and more...";
+$website['explore'] = "Подробнее";
+$More['More'] = "Подробнее";
+$Retrieve['Retrieve'] = "Восстановление пароля";
+$Find['Find'] = "Найти нас на карте!";
+$or['or'] = "или";
+$search['text_bar'] = "Поиск предметов, персонажей, сообщений на форуме...";
 
 // Starting the voting translation
 $Vote['Vote'] = "Система голосования";
@@ -729,6 +729,9 @@ $arena['Teams'] = "Арена команды";
 $statNav['AllRealms'] = "Все миры";
 $statNav['TopHonor'] = "TOP очков Чести";
 $statNav['TopConquest'] = "TOP очков Завоеваний";
+$statNav['2v2'] = "TOP 2v2";
+$statNav['3v3'] = "TOP 3v3";
+$statNav['5v5'] = "TOP 5v5";
 $Index['NoArticles'] = "No Articles";
 $Index['By'] = "By";
 //Finish Others
