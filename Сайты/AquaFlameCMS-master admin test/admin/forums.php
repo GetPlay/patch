@@ -98,22 +98,22 @@ $('#checkall').toggleClass('clicked');
           <form method="post" action="" class="pagination">
             <input type="hidden" name="name_id" value="<?php echo intval($_GET['id']); ?>" />
             <input type="text" class="pag" name="newName" value="<?php echo $categ['name']; ?>" style="width:auto;height:auto;background-color:#FFF;font-size:18px;" />
-            <button type="submit" name="change_name" value="Submit Name">Submit Name</button>
+            <button type="submit" name="change_name" value="Submit Name"><?php echo $admin['SubmitName']; ?></button>
           </form>
         </h2>
-        <div style="float:right;margin: 30px 20px 0 0px;"><a href="fnew.php?id=<?php echo intval($_GET['id']); ?>"><button type="submit" name="f_new" value="New Forum">New Forum</button></a></div>
+        <div style="float:right;margin: 30px 20px 0 0px;"><a href="fnew.php?id=<?php echo intval($_GET['id']); ?>"><button type="submit" name="f_new" value="New Forum"><?php echo $admin['NewForum']; ?></button></a></div>
       </div>
       <div id="moveTable">
       <table>
         <thead>
         <tr>  
-          <th class="edit"><strong>Edit</strong></th>
+          <th class="edit"><strong><?php echo $admin['Edit']; ?></strong></th>
           <th></th>   
-          <th class="title"><strong>Name</strong></th>
-          <th class="desc"><strong>Description</strong></th>
-          <th class="inc"><strong>Topics</strong></th>
-          <th class="inc"><strong>Lock/Unlock</strong></th>
-          <th class="inc"><strong>Up / Down</strong></th>
+          <th class="title"><strong><?php echo $admin['Title']; ?></strong></th>
+          <th class="desc"><strong><?php echo $admin['Descript']; ?></strong></th>
+          <th class="inc"><strong><?php echo $admin['Topics']; ?></strong></th>
+          <th class="inc"><strong><?php echo $admin['LockUnloc']; ?></strong></th>
+          <th class="inc"><strong></strong></th>
         </tr>
         </thead>
         <tbody>

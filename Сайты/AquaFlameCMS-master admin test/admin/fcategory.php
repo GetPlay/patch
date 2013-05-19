@@ -92,21 +92,21 @@ $('#checkall').toggleClass('clicked');
     <div id="content">
 			<div class="datalist">
 	     <div class="heading">
-        <h2>Forum Categorys</h2>
+        <h2><?php echo $admin['Categor']; ?></h2>
         <form method="post" action="" class="pagination">
-          <input type="text" class="pag" name="new_categ" value="New Category" style="margin: 20px 0 0 29px;width:auto;height:auto;background-color:#FFF;font-size:18px;" onfocus="if(this.value=='New Category'){this.value=''}" onblur="if(this.value==''){this.value='New Category'}"/>
-          <button type="submit" name="s_new" value="Add">Add Category</button>
+          <input type="text" class="pag" name="new_categ" value="" style="margin: 20px 0 0 29px;width:auto;height:auto;background-color:#FFF;font-size:18px;" onfocus="if(this.value==''){this.value=''}" onblur="if(this.value==''){this.value=''}"/>
+          <button type="submit" name="s_new" value="Add"><?php echo $admin['AddCategor']; ?></button>
         </form>
       </div><div id="moveTable">
       <table>
         <thead>
         <tr>   
-          <th class="edit"><strong>Manage</strong></th> 
-          <th class="edit"><strong>Delete</strong></th>   
-          <th class="title"><strong>Name</strong></th>
-          <th class="desc"><strong>Forums</strong></th>
-          <th class="inc"><strong>Nº Forums</strong></th>
-          <th class="inc"><strong>Up / Down</strong></th>
+          <th class="edit"><strong><?php echo $admin['Edit']; ?></strong></th> 
+          <th class="edit"><strong><?php echo $admin['Delete']; ?></strong></th>   
+          <th class="title"><strong><?php echo $admin['Title']; ?></strong></th>
+          <th class="desc"><strong><?php echo $admin['Forums']; ?></strong></th>
+          <th class="inc"><strong><?php echo $admin['addforums']; ?></strong></th>
+          <th class="inc"><strong></strong></th>
         </tr>
         </thead>
         <tbody>

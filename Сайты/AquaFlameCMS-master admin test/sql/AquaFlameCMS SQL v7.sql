@@ -1,9 +1,9 @@
 ﻿-- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               5.5.27 - MySQL Community Server (GPL)
--- Server OS:                    Win64
--- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2012-09-14 16:14:26
+-- Host: 127.0.0.1
+-- Server version: 5.5.27 - MySQL Community Server (GPL)
+-- Server OS: Win64
+-- HeidiSQL version: 7.0.0.4053
+-- Date/time: 2012-09-14 16:14:26
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -77,7 +77,12 @@ CREATE TABLE IF NOT EXISTS `forum_categ` (
 DELETE FROM `forum_categ`;
 /*!40000 ALTER TABLE `forum_categ` DISABLE KEYS */;
 INSERT INTO `forum_categ` (`id`, `num`, `name`) VALUES
-	(1, 1, 'WoWFailureCMS');
+('1', '1', 'Поддержка'),
+('2', '2', 'Баг - Трекер'),
+('3', '4', 'Сообщество'),
+('4', '5', 'Игровой процесс'),
+('5', '6', 'Корзина'),
+('6', '3', 'Раздел серверов');
 /*!40000 ALTER TABLE `forum_categ` ENABLE KEYS */;
 
 
@@ -98,10 +103,26 @@ CREATE TABLE IF NOT EXISTS `forum_forums` (
 DELETE FROM `forum_forums`;
 /*!40000 ALTER TABLE `forum_forums` DISABLE KEYS */;
 INSERT INTO `forum_forums` (`id`, `num`, `categ`, `name`, `image`, `description`, `locked`) VALUES
-	(1, 1, 1, 'Announcement', 'blizzard', 'All important messages/announcements/informations regarding WoWFailureCMS will be posted here.', 1),
-	(2, 2, 1, 'General Talk', 'general', 'You can talk anything you want here :)', 0),
-	(3, 3, 1, 'Bugs', 'bugs', 'Post here all bugs you find.', 0),
-	(4, 4, 1, 'Suggestions', 'suggestions', 'Post here your ideas regarding WoWFailureCMS.', 0);
+('7', '1', '1', 'Служба поддержки', 'cs', 'Форум, предназначенный для вопросов службам поддержки и обсуждения проблем, связанных с игрой или учетными записями.', '0'),
+('8', '2', '1', 'Техническая поддержка', 'tsupport', 'Помощь в устранении технических проблем с установкой Wolrd of Warcraft, соеденением с мирами и зависанием игры.', '0'),
+('9', '3', '1', 'Состояние игровых миров [Только чтение]', 'blizzard', 'Собрание важных сообщений о статусе игровых миров', '1'),
+('10', '1', '2', 'Баги веб ресурсов', 'wwi', 'В этот раздел пишем о багах на сайте, форуме и личном кабинете.', '0'),
+('11', '2', '2', 'Таланты и спелы', 'realm-pvp', 'В этот раздел пишем о багах в системе телантов и спелов.', '0'),
+('12', '3', '2', 'Остальное', 'bugs', 'В этот раздел пишем об остальных багах и недочетах, не походящих к другим разделам', '0'),
+('13', '1', '5', 'Корзина', 'bullet', 'Старые, неактуальные тему будут переноситься сюда', '1'),
+('14', '1', '3', 'Гильдии, отличившиеся рейды и т.д.', 'guildrelations', 'Поделитесь своими советами и узнайте все самое захватывающее от гильдий и отличившихся рейд-лидеров', '0'),
+('15', '2', '3', 'Поиск игроков (PvE)', 'battlegroup', 'Место встречи для тех, кто ищет гильдию, рейд или напарника/группу для PvE', '0'),
+('16', '3', '3', 'Поиск игроков', 'dps', 'Хотите испытать себя на поле боя или Арене? Здесь вы можете найти себе комманду.', '0'),
+('17', '1', '4', 'Помощь новичкам', 'newplayers', 'Чувствуете себя новичком? Не беда! Здесь вам подскажут выход из ситуации', '0'),
+('18', '2', '4', 'Задания', 'cs', 'Застряли в ходе выполнения заданий? Тогда вам сюда!', '0'),
+('19', '3', '4', 'Профессии', 'professions', 'Раскройте секреты Мастеров ремесел, а так же поделитесь опытом с другими!', '0'),
+('20', '4', '4', 'Достижения', 'guides', 'Одни пытаются добиться всего и сразу, а другие усердно работают на д получением самых сложных достижений.', '0'),
+('21', '5', '4', 'История', 'localisation', 'Узнайте все об истории Азерота и мире World of Warcraft!', '0'),
+('22', '7', '4', 'Общий раздел', 'bullet', 'Не можете найти подходящий раздел для обсуждения игры? Добро пожаловать сюда!', '0'),
+('23', '6', '4', 'Интерфейс, макросы и аддоны', 'uicustomizations', 'Пытаетесь настроить макросы, аддоны или изменить пользовательский интерфейс? Загляните сюда.', '0'),
+('24', '1', '6', 'Игровой мир WotLK', 'wrath', 'Раздел для обсуждений игрового мира WotLK.', '0'),
+('25', '2', '6', 'Игровой мир Cataclysm', 'cataclysm', 'Раздел дял обсуждения игрового мира Cataclysm', '0'),
+('26', '3', '6', 'Нарушители', 'heal', 'Раздел для злостных нарушителей проекта.', '0');
 /*!40000 ALTER TABLE `forum_forums` ENABLE KEYS */;
 
 
@@ -207,10 +228,10 @@ CREATE TABLE IF NOT EXISTS `media` (
 DELETE FROM `media`;
 /*!40000 ALTER TABLE `media` DISABLE KEYS */;
 INSERT INTO `media` (`id`, `author`, `date`, `id_url`, `title`, `description`, `comments`, `link`, `visible`, `type`) VALUES
-	(16, 0, '2012-03-12 01:59:00', '-E5M3X-1KP0', 'CATACLYSM (Español - España) - World of Warcraft', 'Trailer of the third World of Warcraft Expansion.</br>This expansion supouse a big change for Azeroth, all the known world will change and the Deathwing`s rage will change the curse of the life.', 0, 'http://www.youtube.com/watch?v=-E5M3X-1KP0', 1, 0),
-	(17, 0, '2012-03-12 01:59:00', 'CARC72zF7UI', 'World of Warcraft - Cinemáticas', 'Normal Video', 0, 'http://www.youtube.com/watch?v=CARC72zF7UI', 1, 0),
-	(18, 0, '2012-03-12 01:59:00', 'dYK_Gqyf48Y', 'World of Warcraft - Cinematic Trailer', 'Some Trailers', 0, 'http://www.youtube.com/watch?v=dYK_Gqyf48Y', 1, 0),
-	(19, 0, '2012-03-12 01:59:00', 'IBHL_-biMrQ', 'World of Warcraft: The Burning Crusade', 'TBC Trailer', 0, 'http://www.youtube.com/watch?v=IBHL_-biMrQ', 1, 0);
+(16, 0, '2012-03-12 01:59:00', '-E5M3X-1KP0', 'CATACLYSM (Español - España) - World of Warcraft', 'Trailer of the third World of Warcraft Expansion.</br>This expansion supouse a big change for Azeroth, all the known world will change and the Deathwing`s rage will change the curse of the life.', 0, 'http://www.youtube.com/watch?v=-E5M3X-1KP0', 1, 0),
+(17, 0, '2012-03-12 01:59:00', 'CARC72zF7UI', 'World of Warcraft - Cinemáticas', 'Normal Video', 0, 'http://www.youtube.com/watch?v=CARC72zF7UI', 1, 0),
+(18, 0, '2012-03-12 01:59:00', 'dYK_Gqyf48Y', 'World of Warcraft - Cinematic Trailer', 'Some Trailers', 0, 'http://www.youtube.com/watch?v=dYK_Gqyf48Y', 1, 0),
+(19, 0, '2012-03-12 01:59:00', 'IBHL_-biMrQ', 'World of Warcraft: The Burning Crusade', 'TBC Trailer', 0, 'http://www.youtube.com/watch?v=IBHL_-biMrQ', 1, 0);
 /*!40000 ALTER TABLE `media` ENABLE KEYS */;
 
 
@@ -283,10 +304,10 @@ CREATE TABLE IF NOT EXISTS `prices` (
 DELETE FROM `prices`;
 /*!40000 ALTER TABLE `prices` DISABLE KEYS */;
 INSERT INTO `prices` (`id`, `service`, `type`, `vp`, `dp`) VALUES
-	(1, 'name-change', 'vote', 300, 0),
-	(2, 'race-change', 'vote', 500, 0),
-	(3, 'appear-change', 'vote', 400, 0),
-	(4, 'faction-change', 'vote', 600, 10);
+(1, 'name-change', 'vote', 300, 0),
+(2, 'race-change', 'vote', 500, 0),
+(3, 'appear-change', 'vote', 400, 0),
+(4, 'faction-change', 'vote', 600, 10);
 /*!40000 ALTER TABLE `prices` ENABLE KEYS */;
 
 
@@ -307,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `realms` (
 DELETE FROM `realms`;
 /*!40000 ALTER TABLE `realms` DISABLE KEYS */;
 INSERT INTO `realms` (`id`, `realmid`, `world_db`, `char_db`, `version`, `drop_rate`, `exp_rate`) VALUES
-	(1, 1, 'world', 'characters', '4.0.6a', '1x', '1x');
+(1, 1, 'world', 'characters', '4.0.6a', '1x', '1x');
 /*!40000 ALTER TABLE `realms` ENABLE KEYS */;
 
 
@@ -385,8 +406,8 @@ CREATE TABLE IF NOT EXISTS `slideshows` (
 DELETE FROM `slideshows`;
 /*!40000 ALTER TABLE `slideshows` DISABLE KEYS */;
 INSERT INTO `slideshows` (`id`, `title`, `description`, `image`, `link`) VALUES
-	(4, 'Title1', 'Description1', 'community01.png', '#'),
-	(5, 'Title2', 'Description2', 'draenei.jpg', '#');
+(4, 'Title1', 'Description1', 'community01.png', '#'),
+(5, 'Title2', 'Description2', 'draenei.jpg', '#');
 /*!40000 ALTER TABLE `slideshows` ENABLE KEYS */;
 
 
@@ -431,7 +452,7 @@ CREATE TABLE IF NOT EXISTS `version` (
 DELETE FROM `version`;
 /*!40000 ALTER TABLE `version` DISABLE KEYS */;
 INSERT INTO `version` (`Name`, `Number`, `Revision`, `DB_Version`, `Updates`) VALUES
-	('AquaFlameCMS', 'v6', '192', 'v6', '0');
+('AquaFlameCMS', 'v6', '192', 'v6', '0');
 /*!40000 ALTER TABLE `version` ENABLE KEYS */;
 
 
