@@ -35,7 +35,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title>Админ Панель</title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['ViewSlide']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -95,10 +95,7 @@ $('#checkall').toggleClass('clicked');
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2>Изменение/удаление Объявлений</h2>
-        <select name="sort">
-          <option>Сортировать по</option>
-        </select> 
+        <h2><?php echo $admin['ViewSlide']; ?></h2>
       </div>
       <div class="pagination">
         <?php
@@ -121,14 +118,13 @@ $('#checkall').toggleClass('clicked');
       <ul id="lst">
         <li>
           <div class="chk"><a id="checkall"></a> </div>
-			    <p class="editHead"><strong>Измен./Удал.</strong></p>
-          <p class="title"><strong>Заголовок</strong></p>
-          <p class="descripHead">Текст</p>
-          <p class="incHead">Коментарии</p>
+			    <p class="editHead"><strong><?php echo $admin['Edit']; ?>/<?php echo $admin['Delete']; ?></strong></p>
+          <p class="title"><strong><?php echo $admin['Title']; ?></strong></p>
+          <p class="descripHead"><?php echo $admin['Desc']; ?></p>
         </li>
            <?php
             mysql_select_db($server_db) or die (mysql_error());
-            $result = mysql_query("SELECT id,title FROM slideshows");
+            $result = mysql_query("SELECT id,title,description FROM slideshows");
             while ($new = mysql_fetch_assoc($result)){
               echo'
             <li>
@@ -139,6 +135,7 @@ $('#checkall').toggleClass('clicked');
             </div>
             <p class="edit"><a href="editslideshows.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deleteslideshows.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
             <p class="title">'.$new['title'].'</p>
+			<p class="title">'.$new['description'].'</p>
             </li>';
             }?>
       </ul>

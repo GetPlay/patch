@@ -67,7 +67,7 @@ ini_set("default_charset", "iso-8859-1" );
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title>AquaFlame CMS Admin Panel</title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['ViewSlide']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -164,23 +164,18 @@ function preview(img,event){
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Edit News: <?php if($error){die ('<font color="red">Sorry an error has ocurred!</font>');} ?><?php echo $new['title']; ?></h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+          <h2><?php echo $admin['ViewSlide']; ?></h2>
         </div>
-        <h3>Head</h3>
         <form method="post" action="" class="styleForm">
         <input type="hidden" name="id" value="<?php echo $new['id']; ?>" />
-          <p>Title<br />
+          <p><?php echo $admin['Title']; ?><br />
             <input name="title" type="text" value="<?php echo $new['title']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['title']; ?>'" />
           </p> 
-          <p>—сылка<br />
+          <p><?php echo $admin['URL']; ?><br />
             <input name="link" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
           </p> 
           <div class="folder">
-            <p>&#1048;&#1079;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1077;<br />
+            <p><?php echo $admin['Image']; ?><br />
             <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
             </p>
             <img src="<?php echo '../news/'.$new['image'].'.jpg'; ?>" id="imgLoad" />
@@ -206,13 +201,12 @@ function preview(img,event){
               <img src="" alt="img" id="imgP" />   
             </div>   
           </div> 
-
-          <h3>Content</h3>
+          <h3><?php echo $admin['Desc']; ?></h3>
           <div class="txt">
             <textarea id="input" name="description"><?php echo $new['description']; ?></textarea>
           </div>
-          <input name="save" type="submit" value="Save Changes" />
-          <a href="viewnews.php"><input name="reset" type="reset" value="Cancel" /></a>
+          <input name="save" type="submit" value="<?php echo $admin['Save']; ?>" />
+          <a href="viewnews.php"><input name="reset" type="reset" value="<?php echo $admin['Cancel']; ?>" /></a>
         </form>
       </div>
     </div>

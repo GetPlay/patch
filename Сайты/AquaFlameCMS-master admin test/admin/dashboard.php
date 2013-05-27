@@ -136,28 +136,32 @@ $('#checkall').toggleClass('clicked');
         </div>
         <ul id="lst">
         <li>
-			      <p class="editHead"><strong><?php echo $admin['Username']; ?></strong></p>
-            <p class="title"><strong><?php echo $admin['Name']; ?></strong></p>
-            <p class="descripHead"><?php echo $admin['Char']; ?></p>
+			<p class="editHead2"><strong><?php echo $admin['Edit']; ?></strong></p>
+			<p class="editHead2"><strong><?php echo $admin['Username']; ?></strong></p>
+            <p class="title2"><strong><?php echo $admin['Name']; ?></strong></p>
+            <p class="descripHead2"><?php echo $admin['Char']; ?></p>
             <p class="incHead"><?php echo $admin['Birth']; ?></p>
+            <p class="ip"><?php echo $admin['ip']; ?></p>
           </li>
 		   <?php
           mysql_select_db($server_db) or die (mysql_error());
-          $users = mysql_query("SELECT U.id,U.firstName,U.birth,username FROM users U, $server_adb.account A 
+          $users = mysql_query("SELECT U.id,U.firstName,U.registerIp,U.birth,username FROM users U, $server_adb.account A 
             WHERE A.id = U.id ORDER BY id DESC LIMIT 5");
           while ($usercheck = mysql_fetch_assoc($users)){
             mysql_select_db($server_cdb) or die (mysql_error());
             $chars = mysql_query("SELECT name FROM characters WHERE account = '".$usercheck['id']."'");
 			      echo '
               <li>
-              <p class="edit">'.$usercheck['username'].'</p>
-			        <p class="title">'.$usercheck['firstName'].'</p>
-              <p class="descrip">';
+		<p class="edit2"><a href="editusers.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a></p>
+              <p class="edit2">'.$usercheck['username'].'</p>
+	      <p class="title2">'.$usercheck['firstName'].'</p>
+              <p class="descrip2">';
                 while ($charcheck = mysql_fetch_assoc($chars)){
                   echo $charcheck['name'].', ';
                 }
               echo '</p>
               <p class="inc">'.$usercheck['birth'].'</p>
+              <p class="iplist">'.$usercheck['registerIp'].'</p>
               </li>';
           }
         ?>

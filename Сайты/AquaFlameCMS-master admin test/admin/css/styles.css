@@ -449,9 +449,6 @@ body {
 .carousel_ul li a.icom {
 	background: url(../images/icon-m.png) no-repeat 0 0
 }
-.carousel_ul li a.icom2 {
-	background: url(../images/icon-m2.png) no-repeat 0 0
-}
 .carousel_ul li a.icof {
 	background: url(../images/icon-f.png) no-repeat 0 0
 }
@@ -531,6 +528,9 @@ body {
 }
 .carousel_ul2 li a.ico10 {
 	background: url(../images/icon-10.png) no-repeat 0 0
+}
+.carousel_ul2 li a.ico11 {
+	background: url(../images/icon-m2.png) no-repeat 0 0
 }
 .carousel_ul2 li a:hover {
 	background-position: 0 -64px
@@ -745,7 +745,63 @@ body {
 	line-height:40px
 }
 #content .datalist ul li p.descripHead {
-	width:550px;
+	width:570px;
+	height:43px;
+	float:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#464646;
+	line-height:40px;
+	font-weight:bold
+}
+#content .datalist ul li p.editHead2 {
+	width:35px;
+	height:43px;
+	float:left;
+	margin-right:30px;
+	margin-left:5px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#464646;
+	line-height:40px;
+	font-weight:bold
+}
+#content .datalist ul li p.edit2 a {
+	color:#67832c;
+	text-decoration:underline;
+	float:left;
+	margin:10px 0 0 10px;
+}
+#content .datalist ul li p.edit2 {
+	width:40px;
+	height:43px;
+	float:left;
+	margin-right:30px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#464646;
+	line-height:40px
+}
+#content .datalist ul li p.title2 {
+	width:90px;
+	height:43px;
+	float:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#464646;
+	line-height:40px
+}
+#content .datalist ul li p.descrip2 {
+	width:490px;
+	height:43px;
+	float:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#442c83;
+	line-height:40px
+}
+#content .datalist ul li p.descripHead2 {
+	width:510px;
 	height:43px;
 	float:left;
 	font-family:Tahoma, Geneva, sans-serif;
@@ -755,7 +811,19 @@ body {
 	font-weight:bold
 }
 #content .datalist ul li p.inc {
-	width:80px;
+	width:50px;
+	height:43px;
+	float:left;
+	margin-left:20px;
+	margin-right:30px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#67832c;
+	line-height:40px;
+	/*text-align:center*/
+}
+#content .datalist ul li p.iplist {
+	width:50px;
 	height:43px;
 	float:left;
 	margin-left:20px;
@@ -765,11 +833,23 @@ body {
 	line-height:40px;
 	/*text-align:center*/
 }
-#content .datalist ul li p.incHead {
-	width:80px;
+#content .datalist ul li p.ip {
+	width:0px;
 	height:43px;
 	float:left;
 	margin-right:50px;
+	margin-left:30px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#464646;
+	line-height:40px;
+	font-weight:bold
+}
+#content .datalist ul li p.incHead {
+	width:60px;
+	height:43px;
+	float:left;
+	margin-right:10px;
 	font-family:Tahoma, Geneva, sans-serif;
 	font-size:12px;
 	color:#464646;
@@ -813,6 +893,7 @@ body {
 	height:43px;
 	float:left;
 	margin-right:30px;
+	margin-left:5px;
 	font-family:Tahoma, Geneva, sans-serif;
 	font-size:12px;
 	color:#464646;

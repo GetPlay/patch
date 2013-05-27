@@ -19,7 +19,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title>AquaFlame CMS Admin Panel</title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['DelSlide']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -78,11 +78,8 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Удаление новости</h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+          <h2><?php echo $admin['DelSlide']; ?></h2>
+
         </div>
         <?php
           if (isset($_GET['id'])){
@@ -96,19 +93,18 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
           }
           if (!$error) {
           echo'
-        <h3>Информация</h3>
         <form method="post" action="" class="styleForm">
         <table>
           <tr>
-            <td width="65%"><p><strong>Заголовок: </strong>'.$new['title'].'</p></td>
+            <td width="65%"><p><strong>Р—Р°РіРѕР»РѕРІРѕРє: </strong>'.$new['title'].'</p></td>
             <td rowspan="4" style="vertical-align:middle;">
-              <p align="center"><strong>Вы действительно хотите удалить эту новость?</strong></p>
+              <p align="center"><strong>Р’С‹ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ СЌС‚Рѕ РЎР»Р°Р№Рґ - РјРµРЅСЋ?</strong></p>
               <input type="hidden" name="id" value="'.$new['id'].'" />
-              <p align="center"><button type="submit" name="delete" onclick="Form.submit(this)"><span>Удалить</span></button>
-              <a href="dashboard.php"><button name="reset" type="reset" value="Cancel"><span>Отменить</span></button></a></p>
+              <p align="center"><button type="submit" name="delete" onclick="Form.submit(this)"><span>РЈРґР°Р»РёС‚СЊ</span></button>
+              <a href="dashboard.php"><button name="reset" type="reset" value="Cancel"><span>РћС‚РјРµРЅРёС‚СЊ</span></button></a></p>
             </td>
           </tr>
-          <tr><td colspan="2"><h3>Текст:</h3><p>'.$new['description'].'</p></td></tr>
+          <tr><td colspan="2"><h3>РўРµРєСЃС‚:</h3><p>'.$new['description'].'</p></td></tr>
         </table>
         </form></div>';
           }elseif ($delete_new == false){ //just show error if we have not deleted am article

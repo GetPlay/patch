@@ -212,23 +212,19 @@ function changeVal(val){
         <form method="post" action="" class="styleForm">
         <input type="hidden" value="<?php echo $forum['id']; ?>" name="f_id">
         <table width="100%" class="table-content">
-
-
 		          <tr>
             <td width="50%"><p><strong><?php echo $admin['Lock']; ?></strong>
-
             <style>
             div.checker{
               margin-top: -5px;
             }
             </style>
             <input type="checkbox" name="f_locked" onchange="if(this.checked)<?php if($forum['locked'] == '1'){ echo '<font color="red"></font>';  }else{ echo '<font color="green"></font>'; } ?>
-			        <?php if($forum['locked'] == '1'){ echo '<font color="red">YES</font>';  }else{ echo '<font color="green">NO</font>'; } ?>
+			       <?php if($forum['locked']==1) echo '<img src=images/lock-locked.png>'; else echo '<img src=images/lock-open.png>';?></p></td>
 
             </td>
             <td>
               <p>
-
                 <strong><?php echo $admin['Changv']; ?></strong>
                 <select name="f_categ">
                 <?php

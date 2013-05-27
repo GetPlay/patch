@@ -149,7 +149,8 @@ $('#checkall').toggleClass('clicked');
           <td class="inc">
             <form method="post" action="">
               <input type="hidden" name="lock_id" value="'.$row['id'].'" />
-              <input type="image" name="lock" src="images/'.$lock_ico.'" alt="Lock" />
+              <input type="image" name="lock" src="images/lock-open.png" alt="" /> / 
+              <input type="image" name="lock" src="images/lock-locked.png" alt="" />
             </form>
           </td> 
           <td class="inc">';
