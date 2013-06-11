@@ -30,17 +30,13 @@ class wowheadparser
 		xml_parse_into_struct($parser,fgets($file),$values);
 		xml_parser_free($parser);
 		fclose($file);
-		$this->_imageName = $values[8];
+		$this->_imageName = $values[7];
 		$this->_htmlTooltip = $values[10];
 	}
     
 	public function getItemImage()
-	{ 
-		//return '<img src="images/not_found.png" alt=""/>';
-
-	
-	return '<img src="http://static.wowhead.com/images/wow/icons/large/'.strtolower($this->_imageName["value"]).'.jpg" alt=""/>';
-	
+	{
+		return '<img src="http://static.wowhead.com/images/wow/icons/large/'.strtolower($this->_imageName["value"]).'.jpg" alt=""/>';
 	}
 	
 	public function getHtmlTooltp()
