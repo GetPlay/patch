@@ -23,10 +23,9 @@
               <div class='left_scroll'><img src='images/leftArrow.png' alt="" /></div>
               <div class='carousel_inner'>
               <ul class='carousel_ul'>
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Write News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico1" href='writenews.php'></a></span></li>
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>123</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='info_rate.php'></a></span></li>
-		<li><span rel="tooltip" title="<strong style='color:#00B6FF'>View/Edit News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>View the Website</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico4" href='viewwebsite.php'></a></span></li>
+                <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['WriteNews']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico1" href='writenews.php'></a></span></li>
+				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['ViewEditNews']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
+                <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['ViewWeb']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico4" href='viewwebsite.php'></a></span></li>
               </ul>
               </div>
               <div class='right_scroll'><img src='images/rightArrow.png' alt="" /></div>
@@ -41,8 +40,8 @@
               <div class='carousel_inner'>
                 <ul class='carousel_ul2'>
                   <!-- To do It'll be visible just to superadmins-->
-			         	<li><span rel="tooltip" title="<strong style='color:#00B6FF'>Manage Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico10" href='mediaall.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Unapproved Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icom2" href='mediaun.php'></a></span></li>
+			         	<li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['ManageMedia']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico10" href='mediaall.php'></a></span></li>
+				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['UnapprovedMedia']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico11" href='mediaun.php'></a></span></li>
                 </ul>
               </div>
               <div class='right_scroll'><img src='images/rightArrow.png' alt="" /></div>
@@ -56,7 +55,7 @@
               <div class='left_scroll'><img src='images/leftArrow.png' alt="" /></div>
               <div class='carousel_inner'>
                 <ul class='carousel_ul3'>
-				                  <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['Off2']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico9" href='#'></a></span></li>
+				                  <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['Off2']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico5" href='#'></a></span></li>
                  </ul>
               </div>
               <div class='right_scroll'><img src='images/rightArrow.png' alt="" /></div>
