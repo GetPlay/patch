@@ -53,8 +53,8 @@ _gaq.push(['_trackPageview']);
 <div class="content-trail">
 <ol class="ui-breadcrumb">
 <li><a href="index.php" rel="np"><?php echo $website['title']; ?></a></li>
-<li><a href="status.php" rel="np">Status</a></li>
-<li><a href="status.php" rel="np">Arena</a></li>
+<li><a href="status.php" rel="np"><?php echo $Status['Status']; ?></a></li>
+<li><a href="status.php" rel="np"><?php echo $Status['Arena']; ?></a></li>
 <li class="last"><a href="5vs5.php" rel="np">Top 5vs5</a></li>
 </ol>
 </div>
@@ -89,17 +89,17 @@ _gaq.push(['_trackPageview']);
 		<div id="realm-filters" class="table-filters">
 			<form action="#">
 				<div class="filter">
-					<label for="filter-status">Faction</label>
+					<label for="filter-status"><?php echo $Status['Faction']; ?></label>
 					
 					<select id="filter-status" class="input select" data-filter="column" data-column="0">
-						<option value="">All</option>
-						<option value="up">Alliance</option>
-						<option value="down">Horde</option>
+						<option value=""><?php echo $Status['All']; ?></option>
+						<option value="up"><?php echo $Status['Ali']; ?></option>
+						<option value="down"><?php echo $Status['Horde']; ?></option>
 					</select>
 				</div>
 
 				<div class="filter">
-					<label for="filter-name">Name</label>
+					<label for="filter-name"><?php echo $Status['Name']; ?></label>
 
 					<input type="text" class="input" id="filter-name" 
 						   data-filter="column" data-column="1" />
@@ -109,76 +109,64 @@ _gaq.push(['_trackPageview']);
 					<label for="filter-type">Race</label>
 
 					<select id="filter-type" class="input select" data-filter="column" data-column="2">
-						<option value="">All</option>
+						<option value=""><?php echo $Status['All']; ?></option>
 							<option value="pve">
-								Human
+								<?php echo $Status['Human']; ?>
 							</option>
 							<option value="rppvp">
-								Dwarf
+								<?php echo $Status['Dwarf']; ?>
 							</option>
 							<option value="pvp">
-								Night Elf
+								<?php echo $Status['NightElf']; ?>
 							</option>
 							<option value="rp">
-								Gnome
+								<?php echo $Status['Gnome']; ?>
 							</option>
 							<option value="rp">
-								Draenei
+								<?php echo $Status['Draenei']; ?>
 							</option>
 							<option value="rp">
-								Worgen
+								<?php echo $Status['Worgen']; ?>
 							</option>
 							<option value="rp">
-								Orc
+								<?php echo $Status['Orc']; ?>
 							</option>
 							<option value="rp">
-								Troll
+								<?php echo $Status['Troll']; ?>
 							</option>
 							<option value="rp">
-								Tauren
+								<?php echo $Status['Tauren']; ?>
 							</option>
 							<option value="rp">
-								Undead
+								<?php echo $Status['Undead']; ?>
 							</option>
 							<option value="rp">
-								Blood Elf
+								<?php echo $Status['BloodElf']; ?>
 							</option>
 							<option value="rp">
-								Goblin
+								<?php echo $Status['Goblin']; ?>
 							</option>
 					</select>
 				</div>
 
 				<div class="filter">
-					<label for="filter-population">Class</label>
+					<label for="filter-population"><?php echo $Status['Class']; ?></label>
 
 					<select id="filter-population" class="input select" data-filter="column" data-column="3">
-						<option value="">All</option>
-							<option value="high">Warrior</option>
-							<option value="medium">Paladin</option>
-							<option value="n/a">Rogue</option>
-							<option value="low">Mage</option>
-							<option value="low">Druid</option>
-							<option value="low">Warlock</option>
-							<option value="low">Hunter</option>
-							<option value="low">Shaman</option>
-							<option value="low">Priest</option>
-							<option value="low">Death Knight</option>
+						<option value=""><?php echo $Status['All']; ?></option>
+							<option value="high"><?php echo $Status['Warrior']; ?></option>
+							<option value="medium"><?php echo $Status['Paladin']; ?></option>
+							<option value="n/a"><?php echo $Status['Rogue']; ?></option>
+							<option value="low"><?php echo $Status['Mage']; ?></option>
+							<option value="low"><?php echo $Status['Druid']; ?></option>
+							<option value="low"><?php echo $Status['Warlock']; ?></option>
+							<option value="low"><?php echo $Status['Hunter']; ?></option>
+							<option value="low"><?php echo $Status['Shaman']; ?></option>
+							<option value="low"><?php echo $Status['Priest']; ?></option>
+							<option value="low"><?php echo $Status['DeathKnight']; ?></option>
 					</select>
 				</div>
 
-				<div class="filter">
-					<label for="filter-locale">Level</label>
-
-					<select id="filter-locale" class="input select" data-column="4" data-filter="column">
-						<option value="">All</option>
-							<option value="spanish">Cataclysm Levels</option>
-							<option value="german">WoTLK Levels</option>
-							<option value="french">Burning Crusade Levels</option>
-							<option value="tournament">Vanilla Levels</option>
-							
-					</select>
-				</div>
 
 				<div class="filter">
 					<label for="filter-queue">Location</label>
@@ -201,7 +189,7 @@ _gaq.push(['_trackPageview']);
 		
 		>
 		<span>
-			<span>Reset</span>
+			<span><?php echo $Status['Reset']; ?></span>
 		</span>
 	</button>
 

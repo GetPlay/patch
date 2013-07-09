@@ -24,7 +24,8 @@
               <div class='carousel_inner'>
               <ul class='carousel_ul'>
                 <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['WriteNews']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico1" href='writenews.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['ViewEditNews']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
+		<li><span rel="tooltip" title="<strong style='color:#00B6FF'>123</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='info_rate.php'></a></span></li>
+		<li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['ViewEditNews']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
                 <li><span rel="tooltip" title="<strong style='color:#00B6FF'><?php echo $admin['ViewWeb']; ?></strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico4" href='viewwebsite.php'></a></span></li>
               </ul>
               </div>
