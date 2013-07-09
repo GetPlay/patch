@@ -17,7 +17,7 @@ include("../configs.php");
     $delete_com = mysql_query("DELETE FROM comments WHERE newsid = '".$_POST['id']."'");
     if ($delete_new == true && $delete_com == true){
       echo '<div class="alert-page" align="center"> The article has been deleted successfully!</div>';
-      echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
+      echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
     }
     else{
       echo '<div class="errors" align="center"><font color="red"> An ERROR has occured while deleting the article!</font></div>';
@@ -88,7 +88,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Удаление новости</h2>
+          <h2>Delete News</h2>
           <form class="search" method="get" action="#">
             <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
             <input name="" type="submit" value="" />
@@ -98,6 +98,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
           if (isset($_GET['id'])){
             mysql_select_db($server_db);
             $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,comments,content FROM news WHERE id = '".$_GET['id']."'"));
+            $author = mysql_fetch_assoc(mysql_query("SELECT * FROM users WHERE id = '".$new['author']."'"));
             if (!$new['id']){
               $error = true;
             }
@@ -106,22 +107,23 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
           }
           if (!$error) {
           echo'
-        <h3>Информация</h3>
+        <h3>Article Information</h3>
         <form method="post" action="" class="styleForm">
         <table>
           <tr>
-            <td width="65%"><p><strong>Заголовок: </strong>'.$new['title'].'</p></td>
+            <td width="65%"><p><strong>Title: </strong>'.$new['title'].'</p></td>
             <td rowspan="4" style="vertical-align:middle;">
-              <p align="center"><strong>Вы действительно хотите удалить эту новость?</strong></p>
+              <p align="center"><strong>Are you sure you want to delete this article?</strong></p>
               <input type="hidden" name="id" value="'.$new['id'].'" />
-              <p align="center"><button type="submit" name="delete" onclick="Form.submit(this)"><span>Удалить</span></button>
-              <a href="dashboard.php"><button name="reset" type="reset" value="Cancel"><span>Отменить</span></button></a></p>
+              <p align="center"><button type="submit" name="delete" onclick="Form.submit(this)"><span>Delete</span></button>
+              <a href="viewnews.php"><button name="reset" type="reset" value="Cancel"><span>Cancel</span></button></a></p>
+              <p align="center">(You will lose all the comments too)</p> 
             </td>
           </tr>
-          <tr><td><p><strong>Автор: </strong>'.$new['author'].'</p></td></tr>
-          <tr><td><p><strong>Дата: </strong>'.$new['date'].'</p></td></tr>
-          <tr><td><p><strong>Коментарии: </strong>'.$new['comments'].'</p></td></tr> 
-          <tr><td colspan="2"><h3>Текст:</h3><p>'.$new['content'].'</p></td></tr>
+          <tr><td><p><strong>Author: </strong>'.$author['firstName'].' '.$author['lastName'].' ('.$new['author'].')</p></td></tr>
+          <tr><td><p><strong>Date: </strong>'.$new['date'].'</p></td></tr>
+          <tr><td><p><strong>Replies: </strong>'.$new['comments'].'</p></td></tr> 
+          <tr><td colspan="2"><h3>Content:</h3><p>'.$new['content'].'</p></td></tr>
         </table>
         </form></div>';
           }elseif ($delete_new == false){ //just show error if we have not deleted am article

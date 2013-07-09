@@ -86,14 +86,14 @@ $('#checkall').toggleClass('clicked');
         if($del == true){
           echo '<div class="messages">
 		  <div><img src="images/success.png" alt="" />
-                  <p>‘а…л удален!</p>
+                  <p>Success! The media file has been deleted succesfully!</p>
                 </div></div>
             ';
         }
         else{
           echo'<div class="messages">
 		  <center><div><img src="images/errorIco.png" alt="" />
-                  <p>ќшибка!‘аил не удалось удалить!.</p>
+                  <p>Error! An error has ocurred while deleting the Selected Media File.</p>
                 </div><center>
 				<div class="2"><center><img src="images/infoIcon.png" alt="" /></center>
                 <ul><li><p>We apologise for the inconvinience but something has gone Wrong!</p></li> <li><p>Please recheck your Options that you have done lately and the changes.</p></li> <li><p>Also please re-view the Version of the website and the SQL version that you are using.</p></li></ul>

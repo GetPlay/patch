@@ -30,7 +30,7 @@ class wowheadparser
 		xml_parse_into_struct($parser,fgets($file),$values);
 		xml_parser_free($parser);
 		fclose($file);
-		$this->_imageName = $values[8];
+		$this->_imageName = $values[7];
 		$this->_htmlTooltip = $values[10];
 	}
     

@@ -34,9 +34,9 @@ if(!isset($_SESSION['username'])){
         if($select){
             $avatar = $select['race']."-".$select['gender'].".jpg";	
             $update = mysql_query("UPDATE users SET `avatar` = '".$avatar."', `character` ='".$character_id."', `char_realm` = '".$realm_extra['id']."' WHERE id = '".$account_extra['id']."'");
-            echo '<meta http-equiv="refresh" content="0;url=index.php"/>';
+            echo '<meta http-equiv="refresh" content="0;url=advanced.php"/>';
         }else{
-            echo '<meta http-equiv="refresh" content="0;url=index.php"/>';
+            echo '<meta http-equiv="refresh" content="0;url=advanced.php"/>';
         }
     }
       
@@ -104,41 +104,41 @@ if(!isset($_SESSION['username'])){
 		case 6:
 		case 8:
         case 9:
-		case 10: $side = "horde";
+		case 10: $side = "Орда";
 		break;
-		default: $side = "alliance";
+		default: $side = "Альянс";
 	}
     
     function racetxt($race){
         switch($race){
-            case 1: return "Human"; break;
-            case 2: return "Orc"; break;
-            case 3: return "Dwarf"; break;
-            case 4: return "Night Elf"; break;
-            case 5: return "Undead"; break;
-            case 6: return "Tauren"; break;
-            case 7: return "Gnome"; break;
-            case 8: return "Troll"; break;
-            case 9: return "Goblin"; break;
-            case 10: return "Blood Elf"; break;
-            case 11: return "Draenei"; break;
-            case 22: return "Worgen"; break;
+            case 1: return "Человек - "; break;
+            case 2: return "Орк - "; break;
+            case 3: return "Дворф - "; break;
+            case 4: return "Ночной Эльф - "; break;
+            case 5: return "Нежить - "; break;
+            case 6: return "Таурен - "; break;
+            case 7: return "Гном - "; break;
+            case 8: return "Троль - "; break;
+            case 9: return "Гоблин - "; break;
+            case 10: return "Эльф крови - "; break;
+            case 11: return "Дреней - "; break;
+            case 22: return "Ворген - "; break;
             
         }
     }
             
     function classtxt($class){
         switch($class){
-            case 1: return "Warrior"; break;
-            case 2: return "Paladin"; break;
-            case 3: return "Hunter"; break;
-            case 4: return "Rogue"; break;
-            case 5: return "Priest"; break;
-            case 6: return "Death Knight"; break;
-            case 7: return "Shaman"; break;
-            case 8: return "Mage"; break;
-            case 9: return "Warlock"; break;
-            case 10: return "Druid"; break;                
+            case 1: return "Воин"; break;
+            case 2: return "Паладин"; break;
+            case 3: return "Охотник"; break;
+            case 4: return "Разбойник"; break;
+            case 5: return "Жрец"; break;
+            case 6: return "Рыцарь смерти"; break;
+            case 7: return "Шаман"; break;
+            case 8: return "Маг"; break;
+            case 9: return "Чернокнижник"; break;
+            case 10: return "Друид"; break;                
         }
     }
     
@@ -171,7 +171,7 @@ if(!isset($_SESSION['username'])){
 		  
 			<div class="context-links">
 			<a href="<?php echo $website['root'];?>advanced.php?name=<?php echo $actualchar["name"]; ?>" title="<? echo $uplate['profile']; ?>" class="icon-profile link-first"><? echo $uplate['profile']; ?></a>
-			<a href="#" title="<?php echo $uplate['post']; ?>" class="icon-posts"> </a>
+			<a href="search_f.php" title="<?php echo $uplate['post']; ?>" class="icon-posts"> </a>
 			<a href="#" title="<?php echo $uplate['auction']; ?>" rel="np"class="icon-auctions"> </a>
 			<a href="#" title="<?php echo $uplate['events']; ?>" rel="np" class="icon-events link-last"> </a>
 			</div>
@@ -202,7 +202,7 @@ if(!isset($_SESSION['username'])){
                                     echo '" rel="np">
                                         <span class="pin"></span>
                                         <span class="name">'.$char["name"].'</span>
-                                        <span class="class color-c'.$char["class"].'">'.$char["level"] . ' ' . racetxt($char['race']) . ' ' . classtxt($char['class']).'</span>
+                                        <span class="class color-c'.$char["class"].'"> ' . racetxt($char['race']) . ' ' . classtxt($char['class']).', '.$char["level"] . ' Ур.</span>
                                         <span class="realm';
                                         
                                         $host = $realm['address'];

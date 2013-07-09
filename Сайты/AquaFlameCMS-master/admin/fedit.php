@@ -30,13 +30,18 @@ if(isset($_POST['s_categ'])){
   $change = mysql_query("UPDATE forum_forums SET categ = '".intval($_POST['f_categ'])."', num = '".($info['num'] + 1)."' WHERE id = '".intval($_POST['f_id'])."'");
   if($change) echo '<div align="center"><font color="green">The forum category has been changed</font></div>';
   else echo '<div align="center"><font color="red">An error has ocurred, the category could not been changed!</font></div>'; 
-}
+  }
 elseif(isset($_POST['save'])){
+  if (isset($_POST['f_locked'])) $lock = '1';
+  else $lock = '0';   
+  mysql_select_db($server_db);
+  $info = mysql_fetch_assoc(mysql_query("SELECT num FROM forum_forums WHERE categ = '".intval($_POST['f_categ'])."' ORDER BY num DESC LIMIT 0,1"));
+  if($info['num'] < 1) $info['num'] = '1';
   $image = $_POST['f_image'];
   $name =   htmlentities($_POST['f_name']);
   $desc =  htmlentities($_POST['f_desc']);
   mysql_select_db($server_db);
-  $change = mysql_query("UPDATE forum_forums SET image = '".$image."', name = '".$name."', description = '".$desc."' WHERE id = '".intval($_POST['f_id'])."'");
+  $change = mysql_query("UPDATE forum_forums SET locked = '".$lock."', image = '".$image."', name = '".$name."', description = '".$desc."' WHERE id = '".intval($_POST['f_id'])."'");
   if($change) echo '<div align="center"><font color="green">The changes have been saved!</font></div>';
   else echo '<div align="center"><font color="red">An error has ocurred, the changes could not been saved!</font></div>'; 
 }
@@ -195,24 +200,32 @@ function changeVal(val){
               float:none;
             }
           </style>
-          <h2>Edit Forums</h2>
-        </div>
-        <h3>Forum Information: 
-        <?php 
+          <h2><?php echo $admin['EditForum']; ?>
+		         <?php 
           if($forum['locked'] == '1'){
             echo '<font color="red">'.$forum['name'].'</font>';
           }else{
             echo '<font color="green">'.$forum['name'].'</font>';
           }
-        ?></h3>
+        ?></h2>
+        </div>
         <form method="post" action="" class="styleForm">
         <input type="hidden" value="<?php echo $forum['id']; ?>" name="f_id">
         <table width="100%" class="table-content">
-          <tr>
-            <td width="50%"><p><strong>Locked: </strong><?php if($forum['locked']==1) echo '<font color="red">YES</font>'; else echo '<font color="green">NO</font>';?></p></td>
+		          <tr>
+            <td width="50%"><p><strong><?php echo $admin['Lock']; ?></strong>
+            <style>
+            div.checker{
+              margin-top: -5px;
+            }
+            </style>
+            <input type="checkbox" name="f_locked" onchange="if(this.checked)<?php if($forum['locked'] == '1'){ echo '<font color="red"></font>';  }else{ echo '<font color="green"></font>'; } ?>
+			       <?php if($forum['locked']==1) echo '<img src=images/lock-locked.png>'; else echo '<img src=images/lock-open.png>';?></p></td>
+
+            </td>
             <td>
               <p>
-                <strong>Category: </strong>
+                <strong><?php echo $admin['Changv']; ?></strong>
                 <select name="f_categ">
                 <?php
                   $array_categ = array();
@@ -223,13 +236,13 @@ function changeVal(val){
                   }
                 ?>
                 </select> 
-                <button type="submit" name="s_categ">Change</button>
+                <button type="submit" name="s_categ"><?php echo $admin['Chang']; ?></button>
               </p>
             </td>
           </tr>
           <tr><td>
           <div class="folder">
-          <p><strong>Image: </strong><a href="javascript:;" onclick="pop('open');">
+          <p><strong><?php echo $admin['Image']; ?></strong><a href="javascript:;" onclick="pop('open');">
           <img id="imgLoad" src="../images/forum/forumicons/<?php echo $forum['image']; ?>.gif" alt="<?php echo $forum['image']; ?>" style="vertical-align:middle;"/></a>
           <input type="hidden" name="f_image" id="image" value="<?php echo $forum['image']; ?>">  
             <div  class="pop-image" id="pop" name="pop" onblur="pop('blur');" tabindex="1" style="width:80px;height:300px;left:80px;">
@@ -252,27 +265,27 @@ function changeVal(val){
             </div>
           </p></div>
           </td>
-          <td><p><strong>Delete Forum: </strong>
+          <td><p><strong><?php echo $admin['DelForum']; ?></strong>
             <select name="f_delete" id="delete">
-            <option value="del_all" selected="selected">Delete all threads</option>
+            <option value="del_all" selected="selected"><?php echo $admin['DelAllTopic']; ?></option>
             <?php
               while($op = mysql_fetch_assoc($all_forum)){
-                if($op['categ'] != $last_categ) echo '<optgroup label="Move to '.$array_categ[$op['categ']].'">';
+                if($op['categ'] != $last_categ) echo '<optgroup label="'.$array_categ[$op['categ']].'">';
                 echo'<option value="'.$op['id'].'" name="'.$op['name'].'" id="op_del'.$op['id'].'">'.$op['name'].'</option>';
                 $last_categ = $op['categ'];
               }
               ?>
             </select> 
-            <button type="submit" name="s_delete" onclick="return confirm_del();">Delete</button>
+            <button type="submit" name="s_delete" onclick="return confirm_del();"><?php echo $admin['Del']; ?></button>
           </p></td></tr>
-          <tr><td><p><strong>Name: </strong>
+          <tr><td><p><strong><?php echo $admin['Title']; ?>: </strong>
           <input type="text" name="f_name" value="<?php echo $forum['name']; ?>" class="reg" /></p></td>
           <td></td></tr>
-          <tr><td><p><strong>Description: </strong><br />
+          <tr><td><p><strong><?php echo $admin['Desc']; ?>: </strong><br />
           <textarea name="f_desc" class="reg" style="width:450px;"/><?php echo $forum['description']; ?></textarea></p></td>
           <td></td></tr>
-          <tr><td align="center"><p><button type="submit" name="save">Save Changes</button>
-          <a href="forums.php?id=<?php echo $categ['id']; ?>"><button type="reset" name="cancel">Cancel</button></a></p></td>
+          <tr><td align="center"><p><button type="submit" name="save"><?php echo $admin['Save']; ?></button>
+          <a href="forums.php?id=<?php echo $categ['id']; ?>"><button type="reset" name="cancel"><?php echo $admin['Cancel']; ?></button></a></p></td>
           <td></td></tr>
         </table>
         </form></div>

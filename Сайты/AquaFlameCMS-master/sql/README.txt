@@ -1,1 +1,0 @@
-Please make backup of your SQLs, not the whole Table or DB, because the new DB has a new Structure.

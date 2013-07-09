@@ -15,7 +15,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title>AquaFlame CMS Admin Panel</title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -73,46 +73,15 @@ $('#checkall').toggleClass('clicked');
     <!--Content Start-->
     <div id="content">
               <div class="datalist">
-
         <div class="heading">
-                  <h2>Последние <span rel="tooltip" title="<strong style='color:red'>Сообщения форума</strong><br/><br/>Что бы посмотреть больше сообщений на форуме,<br />нажмите на <strong>это сообщение</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="forumposts.php">сообщения</a></span> на форуме</h2>
-
+                  <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n1']; ?></strong><br/><br/><?php echo $admin['t1']; ?><br /><?php echo $admin['d1']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="forumposts.php"><?php echo $admin['Posts']; ?></a></span><?php echo $admin['Forum']; ?></h2>
                 </div>
         <ul id="lst">
                   <li>
-			<p class="editHead"><strong>Ред./Удал.</strong></p>
-            <p class="title"><strong>В теме</strong></p>
-            <p class="descripHead">Содержание</p>
-          </li>
-
-            <?php
-            mysql_select_db($server_db) or die (mysql_error());
-            $forum = mysql_query("SELECT id,content,name FROM forum_replies ORDER BY date DESC LIMIT 5");
-            while ($fcheck = mysql_fetch_assoc($forum)){
-			echo'
-            <li class="odd" >
-
-            <p class="edit"><a href="editposts.php?id='.$fcheck['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deleteposts.php?id='.$fcheck['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.substr(strip_tags($fcheck['name']),0,15).'...</p>
-            <p class="descripHead">'.substr(strip_tags($fcheck['content']),0,90).'</p>
-            </li>';
-			}?>
-                </ul> 
-                </div>
-                </div>
-
-    <div id="content">
-              <div class="datalist">
-        <div class="heading">
-                  <h2>Последние <span rel="tooltip" title="<strong style='color:red'>Темы форума</strong><br/><br/>Что бы посмотреть больше тем на форуме,<br />нажмите на <strong>это сообщение</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="forumtems.php">темы</a></span> на форуме</h2>
-
-                </div>
-        <ul id="lst">
-                  <li>
-			<p class="editHead"><strong>Ред./Удал.</strong></p>
-            <p class="title"><strong>Название</strong></p>
-            <p class="descripHead">Содержание</p>
-            <p class="incHead">Ответов</p>
+			<p class="editHead"><strong><?php echo $admin['Edit']; ?>/<?php echo $admin['Delete']; ?></strong></p>
+            <p class="title"><strong><?php echo $admin['Title']; ?></strong></p>
+            <p class="descripHead"><?php echo $admin['Desc']; ?></p>
+            <p class="incHead"><?php echo $admin['Replies']; ?></p>
           </li>
 
             <?php
@@ -121,8 +90,7 @@ $('#checkall').toggleClass('clicked');
             while ($fcheck = mysql_fetch_assoc($forum)){
 			echo'
             <li class="odd" >
-
-            <p class="edit"><a href="edittems.php?id='.$fcheck['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletetems.php?id='.$fcheck['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
+            <p class="edit"><a href="editfor.php?id='.$fcheck['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletefor.php?id='.$fcheck['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
             <p class="title">'.substr(strip_tags($fcheck['name']),0,15).'...</p>
             <p class="descrip">'.substr(strip_tags($fcheck['content']),0,90).'</p>
             <p class="inc">'.$fcheck['replies'].'</p>
@@ -130,59 +98,70 @@ $('#checkall').toggleClass('clicked');
 			}?>
                 </ul> 
 				</div>
+
+
+
 				<img src="images/sepLine.png" alt="" class="sepline" />
 				<div class="datalist">
 	   <div class="heading">
-                  <h2>Последние <a href="viewnews.php">новости</a> </h2>
+                  <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n2']; ?></strong><br/><br/><?php echo $admin['t2']; ?><br /><?php echo $admin['d2']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="viewnews.php"><?php echo $admin['News']; ?></a></span></h2>
                 </div>
         <ul id="lst">
         <li>
-			<p class="editHead"><strong>Ред./Удал.</strong></p>
-            <p class="title"><strong>Название</strong></p>
-            <p class="descripHead">Содержание</p>
-            <p class="incHead">Ответов</p>
+			<p class="editHead"><strong><?php echo $admin['Edit']; ?>/<?php echo $admin['Delete']; ?></strong></p>
+            <p class="title"><strong><?php echo $admin['Title']; ?></strong></p>
+            <p class="descripHead"><?php echo $admin['Desc']; ?></p>
+            <p class="incHead"><?php echo $admin['Replies']; ?></p>
           </li>
            <?php
             mysql_select_db($server_db) or die (mysql_error());
-            $result = mysql_query("SELECT id,title,content,comments FROM news ORDER BY date DESC LIMIT 5");
+            $result = mysql_query("SELECT id,title,content1,comments FROM news ORDER BY date DESC LIMIT 5");
             while ($new = mysql_fetch_assoc($result)){
               echo'
             <li>
-
             <p class="edit"><a href="editnews.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
             <p class="title">'.substr(strip_tags($new['title']),0,15).'...</p>
-            <p class="descrip">'.substr(strip_tags($new['content']),0,90).'</p>
+            <p class="descrip">'.substr(strip_tags($new['content1']),0,90).'</p>
             <p class="inc">'.$new['comments'].'</p>
             </li>';
             }?>
                 </ul></div>
+
+
+
 				<img src="images/sepLine.png" alt="" class="sepline" />
 			<div class="datalist">
 	      <div class="heading">
-          <h2>Последние <a href="viewusers.php">зарегестрированные</a> пользователи</span> </h2>
-
+          <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n3']; ?></strong><br/><br/><?php echo $admin['t3']; ?><br /><?php echo $admin['d3']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="viewnews.php"><?php echo $admin['Registered']; ?></a></span><?php echo $admin['Users']; ?></h2>
         </div>
         <ul id="lst">
-          <li><div class="chk"><a id="checkall"></a> </div>
-			      <p class="editHead"><strong>Логин</strong></p>
-            <p class="title"><strong>Ник персонажа</strong></p>
+        <li>
+			<p class="editHead2"><strong><?php echo $admin['Edit']; ?></strong></p>
+			<p class="editHead2"><strong><?php echo $admin['Username']; ?></strong></p>
+            <p class="title2"><strong><?php echo $admin['Name']; ?></strong></p>
+            <p class="descripHead2"><?php echo $admin['Char']; ?></p>
+            <p class="incHead"><?php echo $admin['Birth']; ?></p>
+            <p class="ip"><?php echo $admin['ip']; ?></p>
           </li>
 		   <?php
           mysql_select_db($server_db) or die (mysql_error());
-          $users = mysql_query("SELECT U.id,U.firstName, username FROM users U, $server_adb.account A 
+          $users = mysql_query("SELECT U.id,U.firstName,U.registerIp,U.birth,username FROM users U, $server_adb.account A 
             WHERE A.id = U.id ORDER BY id DESC LIMIT 5");
           while ($usercheck = mysql_fetch_assoc($users)){
+            mysql_select_db($server_cdb) or die (mysql_error());
+            $chars = mysql_query("SELECT name FROM characters WHERE account = '".$usercheck['id']."'");
 			      echo '
               <li>
-              <div class="chk">
-                <label>
-                  <input class="chkl" type="checkbox" name="chk" value="checkbox" />
-                </label>
-              </div>
-            <p class="edit"><a href="users_edit.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-              <p class="edit">'.$usercheck['username'].'</p>
-	      <p class="title">'.$usercheck['firstName'].'</p>
-
+		<p class="edit2"><a href="editusers.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a></p>
+              <p class="edit2">'.$usercheck['username'].'</p>
+	      <p class="title2">'.$usercheck['firstName'].'</p>
+              <p class="descrip2">';
+                while ($charcheck = mysql_fetch_assoc($chars)){
+                  echo $charcheck['name'].', ';
+                }
+              echo '</p>
+              <p class="inc">'.$usercheck['birth'].'</p>
+              <p class="iplist">'.$usercheck['registerIp'].'</p>
               </li>';
           }
         ?>

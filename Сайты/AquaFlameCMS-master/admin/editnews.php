@@ -1,6 +1,5 @@
 <?php
 include("../configs.php");
-ini_set("default_charset", "iso-8859-1" ); 
 
 	mysql_select_db($server_adb);
 	$check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
@@ -56,7 +55,7 @@ ini_set("default_charset", "iso-8859-1" );
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content = '".$content."', date = '".$date."' WHERE id = '".$_POST['id']."'");
+      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content = '".addslashes($content)."', date = '".$date."' WHERE id = '".$_POST['id']."'");
       if ($change_new == true){
         echo '<div class="alert-page" align="center"> The article has been updated successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
@@ -182,12 +181,11 @@ function preview(img,event){
             <input name="title" type="text" value="<?php echo $new['title']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['title']; ?>'" />
           </p> 
           <div class="folder">
-          <div class="folder">
-            <p>&#1048;&#1079;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1077;<br />
+            <p>Image<br />
             <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
             </p>
             <img src="<?php echo '../news/'.$new['image'].'.jpg'; ?>" id="imgLoad" />
-            <div  class="pop-image" id="pop">
+            <div  class="pop-image" id="pop" name="pop" onblur="pop('blur');" tabindex="1">
               <div class="note">
                 <table border=0>
                 <?php       
@@ -197,7 +195,7 @@ function preview(img,event){
                   $pathimagen=$path.$imagen;
                   $nombre = substr($imagen,0,strlen($imagen)-11); //get the name for the db
                   echo "<tr>"; // para empezar una nueva linea
-                  echo "<td><a href='javascript:;' onclick=changeVal('".$nombre."');pop('close');>
+                  echo "<td><a href='javascript:;' name='pop' onclick=changeVal('".$nombre."');pop('close');>
                   <img src='$pathimagen' width='160px' border=0 onmouseover=preview('".$pathimagen."','on'); onmouseout=preview('".$pathiamgen."','out');></a></td>";  //Clik on it and the name appear on the textbox
                   echo "</tr>";
                 }

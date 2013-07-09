@@ -34,7 +34,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title>Админ Панель</title>
+		<title>AquaFlame CMS Admin Panel</title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -76,7 +76,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
 			});
   $('#checkall').click(function(){
 
- $('span').toggleClass('checked
+ $('span').toggleClass('checked');
 $('#checkall').toggleClass('clicked');
 
  }); 
@@ -84,7 +84,7 @@ $('#checkall').toggleClass('clicked');
 	</script>
 </head>
 <body class="bgc">
-	<div id="admin">');
+	<div id="admin">
     <div id="wrap">
       <div id="head">
         <?php include('header.php'); ?>
@@ -94,9 +94,11 @@ $('#checkall').toggleClass('clicked');
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2>Изменение/удаление новостей</h2>
+        <h2>News Posts</h2>
         <select name="sort">
-          <option>Сортировать по</option>
+          <option>Sort By</option>
+          <option>Option1</option>
+          <option>Option2</option>
         </select> 
       </div>
       <div class="pagination">
@@ -120,10 +122,10 @@ $('#checkall').toggleClass('clicked');
       <ul id="lst">
         <li>
           <div class="chk"><a id="checkall"></a> </div>
-			    <p class="editHead"><strong>Измен./Удал.</strong></p>
-          <p class="title"><strong>Заголовок</strong></p>
-          <p class="descripHead">Текст</p>
-          <p class="incHead">Коментарии</p>
+			    <p class="editHead"><strong>Edit/Delete</strong></p>
+          <p class="title"><strong>Title</strong></p>
+          <p class="descripHead">Description</p>
+          <p class="incHead">Replies</p>
         </li>
            <?php
             mysql_select_db($server_db) or die (mysql_error());
@@ -137,8 +139,8 @@ $('#checkall').toggleClass('clicked');
               </label>
             </div>
             <p class="edit"><a href="editnews.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.$new['title'].'</p>
-            <p class="descrip">'.substr(strip_tags($new['content']),0,90).'</p>
+            <p class="title">'.substr(strip_tags($new['title']),0,16).' ...</p>
+            <p class="descrip">'.substr(strip_tags($new['content']),0,90).' ...</p>
             <p class="inc">'.$new['comments'].'</p>
             </li>';
             }?>

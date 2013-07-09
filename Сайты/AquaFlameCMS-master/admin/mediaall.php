@@ -116,19 +116,22 @@ $('#checkall').toggleClass('clicked');
     <div id="content">
 			<div class="datalist">
 	     <div class="heading">
-        <h2>Медиа файлы</h2>
+        <h2>Manage Media</h2>
         <form method="get" action="">
           <select name="sort" onchange="submit(this.form)">
-            <option value="" <?php if(!isset($_GET['sort'])){echo 'selected="selected"';} ?>>Сотировать по</option>
-            <option value="date" <?php if($_GET['sort']=='date'){echo 'selected="selected"';} ?>>Дате</option>
-            <option value="type" <?php if($_GET['sort']=='type'){echo 'selected="selected"';} ?>>Типу</option>
-            <option value="title" <?php if($_GET['sort']=='title'){echo 'selected="selected"';} ?>>Заголовку</option>
-            <option value="author" <?php if($_GET['sort']=='author'){echo 'selected="selected"';} ?>>Автору</option>
+            <option value="" <?php if(!isset($_GET['sort'])){echo 'selected="selected"';} ?>>Sort by</option>
+            <option value="date" <?php if($_GET['sort']=='date'){echo 'selected="selected"';} ?>>Date</option>
+            <option value="type" <?php if($_GET['sort']=='type'){echo 'selected="selected"';} ?>>Type</option>
+            <option value="title" <?php if($_GET['sort']=='title'){echo 'selected="selected"';} ?>>Title</option>
+            <option value="author" <?php if($_GET['sort']=='author'){echo 'selected="selected"';} ?>>Author</option>
           </select>
           <select name="type" onchange="submit(this.form)">
-            <option value="all" <?php if(!isset($_GET['type']) || $_GET['type']=='all'){echo 'selected="selected"';} ?>>Все</option>
-            <option value="0" <?php if($_GET['type']=='0'){echo 'selected="selected"';} ?>>Видео</option>
-            <option value="2" <?php if($_GET['type']=='2'){echo 'selected="selected"';} ?>>Скриншоты</option>
+            <option value="all" <?php if(!isset($_GET['type']) || $_GET['type']=='all'){echo 'selected="selected"';} ?>>All</option>
+            <option value="0" <?php if($_GET['type']=='0'){echo 'selected="selected"';} ?>>Videos</option>
+            <option value="1" <?php if($_GET['type']=='1'){echo 'selected="selected"';} ?>>Wallpapers</option>
+            <option value="2" <?php if($_GET['type']=='2'){echo 'selected="selected"';} ?>>Screen</option>
+            <option value="3" <?php if($_GET['type']=='3'){echo 'selected="selected"';} ?>>Art</option>
+            <option value="3" <?php if($_GET['type']=='4'){echo 'selected="selected"';} ?>>Comic</option>
           </select>
         </form>
       </div>
@@ -154,12 +157,12 @@ $('#checkall').toggleClass('clicked');
         <thead>
         <tr>  
           <th class="chk"><input type="checkbox" /></th>   
-          <th class="edit"><strong>Переместить/Удалить</strong></th>   
-          <th class="title"><strong>Заголовок</strong></th>
-          <th class="desc"><strong>Текст</strong></th>
-          <th class="inc"><strong>Автор</strong></th>
-          <th class="inc"><strong>Дата</strong></th>
-          <th class="inc"><strong>Тип</strong></th>
+          <th class="edit"><strong>Unapprove/Delete</strong></th>   
+          <th class="title"><strong>Title</strong></th>
+          <th class="desc"><strong>Description</strong></th>
+          <th class="inc"><strong>Author</strong></th>
+          <th class="inc"><strong>Date</strong></th>
+          <th class="inc"><strong>Type</strong></th>
         </tr>
         </thead>
         <tbody>
@@ -183,7 +186,10 @@ $('#checkall').toggleClass('clicked');
           <td class="inc">'.date('d-m-Y', strtotime($row['date'])).'</td> 
           <td class="inc">';
       if ($row['type'] == '0'){echo 'Video';}
+      elseif ($row['type'] == '1'){echo 'Wallpaper';}
       elseif ($row['type'] == '2'){echo 'Screenshot';}
+      elseif ($row['type'] == '3'){echo 'ArtWork';}
+      elseif ($row['type'] == '4'){echo 'Comic';}    
       echo' </td>         
         </tr>';  
       }       

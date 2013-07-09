@@ -41,7 +41,7 @@ $server_adb = "authbeta";         // auth\realmd Database name
 # Extra ################
 
 $website['realm'] = "Set Realmlist Your_Realmlist";
-$mysql_cod = 'utf-8';
+$mysql_cod = 'cp-1251';
 
 # Comunity Links ############
 
