@@ -204,12 +204,6 @@ $page_cat = "home";
 					<?php
 						include("panel/promo.php");
 						include("panel/server_information.php");
-						if(isset($_SESSION['username']))
-						{
-							echo '<br><br>';
-							include("panel/vote.php");
-						}else
-						include("panel/vote_offline.php");
 						include("panel/services.php");
 						include("panel/popular_topics.php");
 					?>

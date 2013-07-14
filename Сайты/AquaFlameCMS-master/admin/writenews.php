@@ -28,16 +28,17 @@ ini_set("default_charset", "iso-8859-1" );    //For special chars
   if (isset($_POST['save'])){
     $title = mysql_real_escape_string($_POST['title']);
     $image = mysql_real_escape_string($_POST['image']);
-    $content = $_POST['content'];
-    $content = trim($content);
+    $content1 = mysql_real_escape_string($_POST['content1']);
+    $content2 = $_POST['content2'];
+    $content2 = trim($content2);
     $date = date ("Y-m-d H:i:s", time()); 
 
-    $emptyContent = strip_tags($content);
+    $emptyContent = strip_tags($content2);
     if (empty($emptyContent)){                          //Check if content is empty, title will never be empty
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $save_new = mysql_query("INSERT INTO news (author, date, content, title, image) VALUES ('".$login['id']."','".$date."','".addslashes($content)."','".$title."','".$image."');") or die(mysql_error());
+      $save_new = mysql_query("INSERT INTO news (author, date, content, title, image) VALUES ('".$login['id']."','".$date."','".$content1."','".addslashes($content2)."','".$title."','".$image."');") or die(mysql_error());
       if ($save_new == true){
         echo '<div class="alert-page" align="center"> The new has been created successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
@@ -53,7 +54,7 @@ ini_set("default_charset", "iso-8859-1" );    //For special chars
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title>AquaFlame CMS Admin Panel</title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -151,19 +152,14 @@ function preview(img,event){
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Write News</h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+          <h2><?php echo $admin['writeNews']; ?></h2>
         </div>
-        <h3>Head</h3>
         <form method="post" action="" class="styleForm">
-          <p>Title<br />
-            <input name="title" id="title" type="text" value="Enter Title" class="reg" onfocus="if(this.value=='Enter Title')this.value=''" onblur="if(this.value=='')this.value='Enter Title'" />
+          <p><?php echo $admin['Title']; ?><br />
+            <input name="title" id="title" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
           </p> 
           <div class="folder">
-            <p>Image<br />
+            <p><?php echo $admin['Image']; ?><br />
             <input id="image" name="image" type="text" value="" class="reg" onfocus="pop('open');" />
             </p>
             <img src="" id="imgLoad" style="display:none;"/>
@@ -189,13 +185,16 @@ function preview(img,event){
               <img src="../news/staff.jpg" alt="img" id="imgP" />   
             </div>   
           </div>
-          
-          <h3>Content</h3>
+                    <h3>Content1</h3>
           <div class="txt">
-            <textarea id="input" name="content"></textarea>
+          <textarea name="content1" class="reg" style="width:450px;height:50px;"/></textarea>
           </div>
-          <input name="save" type="submit" value="Save Changes" />
-          <input name="reset" type="reset" value="Cancel" />
+          <h3>Content2</h3>
+          <div class="txt">
+            <textarea id="input" name="content2"></textarea>
+          </div>
+          <input name="save" type="submit" value="<?php echo $admin['Save']; ?>" />
+          <input name="reset" type="reset" value="<?php echo $admin['Cancel']; ?>" />
         </form>
       </div>
     </div>

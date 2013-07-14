@@ -12,10 +12,9 @@ include("../configs.php");
 	}
   
   if (isset($_POST['delete'])){
-    mysql_select_db($server_db);
-    $delete_new = mysql_query("DELETE FROM news WHERE id = '".$_POST['id']."'");
-    $delete_com = mysql_query("DELETE FROM comments WHERE newsid = '".$_POST['id']."'");
-    if ($delete_new == true && $delete_com == true){
+    mysql_select_db($server_cdb);
+    $delete_new = mysql_query("DELETE FROM gm_tickets WHERE ticketId = '".$_POST['id']."'");
+    if ($delete_new == true){
       echo '<div class="alert-page" align="center"> The article has been deleted successfully!</div>';
       echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
     }
@@ -52,31 +51,6 @@ include("../configs.php");
 	 );
  });
 </script>
-    <script type="text/javascript" src="js/DD_roundies_0.0.2a-min.js"></script>
-    <script type="text/javascript">
-DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
-
-</script>
-    <script type="text/javascript" src="js/script-carasoul.js"></script>
-    <script src="js/jquery.uniform.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-      $(function(){
-        $("input, select, button").uniform();
-      });
-    </script>
-    <link rel="stylesheet" href="css/uniform.defaultstyle2.css" type="text/css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.cleditor.css" />
-    <script type="text/javascript" src="js/jquery.cleditor.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("#input").cleditor(
-			{
-				width:        900, // width not including margins, borders or padding
-                height:       250, // height not including margins, borders or padding
-			}
-							 );
-      });
-</script>
 </head>
 <body class="bgc">
 	<div id="admin">
@@ -88,18 +62,13 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Delete News</h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+          <h2>Удаление тикета</h2>
         </div>
         <?php
-          if (isset($_GET['id'])){
-            mysql_select_db($server_db);
-            $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,comments,content1,content2 FROM news WHERE id = '".$_GET['id']."'"));
-            $author = mysql_fetch_assoc(mysql_query("SELECT * FROM users WHERE id = '".$new['author']."'"));
-            if (!$new['id']){
+          if (isset($_GET['ticketId'])){
+            mysql_select_db($server_cdb);
+            $new = mysql_fetch_assoc(mysql_query("SELECT ticketId,guid,name,message,createTime,mapId,posX,posY,posZ,lastModifiedTime,closedBy,assignedTo,comment,response,completed,escalated,viewed,haveTicket FROM gm_tickets WHERE ticketId = '".$_GET['ticketId']."'"));
+            if (!$new['ticketId']){
               $error = true;
             }
           }else{
@@ -107,24 +76,19 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
           }
           if (!$error) {
           echo'
-        <h3>Article Information</h3>
+        <h3>Информация</h3>
         <form method="post" action="" class="styleForm">
         <table>
           <tr>
-            <td width="65%"><p><strong>Title: </strong>'.$new['title'].'</p></td>
-            <td rowspan="4" style="vertical-align:middle;">
-              <p align="center"><strong>Are you sure you want to delete this article?</strong></p>
-              <input type="hidden" name="id" value="'.$new['id'].'" />
-              <p align="center"><button type="submit" name="delete" onclick="Form.submit(this)"><span>Delete</span></button>
-              <a href="viewnews.php"><button name="reset" type="reset" value="Cancel"><span>Cancel</span></button></a></p>
-              <p align="center">(You will lose all the comments too)</p> 
+              <p align="center"><strong>Вы действительно хотите удалить этот тикет?</strong></p>
+              <p align="center"><button type="submit" name="delete" onclick="Form.submit(this)"><span>Удалить</span></button>
+              <a href="viewnews.php"><button name="reset" type="reset" value="Cancel"><span>Отвена</span></button></a></p>
             </td>
           </tr>
-          <tr><td><p><strong>Author: </strong>'.$author['firstName'].' '.$author['lastName'].' ('.$new['author'].')</p></td></tr>
-          <tr><td><p><strong>Date: </strong>'.$new['date'].'</p></td></tr>
-          <tr><td><p><strong>Replies: </strong>'.$new['comments'].'</p></td></tr> 
-          <tr><td colspan="2"><h3>Content1:</h3><p>'.$new['content1'].'</p></td></tr>
-          <tr><td colspan="2"><h3>Content2:</h3><p>'.$new['content2'].'</p></td></tr>
+          <tr><td><p><strong>Автор: </strong>'.$new['name'].'</p></td></tr>
+          <tr><td><p><strong>Номер: </strong> #'.$new['ticketId'].'</p></td></tr>
+          <tr><td colspan="2"><h3>Тикет:</h3><p>'.$new['message'].'</p></td></tr>
+          <tr><td colspan="2"><h3>Ответ:</h3><p>'.$new['comment'].'</p></td></tr>
         </table>
         </form></div>';
           }elseif ($delete_new == false){ //just show error if we have not deleted am article

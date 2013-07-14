@@ -250,7 +250,7 @@ tr:hover .fansite-link,
 #header .user-plate .character-name .arrow { background: url("../images/layout/cms/char-arrow.png") 0 3px no-repeat; display: inline-block; width: 11px; height: 15px; }
 #header .user-plate .character-name:hover .arrow { background-position: 0 -145px; }
 
-#header .user-plate .card-login { width: 215px; height: 65px; padding: 32px 110px 0 30px; display: block; color: #EEE; font-size: 14px; background: url("../images/layout/cards/login.png") 0 0 no-repeat; position: absolute; bottom: 0; right: 0; text-overflow: ellipsis; line-height: 1.4em; }
+#header .user-plate .card-login { width: 215px; height: 65px; padding: 32px 110px 0 30px; display: block; color: #EEE; font-size: 13px; background: url("../images/layout/cards/login.png") 0 0 no-repeat; position: absolute; bottom: 0; right: 0; text-overflow: ellipsis; line-height: 1.4em; }
 #header .user-plate .card-login strong { color: #ffb100; }
 #header .user-plate a.card-login:hover { color: #fff; background-position: 0 -97px; }
 #header .user-plate a.card-login:hover strong { color: white; }

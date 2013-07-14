@@ -26,7 +26,7 @@ include("../configs.php");
   
   if (isset($_GET['id'])){
   mysql_select_db($server_db);
-  $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,image,content FROM news WHERE id = '".$_GET['id']."'"));
+  $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,image,content1,content2 FROM news WHERE id = '".$_GET['id']."'"));
   if (!$new['id']){
     $error = true;
   }
@@ -38,8 +38,9 @@ include("../configs.php");
   if (isset($_POST['save'])){
     $title = mysql_real_escape_string($_POST['title']);
     $image = mysql_real_escape_string($_POST['image']);
-    $content = $_POST['content'];
-    $content = trim($content);
+    $content2 = mysql_real_escape_string($_POST['content2']);
+    $content1 = $_POST['content1'];
+    $content1 = trim($content1);
     if ($_POST['author']){
       $author = $login['id'];
       }else{
@@ -50,12 +51,12 @@ include("../configs.php");
     }else{
       $date = $new['date'];
     }
-    $emptyContent = strip_tags($content);
+    $emptyContent = strip_tags($content1);
     if (empty($emptyContent)){                          //Check if content is empty, title will never be empty
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content = '".addslashes($content)."', date = '".$date."' WHERE id = '".$_POST['id']."'");
+      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content2 = '".$content2."', content1 = '".addslashes($content1)."', date = '".$date."' WHERE id = '".$_POST['id']."'");
       if ($change_new == true){
         echo '<div class="alert-page" align="center"> The article has been updated successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
@@ -71,7 +72,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title>AquaFlame CMS Admin Panel</title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -168,20 +169,15 @@ function preview(img,event){
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2>Edit News: <?php if($error){die ('<font color="red">Sorry an error has ocurred!</font>');} ?><?php echo $new['title']; ?></h2>
-          <form class="search" method="get" action="#">
-            <input name="search" type="text" value="search" onfocus="if(this.value=='search')this.value=''" onblur="if(this.value=='')this.value='search'" />
-            <input name="" type="submit" value="" />
-          </form>
+          <h2><?php echo $admin['EditNews']; ?><?php if($error){die ('<font color="red">Sorry an error has ocurred!</font>');} ?><?php echo $new['title']; ?></h2>
         </div>
-        <h3>Head</h3>
         <form method="post" action="" class="styleForm">
         <input type="hidden" name="id" value="<?php echo $new['id']; ?>" />
-          <p>Title<br />
+          <p><?php echo $admin['Title']; ?><br />
             <input name="title" type="text" value="<?php echo $new['title']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['title']; ?>'" />
           </p> 
           <div class="folder">
-            <p>Image<br />
+            <p><?php echo $admin['Image']; ?><br />
             <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
             </p>
             <img src="<?php echo '../news/'.$new['image'].'.jpg'; ?>" id="imgLoad" />
@@ -207,18 +203,16 @@ function preview(img,event){
               <img src="" alt="img" id="imgP" />   
             </div>   
           </div> 
-          <p>   
-            <input class="chkl" type="checkbox" name="date" value="checkbox" />Change date to current time
-          </p>
-          <p>   
-            <input class="chkl" type="checkbox" name="author" value="checkbox" />Set me as Author
-          </p>
-          <h3>Content</h3>
+          <h3>Content1</h3>
           <div class="txt">
-            <textarea id="input" name="content"><?php echo $new['content']; ?></textarea>
+		  <textarea name="content1" class="reg" style="width:450px;height:50px;"/><?php echo $new['content1']; ?></textarea>
           </div>
-          <input name="save" type="submit" value="Save Changes" />
-          <a href="viewnews.php"><input name="reset" type="reset" value="Cancel" /></a>
+          <h3>Content2</h3>
+          <div class="txt">
+		  <textarea id="input" name="content2"><?php echo $new['content2']; ?></textarea>
+          </div>
+          <input name="save" type="submit" value="<?php echo $admin['Save']; ?>" />
+          <a href="viewnews.php"><input name="reset" type="reset" value="<?php echo $admin['Cancel']; ?>" /></a>
         </form>
       </div>
     </div>

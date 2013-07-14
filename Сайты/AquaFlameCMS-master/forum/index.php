@@ -3,7 +3,7 @@ $page_cat = "forums";
 require_once("../configs.php");
 ?>
 <head>
-<title><?php echo $website['title']; ?></title>
+<title><?php echo $website['title']; ?> - <?php echo $Forums['Forums']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="../wow/static/local-common/images/favicons/wow.ico" type="image/x-icon" />

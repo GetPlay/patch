@@ -1,8 +1,7 @@
 <?php
 include("../configs.php");
-
 	mysql_select_db($server_adb);
-	$check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
+	$check_query = mysql_query("SELECT gmlevel from account inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
     $login = mysql_fetch_assoc($check_query);
 	if($login['gmlevel'] < 3)
 	{
@@ -11,8 +10,8 @@ include("../configs.php");
 		');
 	}
 	
-  mysql_select_db($server_db) or die (mysql_error());
-  $sql = mysql_query("SELECT id FROM slideshows");
+  mysql_select_db($server_cdb) or die (mysql_error());
+  $sql = mysql_query("SELECT ticketId FROM gm_tickets");
   //PAGINATION BEGIN
   $size=10; 
   $num_r = mysql_num_rows($sql);
@@ -35,7 +34,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['ViewSlide']; ?></title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['ticket']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -95,20 +94,16 @@ $('#checkall').toggleClass('clicked');
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2><?php echo $admin['ViewSlide']; ?></h2>
-		        <form method="post" action="" class="pagination">
-          <input type="text" class="pag" name="new_categ" value="" style="margin: 20px 0 0 29px;"/>
-          <a href="addslide.php"><?php echo $admin['addSlide']; ?> </a>
-        </form>
+        <h2><?php echo $admin['all']; ?><?php echo $admin['n4']; ?></h2>
       </div>
       <div class="pagination">
         <?php
           if ($num_p > 1){
-         if ($page > 1){echo '<a href="viewslideshows.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
-         if ($page > 2){echo '<a href="viewslideshows.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
+         if ($page > 1){echo '<a href="viewtickets.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
+         if ($page > 2){echo '<a href="viewtickets.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
          echo $page;
-         if ($page < $num_p-1){echo '...<a href="viewslideshows.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
-         if ($page < $num_p){echo '|<a href="viewslideshows.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
+         if ($page < $num_p-1){echo '...<a href="viewtickets.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
+         if ($page < $num_p){echo '|<a href="viewtickets.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
          echo'
           <form method="get" action="">
             <input type="hidden" name="sort" value="'.$_GET['sort'].'">
@@ -121,19 +116,21 @@ $('#checkall').toggleClass('clicked');
       </div>
       <ul id="lst">
         <li>
-			    <p class="editHead"><strong><?php echo $admin['Edit']; ?>/<?php echo $admin['Delete']; ?></strong></p>
-          <p class="title"><strong><?php echo $admin['Title']; ?></strong></p>
+			    <p class="editHead"><strong><?php echo $admin['addotv']; ?>/<?php echo $admin['Delete']; ?></strong></p>
+          <p class="title"><strong><?php echo $admin['author']; ?></strong></p>
           <p class="descripHead"><?php echo $admin['Desc']; ?></p>
+          <p class="incHead"><?php echo $admin['Lock']; ?></p>
         </li>
            <?php
-            mysql_select_db($server_db) or die (mysql_error());
-            $result = mysql_query("SELECT id,title,description FROM slideshows");
+            mysql_select_db($server_cdb) or die (mysql_error());
+            $result = mysql_query("SELECT ticketId,name,message FROM gm_tickets ORDER BY ticketId DESC LIMIT $start,$size");
             while ($new = mysql_fetch_assoc($result)){
               echo'
             <li>
-            <p class="edit"><a href="editslideshows.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deleteslideshows.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.$new['title'].'</p>
-			<p class="title">'.$new['description'].'</p>
+            <p class="edit"><a href="edittickets.php?ticketId='.$new['ticketId'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletetickets.php?ticketId='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
+            <p class="title">'.substr(strip_tags($new['name']),0,16).' ...</p>
+            <p class="descrip">'.substr(strip_tags($new['message']),0,90).' ...</p>
+            <p class="inc">-</p>
             </li>';
             }?>
       </ul>

@@ -129,7 +129,7 @@ $('#checkall').toggleClass('clicked');
         </li>
            <?php
             mysql_select_db($server_db) or die (mysql_error());
-            $result = mysql_query("SELECT id,title,content,comments FROM news ORDER BY date DESC LIMIT $start,$size");
+            $result = mysql_query("SELECT id,title,content1,comments FROM news ORDER BY date DESC LIMIT $start,$size");
             while ($new = mysql_fetch_assoc($result)){
               echo'
             <li>
@@ -140,7 +140,7 @@ $('#checkall').toggleClass('clicked');
             </div>
             <p class="edit"><a href="editnews.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
             <p class="title">'.substr(strip_tags($new['title']),0,16).' ...</p>
-            <p class="descrip">'.substr(strip_tags($new['content']),0,90).' ...</p>
+            <p class="descrip">'.substr(strip_tags($new['content1']),0,90).' ...</p>
             <p class="inc">'.$new['comments'].'</p>
             </li>';
             }?>

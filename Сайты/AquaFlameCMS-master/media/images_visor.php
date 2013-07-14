@@ -5,7 +5,7 @@ $type = intval($_GET['type']);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" xmlns:xml="http://www.w3.org/XML/1998/namespace" class="chrome chrome8">
 <head><link rel="stylesheet" type="text/css" href="/s7.addthis.com/static/r07/widget49.css" media="all" />
-<title>Media - World of Warcraft</title>
+<title><?php echo $website['title']; ?> - <?php echo $Media['Media']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="../wow/static/local-common/images/favicons/wow.ico" type="image/x-icon"/>
@@ -55,7 +55,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 </li>
 <li>
 <a href="../media.php" rel="np">
-Media
+<?php echo $Media['Media']; ?>
 </a>
 </li>
 <li class="last childless">
@@ -150,15 +150,14 @@ var itemPaths = [<?php echo $paths; ?>];
 <div id="media-meta-data">
 <div class="meta-data">
 <dl class="meta-details">
-<dt>Date: </dt>
-<dd></dd>
-<dt class="dt-separator">Author:</dt>
+<dt><?php echo $Media['dataadd']; ?></dt>
+<dd></dd><?php echo $Media['Author']; ?></dt>
 <dd></dd>
 </dl>
 <dl class="meta-details">
 <dt class="dt-downloads">
 <a class="format" href="#" onclick="window.open(this.href);return false;">
-Download the fullsize Image
+<?php echo $Media['LoadOr']; ?>
 </a>
 </dt>
 </dl>

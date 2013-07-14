@@ -2,7 +2,7 @@
 <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>World of Warcraft</title>
+    <title><?php echo $website['title']; ?></title>
 	<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="wow/static/local-common/css/common.css?v15"/>
     <link rel="stylesheet" type="text/css" href="wow/static/_themes/bam/css/master.css?v1"/>
@@ -32,7 +32,7 @@
   </head>
   <body>
     <div id="embedded-login">
-      <h2>World of Warcraft - Logging Out</h2>
+      <h2><?php echo $website['title']; ?> - <?php echo $logout['logout']; ?></h2>
 
       <style type="text/css">
       .loader {
@@ -43,7 +43,7 @@
       </style>
       <br />
       <center>
-      <h3>Logging Out</h3><br />
+      <h3><?php echo $logout['logout']; ?></h3><br />
       <div class="loader"></div>
       <?php session_unset(); session_destroy(); ?>
       <meta http-equiv="refresh" content="2;url=index.php"/>

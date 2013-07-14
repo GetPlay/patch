@@ -41,7 +41,7 @@ $server_adb = "authbeta";         // auth\realmd Database name
 # Extra ################
 
 $website['realm'] = "Set Realmlist Your_Realmlist";
-$mysql_cod = 'cp-1251';
+$mysql_cod = 'UTF-8';
 
 # Comunity Links ############
 
@@ -54,7 +54,7 @@ $comun_link['vk'] = "http://vk.com/";            // Your adress of VK comunity
 
 $website['title'] = "WoWFailureCMS";
 $website['slogan'] = "WoWFailureCMS, get your best CMS today, simple and fast!";
-$website['address'] = "http://localhost";
+$website['address'] = "http://127.0.0.1";
 $website['root'] = "/";
 
 ######################

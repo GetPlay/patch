@@ -100,6 +100,31 @@ $('#checkall').toggleClass('clicked');
 				</div>
 
 
+								<img src="images/sepLine.png" alt="" class="sepline" />
+				<div class="datalist">
+	   <div class="heading">
+                  <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n4']; ?></strong><br/><br/><?php echo $admin['t4']; ?><br /><?php echo $admin['d4']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="viewtickets.php"><?php echo $admin['tickets']; ?></a></span></h2>
+                </div>
+        <ul id="lst">
+        <li>
+			<p class="editHead"><strong><?php echo $admin['addotv']; ?>/<?php echo $admin['Delete']; ?></strong></p>
+            <p class="incHead"><?php echo $admin['author']; ?></p>
+            <p class="descripHead"><?php echo $admin['Desc']; ?></p>
+            <p class="title"><strong><?php echo $admin['Lock']; ?></strong></p>
+          </li>
+           <?php
+            mysql_select_db($server_cdb) or die (mysql_error());
+            $tick = mysql_query("SELECT ticketId,name,message FROM gm_tickets ORDER BY ticketId DESC LIMIT 5");
+            while ($tickets = mysql_fetch_assoc($tick)){
+              echo'
+            <li>
+            <p class="edit"><a href="edittickets.php?ticketId='.$tickets['ticketId'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletetickets.php?ticketId='.$tickets['ticketId'].'"><img src="images/deletIco.png" alt="" /></a></p>
+            <p class="title">'.substr(strip_tags($tickets['name']),0,15).'</p>
+            <p class="descrip">'.substr(strip_tags($tickets['message']),0,90).'</p>
+            </li>';
+            }?>
+                </ul></div>
+
 
 				<img src="images/sepLine.png" alt="" class="sepline" />
 				<div class="datalist">
@@ -152,7 +177,7 @@ $('#checkall').toggleClass('clicked');
             $chars = mysql_query("SELECT name FROM characters WHERE account = '".$usercheck['id']."'");
 			      echo '
               <li>
-		<p class="edit2"><a href="editusers.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a></p>
+		<p class="edit2"><a href="editusers.php?id='.$usercheck['id'].'"><img src="images/editIco.png" alt="" /></a></p>
               <p class="edit2">'.$usercheck['username'].'</p>
 	      <p class="title2">'.$usercheck['firstName'].'</p>
               <p class="descrip2">';

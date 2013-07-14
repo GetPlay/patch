@@ -203,7 +203,7 @@ function preview(img,event){
           </div> 
           <h3><?php echo $admin['Desc']; ?></h3>
           <div class="txt">
-            <textarea id="input" name="description"><?php echo $new['description']; ?></textarea>
+            <textarea name="description"><?php echo $new['description']; ?></textarea>
           </div>
           <input name="save" type="submit" value="<?php echo $admin['Save']; ?>" />
           <a href="viewnews.php"><input name="reset" type="reset" value="<?php echo $admin['Cancel']; ?>" /></a>

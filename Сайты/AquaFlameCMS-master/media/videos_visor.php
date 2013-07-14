@@ -3,7 +3,7 @@ require_once("../configs.php");
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" xmlns:xml="http://www.w3.org/XML/1998/namespace" class="chrome chrome8">
 <head><link rel="stylesheet" type="text/css" href="/s7.addthis.com/static/r07/widget49.css" media="all" />
-<title><?php echo $website['title']; ?></title>
+<title><?php echo $website['title']; ?> - <?php echo $Media['Media']; ?> - <?php echo $Media['Videos']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="../wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
@@ -139,7 +139,8 @@ _gaq.push(['_trackPageview']);
           </table>
           </div>
           <table width="940">
-            <tr><td width="40"></td><td width="860" height="40">by <a href="#"><?php echo $posterInfo['firstName']; ?></a><span> // </span><?php echo $videos['date']; ?></td><td width="40"></td></tr>
+       <tr><td width="40"></td><td width="860" height="40"><?php echo $Media['Author']; ?> <a href="#"><?php echo $posterInfo['firstName']; ?></a><span>  </span>   |   <?php echo $Media['dataadd']; ?>
+<?php echo $videos['date']; ?></td><td width="40"></td></tr>
 					  <tr><td width="40"></td><td width="860"><font color='#C09A67'><?php echo $videos['description']; ?></font></td><td width="40"></td></tr>
             <tr><td width="40" height="40"></td><td width="860" valign="bottom"><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;"><?php echo $comments['comments']; ?>(<?php echo $videos['comments']; ?>)</span></td><td width="40"></td></tr>
           </table>
@@ -227,7 +228,7 @@ _gaq.push(['_trackPageview']);
 						}else{
 							echo'
 							 <table class="dynamic-center"><tr><td>
-							 <a class="ui-button button1 " href="?login" onclick="return Login.open(\'../loginframe.php\')"><span><span>Add a reply</span></span></a>
+							 <a class="ui-button button1 " href="?login" onclick="return Login.open(\'../loginframe.php\')"><span><span>Добавить комментарий</span></span></a>
 							 </td></tr></table>';
 						}
 						$get_comments = mysql_query("SELECT * FROM media_comments WHERE mediaid = '".$videos['id']."' ORDER BY DATE DESC");

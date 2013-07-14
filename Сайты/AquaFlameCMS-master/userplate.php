@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if(!isset($_SESSION['username'])){
     ?>
     <div class="user-plate">
@@ -221,11 +221,7 @@ if(!isset($_SESSION['username'])){
                     ?>
                 </div>
                 
-                <a href="#" class="manage-chars" onclick=""><!--CharSelect.swipe('in', this); return false;-->
-                    <span class="plus"></span>
-                    <?php echo $uplate['manage']; ?><br />
-                    <span><?php echo $uplate['customize']; ?></span>
-                </a>
+
 			</div>
 			<!--
 			<div class="secondary chars-pane" style="display: none">

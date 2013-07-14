@@ -68,8 +68,7 @@ include("configs.php");
        }
       </style>
       <center>
-      <p><h3>Success</h3></p>
-	  <h3>Loading&#8230;</h3><br />
+	  <h3><?php echo $loading['loading']; ?></h3><br />
       <div class="loader"></div>
       
       <?php
@@ -89,7 +88,7 @@ include("configs.php");
        }
       </style>
       <center>
-      <h3>Your Credentials are Incorrect.</h3><br />
+      <h3><?php echo $errorLogin['errorLogin']; ?></h3><br />
       <div class="loader"></div>
       <meta http-equiv="refresh" content="2"/>
       </center>
