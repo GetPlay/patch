@@ -12,7 +12,7 @@ if (!isset($_SESSION['username'])) {
 <title><?php echo $Vote['Vote'];?> - <?php echo $website['title']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css" />
 <!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css" /><![endif]-->
 <!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie6.css" /><![endif]-->

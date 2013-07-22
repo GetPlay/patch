@@ -5,12 +5,16 @@ $home['home'] = "Главная";
 $status['status'] = "Статус миров";
 $status['status1'] = "Статус игрового мира ";
 $Community['Community'] = "Сообщество";
+$Community['prof'] = "Профили";
+$Community['Char'] = "Персонаж";
+$Community['Guild'] = "Гильдия";
+$Community['Community2'] = "Чтобы перейти к своему профилю, авторизуйтесь на сайте.";
 $Media['Media'] = "Медиа";
 $Forums['Forums'] = "Форум";
 $Services['Services'] = "Услуги";
 $Wow3['Wow3'] = " - Выбор языков";
 $Latest['Latest'] = "Latest Written Posts ";
-$View_all['View_all'] = "Посмотреть все ";
+$View_all['View_all'] = "Посмотреть все";
 $all['all'] = "All Main Posts";
 $P_topics['P_topics'] = "Популярные темы";
 $comments['comments'] = "Комментарии ";
@@ -41,6 +45,8 @@ $Support8['Support8'] = "&#1041;&#1072;&#1079;&#1072; &#1079;&#1085;&#1072;&#108
 $Support9['Support9'] = "Вопросы и ответы";
 $Support10['Support10'] = "Запросы";
 $Support11['Support11'] = "Get Support and explore the knowledgebase.";
+$Support12['Support12'] = "Состояние запросов";
+$Support13['Support13'] = "Подать запрос";
 
 $Games['Games'] = "Игры";
 $Client_down['Client_down'] = "Скачать игровой клиент";
@@ -596,7 +602,6 @@ $uplate['nochars'] = "Нет персонажей";
 
 //Starting Armory
 $armory['talents'] = "ТАЛАНТЫ";
-$armory['APoints'] = "Арена";
 $armory['summary'] = "Данные о персонаже";
 $armory['reputation'] = "Репутация";
 $armory['3d'] = "Развернутый";
@@ -714,6 +719,12 @@ $armory['showAll']="Показать все статистики";
 $armory['showMain']="Показать тольк оосновные статистики";
 $armory['Faction1'] = "Орда";
 $armory['Faction0'] = "Альянс";
+$armory['achiev'] = "Достижения";
+$armory['pets'] = "Спутники и транспорт";
+$armory['prof'] = "Профессии";
+$armory['pvp'] = "PvP";
+$armory['events'] = "Достижения";
+$armory['auctions'] = "Лоты";
 //Finish Armory
 
 //Others

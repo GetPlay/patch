@@ -10,7 +10,7 @@ $character = Factory_Armory::createCharacter($_GET['name']);
 <head>
 <title><?php echo $website['title']; ?> - Armory</title>
 <meta content="false" http-equiv="imagetoolbar" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css" />
 <!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie.css" /><![endif]-->
 <!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie6.css" /><![endif]-->
@@ -127,7 +127,7 @@ Services
 	<?php echo $name_realm1['realm']; ?>
 	</span>
 	</div>
-	<div class="achievements"><a href=""><?php echo $armory['APoints']; ?></a></div>
+	<div class="achievements"><a href=""></a></div>
 	</div>
 	</div>
 	<ul class="profile-sidebar-menu" id="profile-sidebar-menu">
@@ -135,42 +135,38 @@ Services
 	<a href="" class="" rel="np">
 	<span class="arrow"><span class="icon"><?php echo $armory['summary']; ?></span></span></a>
 	</li>
-	<!--<li class="">
-	<a href="" class="" rel="np">
-	<span class="arrow"><span class="icon">Talents &amp; Glyphs</span></span></a>
-	</li>
-	<li class=" disabled">
-	<a href="javascript:;" class=" has-submenu vault" rel="np">
-	<span class="arrow"><span class="icon">Auctions</span></span></a>
-	</li>
-	<li class=" disabled">
-	<a href="javascript:;" class=" vault" rel="np">
-	<span class="arrow"><span class="icon">Events</span></span></a>
+	<li class="">
+	<a href="auctions.php" class=" has-submenu vault" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['auctions']; ?></span></span></a>
 	</li>
 	<li class="">
-	<a href="" class=" has-submenu" rel="np">
-	<span class="arrow"><span class="icon">Achievements</span></span></a>
+	<a href="events.php" class=" vault" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['events']; ?></span></span></a>
 	</li>
 	<li class="">
-	<a href="" class="" rel="np">
-	<span class="arrow"><span class="icon">Companions &amp; Mounts</span></span></a>
+	<a href="achiev.php" class="has-submenu" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['achiev']; ?></span></span></a>
 	</li>
 	<li class="">
-	<a href="" class=" has-submenu" rel="np">
-	<span class="arrow"><span class="icon">Professions</span></span></a>
-	</li>-->
+	<a href="pets.php" class="" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['pets']; ?></span></span></a>
+	</li>
+	<li class="">
+	<a href="prof.php" class="has-submenu" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['prof']; ?></span></span></a>
+	</li>
 	<li class="">
 	<a href="reputation.php" class="" rel="np">
 	<span class="arrow"><span class="icon"><?php echo $armory['reputation']; ?></span></span></a>
-	</li><!--
-	<li class="">
-	<a href="" class="" rel="np">
-	<span class="arrow"><span class="icon">PvP</span></span></a>
 	</li>
 	<li class="">
-	<a href="" class="" rel="np">
-	<span class="arrow"><span class="icon">Activity Feed</span></span></a>
-	</li>-->
+	<a href="pvp.php" class="" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['pvp']; ?></span></span></a>
+	</li>
+	<li class="">
+	<a href="guild.php" class="has-submenu" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $search['Guild']; ?></span></span></a>
+	</li>
 	</ul>
 	<div class="summary-sidebar-links">
 	</div>
@@ -1591,10 +1587,10 @@ Services
 					manaRegen: "Increases mana regeneration by {0} every 5 seconds while not casting.",
 					meleeDps: "Increases damage with melee weapons by {0} damage per second.",
 					rangedDps: "Increases damage with ranged weapons by {0} damage per second.",
-					petArmor: "Increases your pet’s Armour by {0}.",
-					petAttackPower: "Increases your pet’s Attack Power by {0}.",
-					petSpellDamage: "Increases your pet’s Spell Damage by {0}.",
-					petAttackPowerSpellDamage: "Increases your pet’s Attack Power by {0} and Spell Damage by {1}."
+					petArmor: "Increases your petвЂ™s Armour by {0}.",
+					petAttackPower: "Increases your petвЂ™s Attack Power by {0}.",
+					petSpellDamage: "Increases your petвЂ™s Spell Damage by {0}.",
+					petAttackPowerSpellDamage: "Increases your petвЂ™s Attack Power by {0} and Spell Damage by {1}."
 				},
 				decreases: {
 					damageTaken: "Reduces Physical Damage taken by {0}%.",
@@ -1807,13 +1803,13 @@ var xsToken = '';
 var Msg = {
 support: {
 ticketNew: 'Ticket {0} was created.',
-ticketStatus: 'Ticket {0}’s status changed to� {1}.',
+ticketStatus: 'Ticket {0}вЂ™s status changed toВ {1}.',
 ticketOpen: 'Open',
 ticketAnswered: 'Answered',
 ticketResolved: 'Resolved',
 ticketCanceled: 'Cancelled',
 ticketArchived: 'Archived',
-ticketInfo: 'Need� Info',
+ticketInfo: 'NeedВ Info',
 ticketAll: 'View All Tickets'
 },
 cms: {

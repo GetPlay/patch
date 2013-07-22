@@ -5,10 +5,10 @@ $page_cat = "gamesncodes";
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
 <head>
-<title><?php echo $BanL['BanL11']; ?> - <?php echo $website['title']; ?></title>
+<title><?php echo $website['title']; ?> - <?php echo $BanL['BanL11']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-us/data/opensearch" title="Battle.net Search" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css" />
 <!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css" />

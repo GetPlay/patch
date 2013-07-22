@@ -12,7 +12,7 @@ require_once("configs.php");
 <![endif]-->
 <meta name="robots" content="none" />
 <meta http-equiv="refresh" content="120" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <!--[if LT IE 9]>
 <link rel="shortcut icon" type="image/x-icon" href="images/root.ico" />
 <![endif]-->

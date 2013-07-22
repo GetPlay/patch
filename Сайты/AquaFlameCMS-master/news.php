@@ -6,7 +6,7 @@ require_once("configs.php");
 <title><?php echo $website['title']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-gb/data/opensearch" title="WoW Search" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css?v15" />
 <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css?v15" /><![endif]-->
@@ -205,7 +205,7 @@ _gaq.push(['_trackPageview']);
 </a>
 </div>
 <div class="poll-interior">
-<h3>What’s Your Level of Secondary Profession Expertise?</h3>
+<h3>Whatâ€™s Your Level of Secondary Profession Expertise?</h3>
 <div class="results verbose">
 <table>
 <tr>
@@ -219,7 +219,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>I’ve leveled three or four of the secondary professions to their maximum, and use them regularly.</td>
+<td>Iâ€™ve leveled three or four of the secondary professions to their maximum, and use them regularly.</td>
 <td>
 <div class="result-container max">
 <div class="result" style="width: 78px; ">
@@ -239,7 +239,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>My main focus among the secondary professions is archaeology. I’m unearthing most of Azeroth.</td>
+<td>My main focus among the secondary professions is archaeology. Iâ€™m unearthing most of Azeroth.</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 27px; ">
@@ -249,7 +249,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>Just fishing. I’m the master angler around here!</td>
+<td>Just fishing. Iâ€™m the master angler around here!</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 7px; ">
@@ -259,7 +259,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>I use first aid, primarily. These wounds aren’t going to wrap themselves.</td>
+<td>I use first aid, primarily. These wounds arenâ€™t going to wrap themselves.</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 27px; ">
@@ -269,7 +269,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>You’ll usually find me cooking in the kitchen. (ding) Order’s up!</td>
+<td>Youâ€™ll usually find me cooking in the kitchen. (ding) Orderâ€™s up!</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 8px; ">
@@ -279,7 +279,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>I’ve missed out on all of the secondary professions, so far.</td>
+<td>Iâ€™ve missed out on all of the secondary professions, so far.</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 33px; ">

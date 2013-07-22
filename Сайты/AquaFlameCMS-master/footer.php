@@ -1,4 +1,4 @@
-<div class="wrapper">
+﻿<div class="wrapper">
 <div id="footer">
 <div id="sitemap">
 <div class="column">
@@ -200,7 +200,7 @@ echo '>'
 </a>
 </li>
 <li>
-<a href="" tabindex="55" class="support-category">
+<a href="options/tickets.php" tabindex="55" class="support-category">
 <strong class="support-caption"><?php echo $Support10['Support10']; ?></strong>
 <?php echo $Support7['Support7']; ?>
 </a>

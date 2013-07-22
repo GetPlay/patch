@@ -3,7 +3,7 @@
 <title>Im looking for someone to play with - Forums - World of Warcraft</title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<link rel="shortcut icon" href="/wow/static/local-common/images/favicons/wow.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="/wow/static/local-common/images/favicons/index.ico" type="image/x-icon"/>
 <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-gb/data/opensearch" title="Battle.net Search" />
 <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common.css?v37" />
 <!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie.css?v37" />

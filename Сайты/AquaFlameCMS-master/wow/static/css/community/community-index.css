@@ -1,9 +1,30 @@
 @charset "utf-8";
+.community-home #content .content-bot { background: url("../../images/homepage/shadow.png") repeat-y 0 0 transparent; }
 
-.community-home #content .content-top { background: url("../../images/community/bg-community-top.jpg") 0 0 no-repeat; }
+#left { width: 646px; float: left; }
+#right { width: 307px; float: right; padding-right: 18px;}
 
-.community-home .top-banner {width:100%; height:332px;}
+#left .profiles {	
+	width: 646px;
+    height: 328px;
+	background: url("../../images/community/bg-profiles.jpg") no-repeat 100% 0;
+}
+#left .main-feature { background: url("../../images/community/left-features-bg.jpg") repeat-y 0 0 #23120B; }
+#left .main-feature .main-feature-wrapper { background: url("../../images/community/left-features-bg-first.jpg") no-repeat 0 0; padding: 51px 0 50px 0; }
 
+
+.profiles {position: relative; z-index: 0;}
+.profiles h4 { font: 52px Palatino Linotype, Sans-serif; color: #efe3d2; margin-left: 30px; padding-top: 20px; }
+.profiles .profiles-tip { font-size: 12px; color: #98562a; float: right; width: 290px; text-align: center; margin-top: 167px; padding: 10px; }
+#sidebar-profiles-search { width: 305px; margin: 19px 0 0 30px; float: left; }
+#sidebar-profiles-search  .sidebar-title { margin-bottom: 20px; }
+.profiles-search-block { margin-top: 15px; }
+.profiles-search-block .profiles-search-title { display: block; }
+.profiles-search-block input { line-height: 26px; color: #707070; font-size: 13px; background-color: #f1ebd7; border: 0; height: 26px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; width: 175px; margin-top: 7px; padding: 0 9px 0 9px; }
+.profiles-search-block input.active, .profiles-search-block input:focus {color:#000;}
+.profiles-search-block .ui-button {position:relative; top:-1px;}
+
+#sidebar-leaderboards .sidebar-title h3, #sidebar-profiles-search .sidebar-title h3 { font-size: 17px; }
 .community-home .top-banner .ui-slideshow {width:100%; height:300px; z-index:0;}
 .community-home .top-banner .ui-slideshow .slide {width:647px;  height:301px; background-position:7px 0;}
 .community-home .top-banner .ui-slideshow .mask {width:647px;  height:301px; background: url("../../images/community/community-carousel-mask.png") 50% 0 no-repeat;}
@@ -17,8 +38,6 @@
 .community-home .top-banner .ui-slideshow .paging a:hover .paging-title {color:#fff;}
 
 .community-content-body {width:100%; background: url("../../images/community/bg-community-body2.jpg") 0 0 repeat-y; }
-.community-content-body  .body-wrapper {width:100%; background: url("../../images/community/bg-community-body3.jpg") 0 100% no-repeat; padding-bottom:30px; }
-.community-content-body  .content-wrapper {width:100%; background: url("../../images/community/bg-community-body1.jpg") 0 0 no-repeat; min-height:698px; }
 .community-content-body  .content-wrapper .inside-col {width:587px; float:left; margin-left:30px;}
 .community-content-body  .content-wrapper .outside-col {width:307px; float:right; margin-right:19px;}
 

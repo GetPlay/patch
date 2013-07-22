@@ -10,7 +10,7 @@ $character = Factory_Armory::createCharacter($_GET['name']);
 <head>
 <title><?php echo $website['title']; ?> - Armory</title>
 <meta content="false" http-equiv="imagetoolbar" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css" />
 <!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie.css" /><![endif]-->
 <!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie6.css" /><![endif]-->
@@ -1717,10 +1717,10 @@ Services
 					manaRegen: "Increases mana regeneration by {0} every 5 seconds while not casting.",
 					meleeDps: "Increases damage with melee weapons by {0} damage per second.",
 					rangedDps: "Increases damage with ranged weapons by {0} damage per second.",
-					petArmor: "Increases your pet’s Armour by {0}.",
-					petAttackPower: "Increases your pet’s Attack Power by {0}.",
-					petSpellDamage: "Increases your pet’s Spell Damage by {0}.",
-					petAttackPowerSpellDamage: "Increases your pet’s Attack Power by {0} and Spell Damage by {1}."
+					petArmor: "Increases your petвЂ™s Armour by {0}.",
+					petAttackPower: "Increases your petвЂ™s Attack Power by {0}.",
+					petSpellDamage: "Increases your petвЂ™s Spell Damage by {0}.",
+					petAttackPowerSpellDamage: "Increases your petвЂ™s Attack Power by {0} and Spell Damage by {1}."
 				},
 				decreases: {
 					damageTaken: "Reduces Physical Damage taken by {0}%.",
@@ -1933,13 +1933,13 @@ var xsToken = '';
 var Msg = {
 support: {
 ticketNew: 'Ticket {0} was created.',
-ticketStatus: 'Ticket {0}’s status changed to� {1}.',
+ticketStatus: 'Ticket {0}вЂ™s status changed toВ {1}.',
 ticketOpen: 'Open',
 ticketAnswered: 'Answered',
 ticketResolved: 'Resolved',
 ticketCanceled: 'Cancelled',
 ticketArchived: 'Archived',
-ticketInfo: 'Need� Info',
+ticketInfo: 'NeedВ Info',
 ticketAll: 'View All Tickets'
 },
 cms: {

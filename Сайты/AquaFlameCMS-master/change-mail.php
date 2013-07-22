@@ -12,7 +12,7 @@ if (!isset($_SESSION['username'])) {
 <title><?php echo $website['title']; ?><?php echo $Reg['Reg37']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-gb/data/opensearch" title="Battle.net Search" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/management/common.css" />
 <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css?v22" /><![endif]-->
@@ -186,13 +186,13 @@ var xsToken = 'b213c993-d61d-4957-9141-9da399fd7d54';
 var Msg = {
 support: {
 ticketNew: 'Ticket {0} was created.',
-ticketStatus: 'Ticket {0}’s status changed to {1}.',
+ticketStatus: 'Ticket {0}â€™s status changed toÂ {1}.',
 ticketOpen: 'Open',
 ticketAnswered: 'Answered',
 ticketResolved: 'Resolved',
 ticketCanceled: 'Cancelled',
 ticketArchived: 'Archived',
-ticketInfo: 'Need Info',
+ticketInfo: 'NeedÂ Info',
 ticketAll: 'View All Tickets'
 },
 cms: {
@@ -230,10 +230,10 @@ urlPrompt: 'URL Address:'
 },
 ui: {
 viewInGallery: 'View in gallery',
-loading: 'Loading…',
+loading: 'Loadingâ€¦',
 unexpectedError: 'An error has occurred',
-fansiteFind: 'Find this on…',
-fansiteFindType: 'Find {0} on…',
+fansiteFind: 'Find this onâ€¦',
+fansiteFindType: 'Find {0} onâ€¦',
 fansiteNone: 'No fansites available.'
 },
 grammar: {

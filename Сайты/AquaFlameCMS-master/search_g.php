@@ -9,7 +9,7 @@ $page_cat = "services";
 <title><?php echo $Ind['Ind2']; ?> - <?php echo $website['title']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css" />
 <!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie.css" /><![endif]-->
 <!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie6.css" /><![endif]-->
@@ -135,7 +135,6 @@ _gaq.push(['_trackPageLoadTime']);
                     <th><a href="" class="sort-link" ><span class="arrow">'.$search['Realm'].'</span></a></th>
                     <th class=" last-child"><a href="" class="sort-link" ><span class="arrow">'.$search['Battlegroup'].'</span></a></th>
                     <th width="6%"><a href="" class="sort-link" ><span class="arrow">'.$search['Faction'].'</span></a></th>
-                    <th width="6%"><a href="" class="sort-link" ><span class="arrow">'.$search['Level'].'</span></a></th>
                   </tr>
                 </thead>
 	<!-- Here start the list of characters. -->';     //Echo first row of table
@@ -148,7 +147,7 @@ _gaq.push(['_trackPageLoadTime']);
                         <td>'.$name_realm1['realm'].'</td>
                         <td align="center">-</td>
                         <td class="align-center"><span class="icon-frame frame-14 " data-tooltip=""><img src="wow/static/images/icons/faction/'.translate($row["race"]).'" alt="" width="14" height="14" /></span></td>
-                        <td class="align-center">'.$row["level"].'</td>
+
                       </tr>';
                       }
                   echo '</tbody>';

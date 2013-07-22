@@ -5,13 +5,14 @@ $page_cat = "community";
 <HTML>
 <head>
 <title><?php echo $website['title']; ?> - <?php echo $Community['Community']; ?></title>
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-gb/data/opensearch" title="Battle.net Search" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css?v15" />
 <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css?v15" /><![endif]-->
 <!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie6.css?v15" /><![endif]-->
 <!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie7.css?v15" /><![endif]-->
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow.css?v3" />
+<link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/cms.css?v33" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/css/community/community-index.css" />
 <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/community/community-ie.css?v3" /><![endif]-->
 <!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/community/community-ie6.css?v3" /><![endif]-->
@@ -29,8 +30,7 @@ $page_cat = "community";
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
 try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
-//]]>
-</script>
+//]]></script>
 <![endif]-->
 <script type="text/javascript">
 //<![CDATA[
@@ -59,84 +59,83 @@ include("header.php");
 <li class="last"><a href="community.php" rel="np"><?php echo $Community['Community']; ?></a></li>
 </ol>
 </div>
-<div class="content-bot">			
-	<div class="top-banner">
-    <script type="text/javascript" src="wow/static/local-common/js/slideshow.js"></script>
-    <script type="text/javascript" src="wow/static/local-common/js/third-party/swfobject.js"></script>
+<div class="content-bot">	
+	
+	<div id="left">
+		<div class="profiles">
+			<h4><?php echo $Community['Community']; ?></h4>
+			<div class="profiles-section">
 
-     <div id="slideshow" class="ui-slideshow">
-        <div class="slideshow">
-        
-				<?php
-				$query = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 4");
-				$i=0;
-				while($slideshows = mysql_fetch_array($query)){
-					if($i==0){
-					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/slideshows/'.$slideshows['image'].'\'); opacity: 0.997084;"></div>';
-					}else{
-					echo '<div class="slide" id="slide-'.$i.'" style="background-image: url(\'images/slideshows/'.$slideshows['image'].'\'); display: none; "></div>';
-					}
-					$i++;
-				}
-			?>
+	<div class="sidebar-module " id="sidebar-profiles-search">
+			<div class="sidebar-title">
+	<h3 class="category title-profiles-search"><?php echo $Community['prof']; ?></h3>
+			</div>
+
+		<div class="sidebar-content">
+					<div class="profiles-search-block">
+						<span class="profiles-search-title"><?php echo $Community['Char']; ?></span>
+						<form action="search_c.php" method="get">
+							<input type="hidden" name="f" value="wowcharacter" />
+							<input type="text" id="wowcharacter" name="search" />
+
+	<button class="ui-button button1 " type="submit" >
+		<span>
+			<span><?php echo $Ind['Ind2']; ?></span>
+		</span>
+	</button>
+
+						</form>
+					</div>
+					<div class="profiles-search-block">
+						<span class="profiles-search-title"><?php echo $Community['Guild']; ?></span>
+						<form action="search_g.php" method="get">
+							<input type="hidden" name="f" value="wowguild" />
+							<input type="text" id="wowguild" name="search" />
+							
+
+	<button class="ui-button button1 " type="submit" >
+		<span>
+			<span><?php echo $Ind['Ind2']; ?></span>
+		</span>
+	</button>
+
+						</form>
+					</div>
+		</div>
+	</div>
+				<p class="profiles-tip"><?php echo $Community['Community2']; ?></p>
+	<span class="clear"><!-- --></span>
+
+
+						</form>
 		</div>
 
-			<div class="paging">
-			<?php
-				$query2 = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 4");
-				$i=0;
-				while($slideshows = mysql_fetch_assoc($query2)){
-					echo '<a href="javascript:;" id="paging-'.$i.'" onclick="Slideshow.jump('.$i.', this);"';
-					if($i==0){ print 'class="curent"'; }else if($i==3){ print 'class="last-slide"'; }else { print 'class=""'; } echo'>
-				<span class="paging-title">'.$slideshows['title'].' </span>
-				<span class="paging-date">'.$slideshows['date'].'</span></a>';
-					$i++;
-				}
-			?>
-
-			</div>
-		<?php
-		$query3 = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 1");
-		$slideshowsz = mysql_fetch_assoc($query3);
-		echo '<div class="caption" style="display: block;"><h3><a href="#" class="link"> '.$slideshowsz['title'].'</a></h3>'.$slideshowsz['description'].'</div>';
-		?>
-		<div class="preview" style="display: none;"></div>
-		<div class="mask"></div>
-    </div>
-
-	<script type="text/javascript">
-//<![CDATA[
-$(function() {
-Slideshow.initialize('#slideshow', [
-<?php
-$getting_lastq = mysql_query("SELECT * FROM slideshows ORDER BY id DESC");
-$getting_last = mysql_fetch_assoc($getting_lastq);
-$last=$getting_last['id']-4;
-$query = mysql_query("SELECT * FROM slideshows WHERE id >= '".$last."' ORDER BY id DESC LIMIT 4");
-$i=0;
-while($slideshows = mysql_fetch_assoc($query)){
-echo '
-{
-image: "'.$slideshows['image'].'",
-desc: "'.$slideshows['description'].'",
-title: "'.$slideshows['title'].'",
-url: "'.$slideshows['url'].'",
-id: "'.$slideshows['id'].'"
-}';
-if($i!=3) echo ',';
-$i++;
-}
-?>
-]);
-
-});
-//]]>
-</script>
+</div>
 </div>
 	
+
 	<div class="community-content-body">
 		<div class="body-wrapper">
 			<div class="content-wrapper">
+				
+				<div class="outside-col">
+					<div class="outside-section social-media">
+						<div class="title-block">
+							<span class="title"><?php echo $Community['comm9']; ?></span>
+						<span class="clear"><!-- --></span>
+						</div>
+						<div class="content-block">
+							<ul>
+								<li><a href="<?php echo $comun_link['Facebook']; ?>" class="facebook" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm16']; ?></span><span class="content-desc"><?php echo $Community['comm10']; ?></span></a></li>
+								<li><a href="<?php echo $comun_link['Twitter']; ?>" class="Twitter" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm17']; ?></span><span class="content-desc"><?php echo $Community['comm11']; ?></span></a></li>
+								<li><a href="<?php echo $comun_link['Youtube']; ?>" class="Youtube" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm18']; ?></span><span class="content-desc"><?php echo $Community['comm12']; ?></span></a></li>
+								<li><a href="<?php echo $comun_link['vk']; ?>" class="vk" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm15']; ?></span><span class="content-desc"><?php echo $Community['comm14']; ?></span></a></li>
+								
+						</div>
+						<span class="clear"><!-- --></span>
+				</div>
+					
+				</div>
 				<div class="inside-col">				
 					<div class="official-content">
 						<div class="inside-section contests">
@@ -174,7 +173,7 @@ $i++;
 								<span class="panel">
 									<span class="wrapper">
 										<span class="banner-title"><?php echo $Community['FanArt']; ?><em><span class="total">(<?php echo $totalSql; ?>)</span></em></span>
-										<span class="view-all"><?php echo $View_all['View_all']; ?><?php echo $Community['FanArt']; ?></span>
+										<span class="view-all"><?php echo $View_all['View_all']; ?></span>
 									</span>
 								</span>
 							</a>
@@ -194,7 +193,7 @@ $i++;
 								<span class="panel">
 									<span class="wrapper">
 										<span class="banner-title"><?php echo $Media['Comics']; ?> <em><span class="total">(<?php echo $totalSql; ?>)</span></em></span>
-										<span class="view-all"><?php echo $View_all['View_all']; ?><?php echo $Media['Comics']; ?></span>
+										<span class="view-all"><?php echo $View_all['View_all']; ?></span>
 									</span>
 								</span>
 							</a>
@@ -214,7 +213,7 @@ $i++;
 								?>
 
 										<span class="banner-title"><?php echo $Community['Screenshots']; ?> <em><span class="total">(<?php echo $totalSql; ?>)</span></em></span>
-										<span class="view-all"><?php echo $View_all['View_all']; ?><?php echo $Community['Screenshots']; ?></span>
+										<span class="view-all"><?php echo $View_all['View_all']; ?></span>
 									</span>
 								</span>
 							</a>
@@ -231,7 +230,7 @@ $i++;
 								?>
 
 										<span class="banner-title"><?php echo $Community['Wallpap']; ?> <em><span class="total">(<?php echo $totalSql; ?>)</span></em></span>
-										<span class="view-all"><?php echo $View_all['View_all']; ?><?php echo $Community['Wallpap']; ?></span>
+										<span class="view-all"><?php echo $View_all['View_all']; ?></span>
 									</span>
 								</span>
 							</a>
@@ -240,33 +239,6 @@ $i++;
 						
 						<span class="clear"><!-- --></span>
 					</div>	
-				</div>
-				
-				<div class="outside-col">
-										
-					<div class="outside-section social-media">
-						<div class="title-block">
-							<span class="title"><?php echo $Community['comm9']; ?></span>
-						<span class="clear"><!-- --></span>
-						</div>
-						<div class="content-block">
-							<ul>
-							<style type="text/css">
-							#wow {
-    background: url("wow/static/images/community/001.png") no-repeat;
-}
-							</style>
-								<li><a href="<?php echo $comun_link['Facebook']; ?>" class="facebook" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm16']; ?></span><span class="content-desc"><?php echo $Community['comm10']; ?></span></a></li>
-								<li><a href="<?php echo $comun_link['Twitter']; ?>" class="Twitter" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm17']; ?></span><span class="content-desc"><?php echo $Community['comm11']; ?></span></a></li>
-								<li><a href="<?php echo $comun_link['Youtube']; ?>" class="Youtube" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm18']; ?></span><span class="content-desc"><?php echo $Community['comm12']; ?></span></a></li>
-								<li><a href="<?php echo $comun_link['vk']; ?>" class="vk" target="_blank"><span class="content-title"><?php echo $website['title']; ?> <?php echo $Community['comm15']; ?></span><span class="content-desc"><?php echo $Community['comm14']; ?></span></a></li>
-								
-								
-						</div>
-						<span class="clear"><!-- --></span>
-
-					</div>
-					
 				</div>
 			</div>		
 		</div>	

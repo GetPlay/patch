@@ -7,7 +7,7 @@ include("configs.php");
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
 		<title></title>
-		<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+		<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="wow/static/login/static/local-common/css/common.css?v22"/>
 		<link rel="stylesheet" type="text/css" href="wow/static/login/static/_themes/bam/css/master.css?v1"/>
 		<script type="text/javascript" src="wow/static/login/static/local-common/js/third-party/jquery.js"></script>
