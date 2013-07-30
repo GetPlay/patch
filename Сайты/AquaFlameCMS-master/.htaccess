@@ -1,8 +1,11 @@
 AddHandler application/x-httpd-php .php .htm .html
 
 ErrorDocument 404 /404.php
+ErrorDocument 403 /error.php?code=403
 
+# Disable directories listing in browser
 Options -Indexes
+RewriteEngine On
 
 AddDefaultCharset UTF-8
 

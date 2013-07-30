@@ -3,27 +3,24 @@ include("configs.php");
 $page_cat = "account";
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en-gb">
 <head>
 <title><?php echo $re['re']; ?> <?php echo $website['title']; ?></title>
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css" />
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie6.css" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie7.css" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet.css" />
-<link rel="stylesheet" type="text/css" media="print" href="wow/static/css/bnet-print.css" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/inputs.css" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/inputs-ie6.css" /><![endif]-->
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/inputs-ie.css" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/account-reg/streamlined-creation.css" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/account-reg/streamlined-creation-ie6.css" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/account-reg/streamlined-creation-ie7.css" /><![endif]-->
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet-ie.css" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet-ie6.css" /><![endif]-->
-<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/core.js"></script>
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="stylesheet" media="all" href="wow/static/local-common/css/common.css" />
+<link rel="stylesheet" media="all" href="wow/static/css/bnet.css" />
+<link rel="stylesheet" media="print" href="wow/static/css/bnet-print.css" />
+<link rel="stylesheet" media="all" href="wow/static/css/inputs.css" />
+<link rel="stylesheet" media="all" href="wow/static/css/account-reg/streamlined-creation.css" />
+<script src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
+<script src="wow/static/local-common/js/core.js"></script>
 <script type="text/javascript" src="wow/static/local-common/js/tooltip.js"></script>
+
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
 try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
@@ -212,15 +209,27 @@ _gaq.push(['_trackPageLoadTime']);
 <span class="input-select input-select-small">
 <select name="country" id="country" class="small border-5 glow-shadow-2 form-disabled" tabindex="1"  >
 <optgroup label="">
+<<<<<<< HEAD
 <option value="CHL">Chile</option>
-<option value="ESP">Espa�a</option>
+<option value="ESP">Espa&#241;a</option>
 <option value="GBR" selected="selected">United Kingdom</option>
 <option value="FRA">France</option>
 <option value="DEU">Germany</option>
 <option value="RUS">Russian Federation</option>
 </optgroup>
 <option value="AFG">Afghanistan</option>
-<option value="ALA">Åland Islands</option>
+<option value="ALA">&#197;land Islands</option>
+=======
+	<option value="CHL">Chile</option>
+	<option value="ESP">Espa&ntilde;a</option>
+	<option value="GBR" selected="selected">United Kingdom</option>
+	<option value="FRA">France</option>
+	<option value="DEU">Germany</option>
+	<option value="RUS">Russian Federation</option>
+</optgroup>
+<option value="AFG">Afghanistan</option>
+<option value="ALA">&#192;land Islands</option>
+>>>>>>> Code style
 <option value="ALB">Albania</option>
 <option value="DZA">Algeria</option>
 <option value="ASM">American Samoa</option>
@@ -395,7 +404,7 @@ _gaq.push(['_trackPageLoadTime']);
 <option value="REU">Reunion</option>
 <option value="ROU">Romania</option>
 <option value="RWA">Rwanda</option>
-<option value="BLM">Saint Barthélemy</option>
+<option value="BLM">Saint Barth&#233;lemy</option>
 <option value="SHN">Saint Helena</option>
 <option value="KNA">Saint Kitts And Nevis</option>
 <option value="LCA">Saint Lucia</option>
@@ -459,14 +468,10 @@ _gaq.push(['_trackPageLoadTime']);
 </select>
 <span class="inline-message" id="country-message"> </span>
 </span>
-<button
-class="ui-button button1 "
-type="submit"
-id="country-submit"
-tabindex="1">
-<span>
-<span>Change Country</span>
-</span>
+<button class="ui-button button1 " type="submit" id="country-submit" tabindex="1">
+	<span>
+	    <span>Change Country</span>
+	</span>
 </button>
 </span>
 </div>
@@ -475,49 +480,32 @@ tabindex="1">
 <div id="countryGlobal" class="input-note-content">
 <p class="caption">If you change your country, you will get different form fields for account creation and address entry that may not match your situation. Proceed?</p>
 <p>
-<a
-class="ui-button button1 "
-href=""
-tabindex="1">
-<span>
-<span>Change Country</span>
-</span>
+<a class="ui-button button1 " href="" tabindex="1">
+	<span>
+	    <span>Change Country</span>
+	</span>
 </a>
-<a class="ui-cancel "
-href=""
-tabindex="1">
-<span>
-Cancel </span>
+<a class="ui-cancel " href="" tabindex="1">
+<span> Cancel </span>
 </a>
 </p>
 </div>
 <div id="countryCHINA" class="input-note-content">
 <p class="caption">You are on the Taiwanese regional Battle.net website. Only account holders who have a Taiwanese World of Warcraft account should create a Battle.net account here. If you have a Chinese World of Warcraft account, go to Battle.net China instead.</p>
 <p>
-<a
-class="ui-button button1 "
-href="?country=CHINA"
-id="stayTaiwan"
-tabindex="1">
-<span>
-<span>YES, I HAVE A TAIWANESE WORLD OF WARCRAFT ACCOUNT</span>
-</span>
+<a class="ui-button button1 " href="?country=CHINA" id="stayTaiwan" tabindex="1">
+	<span>
+	    <span>YES, I HAVE A TAIWANESE WORLD OF WARCRAFT ACCOUNT</span>
+	</span>
 </a>
 <br />
-<a
-class="ui-button button1 "
-href="http://www.battlenet.com.cn"
-id="gotoChina"
-tabindex="1">
-<span>
-<span>GO TO BATTLE.NET IN CHINA</span>
-</span>
+<a class="ui-button button1 " href="http://www.battlenet.com.cn" id="gotoChina" tabindex="1">
+	<span>
+	    <span>GO TO BATTLE.NET IN CHINA</span>
+	</span>
 </a>
-<a class="ui-cancel "
-href=""
-tabindex="1">
-<span>
-Cancel </span>
+<a class="ui-cancel " href="" tabindex="1">
+<span> Cancel </span>
 </a>
 </p>
 </div>
@@ -1109,9 +1097,9 @@ pet: 'pet'
 };
 //]]>
 </script>
-<script type="text/javascript" src="wow/static/js/bam.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/menu.js"></script>
+<script src="wow/static/js/bam.js"></script>
+<script src="wow/static/local-common/js/tooltip.js"></script>
+<script src="wow/static/local-common/js/menu.js"></script>
 <script type="text/javascript">
 $(function() {
 Menu.initialize();
@@ -1123,8 +1111,8 @@ Locale.dataPath = 'data/i18n.frag.xml';
 <script type="text/javascript" src="wow/static/local-common/js/third-party/jquery.pngFix.pack.js"></script>
 <script type="text/javascript">$('.png-fix').pngFix();</script>
 <![endif]-->
-<script type="text/javascript" src="wow/static/js/inputs.js"></script>
-<script type="text/javascript" src="wow/static/js/account-creation/streamlined-creation.js"></script>
+<script src="wow/static/js/inputs.js"></script>
+<script src="wow/static/js/account-creation/streamlined-creation.js"></script>
 <script type="text/javascript">
 //<![CDATA[
 Core.load("wow/static/local-common/js/overlay.js");

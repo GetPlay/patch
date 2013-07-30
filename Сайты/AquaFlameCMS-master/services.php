@@ -79,7 +79,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 						<span class="banner-title"><?php echo $Serv['Serv7']; ?></span>
 						<span class="banner-desc"><?php echo $Serv['Serv8']; ?><?php echo $website['title']; ?><?php echo $Serv['Serv9']; ?></span>
 					</a>
-					<a href="raf-invite.php" class="main-services-banner right-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-4.jpg');">
+					<a href="recruit_a_friend.php" class="main-services-banner right-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-4.jpg');">
 						<span class="banner-title"><?php echo $Serv['Serv10']; ?></span>
 						<span class="banner-desc"><?php echo $Serv['Serv11']; ?><?php echo $website['title']; ?>.</span>
 					</a>

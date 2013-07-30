@@ -7,13 +7,13 @@
 					   <?php echo $statNav['AllRealms']; ?>
 					</a>
 					 
-					<a href="top-honor.php"
+					<a 
 					   
-					    class="tab-active">
+					    class="tab-inactive">
 					   <?php echo $statNav['TopHonor']; ?>
 					</a>
 					 
-					<a 
+					<a
 					   
 					    class="tab-inactive">
 					   <?php echo $statNav['TopConquest']; ?>
@@ -22,19 +22,19 @@
 					<a href="2vs2.php"
 					   
 					    class="tab-active">
-					   <?php echo $statNav['2v2']; ?>
+					   Top @ 2v2
 					</a>
 					
 					<a href="3vs3.php"
 					   
 					    class="tab-active">
-					   <?php echo $statNav['3v3']; ?>
+					   Top @ 3v3
 					</a>
 					
 					<a href="5vs5.php"
 					   
 					    class="tab-active">
-					   <?php echo $statNav['5v5']; ?>
+					   Top @ 5v5
 					</a>
 					
 				</li>

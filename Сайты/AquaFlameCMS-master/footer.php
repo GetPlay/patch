@@ -188,7 +188,7 @@ echo '>'
 <div class="support-primary">
 <ul class="support-nav">
 <li>
-<a href="" tabindex="55" class="support-category">
+<a href="support/ticketall.php" tabindex="55" class="support-category">
 <strong class="support-caption"><?php echo $Support8['Support8']; ?></strong>
 <?php echo $Support5['Support5']; ?>
 </a>
@@ -200,7 +200,7 @@ echo '>'
 </a>
 </li>
 <li>
-<a href="options/tickets.php" tabindex="55" class="support-category">
+<a href="/ticket.php" tabindex="55" class="support-category">
 <strong class="support-caption"><?php echo $Support10['Support10']; ?></strong>
 <?php echo $Support7['Support7']; ?>
 </a>
@@ -384,7 +384,8 @@ other: 'Other'
 //]]>
 </script>
 
-<script type="text/javascript" src="<?php echo $website['root'];?>wow/static/local-common/js/search.js?v37"></script>
+<!doctype html>
+<script src="<?php echo $website['root'];?>wow/static/local-common/js/search.js?v37"></script>
 
 <script type="text/javascript">
 //<![CDATA[
@@ -396,8 +397,8 @@ Login.embeddedUrl = '<?php echo $website['root']; ?>loginframe.php';
 </script>
 
 
-<script type="text/javascript" src="<?php echo $website['root'];?>wow/static/local-common/js/menu.js?v37"></script>
-<script type="text/javascript" src="<?php echo $website['root'];?>wow/static/js/wow.js?v19"></script>
+<script src="<?php echo $website['root'];?>wow/static/local-common/js/menu.js?v37"></script>
+<script src="<?php echo $website['root'];?>wow/static/js/wow.js?v19"></script>
 <script type="text/javascript">
 //<![CDATA[
 $(function() {
@@ -405,7 +406,7 @@ Menu.initialize('<?php echo $website['root'];?>data/menu.json');
 });
 //]]>
 </script>
-<script type="text/javascript" src="<?php echo $website['root'];?>wow/static/local-common/js/cms.js?v37"></script>
+<script src="<?php echo $website['root'];?>wow/static/local-common/js/cms.js?v37"></script>
 
 <!--[if lt IE 8]> <script type="text/javascript" src="/wow/static/local-common/js/third-party/jquery.pngFix.pack.js?v37"></script>
 <script type="text/javascript">

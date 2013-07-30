@@ -6,25 +6,26 @@ require_once("forum/functions/post_toHtml.php");
 $page_cat = "services";
 ?>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ <html lang="en-gb">
 <head>
-<title><?php echo $website['title']; ?> - <?php echo $Ind['Ind2']; ?></title>
+<title>Search - <?php echo $website['title']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie.css?v35" /><![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie6.css?v35" /><![endif]-->
-<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie7.css?v35" /><![endif]-->
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="stylesheet" href="wow/static/local-common/css/common.css" />
+
 <link title="World of Warcraft - News" href="feed/newshtml.html" type="application/atom+xml" rel="alternate"/>
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow.css" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/search.css" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/search.css" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie.css?v18" /><![endif]--><!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie6.css?v18" /><![endif]-->
-<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie7.css?v18" /><![endif]-->
-<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/core.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js"></script>
+<link rel="stylesheet" href="wow/static/css/wow.css" />
+<link rel="stylesheet" href="wow/static/local-common/css/cms/search.css" />
+<link rel="stylesheet" href="wow/static/css/search.css" />
+<script src="wow/static/local-common/js/third-party/jquery-1.4.4.min.js"></script>
+<script src="wow/static/local-common/js/core.js"></script>
+<script src="wow/static/local-common/js/tooltip.js"></script>
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}//]]>
 </script>
@@ -64,19 +65,17 @@ _gaq.push(['_trackPageLoadTime']);
     include("functions/search/summary.php");?>
   	<div id="content">
       <div class="content-top">
-      	<div class="content-trail">
-        	<ol class="ui-breadcrumb">
-          	<li>
-            	<a href="index.php" rel="np">World of Warcraft</a>
-          	</li>
-          	<li>
-            	<a href="services.php" rel="np"><?php echo $Services['Services']; ?></a>
-          	</li>
-          	<li class="last">
-            	<a href="search.php" rel="np"><?php echo $Ind['Ind2']; ?></a>
-          	</li>
-        	</ol>
-      	</div>
+      <div class="content-trail">
+<ol class="ui-breadcrumb">
+<li>
+<a href="index.php" rel="np"><?php echo $website['title']; ?></a>
+<span class="breadcrumb-arrow"></span>
+</li>
+<li><a href="services.php" rel="np"><?php echo $Services['Services']; ?></a><span class="breadcrumb-arrow"></span></li>
+<li class="last children"><a href="search.php" rel="np"><?php echo $Ind['Ind2']; ?></a>
+</li>
+</ol>
+</div>
       	<div class="content-bot">
         	<div class="search">
           	<div class="search-left">
@@ -88,9 +87,10 @@ _gaq.push(['_trackPageLoadTime']);
             	 echo '<ul class="dynamic-menu" id="menu-search">
               	<li class="item-active"><a href=""><span class="arrow">'.$search['summ'].'</span></a></li>';
               	if ($num_char>0){ echo '<li><a href="search_c.php?search='.$term.'"><span class="arrow">'.$status['chars'].' ('.$num_char.')'.'<span></span></span></a></li>';}
-	              if ($num_guild>0){ echo '<li><a href="search_g.php?search='.$term.'"><span class="arrow">'.$guild['Guilds'].' ('.$num_guild.')'.'<span></span></span></a></li>';}
+	        if ($num_guild>0){ echo '<li><a href="search_g.php?search='.$term.'"><span class="arrow">'.$guild['Guilds'].' ('.$num_guild.')'.'<span></span></span></a></li>';}
                	if ($num_arena>0){ echo '<li><a href="search_a.php?search='.$term.'"><span class="arrow">'.$arena['Teams'].' ('.$num_arena.')'.'<span></span></span></a></li>';}
                	if ($num_forum>0){ echo '<li><a href="search_f.php?search='.$term.'"><span class="arrow">'.$Forums['Forums'].' ('.$num_forum.')'.'<span></span></span></a></li>';}
+               	if ($num_support>0){ echo '<li><a href="search_s.php?search='.$term.'"><span class="arrow">'.$Forums['Forums'].' ('.$num_support.')'.'<span></span></span></a></li>';}
             	 echo '</ul>';} ?>
             </div>  
           	<div class="search-right">
@@ -120,10 +120,29 @@ _gaq.push(['_trackPageLoadTime']);
                   echo'
                     <div class="grid">
 	                    <div class="wowcharacter">
-	                      <a href="threed.php?name='.$row['name'].'" class="icon-frame frame-56 thumbnail">
+	                      <a href="advanced.php?name='.$row['name'].'" class="icon-frame frame-56 thumbnail">
 	                      <img src="images/avatars/2d/'.$row['race'].'-'.$row['gender'].'.jpg" alt="" width="56" height="56" /></a>
-	                      <a href="threed.php?name='.$row['name'].'" class="color-c'.$row['class'].'">
+	                      <a href="advanced.php?name='.$row['name'].'" class="color-c'.$row['class'].'">
 	                      <strong>'.$row['name'].'</strong></a><br />'.$row['level'].'&nbsp;'.$armory['race'.$row['race']].'&nbsp;'.$armory['class'.$row['class']].'<br />'.$name_realm1['realm'].'
+	                      <span class="clear"><!-- --></span>
+	                     </div>
+	                   </div>';
+	               }
+	               echo '<span class="clear"><!-- --></span></div>'; 
+               }?>
+	            <?php 
+              if (!$error && $num_support > 0){
+                $sql = $sqls." LIMIT 3";
+                $result = mysql_query($sql,$conn) or die(mysql_error());
+                echo '<div class="results results-grid wow-results">
+	                   <h3 class="category "><a href="search_s.php?search='.$term.'">'.$Forums['Forums'].'</a> ('.$num_support.')</h3>';
+                while ($row = mysql_fetch_array($result)) {
+                  echo'
+                    <div class="grid">
+	                    <div class="wowcharacter">
+	                      <a href="support/ticketinfo.php?ticketId='.$row['name'].'" class="icon-frame frame-56 thumbnail">
+	                      <a href="support/ticketinfo.php?ticketId='.$row['name'].'" class="color-c'.$row['message'].'">
+	                      <strong>'.$row['name'].'</strong></a><br />'.$row['closedBy'].'&nbsp;'.$armory['race'.$row['message']].'&nbsp;'.$armory['class'.$row['class']].'<br />'.$name_realm1['realm'].'
 	                      <span class="clear"><!-- --></span>
 	                     </div>
 	                   </div>';
@@ -156,8 +175,8 @@ _gaq.push(['_trackPageLoadTime']);
 					<h4 class="subcategory "><a href="search_g.php?search='.$term.'">'.$guild['Guilds'].'</a>('.$num_guild.')</h4>
 					<div class="wowguild">
 					<img src="wow/static/images/icons/guild-flag.png" id="tabard-19804025" class="thumbnail" width="32" height="32" style="display: block; " />
-					<a href="#" class="sublink">
-					<strong>'.$row['name'].'</strong>
+					<a href="guild.php?guildid='.$row['guildid'].'" rel="np">
+          <strong>'.$row['name'].'</strong>
 					</a>- '.$armory['Faction'.translateLet($row['race'])].'<br /><span data-tooltip="'.$armory['Faction'.translateLet($row['race'])].' Guild">'.$name_realm1['realm'].'</span>
 					<span class="clear"><!-- --></span>
 					</div>
@@ -304,8 +323,8 @@ other: 'Other'
 };
 //]]>
 </script>
-<script type="text/javascript" src="/wow/static/local-common/js/menu.js?v35"></script>
-<script type="text/javascript" src="/wow/static/js/wow.js?v18"></script>
+<script src="/wow/static/local-common/js/menu.js?v35"></script>
+<script src="/wow/static/js/wow.js?v18"></script>
 <script type="text/javascript">
 //<![CDATA[
 $(function(){
@@ -314,9 +333,9 @@ Search.initialize('/ta/lookup');
 });
 //]]>
 </script>
-<script type="text/javascript" src="/wow/static/local-common/js/utility/dynamic-menu.js?v35"></script>
-<script type="text/javascript" src="/wow/static/js/character/guild-tabard.js?v18"></script>
-<script type="text/javascript" src="/wow/static/js/character/arena-flag.js?v18"></script>
+<script src="/wow/static/local-common/js/utility/dynamic-menu.js?v35"></script>
+<script src="/wow/static/js/character/guild-tabard.js?v18"></script>
+<script src="/wow/static/js/character/arena-flag.js?v18"></script>
 <script type="text/javascript">
 //<![CDATA[
 Core.load("/wow/static/local-common/js/third-party/jquery-ui-1.8.6.custom.min.js?v35");

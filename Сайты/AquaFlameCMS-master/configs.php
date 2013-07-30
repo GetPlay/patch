@@ -49,6 +49,7 @@ $comun_link['Facebook'] = "http://www.facebook.com/";          // Your adress of
 $comun_link['Twitter'] = "http://twitter.com/";               // Your adress of Twitter comunity
 $comun_link['Youtube'] = "http://www.youtube.com/";            // Your adress of Youtube comunity
 $comun_link['vk'] = "http://vk.com/";            // Your adress of VK comunity
+$forum_link['forum'] = "/forum/";            // Your adress of forum
 
 # Important #############
 

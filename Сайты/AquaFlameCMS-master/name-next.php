@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include("configs.php");
 $page_cat = "security";
 if(!isset($_SESSION['username'])) header('Location: account_log.php');
@@ -6,28 +6,25 @@ if(!isset($_GET['character'])) header('Location: account_log.php');
 if(!isset($_GET['realm'])) header('Location: account_log.php');
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 <title><?php echo $website['title']; ?> - Race Change</title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon"/>
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/management/common.css" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css" /><![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie6.css" /><![endif]-->
-<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie7.css" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet.css" />
-<link rel="stylesheet" type="text/css" media="print" href="wow/static/css/bnet-print.css" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/management/dashboard.css" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/management/services.css" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/management/services-ie6.css" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/ui.css" />
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet-ie.css" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet-ie6.css" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet-ie7.css" /><![endif]-->
-<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/core.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js"></script>
+<link rel="stylesheet" href="wow/static/local-common/css/management/common.css" />
+<link rel="stylesheet" href="wow/static/css/bnet.css" />
+<link rel="stylesheet" href="wow/static/css/bnet-print.css" />
+<link rel="stylesheet" href="wow/static/css/management/dashboard.css" />
+<link rel="stylesheet" href="wow/static/css/management/services.css" />
+<link rel="stylesheet" href="wow/static/css/ui.css" />
+<script src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
+<script src="wow/static/local-common/js/core.js"></script>
+<script src="wow/static/local-common/js/tooltip.js"></script>
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
 try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
@@ -81,13 +78,11 @@ _gaq.push(['_trackPageLoadTime']);
 <a href=""><img src="wow/static/local-common/images/game-icons/wow.png" alt="World of Warcraft" width="48" height="48" /></a>
 </div>
 <div class="service-wrapper">
-
 <p class="service-nav">
     <a href="" class="active">Service</a>
     <!--<a href="">History/Status</a>-->
     <a href="account_man.php">Return to dashboard</a>
 </p>
-
 <?php
 $guid = intval($_GET['character']);
 $realmid = intval($_GET['realm']);
@@ -133,7 +128,6 @@ function classtxt($class){
     }
 }
 ?>
-
 <div class="service-info">
     <div class="service-tag">
         <div class="service-tag-contents border-3">
@@ -143,17 +137,14 @@ function classtxt($class){
                     else echo '<img src="'.$website['root'].'images/avatars/2d/0-0.jpg" width="64" height="64" alt="" />';
                 ?>
             </div>
-            
             <div class="service-tag-description">
                 <span class="character-name caption"><?php echo $character['name']; ?></span>
                 <span class="character-class"> <?php echo $character['level'] . ' ' . racetxt($character['race']) . ' ' . classtxt($character['class']); ?></span>
                 <span class="character-realm"> <?php echo $realm['name']; ?></span>
             </div>
-            
             <span class="clear"><!-- --></span>
         </div>
     </div>
-    
     <div class="service-summary">
         <p class="service-price headline">
         <?php
@@ -165,11 +156,9 @@ function classtxt($class){
         </p>
     </div>
 </div>
-
 <div class="service-form">
     <div class="service-interior">
         <h2 class="caption">Name Change</h2>
-        
         <div class="tos-left full-width">
             <ul>
                 <?php
@@ -179,15 +168,11 @@ function classtxt($class){
                 <li>Please read the conditions and disclaimers below, thank you.</li>
             </ul>
         </div>
-        
         <span class="clear"><!-- --></span>
     </div>
-    
     <br />
-    
     <div class="service-interior">
         <h2 class="caption">CONDITIONS AND DISCLAIMERS</h2>
-        
         <div class="tos-left full-width">
             <ul>
                 <li>The race change process is immediate, your character will be only become available as a new Race to play, only if you are not online. Under normal conditions the process should take less than a minute, but please remember to be offline while you are doing customization.</li>
@@ -197,7 +182,6 @@ function classtxt($class){
                 <li>A character can only change races once every 12 hours.</li>
             </ul>
         </div>
-        
         <span class="clear"><!-- --></span>
         
         <form method="POST" action="name-confirm.php">
@@ -329,9 +313,9 @@ other: 'Other'
 };
 //]]>
 </script>
-<script type="text/javascript" src="wow/static/js/bam.js?v23"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js?v35"></script>
-<script type="text/javascript" src="wow/static/local-common/js/menu.js?v35"></script>
+<script src="wow/static/js/bam.js?v23"></script>
+<script src="wow/static/local-common/js/tooltip.js?v35"></script>
+<script src="wow/static/local-common/js/menu.js?v35"></script>
 <script type="text/javascript">
 $(function() {
 Menu.initialize();

@@ -5,24 +5,24 @@ require_once("configs.php");
 $page_cat = "home";
 ?>
 <head>
-	<title><?php echo $website['title']; ?></title>
+	<title><?php echo $website['title']; ?> - 404</title>
 	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-	<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css?v15" />
-	<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css?v15" /><![endif]-->
-	<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie6.css?v15" /><![endif]-->
-	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie7.css?v15" /><![endif]-->
-	<link title="World of Warcraft - News" href="wow/en/feed/news" type="application/atom+xml" rel="alternate"/>
-	<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow.css?v4" />
-	<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/homepage.css?v15" />
-	<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/blog.css?v15" />
-	<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/cms-common.css?v15" />
-	<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/cms.css?v4" />
-  <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow.css?v23" />
-	<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/cms-ie6.css?v4" /><![endif]-->
-	<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow-ie.css?v4" /><![endif]-->
-	<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow-ie6.css?v4" /><![endif]-->
-	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow-ie7.css?v4" /><![endif]-->
+	<link rel="shortcut icon" href="../wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" media="all" href="../wow/static/local-common/css/common.css?v15" />
+	<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="../wow/static/local-common/css/common-ie.css?v15" /><![endif]-->
+	<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="../wow/static/local-common/css/common-ie6.css?v15" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="../wow/static/local-common/css/common-ie7.css?v15" /><![endif]-->
+	<link title="World of Warcraft - News" href="../wow/en/feed/news" type="application/atom+xml" rel="alternate"/>
+	<link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/wow.css?v4" />
+	<link rel="stylesheet" type="text/css" media="all" href="../wow/static/local-common/css/cms/homepage.css?v15" />
+	<link rel="stylesheet" type="text/css" media="all" href="../wow/static/local-common/css/cms/blog.css?v15" />
+	<link rel="stylesheet" type="text/css" media="all" href="../wow/static/local-common/css/cms/cms-common.css?v15" />
+	<link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/cms.css?v4" />
+  <link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/wow.css?v23" />
+	<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/cms-ie6.css?v4" /><![endif]-->
+	<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/wow-ie.css?v4" /><![endif]-->
+	<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/wow-ie6.css?v4" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/wow-ie7.css?v4" /><![endif]-->
 	<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
 	<script type="text/javascript" src="wow/static/local-common/js/core.js?v15"></script>
 	<script type="text/javascript" src="wow/static/local-common/js/tooltip.js?v15"></script>
@@ -44,7 +44,7 @@ $page_cat = "home";
 <ol class="ui-breadcrumb">
 <li class="last">
 <a href="/wow/en/" rel="np">
-World of Warcraft
+<?php echo $$website['title']; ?>
 </a>
 </li>
 </ol>

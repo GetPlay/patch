@@ -3,23 +3,22 @@ require_once("configs.php");
 if(isset($_GET['realm'])) $realmid = intval($_GET['realm']); else $realmid = 1;
 ?>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" xmlns:xml="http://www.w3.org/XML/1998/namespace" class="chrome chrome8">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ <html lang="en-gb">
 <head>
 <title><?php echo $website['title']; ?> - <?php echo $status['status']; ?></title>
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css?v15" />
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie.css?v17" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie6.css?v17" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie7.css?v17" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow.css?v7" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/status/realmstatus.css?v7" />
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie.css?v7" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie6.css?v7" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie7.css?v7" /><![endif]-->
-<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/core.js?v15"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js?v15"></script>
+<link rel="stylesheet" href="wow/static/local-common/css/common.css?v15" />
+<link rel="stylesheet" href="wow/static/css/wow.css?v7" />
+<link rel="stylesheet" href="wow/static/css/status/realmstatus.css?v7" />
+<script src="wow/static/local-common/js/third-party/jquery-1.4.4.min.js"></script>
+<script src="wow/static/local-common/js/core.js?v15"></script>
+<script src="wow/static/local-common/js/tooltip.js?v15"></script>
 
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
@@ -56,176 +55,119 @@ include("header.php");
 <div class="content-top">
 <div class="content-trail">
 <ol class="ui-breadcrumb">
-<li><a href="../index.php" rel="np"><?php echo $website['title']; ?></a></li>
-<li><a href="../status.php" rel="np"><?php echo $status['status']; ?></a></li>
-<li><a href="status.php" rel="np"><?php echo $Status['RealmStat']; ?></a></li>
-<li class="last"><a href="servername1.php" rel="np">
-<?php
+<li>
+<a href="index.php" rel="np"><?php echo $website['title']; ?></a>
+<span class="breadcrumb-arrow"></span>
+</li>
+<li><a href="status.php" rel="np"><?php echo $status['status']; ?></a><span class="breadcrumb-arrow"></span></li>
+<li><a href="status.php" rel="np"><?php echo $Status['RealmStat']; ?></a><span class="breadcrumb-arrow"></span></li>
+<li class="last children"><a href="servername1.php" rel="np"><?php echo $news['title']; ?><?php
 $realm_extra = mysql_fetch_assoc(mysql_query("SELECT * FROM realms WHERE id = '".$realmid."'"));
 if(!$realm_extra) $realm_extra = mysql_fetch_assoc(mysql_query("SELECT * FROM realms WHERE id = '1'"));
 $realm = mysql_fetch_assoc(mysql_query("SELECT * FROM $server_adb.realmlist WHERE id = '".$realm_extra['realmid']."'"));
 echo $realm['name']; 
-?>
-</a></li>
+?></a>
+</li>
 </ol>
 </div>
-
 <div class="content-bot">
 	<div class="content-header">
-				<h2 class="header "><?php echo $status['status1']; ?> <?php 	require_once("configs.php");
-									echo $realm['name']; 
-									?> </h2>
-
-		<div class="desc"><?php echo $Status['Stat3']; ?><?php 	require_once("configs.php");
-									echo $realm['name'];
-									?><?php echo $Status['Stat4']; ?></div>
+		<h2 class="header ">
+		<?php 	require_once("configs.php");
+				echo $realm['name']; 
+									?> 
+		<?php echo $status['status']; ?></h2>
+		<div class="desc"><?php echo $Status['Stat3']; ?>
+		<?php 	require_once("configs.php");
+				echo $realm['name'];?>
+		<?php echo $Status['Stat4']; ?>
+		</div>
 <span class="clear"><!-- --></span>
 	</div>
-
 	<div id="realm-status">
 		<div class="filter-toggle">
-			<a href="javascript:;" class="selected" onClick="RealmStatus.filterToggle(this)">
-				
-			</a>
+			<a href="javascript:;" class="selected" onClick="RealmStatus.filterToggle(this)">	</a>
 		</div>
-
 	<span class="clear"><!-- --></span>
-
 		<div id="realm-filters" class="table-filters">
 			<form action="#">
 				<div class="filter">
 					<label for="filter-status"><?php echo $Status['Faction']; ?></label>
-					
 					<select id="filter-status" class="input select" data-filter="column" data-column="0">
 						<option value=""><?php echo $Status['All']; ?></option>
 						<option value="up"><?php echo $Status['Ali']; ?></option>
 						<option value="down"><?php echo $Status['Horde']; ?></option>
 					</select>
 				</div>
-
 				<div class="filter">
 					<label for="filter-name"><?php echo $Status['Name']; ?></label>
-
-					<input type="text" class="input" id="filter-name" 
-						   data-filter="column" data-column="1" />
+					<input type="text" class="input" id="filter-name" data-filter="column" data-column="1" />
 				</div>
-
 				<div class="filter">
 					<label for="filter-type"><?php echo $Status['Race']; ?></label>
-
 					<select id="filter-type" class="input select" data-filter="column" data-column="2">
 						<option value=""><?php echo $Status['All']; ?></option>
-							<option value="pve">
-								<?php echo $Status['Human']; ?>
-							</option>
-							<option value="rppvp">
-								<?php echo $Status['Dwarf']; ?>
-							</option>
-							<option value="pvp">
-								<?php echo $Status['NightElf']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['Gnome']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['Draenei']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['Worgen']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['Orc']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['Troll']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['Tauren']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['Undead']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['BloodElf']; ?>
-							</option>
-							<option value="rp">
-								<?php echo $Status['Goblin']; ?>
-							</option>
+						<option value="pve"><?php echo $Status['Human']; ?></option>
+						<option value="rppvp"><?php echo $Status['Dwarf']; ?></option>
+						<option value="pvp"><?php echo $Status['NightElf']; ?></option>
+						<option value="rp"><?php echo $Status['Gnome']; ?></option>
+						<option value="rp"><?php echo $Status['Draenei']; ?></option>
+						<option value="rp"><?php echo $Status['Worgen']; ?></option>
+						<option value="rp"><?php echo $Status['Orc']; ?></option>
+						<option value="rp"><?php echo $Status['Troll']; ?></option>
+						<option value="rp"><?php echo $Status['Tauren']; ?></option>
+						<option value="rp"><?php echo $Status['Undead']; ?></option>
+						<option value="rp"><?php echo $Status['BloodElf']; ?></option>
+						<option value="rp"><?php echo $Status['Goblin']; ?></option>
 					</select>
 				</div>
-
 				<div class="filter">
 					<label for="filter-population"><?php echo $Status['Class']; ?></label>
-
 					<select id="filter-population" class="input select" data-filter="column" data-column="3">
 						<option value=""><?php echo $Status['All']; ?></option>
-							<option value="high"><?php echo $Status['Warrior']; ?></option>
-							<option value="medium"><?php echo $Status['Paladin']; ?></option>
-							<option value="n/a"><?php echo $Status['Rogue']; ?></option>
-							<option value="low"><?php echo $Status['Mage']; ?></option>
-							<option value="low"><?php echo $Status['Druid']; ?></option>
-							<option value="low"><?php echo $Status['Warlock']; ?></option>
-							<option value="low"><?php echo $Status['Hunter']; ?></option>
-							<option value="low"><?php echo $Status['Shaman']; ?></option>
-							<option value="low"><?php echo $Status['Priest']; ?></option>
-							<option value="low"><?php echo $Status['DeathKnight']; ?></option>
+						<option value="high"><?php echo $Status['Warrior']; ?></option>
+						<option value="medium"><?php echo $Status['Paladin']; ?></option>
+						<option value="n/a"><?php echo $Status['Rogue']; ?></option>
+						<option value="low"><?php echo $Status['Mage']; ?></option>
+						<option value="low"><?php echo $Status['Druid']; ?></option>
+						<option value="low"><?php echo $Status['Warlock']; ?></option>
+						<option value="low"><?php echo $Status['Hunter']; ?></option>
+						<option value="low"><?php echo $Status['Shaman']; ?></option>
+						<option value="low"><?php echo $Status['Priest']; ?></option>
+						<option value="low"><?php echo $Status['DeathKnight']; ?></option>
 					</select>
 				</div>
-
 				<div class="filter">
 					<label for="filter-locale"><?php echo $Status['Level']; ?></label>
-
 					<select id="filter-locale" class="input select" data-column="4" data-filter="column">
 						<option value=""><?php echo $Status['All']; ?></option>
-							<option value="spanish"><?php echo $Status['CataLev']; ?></option>
-							<option value="german"><?php echo $Status['WoTLKLev']; ?></option>
-							<option value="french"><?php echo $Status['BCLev']; ?></option>
-							<option value="tournament"><?php echo $Status['VanLev']; ?></option>
-							
+						<option value="spanish"><?php echo $Status['CataLev']; ?></option>
+						<option value="german"><?php echo $Status['WoTLKLev']; ?></option>
+						<option value="french"><?php echo $Status['BCLev']; ?></option>
+						<option value="tournament"><?php echo $Status['VanLev']; ?></option>
 					</select>
 				</div>
-
 				<div class="filter">
 					<label for="filter-queue"><?php echo $Status['Location']; ?></label>
-
 					<input type="checkbox" id="filter-queue" class="input" value="true" data-column="5" data-filter="column" />
 				</div>
-
 				<div class="filter" style="margin: 5px 0 5px 15px">
-					
-
-	<button
-		class="ui-button button1 "
-			type="button"
-			
-		
-		id="filter-button"
-		
-		onclick="RealmStatus.reset();"
-		
-		
-		>
-		<span>
-			<span><?php echo $Status['Reset']; ?></span>
-		</span>
-	</button>
-
+					<button class="ui-button button1 " type="button" id="filter-button" onclick="RealmStatus.reset();" >
+						<span>
+							<span><?php echo $Status['Reset']; ?></span>
+						</span>
+					</button>
 				</div>
-
-	<span class="clear"><!-- --></span>
+	            <span class="clear"><!-- --></span>
 			</form>
 		</div>
 	</div>
-
 	<span class="clear"><!-- --></span>
-
-
 		<div id="all-realms">
-	<div class="table full-width">
+	    <div class="table full-width">
 		<table>
 			<thead>
 				<tr>
-
 <?php
 $server_cdb = $realm_extra['char_db'];
 $sql = mysql_query("SELECT * FROM $server_cdb.characters WHERE online='1' ORDER BY RAND() LIMIT 49") or die(mysql_error());
@@ -421,86 +363,34 @@ else
 echo "<b>".$Status['NotConected']."</b>";
 }
 ?>
-					
-				
 			<tbody>
-			
 					<tr class="row1">
-						
-						<td class="name">
-							
-						</td>
-						<td class="type" data-raw="pvp">
-							<span class="pvp">
-									
-							</span>
-						</td>
-						<td class="population" data-raw="Low">
-							<span class="Low">
-									
-							</span>
-						</td>
+						<td class="name"></td>
+						<td class="type" data-raw="pvp"><span class="pvp"></span></td>
+						<td class="population" data-raw="Low"><span class="Low"></span></td>
 						<td class="locale">
-							
-						</td>
-						<td class="queue" data-raw="false">
-						
-						</td>
+						</td><td class="queue" data-raw="false"></td>
 					</tr>
 					<tr class="row2">
-						
-						<td class="name">
-							
-						</td>
-						<td class="type" data-raw="pve">
-							<span class="pve">
-									
-							</span>
-						</td>
-						<td class="population" data-raw="medium">
-							<span class="medium">
-									
-							</span>
-						</td>
-						<td class="locale">
-							
-						</td>
-						<td class="queue" data-raw="false">
-						
-						</td>
+						<td class="name"></td>
+						<td class="type" data-raw="pve"><span class="pve"></span></td>
+						<td class="population" data-raw="medium"><span class="medium"></span></td>
+						<td class="locale"></td>
+						<td class="queue" data-raw="false"></td>
 					</tr>
 					<tr class="row1">
-						
-						<td class="name">
-							
-						</td>
-						<td class="type" data-raw="pvp">
-							<span class="normal">
-									
-							</span>
-						</td>
-						<td class="population" data-raw="Low">
-							<span class="Low">
-									
-							</span>
-						</td>
-						<td class="locale">
-							
-						</td>
-						<td class="queue" data-raw="false">
-						
-						</td>
+						<td class="name"></td>
+						<td class="type" data-raw="pvp"><span class="normal"></span></td>
+						<td class="population" data-raw="Low"><span class="Low"></span></td>
+						<td class="locale"></td>
+						<td class="queue" data-raw="false"></td>
 					</tr>
-				<tr class="no-results" style="display: none">
-					<td colspan="6"></td>
-				</tr>
+				<tr class="no-results" style="display: none"><td colspan="6"></td></tr>
 			</tbody>
 		</table>
 	</div>
-		</div>
-
-	<span class="clear"><!-- --></span>
-
+</div>
+<span class="clear"><!-- --></span>
 </div>
 </div>
 </div>

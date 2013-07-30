@@ -122,7 +122,7 @@ Services
 	<?php echo $name_realm1['realm']; ?>
 	</span>
 	</div>
-	<div class="achievements"><a href=""><?php echo $armory['APoints']; ?></a></div>
+	<div class="achievements"><a href=""></a></div>
 	</div>
 	</div>
 	<ul class="profile-sidebar-menu" id="profile-sidebar-menu">
@@ -130,42 +130,38 @@ Services
 	<a href="" class="" rel="np">
 	<span class="arrow"><span class="icon"><?php echo $armory['summary']; ?></span></span></a>
 	</li>
-	<!--<li class="">
-	<a href="" class="" rel="np">
-	<span class="arrow"><span class="icon">Talents &amp; Glyphs</span></span></a>
-	</li>
-	<li class=" disabled">
-	<a href="javascript:;" class=" has-submenu vault" rel="np">
-	<span class="arrow"><span class="icon">Auctions</span></span></a>
-	</li>
-	<li class=" disabled">
-	<a href="javascript:;" class=" vault" rel="np">
-	<span class="arrow"><span class="icon">Events</span></span></a>
+	<li class="">
+	<a href="auctions.php" class=" has-submenu vault" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['auctions']; ?></span></span></a>
 	</li>
 	<li class="">
-	<a href="" class=" has-submenu" rel="np">
-	<span class="arrow"><span class="icon">Achievements</span></span></a>
+	<a href="events.php" class=" vault" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['events']; ?></span></span></a>
 	</li>
 	<li class="">
-	<a href="" class="" rel="np">
-	<span class="arrow"><span class="icon">Companions &amp; Mounts</span></span></a>
+	<a href="achiev.php" class="has-submenu" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['achiev']; ?></span></span></a>
 	</li>
 	<li class="">
-	<a href="" class=" has-submenu" rel="np">
-	<span class="arrow"><span class="icon">Professions</span></span></a>
-	</li>-->
+	<a href="pets.php" class="" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['pets']; ?></span></span></a>
+	</li>
+	<li class="">
+	<a href="prof.php" class="has-submenu" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['prof']; ?></span></span></a>
+	</li>
 	<li class="">
 	<a href="reputation.php" class="" rel="np">
 	<span class="arrow"><span class="icon"><?php echo $armory['reputation']; ?></span></span></a>
-	</li><!--
-	<li class="">
-	<a href="" class="" rel="np">
-	<span class="arrow"><span class="icon">PvP</span></span></a>
 	</li>
 	<li class="">
-	<a href="" class="" rel="np">
-	<span class="arrow"><span class="icon">Activity Feed</span></span></a>
-	</li>-->
+	<a href="pvp.php" class="" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $armory['pvp']; ?></span></span></a>
+	</li>
+	<li class="">
+	<a href="guild.php" class="has-submenu" rel="np">
+	<span class="arrow"><span class="icon"><?php echo $search['Guild']; ?></span></span></a>
+	</li>
 	</ul>
 	<div class="summary-sidebar-links">
 	</div>

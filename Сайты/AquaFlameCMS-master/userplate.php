@@ -34,9 +34,9 @@ if(!isset($_SESSION['username'])){
         if($select){
             $avatar = $select['race']."-".$select['gender'].".jpg";	
             $update = mysql_query("UPDATE users SET `avatar` = '".$avatar."', `character` ='".$character_id."', `char_realm` = '".$realm_extra['id']."' WHERE id = '".$account_extra['id']."'");
-            echo '<meta http-equiv="refresh" content="0;url=advanced.php"/>';
+            echo '<meta http-equiv="refresh" content="0;url=index.php"/>';
         }else{
-            echo '<meta http-equiv="refresh" content="0;url=advanced.php"/>';
+            echo '<meta http-equiv="refresh" content="0;url=index.php"/>';
         }
     }
       

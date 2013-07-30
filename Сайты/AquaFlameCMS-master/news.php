@@ -1,30 +1,28 @@
 <?php
 require_once("configs.php");
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" xmlns:xml="http://www.w3.org/XML/1998/namespace" class="chrome chrome8">
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ <html lang="en-gb">
 <head><link rel="stylesheet" type="text/css" href="/s7.addthis.com/static/r07/widget49.css" media="all" />
 <title><?php echo $website['title']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-gb/data/opensearch" title="WoW Search" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css?v15" />
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css?v15" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie6.css?v15" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie7.css?v15" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow.css?v3" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/lightbox.css?v7" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/lightbox-ie6.css?v7" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/blog.css?v15" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/comments.css?v15" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/cms.css?v3" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/cms-ie6.css?v3" /><![endif]-->
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow-ie.css?v3" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow-ie6.css?v3" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow-ie7.css?v3" /><![endif]-->
-<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/core.js?v15"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js?v15"></script>
+<link rel="stylesheet" href="wow/static/local-common/css/common.css?v15" />
+<link rel="stylesheet" href="wow/static/css/wow.css?v3" />
+<link rel="stylesheet" href="wow/static/css/lightbox.css?v7" />
+<link rel="stylesheet" href="wow/static/local-common/css/cms/blog.css?v15" />
+<link rel="stylesheet" href="wow/static/local-common/css/cms/comments.css?v15" />
+<link rel="stylesheet" href="wow/static/css/cms.css?v3" />
+<script src="wow/static/local-common/js/third-party/jquery-1.4.4.min.js"></script>
+<script src="wow/static/local-common/js/core.js?v15"></script>
+<script src="wow/static/local-common/js/tooltip.js?v15"></script>
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
 try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
@@ -65,21 +63,23 @@ _gaq.push(['_trackPageview']);
 		<div id="content">
 			<div class="content-top">
 				<div class="content-trail">
-					<ol class="ui-breadcrumb">
-					<li><a href="index.php"><?php echo $website['title']; ?></a></li>
-					<?php
-					$news_id = intval($_GET['id']);
-					if($news_id != 0) $error=0; else $error=1;
-					$news_query = mysql_query("SELECT * FROM news WHERE id = '".$news_id."'")or $error=1;
-					$news = mysql_fetch_assoc($news_query)or $error=1;
-					$date = $news['date'];
-					?>
-					<li class="last"><a href="#" rel="np"><?php echo $news['title']; ?></a></li>
-					</ol>
+				<ol class="ui-breadcrumb">
+				<li>
+				<a href="index.php" rel="np"><?php echo $website['title']; ?></a>
+				<span class="breadcrumb-arrow"></span>
+				</li>
+				<?php
+									$news_id = intval($_GET['id']);
+									if($news_id != 0) $error=0; else $error=1;
+									$news_query = mysql_query("SELECT * FROM news WHERE id = '".$news_id."'")or $error=1;
+									$news = mysql_fetch_assoc($news_query)or $error=1;
+									$date = $news['date'];
+									?>
+				<li class="last children"><a href="#" rel="np"><?php echo $news['title']; ?></a>
+				</li>
+				</ol>
 				</div>
-				
 				<div class="content-bot">	
-				
 					<script type="text/javascript">
 					//<![CDATA[
 						var addthis_config = {
@@ -105,12 +105,9 @@ _gaq.push(['_trackPageview']);
 									<?php
 									}
 									?>
-
 									<span class="clear"></span>
 								</div>
-		
 								<div id="blog">
-								
 									<?php
 									if($error == 0){
 									
@@ -162,7 +159,7 @@ _gaq.push(['_trackPageview']);
 										<h3 class="blog-title">'.$news['title'].'</h3>
 										<div class="byline">
 											<div class="blog-info">
-											 <a href="#">'.$posterInfo['firstName'].'</a><span></span> '.$news['date'].'
+											by <a href="#">'.$posterInfo['firstName'].'</a><span>//</span> '.$news['date'].'
 											</div>
 											<a class="comments-link" href="#comments">'.$news['comments'].'</a>
 											<span class="clear"><!-- --></span>
@@ -173,8 +170,7 @@ _gaq.push(['_trackPageview']);
 										</div>
 
 										<div class="detail">
-											<div>'.$news['content1'].'</div>
-					                                                <div>'.$news['content2'].'</div>
+											<div>'.$news['content'].'</div>
 										</div>
 										
 										<div class="community-share">
@@ -205,7 +201,7 @@ _gaq.push(['_trackPageview']);
 </a>
 </div>
 <div class="poll-interior">
-<h3>Whatâ€™s Your Level of Secondary Profession Expertise?</h3>
+<h3>What’s Your Level of Secondary Profession Expertise?</h3>
 <div class="results verbose">
 <table>
 <tr>
@@ -219,7 +215,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>Iâ€™ve leveled three or four of the secondary professions to their maximum, and use them regularly.</td>
+<td>I’ve leveled three or four of the secondary professions to their maximum, and use them regularly.</td>
 <td>
 <div class="result-container max">
 <div class="result" style="width: 78px; ">
@@ -239,7 +235,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>My main focus among the secondary professions is archaeology. Iâ€™m unearthing most of Azeroth.</td>
+<td>My main focus among the secondary professions is archaeology. I’m unearthing most of Azeroth.</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 27px; ">
@@ -249,7 +245,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>Just fishing. Iâ€™m the master angler around here!</td>
+<td>Just fishing. I’m the master angler around here!</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 7px; ">
@@ -259,7 +255,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>I use first aid, primarily. These wounds arenâ€™t going to wrap themselves.</td>
+<td>I use first aid, primarily. These wounds aren’t going to wrap themselves.</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 27px; ">
@@ -269,7 +265,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>Youâ€™ll usually find me cooking in the kitchen. (ding) Orderâ€™s up!</td>
+<td>You’ll usually find me cooking in the kitchen. (ding) Order’s up!</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 8px; ">
@@ -279,7 +275,7 @@ _gaq.push(['_trackPageview']);
 </td>
 </tr>
 <tr>
-<td>Iâ€™ve missed out on all of the secondary professions, so far.</td>
+<td>I’ve missed out on all of the secondary professions, so far.</td>
 <td>
 <div class="result-container ">
 <div class="result" style="width: 33px; ">
@@ -304,7 +300,6 @@ ended
 <div id="poll-ajax-error"></div>
 </td></tr></table>-->
 								</div>
-								
 								<script type="text/javascript">
 								//<![CDATA[
 									$(function(){
@@ -312,7 +307,6 @@ ended
 									});
 								//]]>
 								</script>
-								
 								<!--[if IE 6]>
 								<script type="text/javascript">
 								//<![CDATA[
@@ -322,7 +316,6 @@ ended
 								//]]>
 								</script>
 								<![endif]-->
-
 								<div id="report-post">
 										<table id="report-table">
 											<tr>
@@ -334,15 +327,15 @@ ended
 												<td class="report-desc"><div>Reason</div></td>
 												<td class="report-detail">
 													<select id="report-reason">
-																<option value="SPAMMING">Spamming</option>
-																<option value="REAL_LIFE_THREATS">Real Life Threats</option>
-																<option value="BAD_LINK">Bad Link</option>
-																<option value="ILLEGAL">Illegal</option>
-																<option value="ADVERTISING_STRADING">Advertising</option>
-																<option value="HARASSMENT">Harassment</option>
-																<option value="OTHER">Other</option>
-																<option value="NOT_SPECIFIED">Not Specified</option>
-																<option value="TROLLING">Trolling</option>
+														<option value="SPAMMING">Spamming</option>
+														<option value="REAL_LIFE_THREATS">Real Life Threats</option>
+														<option value="BAD_LINK">Bad Link</option>
+														<option value="ILLEGAL">Illegal</option>
+														<option value="ADVERTISING_STRADING">Advertising</option>
+														<option value="HARASSMENT">Harassment</option>
+														<option value="OTHER">Other</option>
+														<option value="NOT_SPECIFIED">Not Specified</option>
+														<option value="TROLLING">Trolling</option>
 													</select>
 												</td>
 												<td></td>
@@ -367,7 +360,6 @@ ended
 											[<a href="javascript:;" onclick="$(&quot;#report-post&quot;).hide()">Close</a>]
 										</div>
 								</div>
-								
 								<?php if($show_comment == true){ ?>
 								<span id="comments"></span>
 								<div id="page-comments">
@@ -399,7 +391,7 @@ ended
 												
 													<div class="portrait-c ajax-update">
 														<div class="avatar-interior">
-															<a href="#"><img height="64" width="64" src="/images/avatars/2d/<?php echo $user['avatar']; ?>" alt="" /></a>
+															<a href="#"><img height="64" width="64" src="images/avatars/2d/<?php echo $user['avatar']; ?>" alt="" /></a>
 														</div>
 													</div>
 													
@@ -418,28 +410,23 @@ ended
 																			<span></span>
 																		</div>
 																		
-																		<div class="context-links">
-																		</div>
+																		<div class="context-links"></div>
 																	</div>
 																</div>
-																
 																<a href="#" class="context-link" rel="np"><?php echo ucfirst($user['firstName']); ?></a>
-																
 															</div>
 														</div>
-														
 														<div class="content">
 															<div class="comment-ta">
 															<textarea id="comment-ta-reply" cols="78" rows="3" name="detail" onfocus="textAreaFocused = true;" onblur="textAreaFocused = false;"></textarea>
 															</div>
 															
 															<div class="action">
-															
 																<div class="cancel">
 																	<span class="spacer">|</span>
 																	<a href="javascript:;" onclick="$('#comment-form-reply').slideUp();">Cancel</a>
 																</div>
-																
+													
 																<div class="submit">
 																	<button class="ui-button button1 comment-submit " type="submit">
 																		<span>
@@ -575,7 +562,7 @@ ended
 											    <div class="comment <?php echo $type; ?>" id="c-<?php echo $replyQ['id'];?>">
 												  <div class="avatar portrait-b">
 												    <a href="#">
-												    <img height="64" width="64" src="images/avatars/2d/<?php echo $userInfo['avatar']; ?>" alt="" />
+												      <img height="64" width="64" src="images/avatars/2d/<?php echo $userInfo['avatar']; ?>" alt="" />
 												    </a>
 												  </div>                       
 												  <div class="comment-interior">
@@ -706,12 +693,12 @@ ended
 				</div>
 			</div>
 		</div>
-	<script type="text/javascript" src="wow/static/local-common/js/cms.js"></script>
-	<script type="text/javascript" src="wow/static/local-common/js/menu.js"></script>
-	<script type="text/javascript" src="wow/static/js/wow.js"></script>
-	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
-	<script type="text/javascript" src="wow/static/local-common/js/cms.js?v17?v7"></script>
-	<script type="text/javascript" src="wow/static/local-common/js/lightbox.js?v17?v7"></script>
+	<script src="wow/static/local-common/js/cms.js"></script>
+	<script src="wow/static/local-common/js/menu.js"></script>
+	<script src="wow/static/js/wow.js"></script>
+	<script src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+	<script src="wow/static/local-common/js/cms.js?v17?v7"></script>
+	<script src="wow/static/local-common/js/lightbox.js?v17?v7"></script>
 	<?php include("footer.php"); ?>
 </div>
 </body>

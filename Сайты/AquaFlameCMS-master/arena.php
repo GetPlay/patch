@@ -1,32 +1,29 @@
-<?php
+﻿<?php
 require_once("configs.php");
 $page_cat = "services";
 include("functions/arena_items_func.php");
 ?>
 
+<!doctype html>
+<html lang="en-gb">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
 <head>
 <title><?php echo $name = $_GET['name'];?> - <?php echo $website['title']; ?></title>
 <link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-gb/data/opensearch" title="Battle.net Search" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/armory/common.css?" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie.css?" /><![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie6.css?" /><![endif]-->
-<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/local-common/css/common-ie7.css?" /><![endif]-->
+<link rel="stylesheet" href="wow/static/local-common/css/armory/common.css?" />
 <link title="World of Warcraft - News" href="http://eu.battle.net/wow/en/feed/news" type="application/atom+xml" rel="alternate"/>
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow.css?" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/armory/profile.css?" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/profile-ie.css?" /><![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/profile-ie6.css?" /><![endif]-->
+<link rel="stylesheet" href="wow/static/css/wow.css?" />
+<link rel="stylesheet" href="wow/static/css/armory/profile.css?" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/css/armory/arena/arena.css?" />
 <link rel="stylesheet" type="text/css" media="all" href="wow/static/css/armory/arena/summary.css?" />
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/arena/summary-ie6.css?" /><![endif]-->
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie.css?" /><![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie6.css?" /><![endif]-->
-<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="/wow/static/css/wow-ie7.css?" /><![endif]-->
-<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/core.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js"></script>
+<script src="wow/static/local-common/js/third-party/jquery-1.4.4.min.js"></script>
+<script src="wow/static/local-common/js/core.js"></script>
+<script src="wow/static/local-common/js/tooltip.js"></script>
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
 try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
@@ -70,30 +67,28 @@ _gaq.push(['_trackPageLoadTime']);
 	<div class="content-trail">
 	<ol class="ui-breadcrumb">
 	<li>
-	<a href="index.php" rel="np">World of Warcraft</a>
+	<a href="index.php" rel="np"><?php echo $website['title']; ?></a>
+	<span class="breadcrumb-arrow"></span>
 	</li>
 	<li>
 	<a href="services.php" rel="np">Services</a>
+	<span class="breadcrumb-arrow"></span>
 	</li>
 	<li>
 	<a href="search.php" rel="np">Search</a>
+	<span class="breadcrumb-arrow"></span>
 	</li>
-	<li class="last">
-	<a href="arena.php" rel="np"><?php echo $name = $_GET['name'];?></a>
+	<li class="last children"><a href="arena.php" rel="np"><?php echo $name = $_GET['name'];?></a>
 	</li>
 	</ol>
 	</div>
 	<div class="content-bot">
 
-
 	<div id="profile-wrapper" class="profile-wrapper profile-wrapper">
-
 		<div class="profile-sidebar-anchor">
 			<div class="profile-sidebar-outer">
 				<div class="profile-sidebar-inner">
 					<div class="profile-sidebar-contents">
-
-
 
 		<div class="profile-info-anchor">
 		<div class="arenateam-flag">
@@ -128,70 +123,51 @@ _gaq.push(['_trackPageLoadTime']);
 				?>
 				<div class="under-name">
 					<span class="teamsize"><b><?php echo $type ?></b></span> <span class="faction"><?php echo $faction; ?></span> Arena Team<span class="comma">,</span>
-
 					<span class="text" data-tooltip="<?php echo $website['title']; ?>">
 					<a href=""><font color=""><?php echo $website['title'];?></font></a> <!-- There should be Battlegroup name -->
 					</span>
-					
 				</div>
 
-				<div class="rank">
-					
-					Last week's ranking: <span class="ranked"><?php echo $team_row['rank']; ?>°</span>
+				<div class="rank">Last week's ranking: <span class="ranked"><?php echo $team_row['rank']; ?>°</span>
 				</div>
-
 			</div>
 		</div>
-
-
-
 	<ul class="profile-sidebar-menu" id="profile-sidebar-menu">
 			<li class="">
-
 	<a href="search.php" class="back-to" rel="np"><span class="arrow"><span class="icon">Search</span></span></a>
 
 			</li>
 
 			<li class=" active">
 
-		<a href="index.html" class="" rel="np">
-			<span class="arrow"><span class="icon">
-				<?php echo $name = $_GET['name'];?>
-			</span></span>
-		</a>
-
+			<a href="index.html" class="" rel="np">
+				<span class="arrow"><span class="icon">
+					<?php echo $name = $_GET['name'];?>
+				</span></span>
+			</a>
 			</li>
-
-		
 	</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+</div>
+</div>
+</div>
+</div>
 		
 		<div class="profile-contents">
-
 		<div class="summary">
-
 			<div class="profile-section">
-
 					<div class="summary-stats">
 	<div class="arenateam-stats table">
 		<table>
 			<thead>
 				<tr>
-					<th class="align-left">	<span class="sort-tab">&#0160;</span>
-</th>
-					<th width="23%" class="align-center">	<span class="sort-tab">Matches</span>
-</th>
-					<th width="23%" class="align-center">	<span class="sort-tab">Win - Loss</span>
-</th>
-					<th width="23%" class="align-center">	<span class="sort-tab">Team Rating</span>
-</th>
+					<th class="align-left">	<span class="sort-tab">&#0160;</span></th>
+					<th width="23%" class="align-center">	<span class="sort-tab">Matches</span></th>
+					<th width="23%" class="align-center">	<span class="sort-tab">Win - Loss</span></th>
+					<th width="23%" class="align-center">	<span class="sort-tab">Team Rating</span></th>
 				</tr>
 			</thead>
 			<tbody>
-	
+
 	<tr class="row2">
 		<td class="align-left">
 			<strong class="week">This Week</strong>
@@ -205,7 +181,6 @@ _gaq.push(['_trackPageLoadTime']);
 				<span class="arenateam-rating"><?php echo $team_row['rating']; ?></span>
 		</td>
 	</tr>
-	
 	<tr class="row1">
 		<td class="align-left">
 			<strong class="season">Season</strong>
@@ -219,50 +194,35 @@ _gaq.push(['_trackPageLoadTime']);
 				<span class="arenateam-rating"><?php echo $team_row['rating']; ?></span>
 		</td>
 	</tr>
-			</tbody>
+	</tbody>
 		</table>
 	</div>
-					</div>
+</div>
 
-					<div class="summary-roster">
-					<div class="ui-dropdown" id="filter-timeframe">
-						<select>
-							<option value="season">Season</option>
-							<option value="weekly">Weekly</option>
-						</select>
-					</div>
-
-							<h3 class="category "><b>Roster</b></h3>
-
-
+	<div class="summary-roster">
+		<div class="ui-dropdown" id="filter-timeframe">
+			<select>
+				<option value="season">Season</option>
+				<option value="weekly">Weekly</option>
+			</select>
+		</div>
+	<h3 class="category "><b>Roster</b></h3>
 	<div class="arenateam-roster table" id="arena-roster">
 		<table>
 			<thead>
 				<tr>
-					<th>	<a href="javascript:;" class="sort-link">
-		<span class="arrow">Name</span>
-	</a>
-</th>
+					<th><a href="javascript:;" class="sort-link">
+						<span class="arrow">Name</span></a></th>
 					<th style="display: none" class="align-center season">	<a href="javascript:;" class="sort-link numeric">
-		<span class="arrow">Season Played</span>
-	</a>
-</th>
+						<span class="arrow">Season Played</span></a></th>
 					<th style="display: none" class="align-center season">	<a href="javascript:;" class="sort-link numeric">
-		<span class="arrow">Season Win – Loss</span>
-	</a>
-</th>
+						<span class="arrow">Season Win – Loss</span></a></th>
 					<th class="align-center weekly">	<a href="javascript:;" class="sort-link numeric">
-		<span class="arrow">Played</span>
-	</a>
-</th>
+						<span class="arrow">Played</span></a></th>
 					<th class="align-center weekly">	<a href="javascript:;" class="sort-link numeric">
-		<span class="arrow">Win – Loss</span>
-	</a>
-</th>
+						<span class="arrow">Win – Loss</span></a></th>
 					<th class="align-center">	<a href="javascript:;" class="sort-link numeric">
-		<span class="arrow">Rating</span>
-	</a>
-</th>
+						<span class="arrow">Rating</span></a></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -397,7 +357,7 @@ _gaq.push(['_trackPageLoadTime']);
 </div>
 </div>
 <?php include("footer.php") ?>
-<script type="text/javascript" src="wow/static/local-common/js/search.js?"></script>
+<script src="wow/static/local-common/js/search.js?"></script>
 <script type="text/javascript">
 //<![CDATA[
 var xsToken = '';
@@ -505,8 +465,8 @@ Login.embeddedUrl = '<?php echo $website['root'];?>loginframe.php';
 });
 //]]>
 </script>
-<script type="text/javascript" src="wow/static/local-common/js/menu.js?"></script>
-<script type="text/javascript" src="wow/static/js/wow.js?"></script>
+<script src="wow/static/local-common/js/menu.js?"></script>
+<script src="wow/static/js/wow.js?"></script>
 <script type="text/javascript">
 //<![CDATA[
 $(function() {
@@ -515,9 +475,9 @@ Search.initialize('/ta/lookup');
 });
 //]]>
 </script>
-<script type="text/javascript" src="wow/static/js/profile.js?"></script>
-<script type="text/javascript" src="wow/static/local-common/js/table.js?"></script>
-<script type="text/javascript" src="wow/static/js/character/arena-flag.js?"></script>
+<script src="wow/static/js/profile.js?"></script>
+<script src="wow/static/local-common/js/table.js?"></script>
+<script src="wow/static/js/character/arena-flag.js?"></script>
 <script type="text/javascript" src="wow/static/local-common/js/dropdown.js?"></script>
 <script type="text/javascript" src="wow/static/js/armory/pvp/arena.js?"></script>
 <!--[if lt IE 8]> <script type="text/javascript" src="/wow/static/local-common/js/third-party/jquery.pngFix.pack.js?"></script>

@@ -3,15 +3,19 @@ $page="loginframe.php";
 include("configs.php");
 ?>
 
-<!DOCTYPE html>
-  <html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ <html lang="en-gb">
   <head>
 		<title></title>
 		<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
-		<link rel="stylesheet" type="text/css" href="wow/static/login/static/local-common/css/common.css?v22"/>
-		<link rel="stylesheet" type="text/css" href="wow/static/login/static/_themes/bam/css/master.css?v1"/>
-		<script type="text/javascript" src="wow/static/login/static/local-common/js/third-party/jquery.js"></script>
-		<script type="text/javascript" src="wow/static/login/static/local-common/js/core.js?v22"></script>
+		<link rel="stylesheet" href="wow/static/login/static/local-common/css/common.css?v22"/>
+		<link rel="stylesheet" href="wow/static/login/static/_themes/bam/css/master.css?v1"/>
+		<script src="wow/static/login/static/local-common/js/third-party/jquery.js"></script>
+		<script src="wow/static/login/static/local-common/js/core.js?v22"></script>
 		<style type="text/css">
 		.wuaha {
 		text-shadow:0px 0px 6px #000;
@@ -46,6 +50,7 @@ include("configs.php");
     <div id="embedded-login">
 	<center><a href="#" height="46" width="190"><img src="<?php echo $website['root'];?>wow/static/images/logos/wof-logo.png" /></a>
     <br /><h2 class="wuaha2"><?php echo $website['title']; ?></h2></center>
+	<a id="embedded-close" href="javascript:;" onclick="updateParent('close')"> </a>
   <?php
   
   if(!isset($_SESSION['username'])){
@@ -68,7 +73,8 @@ include("configs.php");
        }
       </style>
       <center>
-	  <h3><?php echo $loading['loading']; ?></h3><br />
+      <p><h3>Success</h3></p>
+	  <h3>Loading&#8230;</h3><br />
       <div class="loader"></div>
       
       <?php
@@ -88,7 +94,7 @@ include("configs.php");
        }
       </style>
       <center>
-      <h3><?php echo $errorLogin['errorLogin']; ?></h3><br />
+      <h3>Your Credentials are Incorrect.</h3><br />
       <div class="loader"></div>
       <meta http-equiv="refresh" content="2"/>
       </center>
@@ -162,10 +168,6 @@ include("configs.php");
 			});
 		</script>
 	</form>
-
-  
     </div>
   </body>
   </html>
-
-

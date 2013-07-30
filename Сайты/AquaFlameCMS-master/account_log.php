@@ -2,21 +2,21 @@
 include("configs.php");
 $page_cat = "account";
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 <title><?php echo $website['title']; ?><?php echo $Log['Log']; ?></title>
 <meta http-equiv="imagetoolbar" content="false"/>
 <link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="wow/static/local-common/css/common.css?v22"/>
-<!--[if IE]><link rel="stylesheet" type="text/css" href="wow/static/local-common/css/common-ie.css?v22"/><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" href="wow/static/local-common/css/common-ie6.css?v22"/><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" href="wow/static/local-common/css/common-ie7.css?v22"/><![endif]-->
+<link rel="stylesheet" href="wow/static/local-common/css/common.css?v22"/>
 <link rel="shortcut icon" href="wow/static/_themes/bam/img/favicon.ico" type="image/x-icon"/>
-<link rel="stylesheet" type="text/css" href="wow/static/_themes/bam/css/master.css?v1"/>
-<!--[if IE 6]><link rel="stylesheet" type="text/css" href="wow/static/_themes/bam/css/master-ie6.css?v1" /><![endif]-->
-<link rel="stylesheet" type="text/css" href="wow/static/_themes/bam/css/_lang/en-gb.css?v1"/>
-<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/core.js?v22"></script>
+<link rel="stylesheet" href="wow/static/_themes/bam/css/master.css?v1"/>
+<link rel="stylesheet" href="wow/static/_themes/bam/css/_lang/en-gb.css?v1"/>
+<script src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
+<script src="wow/static/local-common/js/core.js?v22"></script>
 <script type="text/javascript">
 Core.baseUrl = '/login/en/';
 </script>
@@ -99,19 +99,14 @@ Core.baseUrl = '/login/en/';
     }
     
     ?>
-    
-    
-    
   <?php }else{ ?>
   <form action="?SSID:<?php echo $sessionid; ?>" method="post">
     <a id="embedded-close" href="javascript:;" onclick="updateParent('close')"> </a>
     <div>
       <p><label for="accountName" class="label"><?php echo $Log['Log6']; ?></label>
       <input id="accountName" value="" name="accountName" maxlength="320" type="text" tabindex="1" class="input" /></p>
-
       <p><label for="password" class="label"><?php echo $Log['Log7']; ?></label>
       <input id="password" name="password" maxlength="16" type="password" tabindex="2" autocomplete="off" class="input"/></p>
-
       <p>
         <span id="remember-me">
           <label for="persistLogin">
@@ -171,10 +166,7 @@ Core.baseUrl = '/login/en/';
 <div id="right">
 <h2><?php echo $Log['Log16']; ?></h2>
 <h3><?php echo $Log['Log17']; ?></h3>
-<a
-class="ui-button button1 "
-href="account_man.php"
->
+<a class="ui-button button1 " href="account_man.php" >
 <span>
 <span><?php echo $Log['Log18']; ?></span>
 </span>

@@ -1,7 +1,7 @@
 <?php
 // Needs to be Translated
-$lang['adb'] = "Imposible conectar con la base de datos de las cuentas.";
-$lang['db'] = "Imposible conectar con la base de datos de la web..";
+$adb['adb'] = "Imposible conectar con la base de datos de las cuentas.";
+$db['db'] = "Imposible conectar con la base de datos de la web..";
 $home['home'] = "Inicio";
 $status['status'] = "Estado";
 $Community['Community'] = "Comunidad";
@@ -30,7 +30,7 @@ $Account5['Account5'] = "Seguridad de la cuenta";
 $Account6['Account6'] = "Gestiona tu cuenta";
 $Friends['Keepthem'] = "Manten a tus Amigos en el Juego.";
 
-$Support['Support'] = "ASISTENCIA";
+$Support['Support'] = "SOPORTE";
 $Support3['Support3'] = "Artículos de Asistencia";
 $Support4['Support4'] = "·Ayuda, me han pirateado!";
 $Support5['Support5'] = "Busca tus tickets de asistencia";
@@ -127,6 +127,8 @@ $Vote['Vote35'] = " minuto";
 $Vote['CanVoteIn'] = "Puedes votar en ";
 $Vote['Earned'] = "Ganados";
 $Vote['VotePanel'] = "Panel de votos";
+$Vote['Vote39'] = "¡Inicie sesión para votar ahora!";
+$Vote['Vote40'] = "¡Aprende más!";
 // Finishing the voting translation
 
 // Starting the register.php translation
@@ -969,4 +971,122 @@ $Media['Title'] = "Título";
 $Media['File'] = "Archivo";
 $Media['Multimedia'] = "Multimedia";
 //Finish Media
+
+//Start Mail
+$Mail['1'] = "Cambia tu correo electrónico";
+$Mail['2'] = "Cambiar correo";
+$Mail['3'] = "Tu cuenta tiene que estar DESCONECTADA para que esta herramienta pueda funcionar. Utiliza esta herramiena para cambiar tu correo.";
+$Mail['4'] = "Correo actual";
+$Mail['5'] = "Correo nuevo";
+$Mail['6'] = "Confirmar correo";
+$Mail['7'] = "Los correos deben coincidir";
+$Mail['8'] = "El nuevo correo que has introducido no es válido.";
+$Mail['9'] = "Dirección de correo inválida, por favor, escribe tu correo actual correctamente.";
+$Mail['10'] = "El correo de la cuenta";
+//Finish Mail
+
+//Start raf-invite
+$friend['1'] = " Recluta a un amigo";
+$friend['2'] = "Requerido";
+$friend['3'] = "REFERENCIAS Y RECOMPENSAS";
+$friend['4'] = "Recluta a un amigo";
+$friend['5'] = "Enviar Invitaciones";
+$friend['6'] = "Historia/Estado";
+$friend['7'] = "¿Cómo funciona?";
+$friend['8'] = "Instrucciones para el destinatario";
+$friend['9'] = "Usted tiene ";
+$friend['10'] = "0 Amigos";
+$friend['11'] = " vinculados a su cuenta y 20 referencias restantes.";
+$friend['12'] = "Suban niveles juntos y más rápido";
+$friend['13'] = "Gane recompensas si tu amigo se suscribe";
+$friend['14'] = "Obtienen una montura único de dos personas";
+$friend['15'] = "Más información sobre cómo funciona...";
+$friend['16'] = "No está permitido referir a amigos que solían jugar o siguen jugando.";
+$friend['17'] = "Utilice ";
+$friend['18'] = "Recluta a un Amigo ";
+$friend['19'] = "en su lugar!";
+$friend['20'] = "Rellene la información de su amigo a continuación, junto con cualquier mensaje personalizado que desea enviarle, y le enviaremos un e-mail con una invitación a la dirección indicada. Puede hacer un seguimiento del estado de cada una de las invitaciones ";
+$friend['21'] = "Aqui.";
+$friend['22'] = "Tu nombre de cuenta:";
+$friend['23'] = "Su contraseña:";
+$friend['24'] = "Correo electrónico de su Amigo:";
+$friend['25'] = "Su Personaje:";
+$friend['26'] = "Tipo de clave:";
+$friend['27'] = "Ruso";
+$friend['28'] = "Europeo";
+$friend['29'] = "Americano:";
+$friend['30'] = "Método:";
+$friend['31'] = "Manual";
+$friend['32'] = "Automático";
+$friend['33'] = "El método manual está disponible en estos momentos. El método automático vendrá en un futuro cercano. Manténgase en contacto en: ";
+$friend['34'] = " para las actualizaciones.";
+$friend['35'] = "Mensaje personalizado:";
+$friend['36'] = "Sugerencia: Incluya su reino, hermandad, y el nombre del personaje para que su amigo puede ponerse en contacto con usted en el juego.";
+$friend['37'] = "Tu amigo tendrá que seguir las instrucciones enviadas al correo electrónico con el fin de crear el vínculo entre sus cuentas. ";
+$friend['38'] = "Ver los pasos a tomar.";
+$friend['39'] = "Enviar invitación";
+$friend['40'] = "Cancelar";
+$friend['Function Unavailable'] = "* Función no disponible.";
+//Finish raf-invite
+
+//Start Change Character Appearance
+$appear['1'] = " - Cambiar apariencia del Personaje";
+$appear['2'] = "AJUSTES DE PERSONAJES";
+$appear['3'] = "Cambio de Apariencia";
+$appear['4'] = " para que esta herramienta funcione correctamente! Además, usted debe estar conectado a la web. Tu personaje no debe tener una opción de cambio activada.";
+$appear['5'] = "Recuerde que el cambio raza es más útil que la personalización y le permite cambiar su apariencia también.";
+$appear['6'] = "Nombre de la cuenta";
+$appear['7'] = "Seleccione un Personaje";
+$appear['8'] = "Comprar";
+$appear['9'] = "Cancelar";
+//Finish Change Character Appearance
+
+//Start Change Character Faction
+$faction['1'] = " - Cambio de Facción del Personaje";
+$faction['2'] = "AJUSTES DE PERSONAJES";
+$faction['3'] = "Cambio de Facción";
+$faction['4'] = " para que esta herramienta funcione correctamente! Además, usted debe estar conectado a la web. Tu personaje no debe tener una opción de cambio activada.";
+$faction['5'] = "Nombre de la cuenta";
+$faction['6'] = "Seleccione un Personaje";
+$faction['7'] = "Comprar";
+$faction['8'] = "Cancelar";
+//Start Change Character Faction
+
+//Start Change Character Name
+$name['1'] = " - Cambio de Nombre del Personaje";
+$name['2'] = "AJUSTES DE PERSONAJES";
+$name['3'] = "Cambio de nombre";
+$name['4'] = " para que esta herramienta funcione correctamente! Además, usted debe estar conectado a la web. Tu personaje no debe tener una opción de cambio activada.";
+$name['5'] = "Recuerde que el nombre de cambio es la herramienta menos potente. La personalización y Cambio de Raza le permite cambiar su nombre también.";
+$name['6'] = "Nombre de la cuenta";
+$name['7'] = "Seleccione un Personaje";
+$name['8'] = "Comprar";
+$name['9'] = "Cancelar";
+//Finish Change Character Name
+
+//Start Change Character Race
+$race['1'] = " - Cambio de Raza del Personaje";
+$race['2'] = "AJUSTES DE PERSONAJES";
+$race['3'] = "Cambio de raza";
+$race['4'] = " para que esta herramienta funcione correctamente! Además, usted debe estar conectado a la web. Tu personaje no debe tener una opción de cambio activada.";
+$race['5'] = "Nombre de la cuenta";
+$race['6'] = "Seleccione un Personaje";
+$race['7'] = "Comprar";
+$race['8'] = "Cancelar";
+//Finish Change Character Race
+
+//Donation Panel
+$donar['1'] = " - Panel de Donación";
+$donar['2'] = "Sistema de donación";
+$donar['3'] = "Panel de Donación";
+$donar['4'] = "Donar a través de SMS";
+$donar['5'] = "Dona a través de SMS y recibe grandes recompensas.";
+$donar['6'] = "Donar a través de Paypal";
+$donar['7'] = "Dona a través de Paypal y recibe grandes recompensas.";
+$donar['8'] = "Tienda de Votación";
+$donar['9'] = "Cambia tus puntos de voto por grandes recmpensas";
+$donar['10'] = "Tienda de Donación";
+$donar['11'] = "Cambia tus puntos de voto por grandes recmpensas";
+$donar['12'] = "LEA LOS TÉRMINOS Y CONDICIONES DE DONACIÓN ";
+//Donation Panel
 ?>

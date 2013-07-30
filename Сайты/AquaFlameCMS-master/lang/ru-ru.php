@@ -297,7 +297,8 @@ $Man['Man24'] = "Пожертвовать";
 $Man['Man25'] = "Голоса";
 $Man['Man26'] = "Изменить пароль";
 $Man['Man27'] = "Просмотр истории аккаунта";
-$Man['Man29'] = "Скачать клиент";
+$Man['Man28'] = "Магазин игровых товаров";
+$Man['Man29'] = "Скачать игровой клиент";
 $Man['Man30'] = "Введите Ваш ключ игры";
 $Man['Man31'] = "Обновление учетной записи";
 $Man['Man32'] = "Отмена ";
@@ -370,7 +371,7 @@ $ha['ha20'] = "Изменение расы";
 $ha['ha21'] = "Перенос персонажа";
 $ha['ha22'] = "Изменение внешнего вида";
 $ha['ha23'] = "Изменение аккаунта";
-$ha['ha24'] = "Пригласить друга";
+$ha['ha24'] = "Пригласи друга";
 // Finishing Header Account
 
 //Starting Ban List
@@ -456,6 +457,25 @@ $Ind['Ind23'] = "Зарегестрируйся сейчас!";
 // Finishing Index
 
 // Starting Services
+$Serv['read'] = "Вопросы и ответы";
+$Serv['info1'] = "Описание услуги";
+$Serv['info2'] = "Отправьте приглашение";
+$Serv['info3'] = "Отправьте приглашение знакомым и близким. Они смогут сразу создать себе учетную запись и начать игру.";
+$Serv['info4'] = "Играйте вместе";
+$Serv['info5'] = "Вы встретитесь со своим протеже в Азероте и в течение 90 дней будете пользоваться особыми преимуществами:";
+$Serv['info6'] = "Вы сможете призывать друг друга в игре — так проще путешествовать вместе.";
+$Serv['info7'] = "Вы будете быстрее зарабатывать опыт и переходить с уровня на уровень.";
+$Serv['info8'] = "Награды";
+$Serv['info9'] = "Если ваш друг приобретет полную версию World of Warcraft и оплатит месяц подписки, вам будет начислено 30 дней игрового времени бесплатно.";
+$Serv['info10'] = "Если ваш друг оплатит два месяца подписки, вас ждет эксклюзивный подарок:";
+$Serv['info11'] = "В сражениях и странствиях по Азероту не помешает заручиться лишним союзником. Пригласите друга в World of Warcraft и играйте вместе! Это очень просто и сулит немало преимуществ.";
+$Serv['info12'] = "Авторизуйтесь в разделе";
+$Serv['info13'] = " управления учетной записью ";
+$Serv['info14'] = "со своей записи Battle.net, выберите запись World of Warcraft и в рубрике «Приглашения и награды» выберите «Пригласить друга». Отправьте приглашение. Ваш друг получит письмо с ";
+$Serv['info15'] = "указаниями";
+$Serv['info16'] = ", как начать играть в World of Warcraft.";
+$Serv['info17'] = "Учетная запись вашего друга будет связана с вашей, и вы оба сможете быстрее переходить с уровня на уровень и призывать друг друга в игре.";
+$Serv['info18'] = "Если ваш друг перейдет на полную версию World of Warcraft, вы получите еще больше подарков!";
 $Serv['Serv'] = "Услуги";
 $Serv['Serv1'] = " услуги для учетной записи";
 $Serv['Serv2'] = "Используйте доступные вам услуги, доступные в World of Warcraft, что бы легко обновить игру, моментально просматривать персонажа и многое другое.";
@@ -725,6 +745,16 @@ $armory['prof'] = "Профессии";
 $armory['pvp'] = "PvP";
 $armory['events'] = "Достижения";
 $armory['auctions'] = "Лоты";
+$armory['rank'] = "Ранг ";
+$guild1['guild'] = "Гильдия";
+$guild1['guild1'] = "Сводка";
+$guild1['guild2'] = "Состав";
+$guild1['guild3'] = "Новости";
+$guild1['guild4'] = "События";
+$guild1['guild5'] = "Достижения";
+$guild1['guild6'] = "Бонусы";
+$guild1['guild7'] = "Награды";
+$guild1['guild8'] = "Режим испытаний";
 //Finish Armory
 
 //Others
@@ -994,6 +1024,119 @@ $erors['page'] = " страница.";
 $erors['gonenow'] = "Была, да сплыла.";
 $erors['whatelse'] = "(А что еще случается с непослушными страницами?)";
 //Finish erors
+
+//Donation Panel
+$donar['1'] = "Магазин";
+$donar['3'] = "Магазин";
+$donar['4'] = "Donate Via SMS";
+$donar['5'] = "Donate via SMS and receive great rewards";
+$donar['6'] = "Donate Via Paypal";
+$donar['7'] = "Donate via SMS and receive great rewards";
+$donar['8'] = "Voting Store";
+$donar['9'] = "Exchange your points for great rewards";
+$donar['10'] = "Donation Store";
+$donar['11'] = "Exchange your points for great rewards";
+$donar['12'] = "READ TERMS AND CONDITIONS OF DONATION ";
+//Donation Panel
+
+//Start Mail
+$Mail['1'] = "Change your E-Mail";
+$Mail['2'] = "Change E-Mail";
+$Mail['3'] = "Your account MUST be offline to this tool to work. Use this tool to change your email.";
+$Mail['4'] = "Current E-Mail";
+$Mail['5'] = "New E-Mail";
+$Mail['6'] = "Confirm E-Mail";
+$Mail['7'] = "E-Mail Addresses MUST match";
+$Mail['8'] = "The new E-Mail address is not a valid E-mail.";
+$Mail['9'] = "Invalid E-Mail address, write your current E-Mail correctly.";
+$Mail['10'] = "The E-Mail for account";
+//Finish Mail
+
+//raf-invite
+$friend['1'] = " Refer a Friend";
+$friend['2'] = "Required";
+$friend['3'] = "REFERRALS &amp; REWARDS";
+$friend['4'] = "Refer a Friend";
+$friend['5'] = "Send Invitations";
+$friend['6'] = "History/Status";
+$friend['7'] = "How It Works";
+$friend['8'] = "Instructions For Recipient";
+$friend['9'] = "You have ";
+$friend['10'] = "0 friends";
+$friend['11'] = " linked to your account and 20 Referrals remaining.";
+$friend['12'] = "Level together and faster";
+$friend['13'] = "Gain rewards if your friend subscribes";
+$friend['14'] = "Get a unique two-person mount";
+$friend['15'] = "More details on how it works...";
+$friend['16'] = "You are not allowed to Refer friends who used to or still play,";
+$friend['17'] = " Use the ";
+$friend['18'] = "Refer a Friend";
+$friend['19'] = " instead!";
+$friend['20'] = "Fill in your friend's information below, along with any custom message you would like to send, and we will send an e-mail containing an invitation to the provided address. You can track the status of each Refer a Friend invitation ";
+$friend['21'] = "here";
+$friend['22'] = "Your Account Name:";
+$friend['23'] = "Your Password:";
+$friend['24'] = "Friend's Email Address:";
+$friend['25'] = "Your Character:";
+$friend['26'] = "Key Type:";
+$friend['27'] = "Russian";
+$friend['28'] = "European";
+$friend['29'] = "American";
+$friend['30'] = "Method:";
+$friend['31'] = "Manual";
+$friend['32'] = "Automatic";
+$friend['33'] = "Manual Version is available right now. Automatic Method will be coming in the near future. Stay Tuned at: ";
+$friend['34'] = " for any updates.";
+$friend['35'] = "Custom Message:";
+$friend['36'] = "Suggestion: Include your realm, guild, and character name so that your friend can contact you in-game.";
+$friend['37'] = "Your friend will need to follow the instructions in the e-mail in order to create the link between your accounts. ";
+$friend['38'] = "View the steps they will take.";
+$friend['39'] = "SEND INVITATION";
+$friend['40'] = "Cancel";
+$friend['Function Unavailable'] = "* Function Unavailable.";
+//Finish raf-invite
+
+//Start Change Character Appearance
+$appear['1'] = "Изменение персонажа";
+$appear['3'] = "Изменение вида персонажа";
+$appear['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
+$appear['5'] = "Remember that Race Change is more powerful than Customization and it allows you to change your appearance too.";
+$appear['6'] = "Аккаунт";
+$appear['7'] = "Выбор персонажа";
+$appear['8'] = "Изменить";
+$appear['9'] = "Отмена";
+//Finish Change Character Appearance
+
+//Start Change Character Faction
+$faction['1'] = "Смена фракции";
+$faction['3'] = "Смена фракции пермонажа";
+$faction['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
+$faction['5'] = "Аккаунт";
+$faction['6'] = "Выбор персонажа";
+$faction['7'] = "Изменить";
+$faction['8'] = "Отмена";
+//Start Change Character Faction
+
+//Start Change Character Name
+$name['1'] = "Смена имени";
+$name['3'] = "Смена имени персонажа";
+$name['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
+$name['5'] = "Remember that Change name is the less powerful tool, Customization and Race Change allows you to change your Name too.";
+$name['6'] = "Аккаунт";
+$name['7'] = "Выбор персонажа";
+$name['8'] = "Изменить";
+$name['9'] = "Отмена";
+//Finish Change Character Name
+
+//Start Change Character Race
+$race['1'] = "Смена расы";
+$race['3'] = "Смена расы персонажа";
+$race['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
+$race['5'] = "Аккаунт";
+$race['6'] = "Выбор персонажа";
+$race['7'] = "Изменить";
+$race['8'] = "Отмена";
+//Finish Change Character Race
 
 //admin
 $admin['AP'] = "Панель администратора";

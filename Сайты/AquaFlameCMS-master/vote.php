@@ -7,29 +7,26 @@ if (!isset($_SESSION['username'])) {
 }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
+<!DOCTYPE html> 
+<html lang="en-gb">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 <title><?php echo $Vote['Vote'];?> - <?php echo $website['title']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common.css" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie.css" /><![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie6.css" /><![endif]-->
-<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/common-ie7.css" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet.css" />
-<link rel="stylesheet" type="text/css" media="print" href="wow/static/css/bnet-print.css" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/management/dashboard.css" />
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/management/services.css" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/management/services-ie6.css" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/management/wow/raf.css" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/management/wow/raf-ie6.css" /><![endif]-->
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet-ie.css" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet-ie6.css" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/bnet-ie7.css" /><![endif]-->
-<script type="text/javascript" src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/core.js?v22"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js?v22"></script>
+<link rel="shortcut icon" href="wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
+<link rel="stylesheet" media="all" href="wow/static/local-common/css/common.css" />
+<link rel="stylesheet" media="all" href="wow/static/css/bnet.css" />
+<link rel="stylesheet" media="print" href="wow/static/css/bnet-print.css" />
+<link rel="stylesheet" media="all" href="wow/static/css/management/dashboard.css" />
+<link rel="stylesheet" media="all" href="wow/static/css/management/services.css" />
+<link rel="stylesheet" media="all" href="wow/static/css/management/wow/raf.css" />
+<script src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
+<script src="wow/static/local-common/js/core.js?v22"></script>
+<script src="wow/static/local-common/js/tooltip.js?v22"></script>
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
 try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
@@ -75,24 +72,17 @@ _gaq.push(['_trackPageLoadTime']);
 <div id="layout-middle">
 	<div class="wrapper">
 	<div id="content">
-
-
      <!--[if lte IE 7]>  <style type="text/css">
     .raf-step3-arrow { position:relative; width:176px; height:61px; background:url('wow/static/images/services/wow/raf/step_3_arrow_b.png') 0 0 no-repeat!important; top:-540px; left:105px; }
     .raf-step5-arrow { position:relative; width:155px; height:57px; background:url('wow/static/images/services/wow/raf/step_5_arrow_b.png') 0 0 no-repeat!important; top:-163px; left:150px; }
      </style>  <![endif]-->
-
-
 	<div class="dashboard service">
-
 		<div class="primary">
-
 			<div class="header">
 				<h2 class="subcategory"><?php echo $Vote['Vote']; ?></h2>
 				<h3 class="headline">Vote System</h3>
 				<a href=""><img src="wow/static/local-common/images/game-icons/wow.png" alt="World of Warcraft" width="48" height="48" /></a>
 			</div>
-
 			<div class="service-wrapper">
 			<p class="service-nav">
 				<a href=""><?php echo $Vote['Vote2']; ?></a> <!-- Spend Points -->
@@ -265,37 +255,26 @@ _gaq.push(['_trackPageLoadTime']);
 						}
 				
 				?>
-				
-				<br><br><br>
-				
-				<div class="subsection">
-					<div class="middle">?</div>
-					<div class="right">
-						<h2 class="caption" id="howitworks"><a href="#"><?php echo $Vote['Vote4']; ?></a></h2>
-						<p><?php echo $Vote['Vote30']; ?></p>
-						<P><?php echo $Vote['Vote31']; ?></p>
-						<p><?php echo $Vote['Vote32']; ?></p>
+					<br><br><br>
+					<div class="subsection">
+						<div class="middle">?</div>
+						<div class="right">
+							<h2 class="caption" id="howitworks"><a href="#"><?php echo $Vote['Vote4']; ?></a></h2>
+							<p><?php echo $Vote['Vote30']; ?></p>
+							<P><?php echo $Vote['Vote31']; ?></p>
+							<p><?php echo $Vote['Vote32']; ?></p>
+						</div>
 					</div>
-				</div>
-            <div class="raf-step3-arrow"></div>
-            <div class="raf-step5-arrow"></div>
-        </div>
-
-
-
-	<span class="clear"><!-- --></span>
+				<div class="raf-step3-arrow"></div>
+				<div class="raf-step5-arrow"></div>
 			</div>
-
+			<span class="clear"><!-- --></span>
+		    </div>
 		</div>
 	</div>
-
-
-
-
-				</div>
-            </div>
-        </div>
-
+</div>
+</div>
+</div>
 <div id="layout-bottom">
 <?php include("functions/footer_man.php"); ?>
 </div>
@@ -397,9 +376,9 @@ other: 'Other'
 };
 //]]>
 </script>
-<script type="text/javascript" src="wow/static/js/bam.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/menu.js"></script>
+<script src="wow/static/js/bam.js"></script>
+<script src="wow/static/local-common/js/tooltip.js"></script>
+<script src="wow/static/local-common/js/menu.js"></script>
 <script type="text/javascript">
 $(function() {
 Menu.initialize();

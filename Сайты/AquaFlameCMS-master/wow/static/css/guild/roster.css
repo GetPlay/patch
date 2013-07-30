@@ -5,11 +5,19 @@
 .roster-filters { padding: 20px; padding-top: 5px; background: url("../../images/character/auction/browse-form-bg.jpg") no-repeat left bottom; }
 .roster-filters .float-left { width: 100%; position:relative; }
 .roster-filters .selection { display: inline-block; margin-right: 10px; }
-.roster-filters .selection label { display: block; padding-bottom: 4px; }
+.roster-filters .selection label { display: block; padding-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .roster-filters .selection label.show-max-skill-label { display: inline; }
 .roster-filters .selection .level { width: 20px; text-align: center;}
 #professions-filters, #roster-filters {display: inline-block;}
 .roster-filters #activate-reset { position:absolute; right: -5px; top: 27px; height: 20px; width: 20px; background:url("../../images/guild/icon-resetfilters.gif") no-repeat 0 0; display: none;}
+
+.roster-filters .inputs-name { max-width: 165px; }
+.roster-filters .inputs-level { max-width: 72px; min-width: 74px; }
+.roster-filters .inputs-race { max-width: 96px;}
+.roster-filters .inputs-race select { max-width: 96px; }
+.roster-filters .inputs-class { max-width: 96px; }
+.roster-filters .inputs-class select { max-width: 96px; }
+.roster-filters .inputs-rank { max-width: 116px; }
 
 /* Flyout menu*/
 .guild-dropdown { position:relative; float: right;}

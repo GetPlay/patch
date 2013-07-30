@@ -6,34 +6,31 @@ if (!isset($_SESSION['username'])) {
 }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+<!doctype html> 
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en-gb">
 <head>
-<title><?php echo $website['title']; ?> - Change Character Faction</title>
+<title><?php echo $website['title']; ?> - <?php echo $faction['1']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="../wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
-<link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/en-gb/data/opensearch" title="Battle.net Search" />
-<link rel="stylesheet" type="text/css" media="all" href="../wow/static/local-common/css/management/common.css" />
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="local-common/css/common-ie.css" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="local-common/css/common-ie6.css" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="local-common/css/common-ie7.css" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/bnet.css" />
-<link rel="stylesheet" type="text/css" media="print" href="../wow/static/css/bnet-print.css" />
-<link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/management/dashboard.css" />
-<link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/management/wow/dashboard.css" />
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="/css/management/wow/dashboard-ie.css" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="/css/management/dashboard-ie6.css" /><![endif]-->
-<!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="css/bnet-ie.css" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="css/bnet-ie6.css" /><![endif]-->
-<script type="text/javascript" src="../wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
-<script type="text/javascript" src="../wow/static/local-common/js/core.js"></script>
-<script type="text/javascript" src="../wow/static/local-common/js/tooltip.js"></script>
-<script type="text/javascript" src="../wow/static/local-common/js/third-party/swfobject.js?v37"></script>
-<script type="text/javascript" src="../wow/static/js/management/dashboard.js?v23"></script>
-<script type="text/javascript" src="../wow/static/js/management/wow/dashboard.js?v23"></script>
-<script type="text/javascript" src="../wow/static/js/bam.js?v23"></script>
-<script type="text/javascript" src="../wow/static/local-common/js/tooltip.js?v37"></script>
-<script type="text/javascript" src="../wow/static/local-common/js/menu.js?v37"></script>
+<link rel="stylesheet" media="all" href="../wow/static/local-common/css/management/common.css" />
+<link rel="stylesheet" media="all" href="../wow/static/css/bnet.css" />
+<link rel="stylesheet" media="print" href="../wow/static/css/bnet-print.css" />
+<link rel="stylesheet" media="all" href="../wow/static/css/management/dashboard.css" />
+<link rel="stylesheet" media="all" href="../wow/static/css/management/wow/dashboard.css" />
+<script src="../wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
+<script src="../wow/static/local-common/js/core.js"></script>
+<script src="../wow/static/local-common/js/tooltip.js"></script>
+<script src="../wow/static/local-common/js/third-party/swfobject.js?v37"></script>
+<script src="../wow/static/js/management/dashboard.js?v23"></script>
+<script src="../wow/static/js/management/wow/dashboard.js?v23"></script>
+<script src="../wow/static/js/bam.js?v23"></script>
+<script src="../wow/static/local-common/js/tooltip.js?v37"></script>
+<script src="../wow/static/local-common/js/menu.js?v37"></script>
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
 try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
@@ -78,7 +75,7 @@ _gaq.push(['_trackPageLoadTime']);
 <div id="content">
 <div id="page-header">
 <span class="float-right"><span class="form-req">*</span> <?php echo $Reg['Reg']; ?></span>
-<h2 class="subcategory">CHARACTERS SETTINGS</h2>
+<h2 class="subcategory"><?php echo $faction['2']; ?></h2>
 <?php
   $price = mysql_fetch_assoc(mysql_query("SELECT * FROM $server_db.prices WHERE service = 'faction-change'"));
   if ($price['id']=='' || ($price['vp']==0 && $price['dp']==0)){
@@ -87,7 +84,7 @@ _gaq.push(['_trackPageLoadTime']);
    $free = 0;
   }
 ?>
-<h3 class="headline">Faction Change
+<h3 class="headline"><?php echo $faction['3']; ?>
 <?php
 if ($free!= 1 && ($price['vp'] > 0 || $price['dp'] > 0)){
   echo ' (';
@@ -104,8 +101,7 @@ if ($free!= 1 && ($price['vp'] > 0 || $price['dp'] > 0)){
 </h3>
 </div>
 <div id="page-content" class="page-content">
-<p><?php echo $Reg['Reg3']; ?><b><?php echo $Reg['Reg4']; ?></b> be offline for this tool to successfully work! Plus you need to be Loged to the 
-website. Your character should not have a change option activated.</p>
+<p><?php echo $Reg['Reg3']; ?><b><?php echo $Reg['Reg4']; ?></b><?php echo $faction['4']; ?></p>
 <form autocomplete="off" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 <input type="hidden" name="csrftoken" value="" />
 <?php 
@@ -160,7 +156,7 @@ else{
 ?>
 	<div class="form-row required">
 		<label for="firstname" class="label-full ">
-			<strong>Account Name</strong>
+			<strong><?php echo $faction['5']; ?></strong>
 			<span class="form-required">*</span>
 		</label>
 		<input type="text" id="firstname" name="account" value="<?php echo strtolower($_SESSION['username']); ?>" class=" input border-5 glow-shadow-2 form-disabled" maxlength="16" tabindex="1" />
@@ -168,7 +164,7 @@ else{
 
 	<div class="form-row required">
 		<label for="character" class="label-full ">
-			<strong>Select a Character</strong>
+			<strong><?php echo $faction['6']; ?></strong>
 			<span class="form-required">*</span>
 		</label>
 		
@@ -194,7 +190,7 @@ else{
 	if($free==0){
 		echo '<div class="form-row required">
 			<label for="type" class="label-full ">
-				<strong>Paymenth Method</strong>
+				<strong>Способ оплаты</strong>
 				<span class="form-required">*</span>
 			</label>
 			<select id="type" name="type">';
@@ -212,10 +208,10 @@ else{
 		elseif($online == 1) echo '*One of your characters is online<br><br><button class="ui-button button1 disabled" type="submit" name="submit" id="settings-submit" value="Continue" tabindex="1" disabled="disabled">';
     else echo '<button class="ui-button button1" type="submit" name="submit" id="settings-submit" value="Purchase" tabindex="1">';
 		?>
-		<span><span>Purchase</span></span>
+		<span><span><?php echo $faction['7']; ?></span></span>
 		</button>
 		
-		<a class="ui-cancel" href="../account_man.php" tabindex="1"><span>Cancel</span></a>
+		<a class="ui-cancel" href="../account_man.php" tabindex="1"><span><?php echo $faction['8']; ?></span></a>
 	</fieldset>
 
 </form>
@@ -235,13 +231,13 @@ var xsToken = 'b213c993-d61d-4957-9141-9da399fd7d54';
 var Msg = {
 support: {
 ticketNew: 'Ticket {0} was created.',
-ticketStatus: 'Ticket {0}�s status changed to�{1}.',
+ticketStatus: 'Ticket {0}’s status changed to {1}.',
 ticketOpen: 'Open',
 ticketAnswered: 'Answered',
 ticketResolved: 'Resolved',
 ticketCanceled: 'Cancelled',
 ticketArchived: 'Archived',
-ticketInfo: 'Need�Info',
+ticketInfo: 'Need Info',
 ticketAll: 'View All Tickets'
 },
 cms: {
@@ -279,10 +275,10 @@ urlPrompt: 'URL Address:'
 },
 ui: {
 viewInGallery: 'View in gallery',
-loading: 'Loading�',
+loading: 'Loading…',
 unexpectedError: 'An error has occurred',
-fansiteFind: 'Find this on�',
-fansiteFindType: 'Find {0} on�',
+fansiteFind: 'Find this on…',
+fansiteFindType: 'Find {0} on…',
 fansiteNone: 'No fansites available.'
 },
 grammar: {
@@ -313,9 +309,9 @@ pet: 'pet'
 };
 //]]>
 </script>
-<script type="text/javascript" src="wow/static/js/bam.js?v21"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js?v22"></script>
-<script type="text/javascript" src="wow/static/local-common/js/menu.js?v22"></script>
+<script src="wow/static/js/bam.js?v21"></script>
+<script src="wow/static/local-common/js/tooltip.js?v22"></script>
+<script src="wow/static/local-common/js/menu.js?v22"></script>
 <script type="text/javascript">
 $(function() {
 Menu.initialize();
@@ -327,8 +323,8 @@ Locale.dataPath = 'data/i18n.frag.xml';
 <script type="text/javascript" src="wow/static/local-common/js/third-party/jquery.pngFix.pack.js?v22"></script>
 <script type="text/javascript">$('.png-fix').pngFix();</script>
 <![endif]-->
-<script type="text/javascript" src="wow/static/js/settings/settings.js?v21"></script>
-<script type="text/javascript" src="wow/static/js/settings/password.js?v21"></script>
+<script src="wow/static/js/settings/settings.js?v21"></script>
+<script src="wow/static/js/settings/password.js?v21"></script>
 <script type="text/javascript">
 //<![CDATA[
 Core.load("wow/static/local-common/js/overlay.js?v22");
