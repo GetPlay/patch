@@ -37,6 +37,58 @@ function translate($race)
     return $faction;
 }
 
+function translateBg($race)
+{
+    $faction = "";
+    switch ($race) {
+        case "1":
+        case "3":
+        case "4":
+        case "7":
+        case "11":
+        case "22":
+            global $faction;
+            $faction = "bg-alliance.jpg";
+            break;
+        case "2":
+        case "5":
+        case "6":
+        case "8":
+        case "9":
+        case "10":
+            global $faction;
+            $faction = "bg-horde.jpg";
+            break;
+    }
+    return $faction;
+}
+
+function translateicon($race)
+{
+    $faction = "";
+    switch ($race) {
+        case "1":
+        case "3":
+        case "4":
+        case "7":
+        case "11":
+        case "22":
+            global $faction;
+            $faction = "sidebar-bg-alliance.png";
+            break;
+        case "2":
+        case "5":
+        case "6":
+        case "8":
+        case "9":
+        case "10":
+            global $faction;
+            $faction = "sidebar-bg-horde.png";
+            break;
+    }
+    return $faction;
+}
+
 if (isset($_GET['charname'])) {
     $cont = new wowheadparser();
     $conn = mysql_open($serveraddress, $serveruser, $serverpass);

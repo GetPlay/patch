@@ -108,20 +108,29 @@ $('#checkall').toggleClass('clicked');
         <ul id="lst">
         <li>
 			<p class="editHead"><strong><?php echo $admin['addotv']; ?>/<?php echo $admin['Delete']; ?></strong></p>
-            <p class="incHead"><?php echo $admin['author']; ?></p>
+            <p class="title"><?php echo $admin['author']; ?></p>
             <p class="descripHead"><?php echo $admin['Desc']; ?></p>
-            <p class="title"><strong><?php echo $admin['Lock']; ?></strong></p>
+            <p class="incHead"><strong><?php echo $admin['Lock']; ?></strong></p>
           </li>
            <?php
             mysql_select_db($server_cdb) or die (mysql_error());
-            $tick = mysql_query("SELECT ticketId,name,message FROM gm_tickets ORDER BY ticketId DESC LIMIT 5");
+            $tick = mysql_query("SELECT ticketId,name,message,closedBy FROM gm_tickets ORDER BY ticketId DESC LIMIT 5");
             while ($tickets = mysql_fetch_assoc($tick)){
               echo'
             <li>
             <p class="edit"><a href="edittickets.php?ticketId='.$tickets['ticketId'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletetickets.php?ticketId='.$tickets['ticketId'].'"><img src="images/deletIco.png" alt="" /></a></p>
             <p class="title">'.substr(strip_tags($tickets['name']),0,15).'</p>
-            <p class="descrip">'.substr(strip_tags($tickets['message']),0,90).'</p>
-            </li>';
+            <p class="descrip">'.substr(strip_tags($tickets['message']),0,90).'</p> ';
+				   
+													if($tickets['closedBy'] != 0)
+											echo  '<p class="inc"><font color="green">архив</font></p>';
+										else
+											echo  '<p class="inc"><font color="blue">открыт</font></p>';
+											
+																				echo' 
+									<span class="clear"><!-- --></span> 
+							</p></li>	';
+
             }?>
                 </ul></div>
 

@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+.page-header { position: relative; }
+.parchment { width: 563px; height: 240px; background: url("../../images/layout/bg-question-header.png") no-repeat 0 0; position: absolute; top: -25px; right: -80px; }
+#page-content { position: relative; }
+
+.introduction { margin: 2em 0 5em 0; width: 580px; min-height: 120px; }
+.introduction p { font-size: 13px; }
+
+.step1 { padding-right: 64px; }
+.step1 .headline { line-height: 35px; }
+
+.related-articles { overflow: hidden; min-height: 260px; }
+.article-title { font-size: 18px; line-height: 35px; height: 35px; overflow: hidden; }
+.article-issue { color: #7d7d7d; }
+.truncate-issue { position: absolute; right: 0; top: 0; width: 128px; height: 100%; overflow: hidden; z-index: 50; background: url("../../images/layout/truncate-issue.png")  repeat-y 0 center; }
+.article-subtitle { margin: 0 0 1.5em 0; }
+.article-content { padding: .75em 0 0 0; }
+.article-list li { margin: 0 0 1em 0; font-size: 13px; }
+.article-list li:last-child { margin-bottom: 0; }
+.next-step { margin-top: 3em; padding-bottom: 16px; background: url("../../images/layout/articles-arrow.png") no-repeat center bottom; }
+.next-step-content { background: #c1c0bd; font-size: 13px; padding: 12px 16px; }
+
+.form-blockable { position: relative; z-index: 1; }
+.form-block { background: rgba(221, 220, 218, .66); height: 0; padding: 0; position: absolute; top: 0; left: 0; width: 100%; z-index: 2; }
+
+.input-left { display: block; text-align: left; }
+
+.input-static .static { padding: 0; }
+
+.wow-issue-note,
+.sc2-issue-note { margin-bottom: 24px; font-size: 14px; color: #fff; }
+.hacks-issue { text-align: center; font-style: italic; font-size: 14px; width: 768px; margin: 0 auto; }
+
+.submit-row { margin-top: 40px; }
+
+#recommend-attachments { margin-bottom:8px; clear:both; }
+#recommend-attachments strong {font-size:14px;}
+.hidden-attachment { display:none; }
+
+.input-info-tooltip { cursor: default; display: inline-block; text-decoration: underline; vertical-align: middle; width: 130px; padding-top: 1px; }
+
+#no-good { margin-top: 30px; font-size: 13px; }
+#close-article-button { margin-top: 10px; }
+
+#article-container { margin-top: 0; }
+.article-column { width: auto; }
+#article-title { font-size: 20px; }
+#article-preview .article-column { background-color: #DAD8D5; border: 1px solid #999999; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 3px #888888; margin: 3px 3px 30px; padding: 10px; width: auto; }
+#article-preview #article-content { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
+#article-preview #article-info { top: 0; }
+
+.file-message { width: 750px; }
+
+#page-header .headline span { font-size: 17px; color: #479810; }
+
+.article-list .icon-16-label { margin-left: 4px; width: 460px; }
+
+#file-errors { display: none; text-align: center; }
+
+.self-help-issue:hover .section-box { background: #EEEEEE; }
+.self-help-service { padding-left: 45px; color: #6b6b6b; margin: 0; font: 14px/29px "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif; }
+.self-help-service span { color: #0072a3; }
+.self-service-box { background: #EBEAE8; padding: 12px; clear: both; width: 560px; }
+.self-service-box:hover { background: #f0efed; }
+
+.decline-preempt { margin-top: 50px; }
+
+.submit-ticket { margin: 0; }
+#file-errors { display: none; text-align: center; }
+
+#game-selection .title-text {padding: 18px 0 10px 0;}
+#summarize-issue .title-text {padding: 18px 0 10px 0;}
+#category-tree .title-text {padding: 0px 0 10px 0;}
+#category-tree .level-1 .title-text {padding: 10px 0 10px 0; width: 486px; clear:both; text-align: left;}
+#category-tree .side-note { font: bold 12px/16px "Trebuchet MS",Arial,sans-serif; float:right; margin-top:6px;}                            
+.loading {background: url("../../../static/images/loaders/loader-dark.gif") 50% 75% no-repeat; height: 70px; width: 675px;}
+
+.suggestion-block,
+.penalty-block .penalty { background-color: #EBEBEB; width: 650px; margin-top: 15px; margin-bottom: 30px; padding: 15px; }
+.custom-field-block { background-color: #EBEBEB; width: 500px; margin-top: 15px; margin-bottom: 30px; padding: 15px; }
+.suggestion-block p { padding: 8px 8px 8px 8px; }
+.suggestion-block p:focus, 
+.suggestion-block p:hover,
+.suggestion-block p:active,
+.suggestion-block div:focus,
+.suggestion-block div:hover,
+.suggestion-block div:active { background: #FFFFFF; border-radius: 4px 4px 4px 4px; }
+.suggestion-block .intro { font-size: 12px; font-weight: bold;}
+.suggestion-block a { font-size: 16px; text-decoration: underline; }
+.suggestion-block .comments-link {margin-left:50px; background: url("../../images/icons/comment-icon.png") no-repeat scroll 0 2px transparent; margin-left: 8px; padding-left: 17px; width: 25px; font-size: 13px; font-family: Arial,sans-serif; text-decoration: none;}
+.suggestion-block .comments-link:active,
+.suggestion-block .comments-link:hover { background-position: 0 -58px; }
+.suggestion-block em { color: #333333; font-style: normal; font-weight: bold; }
+
+.endpoint-block { background-color: #EBEBEB; margin-top: 15px;  margin-bottom: 30px;  padding: 15px 15px 15px 25px; text-align:left; font-size: 16px; font-weight: bold; width: 650px; }
+
+#next-step { margin-top: 30px; width: 680px; display: table; }
+
+.services .icon { float: left; margin: 10px 8px 8px 8px; }
+.endpoint-block .services .icon { margin: 15px 15px 25px 0; }
+
+#game-title {display: inline-block; vertical-align: top; padding: 25px 0 5px 0;}
+#issue-title {display: inline-block; vertical-align: top; padding: 20px 0 5px;}
+#topic-title {display: inline-block; vertical-align: top; padding: 0 0 12px 0;}
+
+#recent-account-events { margin-top: 30px; margin-bottom: 50px; width: 680px; }
+.account-event-desc { font-weight: bold; }
+
+#penalties { display: none; }
+#penalties .penalty { width: 550px; font-size: 15px; line-height: 28px; padding: 15px 0 15px 15px; }
+.penalty-block .header { font-size: 17px; font-weight: bold; margin-bottom: 10px; display: block; }
+.penalty-block .label { width: 140px; font-weight: bold; display: block; }
+.penalty-block .penalty-description span { float: left; font-size: 13px; }
+
+.supplemental-files .input-row { padding: 4px 4px 30px 0px; }
+.supplemental-files .inline-message {margin: 6px 0px 0px 12px;}
+#diagnostic .input-row-radio {padding: 4px 0px 30px 0px; }
+
+.event-date,
+.event-activity,
+.event-description { text-align: left; }
+
+.footer-padding {padding: 30px 0px 0px 0px;}
+
+.change { font-size: 11px; margin-left: 0.25em;}
+
+
+#radio-method {padding: 10px 0px 15px 0px;}
+#radio-method .input-row-radio .label-text { padding-right: 30px;}
+
+#issue-title {width:600px;}
+
+#summarize-issue {padding-top:20px;}
+
+.title-text .field-value {color: #7d7d7d;}
+
+#matching-categories .label-text img { padding-left: 8px; padding-right: 8px; position: relative; top: 2px; }
+
+.single-field-align-left .input-left,
+.multi-field-align-left .input-left { width: 150px; }
+
+.custom-field-block .title-text { padding-bottom: 10px; }
+.security-question { color: #8D8D8D; padding-bottom: 10px; }
+.ui-typeahead { margin-top: 0px;}
+.instruction-block {width: 700px;}
+.table-field-grid-row { width: 100px; }
+.service-bundle { padding-bottom: 25px; }
+.input-not-required-placeholder { display: inline-block; font: 22px/32px "Trebuchet MS",Arial,sans-serif; width: 6px; }
+.service-bundle .input-row-checkbox { padding-bottom: 0; }
+
+#ticket-form-submit-target { width: 0; height: 0; border: 0px solid #fff; }
+#live-chat-submit-response { display: none; }
+.ticket-submit-response { background-color: #E8E7E6; margin-top: 10px; padding: 1px 30px; width: 570px; }
+
+.ticket-create-received { font-size: 16px; margin-top: 25px; }
+.reference-ticket { margin-top: 25px; margin-bottom: 25px; }
+#ticket-id { font-weight: bold; }
+
+#summarize-issue .input-text { width: 579px; }
+#summarize-issue #summary { width: 561px; }
+
+#submit-form { margin-top: 20px; }
+#submit-form #lpDivButton { display: none; }
+
+.contact-channel-options { margin: 0; }
+.contact-channel-options td { border-top-width: 0; padding: 0; }
+.contact-channel-options .outer { width: 1%; }
+#next-step.chat-channel-disabled { width: 1px; }
+#next-step.chat-channel-disabled #next-step-web-ticket { padding-right: 50px; }
+
+#choose-topic { font-size: 100%; }
+
+/* modal prompt dialog */
+#modal-prompt-embedded { background: none repeat scroll 0 0 #000000; border: 5px solid #525E67; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 20px #000000; height: 180px; left: 50%; margin: -215px; padding: 0; position: fixed; top: 50%; width: 430px; z-index: 9005; }
+#modal-prompt-embedded object, 
+#modal-prompt-embedded iframe { border: medium none; margin: 0; padding: 0; width: 430px; height: 180px; }
+
+.wait-time-wrapper { text-align: center; }
+.wait-time-wrapper a { text-align: center; }
+.wait-time-estimate { text-align: center; }
+ 

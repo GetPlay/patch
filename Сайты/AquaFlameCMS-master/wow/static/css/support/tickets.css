@@ -29,7 +29,7 @@ tbody .ticket-read:hover td { background: #e1e0de; color: #222; }
 tbody .ticket-unread td { background: #e1e0de; font-weight: bold; }
 tbody .ticket-unread:hover td { background: #efefef; }
 
-tbody tr .truncate-subject { position: absolute; right: 0; top: 0; width: 32px; height: 100%; overflow: hidden; z-index: 50; background: url("../../images/tables/td-truncate.png") repeat-y 0 center; }
+tbody tr .truncate-subject { position: absolute; right: 0; top: 0; width: 32px; height: 100%; overflow: hidden; z-index: 50; background: url("../wow/static/images/tables/td-truncate.png") repeat-y 0 center; }
 tbody .ticket-read .truncate-subject { background-position: 0 center; }
 tbody .ticket-read:hover .truncate-subject { background-position: -32px center; }
 tbody .ticket-unread .truncate-subject { background-position: -64px center; }
@@ -71,4 +71,4 @@ tbody .ticket-unread:hover .truncate-subject { background-position: -96px center
 
 .no-tickets { text-align: center; font-style: italic; font-size: 14px; margin-top: 32px; }
 
-.loading-light { background: url("../../../static/images/loaders/transparent_loader_gray_48.gif") #000 50% 50% no-repeat !important; }
+.loading-light { background: url("../wow/static/../static/images/loaders/transparent_loader_gray_48.gif") #000 50% 50% no-repeat !important; }

@@ -100,192 +100,154 @@ return false;
 </div>
   <div id="layout-middle">
     <div class="wrapper"> 
-      <div id="content">
+      <div id="content"> 
         <div class="page-header" id="page-header"> 
-          <h3 class="headline">Состояние запросов</h3>
+          <h3 class="headline">
+            Обращение в службу поддержки — Подать запрос
+          </h3>
+          <div class="parchment"></div>
         </div>
         <div id="page-content">
-          <div class="ticket-filters">
-            <span class="create-ticket">
-              <a class="ui-button button1 " href="/support/ru/ticket/submit" id="create-ticket" tabindex="1" >
-                <span>
-                  <span>Подать запрос</span>
-                </span>
-              </a>
-            </span>
+
  
-            <div class="ticket-filter" id="ticket-filter" style="display: none;">
-              <form method="get" action="/support/ru/ticket/status">
-                <span class="input-left">
-                  <label for="filter-select">
-                    <span class="label-text">
-                      Показывать:
-                    </span>
-                    <span class="input-required"></span>
-                  </label>
-                </span>
-                <span class="input-right">
-                  <span class="input-select input-select-extra-small">
-                    <select name="show" id="filter-select" class=" extra-small border-5 glow-shadow-2" tabindex="1">
-                      <option value="active" selected="selected">Открытые запросы</option>
-                      <option value="all">Все запросы</option>
-                    </select>
-                    <span class="inline-message" id="filter-select-message"> </span>
-                  </span>
-                </span>
-                <script type="text/javascript">
-                  //<![CDATA[
-(function() {
-var ticketFilter = document.getElementById('ticket-filter');
-ticketFilter.style.display = 'inline-block';
-})();
-//]]>
-                </script>
-              </form>
-            </div>
-            <span class="clear">
-              <!-- -->
-            </span>
+          <br/>
+          <div id="category-title" class="title-text">
+            <span class="field-name">Тема:</span> 
           </div>
-          <table id="ticket-history">
-            <thead>
-              <tr>
-                <th scope="col" class="ticket-id">
-                  <a href="#" class="sort-link">
-                    <span class="arrow">Запрос</span>
-                  </a>
-                </th>
-                <th scope="col" class="ticket-subject">
-                  <a href="#" class="sort-link">
-                    <span class="arrow">Тема</span>
-                  </a>
-                </th>
-                <th scope="col" class="ticket-date">
-                  <a href="#" class="sort-link">
-                    <span class="arrow down">Обновлен</span>
-                  </a>
-                </th>
-                <th scope="col" class="ticket-type">
-                  <a href="#" class="sort-link">
-                    <span class="arrow">Автор</span>
-                  </a>
-                </th>
-                <th scope="col" class="ticket-status">
-                  <a href="#" class="sort-link">
-                    <span class="arrow">Статус</span>
-                  </a>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-
-
-              <?php
-      mysql_select_db($server_cdb);
-          $ticket_query = mysql_query("SELECT U.guid,U.name,A.title,A.ticketId,A.closedBy FROM characters U, gm_tickets A 
-            WHERE A.guid = U.guid");
-          while ($ticket = mysql_fetch_assoc($ticket_query)){
-          ?>
-              <tr class="ticket-read">
-                <td class="ticket-id" >
-                <a class="ticket-link" href="/<?php echo $ticket['ticketId']; ?>">
-                  <span class="ticket">EU<?php echo $ticket['ticketId']; ?>
-                  </span>
-                </a>
-                </td>
-                  <td class="ticket-subject" >
-                <div class="subject">
-                  <div class="subject-line">
-                    <?php echo $ticket['title']; ?>
-                  </div>
-                  <div class="truncate-subject"></div>
+ 
+          <div id="submit-form">
+            <form method="post" action="/support/ru/ticket/details" id="create-ticket" enctype="multipart/form-data" >
+              <input type="hidden" id="csrftoken" name="csrftoken" value="cb36e0f5-f248-4199-a442-3f386aa7a67c" />
+              <div id="ticket-form-fields">
+ 
+                <div id="d3compromised">
                 </div>
-                  </td>
-                <td class="ticket-date" >
-                <span>
-                  <time datetime="">-</time>
-                </span>
-                </td>
+                <div class="editor" id="post-edit">
+                  <div class="input-row input-row-textarea">
 
-                    <td class="ticket-date" >
-                <div class="subject">
-                  <div class="subject-line">
-                    <?php echo $ticket['name']; ?>
-                  </div>
-                  <div class="truncate-subject"></div>
-                </div>
-                    </td>
-                    <td class="ticket-status" >
-                <?php
-      mysql_select_db($server_cdb);
-          $ticket_query2 = mysql_query("SELECT A.guid,A.name,U.ticketId,U.closedBy FROM gm_tickets U, characters A 
-            WHERE A.guid = U.closedBy limit 1");
-          while ($ticket2 = mysql_fetch_assoc($ticket_query2)){
-          ?>
-                <div class="status status-archived" data-tooltip="
-                  <?php 
-           if ($ticket['closedBy'] > 0) {                         
-            echo 'Ваш запрос был перенесен в архив администратором: ' ;
-            echo $ticket2['name'];
-             }else{
-            echo 'Не просмотрен';
-            }
-         ?>" data-tooltip-options='{"location": "mouse"}'>
-                  <?php 
-           if ($ticket['closedBy'] > 0) {                         
-            echo 'Архив' ;
-             }else{
-            echo 'Открыт';
-            }
-         ?>          <?php
-        }
-        ?>
-                </div>
-                    </td>
-              </tr>
 
-              <?php
-        }
-        ?> 
-              <tr class="no-results">
-                <td class="empty-table" colspan="5">
-                  <div class="no-tickets">
-                    <p>
-                      В настоящий момент у вас нет открытых запросов в службу поддержки. Если вы хотите просмотреть свои предыдущие запросы, откройте <a href="" id="filter-link" rel="all">список «Все запросы»</a>.
-                    </p>
+
+
+
+
+                    <span class="input-left">
+                      <label for="description">
+                        <span class="label-text">
+                          Описание:
+                        </span>
+                        <span class="input-required">*</span>
+                      </label>
+                    </span>
+                    <span class="input-right">
+                      <span class="input-textarea input-textarea-extra-large">
+                        <textarea name="description" id="description"  class="extra-large border-5 glow-shadow-2" cols="78" rows="8" tabindex="1" required="required" placeholder="Опишите ситуацию как можно точнее и подробнее. Чем яснее и детальнее описание, тем быстрее мы сможем разрешить проблему." maxlength="2000"></textarea>
+                        <span id="description-charcount" class="inline-message">&#160;</span>
+                        <span class="inline-message" id="description-message"> </span>
+                      </span>
+                    </span>
                   </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="ticket-assistance columns-2"> </div>
+                </div>
+ 
+              </div>
+              <input type="hidden" id="categoryId" name="categoryId" value = "205" />
+              <input type="hidden" id="categoryIds" name="categoryIds" value = "0,197,205" />
+              <input type="hidden" id="game" name="game" value="1" />
+              <input type="hidden" id="channel" name="channel" value="TICKET" />
+              <div class="submit-row">
+                <div class="input-left"></div>
+                <div class="input-right">
+
+
+                  <button class="ui-button button1 " type="submit" id="form-submit" tabindex="1" >
+                    <span>
+                      <span>Отправить</span>
+                    </span>
+                  </button>
+
+
+                  <a class="ui-cancel" href="../account_man.php" tabindex="1">
+                    <span>
+                      Отмена
+                    </span>
+                  </a>
+
+                </div>
+              </div>
+              <script type="text/javascript">
+                //<![CDATA[
+	(function() {
+		var questionSubmit = document.getElementById('form-submit');
+		questionSubmit.disabled = 'disabled';
+		questionSubmit.className = questionSubmit.className + ' disabled';
+	})();
+        //]]>
+              </script>
+              <script type="text/javascript">
+                //<![CDATA[
+			var ReplyMsg = {
+				textareaMessage0: 'Осталось {0} симв.',
+				textareaMessage1: 'Осталось {0} симв.',
+				textareaMessage2: '<span class="inline-error">Допустимый объем ответа — не более {0} символов.</span>',
+				parenthesis: '({0})',
+				myLicenses: 'Мои записи игр',
+				myRealms: 'Мои игровые миры',
+				myCharacters: 'Мои персонажи'
+			};
+        //]]>
+              </script>
+            </form>
+          </div>
+          <div id="live-chat-submit-response" class="ticket-submit-response">
+            <p class="ticket-create-received">
+              Ваш запрос отправлен. Как только кто-то из сотрудников освободится, он ответит вам в новом окне чата.
+            </p>
+            <p class="reference-ticket">
+              Номер запроса:
+              <a id="chat-ticket-link" href="#">
+                <span id="chat-ticket-id"></span>
+              </a>
+            </p>
+          </div>
+
+        </div>
+        <div class="footer-padding">
         </div>
         <script type="text/javascript">
           //<![CDATA[
 $(function() {
-var history = new TicketHistory({
-results: 10
+	 
+	var inputs = new Inputs('#create-ticket');
+	var selectionInputs = new Inputs('#select-topic');
+	var details = new TicketDetails(1);
+	var categories = new TicketCategories(details, inputs);
+	details.setCategories(categories);
+	details.selectTicketCategory([0,197,205]);
+	var attachments = new Attachments();
+	isUserAuthenticated = true;
 });
-});
-//]]>
+        //]]>
         </script>
-        <!--[if IE 6]> <script type="text/javascript" src="/support/static/local-common/js/third-party/DD_belatedPNG.js?v46"></script>
-<script type="text/javascript">
-//<![CDATA[
-DD_belatedPNG.fix('.icon-16');
-DD_belatedPNG.fix('.icon-alert-success');
-DD_belatedPNG.fix('.icon-64');
-DD_belatedPNG.fix('.input-radio');
-DD_belatedPNG.fix('.input-checkbox');
-//]]>
-</script>
+
+        <!--[if IE 6]>		<script type="text/javascript" src="/support/static/local-common/js/third-party/DD_belatedPNG.js?v46"></script>
+        <script type="text/javascript">
+        //<![CDATA[
+			DD_belatedPNG.fix('.icon-16');
+			DD_belatedPNG.fix('.icon-32');
+			DD_belatedPNG.fix('.icon-64');
+			DD_belatedPNG.fix('.input-radio');
+			DD_belatedPNG.fix('.input-checkbox');
+			DD_belatedPNG.fix('.parchment');
+        //]]>
+        </script>
 <![endif]-->
+
         <script type="text/javascript">
           //<![CDATA[
-$(function(){
-});
-//]]>
+		$(function(){
+		});
+        //]]>
         </script>
+
       </div>
     </div>
   </div>

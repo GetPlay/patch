@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+.page-header { border: 0; margin: 0 0 12px 0; padding: 0; }
+.page-header .children { margin: 0; font-style: italic; }
+
+.thread-actions { padding: 10px 0; }
+.thread-actions .thread-buttons { -moz-user-select: none; -webkit-user-select: none; user-select: none; width: 60%; }
+.thread-actions .thread-status { text-align: right; width: 40%; }
+.thread-actions .thread-status h4 { margin: 0; }
+.thread-actions .thread-status .status-answered strong { color: #4a8432; }
+.thread-actions .thread-status p { margin: 0; display: inline-block; }
+
+.message-thread { width: 100%; border: 0; border-collapse: collapse; padding: 0; margin: 24px 0 10px 0; }
+
+.message-row td { border-top: 1px solid #afadac; vertical-align: top; text-align: left; padding: 8px 4px; }
+.message-open.message-row td.message-status { width: 16px; background: url("../wow/static/images/messages/bg.png") no-repeat 0 0; }
+.message-open.message-row td.message-author { width: 200px; background: url("../wow/static/images/messages/bg.png") no-repeat -24px 0; }
+.message-open.message-row td.message-content { background: url("../wow/static/images/messages/bg.png") no-repeat -232px 0; }
+.message-open.message-row td.message-meta { width: 224px; text-align: right; font-size: 11px; background: url("../wow/static/images/messages/bg.png") no-repeat -758px 0; }
+
+.message-open.message-row-gm td.message-status { background: url("../wow/static/images/messages/bg-blizzard.png") no-repeat 0 0; }
+.message-open.message-row-gm td.message-author { background: url("../wow/static/images/messages/bg-blizzard.png") no-repeat -24px 0; }
+.message-open.message-row-gm td.message-content { background: url("../wow/static/images/messages/bg-blizzard.png") no-repeat -232px 0; }
+.message-open.message-row-gm td.message-meta { background: url("../wow/static/images/messages/bg-blizzard.png") no-repeat -758px 0; }
+
+.message-closed.message-row td.message-status { width: 16px; background: url("../wow/static/images/messages/bg.png") no-repeat -990px 0; }
+.message-closed.message-row td.message-author { width: 200px; background: url("../wow/static/images/messages/bg.png") no-repeat -1014px 0; }
+.message-closed.message-row td.message-content { background: url("../wow/static/images/messages/bg.png") no-repeat -1222px 0; }
+.message-closed.message-row td.message-meta { width: 224px; text-align: right; font-size: 11px; background: url("../wow/static/images/messages/bg.png") no-repeat -1748px 0; }
+
+.message-closed.message-row-gm td.message-status { background: url("../wow/static/images/messages/bg-blizzard.png") no-repeat -990px 0; }
+.message-closed.message-row-gm td.message-author { background: url("../wow/static/images/messages/bg-blizzard.png") no-repeat -1014px 0; }
+.message-closed.message-row-gm td.message-content { background: url("../wow/static/images/messages/bg-blizzard.png") no-repeat -1222px 0; }
+.message-closed.message-row-gm td.message-meta { background: url("../wow/static/images/messages/bg-blizzard.png") no-repeat -1748px 0; }
+
+.message-row td p { margin: 0; }
+
+.message-row td.message-author { color: #222; font-size: 16px; }
+.message-row td.message-author .author-title { font-size: 11px; display: block; margin: .5em 0 0 0; }
+.message-row td.message-author .author-title img { display: block; margin: 1em 0 0 0; }
+
+.message-open td { height: 118px; padding: 16px 4px; }
+.message-open td.message-content .message-summary { display: none; }
+.message-open td.message-content .message-full { width: 518px; word-wrap: break-word; font: normal 13px/1.25 "Trebuchet MS", Arial, sans-serif; letter-spacing: .02em; }
+.message-open td.message-meta .date-full { display: block; }
+.message-open td.message-meta .date-summary { display: none; }
+.message-open-hover td.message-status { cursor: pointer; }
+.message-open-hover td.message-author { cursor: pointer; color: #000; }
+.message-open-hover td.message-status span { display: inline-block; }
+
+.message-row-gm td.message-author { color: #086d97; }
+.message-row-gm td.message-content { color: #086d97; }
+.message-row-gm td.message-content a { font-weight: bold; text-decoration: underline; }
+
+.message-open td.message-status .icon-16 { display: none; }
+.message-open-hover td.message-status .icon-16 { display: block; }
+
+.message-closed td.message-content .message-summary { width: 518px; word-wrap: break-word; height: 16px; overflow: hidden; position: relative; }
+.message-closed td.message-content .message-full { display: none; }
+.message-closed td.message-meta .date-full { display: none; }
+.message-closed td.message-author .author-title { display: none; }
+.message-closed-hover { cursor: pointer; }
+
+.message-closed td.message-content .truncate-summary { position: absolute; right: 0; top: 0; width: 32px; height: 100%; overflow: hidden; z-index: 50; background: url("../wow/static/images/messages/truncate-summary.png") no-repeat 0 center; }
+
+.message-attachments { padding: 32px 0; font-style: italic; }
+
+.message-reopen { background: #E8E7E6; text-align: center; margin: 48px 0 0 0; padding: 24px 28px; }
+.message-reopen p { font-size: 13px; font-style: italic; }
+.message-reopen-buttons { margin: 24px 0 0 0; }
+
+.message-editor { background: #c1c0bd; margin: 48px 0 0 0; padding: 24px 28px; overflow: hidden; }
+.message-editor-title { width: 208px; float: left; }
+.message-editor-form { float: left; width: 583px; }
+.message-editor-note { width: 583px; margin: 0 0 24px 0; font-size: 14px; color: #fff; }
+.message-editor-buttons { margin: 40px 0 0 0; }
+.message-editor-buttons .button1 { padding-left: 0; }
+.message-editor-buttons .button1.disabled span { background: #afadac; }
+.message-editor-buttons .ui-cancel span { border-color: #a1a09f; }
+
+.post-editor { padding: 6px; background: #fff url("../wow/static/images/inputs/bg.png") 0 0 repeat-x; border: 1px solid #9c9b9a; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: #888 0 0 4px; -webkit-box-shadow: #888 0 0 4px; box-shadow: #888 0 0 4px; }
+.post-editor:hover { background: #fff; }
+.post-editor:focus { background: #fff; border-color: #175e7c; color: #444; }
+
+.file-details { background: #d3d1ce; }
+
+#file-errors { display: none; text-align: center; }
+
+.message-full .subtitle { font: 17px/20px "Trebuchet MS",Arial,sans-serif; letter-spacing: -0.05em; font-weight: bold; margin-bottom: 20px; margin-top: 20px; }
+#phone-block {  background-color: #EBEBEB; margin-top: 15px; padding: 40px; width: 975px; }
+#phone-primary-intro {font-size:150%; text-align:center;}
+#phone-primary-country {font-weight:bold;}
+#phone-primary-number { font: 35px/38px "Trebuchet MS",Arial,sans-serif; letter-spacing: -0.05em; font-weight: bold; margin-top: 10px; margin-bottom: 10px; text-align: center;}
+#phone-primary-hours { margin-bottom: 15px; }
+#phone-primary-hours div { font-size:150%; padding-bottom:4px; text-align:center;}
+#phone-block tbody td { height: 18px; line-height: 16px; padding: 8px; vertical-align: top; border-bottom: 1px solid #D4D3D1;}
+#phone-block tbody .phone-country {font-weight:bold;}
+#phone-block table .phone-country {text-align: right; vertical-align: middle}
+#phone-block table .phone-number {text-align: center; vertical-align:middle;}
+#phone-block table .phone-hours {text-align: left; vertical-align:center;}
+#phone-block table .phone-hours-2 {font-size: 100%; line-height: 14px; padding-top: 3px; padding-bottom: 3px;}
+#phone-block tbody .phone-hours-2 div {padding-top: 1px; padding-bottom: 5px;}
+#phone-block tbody tr:nth-child(2n+1) td { background-color: #E8E7E7; border-bottom: 1px solid #D4D3D1; border-top: 1px solid #D4D3D1; }
+#phone-message { padding-top: 10px; padding-bottom: 10px;}
+

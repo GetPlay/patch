@@ -1,22 +1,5 @@
-
 @charset "utf-8";
-
-html,
-body { background: #040404 url("../images/layout/bg-top.jpg") 50% 0 no-repeat; color: #4a4a4a; font: normal 12px/16px Arial, "Trebuchet MS", sans-serif; }
-
-/* text and headings */
-p { margin: .7em 0; line-height: 20px; }
-h2,
-h3,
-h4,
-h5,
-h6 { line-height: 1.1; font-weight: normal; }
-h2 strong,
-h3 strong,
-h4 strong,
-h5 strong,
-h6 strong { font-weight: bold; }
-
+  
 .subcategory { color: #5d5d5d; text-transform: uppercase; font: normal 11px/1.25 "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif; }
 .headline { color: #393939; letter-spacing: -.04em; font: bold 28px/1.25 Arial, "Trebuchet MS", sans-serif; }
 #page-header .headline { padding-top: 35px; }
@@ -61,47 +44,7 @@ hr { margin: 0.75em auto 2em; height: 1px; border: none; border-top: 1px solid #
 .border-3 { -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
 .border-4 { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .border-5 { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
-
-/* buttons */
-.button1 { padding: 2px 4px; }
-.button1 span { color: #fff; height: 32px; line-height: 32px; background: url("../images/buttons/default.gif") 50% 0 repeat-x; }
-.button1.button-em span { background: url("../images/buttons/emphasis.gif") 50% 0 repeat-x; }
-.button1 > span { -moz-box-shadow: #444 0 0 5px; -webkit-box-shadow: #444 0 0 5px; box-shadow: #444 0 0 2px; }
-.button1 span { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; line-height: 32px; }
-.button1 span span { height: 31px; }
-.button1.disabled,
-.button1[disabled] { cursor: not-allowed; }
-.button1.processing { cursor: progress; }
-.button1.disabled span,
-.button1.processing span,
-.button1[disabled] span { -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
-.button1[disabled] span:hover,
-.button1[disabled] span span:hover { cursor: not-allowed; }
-.button1.hover span,
-.button1:hover span,
-.button1:focus span { background-position: 50% -32px; }
-.button1.disabled span { cursor: default; background: #bdbcb9; }
-.ui-button.disabled span,
-.ui-button.disabled span span { cursor: not-allowed !important; }
-.button1.processing span { cursor: default; background-position: 50% -64px; color: transparent; }
-.ui-button.processing span, 
-.ui-button.processing:hover span, 
-.ui-button.processing.hover span { cursor: default; background-position: 50% -64px; color: transparent; }
-.ui-cancel span { border-left: 1px solid #bbb; padding: 0 1em; margin-left: 10px; }
-.ui-button span span { font-family: Arial,sans-serif; }
-
-.button-icon { overflow: visible; height: 32px; }
-.button-icon span { padding: 0 0 0 12px; }
-.button-icon span span { padding: 0 12px 0 0; }
-.button-icon .icon { display: inline-block; height: 16px; padding: 8px 0; }
-.button-icon .icon-16 { display: block; }
-
-.right-block-buttons { margin-top: 15px; }
-.button-small { margin-right: 5px; }
-.button-small > span { box-shadow: 0 0 2px #777777; }
-.button-small span { background: url("../images/buttons/default.gif") repeat-x scroll 50% 0 transparent; color: #FFFFFF; height: 23px; line-height: 23px; border-radius: 2px 2px 2px 2px; font-size: 11px; padding-left: 8px; }
-.button-small span span { background-position: 100% -123px; padding: 0 8px 0 0; }
-
+ 
 /* tooltip */
 .ui-tooltip { max-width: 300px; color: #c4d2db; background: #4d606d; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; -moz-box-shadow: #b2b2b2 0 0 5px; -webkit-box-shadow: #b2b2b2 0 0 5px; box-shadow: #b2b2b2 0 0 5px; padding: 8px 12px; }
 .ui-tooltip h3 { color: #fff; }
@@ -119,95 +62,25 @@ hr { margin: 0.75em auto 2em; height: 1px; border: none; border-top: 1px solid #
 
 /* layout */
 .wrapper { width: 990px; margin: 0 auto; }
-#layout-top { background: url("../images/layout/bg-sides-2.png") repeat-x scroll center bottom transparent; position: relative; }
+#layout-top { background: url("../wow/static/images/layout/bg-sides-2.png") repeat-x scroll center bottom transparent; position: relative; }
 #layout-top .wrapper { position: relative; }
-#layout-middle { background: #DDDCDA url("../images/layout/bg-middle-2.jpg") top center repeat-x; border-bottom: 4px solid #777674; min-height: 400px; min-width: 1120px; }
-#layout-middle-hot { background: #DDDCDA url("../images/index/home-middle-shadow-stripe.png") top center repeat-x; border-bottom: 4px solid #777674; height: 560px; min-width: 1120px; }
+#layout-middle { background: #DDDCDA url("../wow/static/images/layout/bg-middle-2.jpg") top center repeat-x; border-bottom: 4px solid #777674; min-height: 400px; min-width: 1120px; }
+#layout-middle-hot { background: #DDDCDA url("../wow/static/images/index/home-middle-shadow-stripe.png") top center repeat-x; border-bottom: 4px solid #777674; height: 560px; min-width: 1120px; }
 #layout-middle-hot .wrapper { padding-top: 38px; }
-#layout-bottom { background: #040404 url("../images/layout/bg-top.jpg") no-repeat 50% 70%; min-height: 300px; -moz-user-select: none; -webkit-user-select: none; user-select: none; }
+#layout-bottom { background: #040404 url("../wow/static/images/layout/bg-top.jpg") no-repeat 50% 70%; min-height: 300px; -moz-user-select: none; -webkit-user-select: none; user-select: none; }
 img { -moz-user-select: none; -webkit-user-select: none; user-select: none; }
 body.home #layout-middle { border-bottom: none; }
 .home #content { padding: 23px 0; }
-
-/* header */
-#header { padding-top: 40px; clear: both; }
-#header #logo {  width: 313px; height: 92px; float: left; overflow: hidden; -moz-user-select: none; -webkit-user-select: none; user-select: none; }
-#header #logo a { width: 313px; height: 72px; display: block; border: none; text-indent: -9999px; background: url("../images/layout/bnet-default.png") no-repeat;  }
-#header #navigation { margin-top: 5px; padding: 0; height: 50px; -moz-user-select: none; -webkit-user-select: none; user-select: none; }
-#header h2 { font-family: "Lucida Sans Unicode", Arial; margin-bottom: 10px; color: #89959a; font-weight: normal; letter-spacing: -0.05em; float: left; margin: 0 0 0 17px; padding-left: 18px; border-left: 1px solid #495354; font-size: 28px; line-height: 42px; position: relative; top: 13px; }
-#header h2.isolated { border: 0; }
-#header h2 a { color:#62737e; }
-#header h2 a:hover,
-#header h2 a:focus,
-#header h2 a:active {color: #fff; }
-#header #navigation a { color: #00b6ff; }
-#header .ui-breadcrumb li { padding-right: 15px; background: url("../local-common/images/icons/arrows.png") 105% -91px no-repeat; }
-#header .ui-breadcrumb li.last { background: none; }
-
-/* search bar */
-#search-bar { float: right; margin-top: 25px; margin-right: 7px; overflow: hidden; position: relative; }
-#search-form { height: 32px; width: 280px; padding: 0 3px 0 20px; background: url("../images/layout/search-form.png") 0 0 no-repeat; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
-#search-form div { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; background: none; padding: 0; width: auto; }
-#search-form #search-button { float: right; width: 30px; height: 32px; background: none; border: none; cursor: pointer; }
-#search-form #search-field { font-size: 15px; width: 240px; padding: 3px; border: 0; margin-top: 4px; color: #707070; background: transparent; outline: 0; position: absolute; }
-#search-form #search-field.active,
-#search-form #search-field:focus { color: #000; }
-#search-form .ui-typeahead-ghost .input-ghost { margin-left: 16px; margin-top: 4px; width: 246px; }
-
-/* content */
-#content { padding: 32px 0; position: relative; }
-
-/* footer */
-#footer-banner .banner-slot { background: #d3d1ce; margin-bottom: 10px; -moz-box-shadow: #000000 0 0 5px; -webkit-box-shadow: #000000 0 0 5px; box-shadow: #000000 0 0 5px; }
-
-/* page */
-#menu-container { margin-top: -22px; }
-#navigation #page-menu.large {}
-#navigation #page-menu h3 { color: #393939; font-weight: bold; font-size: 32px; color:#BDC4D0; float:left; font-size:26px; font-weight:normal; padding-top:7px; }
-#navigation #page-menu ul { list-style: none; padding: 3px 0 0 0; font-size: 13px; font-family: "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif; }
-#navigation #page-menu li { float: left; position: relative; margin-right: 10px; }
-#navigation #page-menu li:first-child a { padding-left: 0; }
-#navigation #page-menu li a { letter-spacing: -0.025em; height: 36px; display: block; float: left; padding: 10px 15px 0; text-transform: uppercase; font-family: Arial, sans-serif; }
-#navigation #page-menu li a:hover,
-#navigation #page-menu li a:focus,
-#navigation #page-menu li a:active { color: #fff; }
-#navigation #page-menu li span { display: none; position: absolute; top: 33px; left: 50%; margin: 0 -13px; background: url("../images/layout/menu-arrow.png") no-repeat; width: 27px; height: 18px; }
-#navigation #page-menu li.active a { color: #fff; }
-#navigation #page-menu li.active span { display: block; }
-#navigation #page-menu .flyout-menu ul { padding: 0 0 5px 0; display: block; visibility: visible }
-#navigation #page-menu .flyout-menu li { float: none; display: block; width: auto; position: static; margin-right: 0; }
-#navigation #page-menu .flyout-menu li a { float: none; display: block; color: #ACBDC8; padding:3px 5px; font-size: 12px; height: auto; }
-#navigation #page-menu .flyout-menu li a:hover,
-#navigation #page-menu .flyout-menu li a:focus,
-#navigation #page-menu .flyout-menu li a:active { color: #fff }
-#navigation #page-menu .login-support { float: right; }
-#navigation #page-menu .login-support li { padding: 6px 0; color: #FFFFFF; margin-right: 0; }
-#navigation #page-menu .login-support a { float: none; display: inline; text-transform: none; font-family: "Lucida Sans Unicode","Lucida Grande","Arial",sans-serif; letter-spacing: 0; padding-right: 0; }
-.home #navigation #page-menu li span { margin: 0 -20px; }
-
-
+  
 /* menu */
-.flyout-menu { padding-top: 20px; background: url("../images/layout/menu-dropdown.gif") 0 0 no-repeat; width: 190px; margin-top: 35px; position: absolute; left: 50%; margin-left: -95px; }
+.flyout-menu { padding-top: 20px; background: url("../wow/static/images/layout/menu-dropdown.gif") 0 0 no-repeat; width: 190px; margin-top: 35px; position: absolute; left: 50%; margin-left: -95px; }
 .flyout-menu ul { background: #4d606d; width: 190px; padding-bottom: 5px; border-radius: 0 0 4px 4px; }
 .flyout-menu ul li { padding: 0 5px; }
 .flyout-menu ul li.divider { padding: 3px 10px; margin: 5px 0; background: #364b58; color: #627a8a; }
 .flyout-menu ul li a { color: #acbdc8; display: block; padding: 3px 5px; line-height: 1.5em; }
 .flyout-menu ul li a:hover { background: #6b7f8d; color: #fff; -moz-border-radius: 3px; }
 .flyout-menu ul li .flyout-menu { left: 195px; top: -2px; }
-
-/* breadcrumb menu */
-#menu-container .flyout-menu { background: none; left: 0; margin-top: 5px; margin-top: 0; top: 28px; margin-left: 0; padding-top: 0; }
-#menu-container .flyout-menu ul li .flyout-menu { left: 191px; top: -5px; }
-#menu-container .flyout-menu ul { border-radius: 4px 4px 4px 4px; padding: 5px 0; top: -30px; }
-#menu-container .flyout-menu ul li a.children, 
-.flyout-menu ul li span.children { background: url("../images/icons/breadcrumb-arrow.png") no-repeat scroll 98% 7px transparent; font-weight: normal; }
-#menu-container .flyout-menu ul li a.children:hover { background: url("../images/icons/breadcrumb-arrow.png") no-repeat scroll 98% -32px #6b7f8d; }
-	
-#navigation #page-menu li .menu-arrow { padding-right:17px; background: url("../images/icons/account-arrows.png") no-repeat 100% -2px; }
-#navigation #page-menu li .menu-arrow:hover,
-#navigation #page-menu li .menu-arrow:focus,
-#navigation #page-menu li .menu-arrow:active { background-position:100% -44px; }
-
+ 
 /* cursor state */
 html.busy, html.busy * {  
 	cursor: progress !important;  
@@ -226,7 +99,7 @@ html.busy, html.busy * {
 .ui-breadcrumb a { color: #5f5f5f; font-weight: bold; font-size: 12px; line-height: 20px; font-style: normal; }
 .ui-breadcrumb a:hover, 
 .ui-breadcrumb a:active { color: #000000; }
-.ui-breadcrumb li { margin-right: 5px; padding-right: 12px; background: url("../images/icons/breadcrumb.png") no-repeat 100%; max-width: 850px; max-height: 40px; overflow: hidden; }
+.ui-breadcrumb li { margin-right: 5px; padding-right: 12px; background: url("../wow/static/images/icons/breadcrumb.png") no-repeat 100%; max-width: 850px; max-height: 40px; overflow: hidden; }
 .ui-breadcrumb li.last a, 
 .ui-breadcrumb li.last a:hover, 
 .ui-breadcrumb li.last a:active { color: #000000; font-weight: bold; }
@@ -285,7 +158,7 @@ a:active .icon-internal,
 .icon-file-png { background-position: -96px -96px; }
 .icon-file-zip { background-position: -112px -112px; }
 .icon-attachment-small { background-position: -224px 0; }
-.icon-loading-small { background: url("../images/icons/loading-light-small.gif") no-repeat 1px 1px; }
+.icon-loading-small { background: url("../wow/static/images/icons/loading-light-small.gif") no-repeat 1px 1px; }
 
 .icon-32-label { line-height: 32px; display: inline-block; vertical-align: middle; }
 .icon-32 { width: 32px; height: 32px; overflow: hidden; display: inline-block; vertical-align: middle; background: url("../local-common/images/icons/sprite.png"); }
@@ -373,24 +246,24 @@ a:active .icon-tasklist-open-disabled,
 .alert ul li { list-style: disc outside; }
 .alert ul li { list-style: disc; }
 .alert ul li { list-style: disc; }
-.alert.alert-error { color: #c4bdb0; background: #530901 url("../images/alerts/error-close.png") 0 0 repeat-x; }
+.alert.alert-error { color: #c4bdb0; background: #530901 url("../wow/static/images/alerts/error-close.png") 0 0 repeat-x; }
 .alert.alert-error strong { color: #fff; }
-.alert.alert-error .alert-inner { background: #732e03 url("../images/alerts/error.png") 0 0 repeat-x; }
+.alert.alert-error .alert-inner { background: #732e03 url("../wow/static/images/alerts/error.png") 0 0 repeat-x; }
 .alert.alert-error p.title { color: #fff; }
 .alert.alert-error .alert-message a { color: #ffd800; }
-.alert.alert-warning { color: #6f3900; background: #ea8e00 url("../images/alerts/warning-close.png") 0 0 repeat-x; }
+.alert.alert-warning { color: #6f3900; background: #ea8e00 url("../wow/static/images/alerts/warning-close.png") 0 0 repeat-x; }
 .alert.alert-warning strong { color: #000; }
-.alert.alert-warning .alert-inner { background: #efa700 url("../images/alerts/warning.png") 0 0 repeat-x; }
+.alert.alert-warning .alert-inner { background: #efa700 url("../wow/static/images/alerts/warning.png") 0 0 repeat-x; }
 .alert.alert-warning p.title { color: #000; }
 .alert.alert-warning .alert-message a { color: #006c9d; }
-.alert.alert-success { color: #adbda8; background: #2f4728 url("../images/alerts/success-close.png") 0 0 repeat-x; }
+.alert.alert-success { color: #adbda8; background: #2f4728 url("../wow/static/images/alerts/success-close.png") 0 0 repeat-x; }
 .alert.alert-success strong { color: #fff; }
-.alert.alert-success .alert-inner { background: #4c7141 url("../images/alerts/success.png") 0 0 repeat-x; }
+.alert.alert-success .alert-inner { background: #4c7141 url("../wow/static/images/alerts/success.png") 0 0 repeat-x; }
 .alert.alert-success p.title { color: #fff; }
 .alert.alert-success .alert-message a { color: #ffd800; }
-.alert.alert-info { color: #9edaf0; background: #0081b4 url("../images/alerts/info-close.png") 0 0 repeat-x; }
+.alert.alert-info { color: #9edaf0; background: #0081b4 url("../wow/static/images/alerts/info-close.png") 0 0 repeat-x; }
 .alert.alert-info strong { color: #fff; }
-.alert.alert-info .alert-inner { background: #005171 url("../images/alerts/info.png") 0 0 repeat-x; }
+.alert.alert-info .alert-inner { background: #005171 url("../wow/static/images/alerts/info.png") 0 0 repeat-x; }
 .alert.alert-info p.title { color: #fff; }
 .alert.alert-info .alert-message a { color: #ffd800; }
 
@@ -417,12 +290,12 @@ a:active .icon-tasklist-open-disabled,
 
 /*tables */
 table { width: 100%; margin: .75em 0; border-collapse: collapse; }
-thead th { background: url("../images/tables/bg-thead.png") repeat-x left bottom; padding: 8px; height: 34px; vertical-align: middle; text-transform: uppercase; font-size: 11px; line-height: 16px; height: 16px; }
+thead th { background: url("../wow/static/images/tables/bg-thead.png") repeat-x left bottom; padding: 8px; height: 34px; vertical-align: middle; text-transform: uppercase; font-size: 11px; line-height: 16px; height: 16px; }
 tbody td { padding: 8px;  vertical-align: top; line-height: 16px; height: 16px; }
 .sort-link { display: block; }
 .sort-link:hover,
 .sort-link:focus { color: #014663; }
-.sort-link .arrow { padding-left: 10px; background: url("../images/tables/sort-arrows.png") 0 -10px no-repeat }
+.sort-link .arrow { padding-left: 10px; background: url("../wow/static/images/tables/sort-arrows.png") 0 -10px no-repeat }
 .sort-link:hover .arrow,
 .sort-link:focus .arrow { background-position: 0 -115px }
 .sort-link .arrow.up { background-position: 0 -80px }
@@ -558,7 +431,7 @@ textarea { resize: none; word-wrap: break-word; }
 
 .input-separator { display: inline-block; vertical-align: middle; height: 32px; font: normal 14px/32px "Lucida Sans Unicode","Lucida Grande", "Arial", sans-serif; color: #4a4a4a; text-align: center; padding-right: 8px; }
 
-.input-text input { background: #fff url("../images/inputs/bg.png") repeat-x; font: 14px "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif; color: #5a5a5a; padding: 0 7px; height: 32px; line-height: normal; border: 1px solid #c0c0c0; width: 250px; margin: 0; display: block; }
+.input-text input { background: #fff url("../wow/static/images/inputs/bg.png") repeat-x; font: 14px "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif; color: #5a5a5a; padding: 0 7px; height: 32px; line-height: normal; border: 1px solid #c0c0c0; width: 250px; margin: 0; display: block; }
 .input-error .input-text input { border-color: #730202; }
 .input-text input:hover { background: #fff; }
 .input-text input:focus { background: #fff; border-color: #175e7c; color: #5a5a5a; }
@@ -576,7 +449,7 @@ textarea { resize: none; word-wrap: break-word; }
 .input-text input::-webkit-input-placeholder,
 .input-textarea textarea::-webkit-input-placeholder { color: #999 !important; }
 
-.input-textarea textarea { padding: 6px; background: #fff url("../images/inputs/bg.png") 0 0 repeat-x; border: 1px solid #9c9b9a; color: #292929; font: normal 14px/1.5 "Trebuchet MS", Arial, sans-serif; }
+.input-textarea textarea { padding: 6px; background: #fff url("../wow/static/images/inputs/bg.png") 0 0 repeat-x; border: 1px solid #9c9b9a; color: #292929; font: normal 14px/1.5 "Trebuchet MS", Arial, sans-serif; }
 .input-error .input-textarea textarea { border-color: #730202; }
 .input-textarea textarea:hover { background: #fff; }
 .input-textarea textarea:focus { background: #fff; border-color: #175e7c; color: #444; }
@@ -706,8 +579,8 @@ textarea { resize: none; word-wrap: break-word; }
 
 /* dialog */
 .ui-dialog { background: #dbdbdb; border: 1px solid #fff; overflow: hidden; position: absolute; }
-.ui-dialog .ui-dialog-titlebar { height: 30px; font-size: 14px; padding: 0 10px; line-height: 30px; color: #fff; background: url("../images/layout/section-title.png") 0 0 repeat-x; }
-.ui-dialog .ui-dialog-titlebar a { float: right; color: #fff; background:url("../local-common/images/service-bar/close.gif") 100% 50% no-repeat; padding-right: 17px; }
+.ui-dialog .ui-dialog-titlebar { height: 30px; font-size: 14px; padding: 0 10px; line-height: 30px; color: #fff; background: url("../wow/static/images/layout/section-title.png") 0 0 repeat-x; }
+.ui-dialog .ui-dialog-titlebar a { float: right; color: #fff; background:url("../wow/static/local-common/images/service-bar/close.gif") 100% 50% no-repeat; padding-right: 17px; }
 .ui-dialog .ui-dialog-titlebar span { float: left; }
 .ui-dialog .ui-dialog-content { padding: 10px; width: auto; height: auto; }
 .ui-dialog .ui-dialog-buttonpane { text-align: center; padding: 10px; border-top: 1px solid #bababa; }
@@ -720,30 +593,30 @@ textarea { resize: none; word-wrap: break-word; }
 
 /* breaking news alert */
 #layout-middle #breaking-news { left: 0px; position: relative; margin: 0 auto -10px; top: 10px; width: 531px; z-index: 2; }
-.breaking-news-tip { background: transparent url("../images/index/breaking-news-tip.png") 0 0 no-repeat scroll; height: 16px; left: 50%; position: absolute; top: 42px; width: 48px; margin: 0 -23px; }
-#layout-middle #breaking-news .breaking-news-top { background: transparent url("../images/index/breaking-news-top.png") 0 0 no-repeat scroll; height: 53px; }
-#layout-middle #breaking-news .breaking-news-inner { background: url("../images/index/breaking-news-inner.png") repeat-y scroll 0 0 transparent; }
-#layout-middle #breaking-news .breaking-news-bottom { background: url("../images/index/breaking-news-bottom.png") no-repeat scroll 0 0 transparent; width: 100%; height: 13px; }
-#layout-middle #breaking-news .more { background: url("../images/icons/more-arrow-black-small.png") no-repeat scroll 95% 8px #C78405; border-radius: 4px 4px 4px 4px; color: #000000; display: block; float: right; font-size: 11px; margin-right: 3px; padding: 4px 17px 4px 12px; position: absolute; right: 17px; text-decoration: none; top: 23px; font-weight: bold;  }
+.breaking-news-tip { background: transparent url("../wow/static/images/index/breaking-news-tip.png") 0 0 no-repeat scroll; height: 16px; left: 50%; position: absolute; top: 42px; width: 48px; margin: 0 -23px; }
+#layout-middle #breaking-news .breaking-news-top { background: transparent url("../wow/static/images/index/breaking-news-top.png") 0 0 no-repeat scroll; height: 53px; }
+#layout-middle #breaking-news .breaking-news-inner { background: url("../wow/static/images/index/breaking-news-inner.png") repeat-y scroll 0 0 transparent; }
+#layout-middle #breaking-news .breaking-news-bottom { background: url("../wow/static/images/index/breaking-news-bottom.png") no-repeat scroll 0 0 transparent; width: 100%; height: 13px; }
+#layout-middle #breaking-news .more { background: url("../wow/static/images/icons/more-arrow-black-small.png") no-repeat scroll 95% 8px #C78405; border-radius: 4px 4px 4px 4px; color: #000000; display: block; float: right; font-size: 11px; margin-right: 3px; padding: 4px 17px 4px 12px; position: absolute; right: 17px; text-decoration: none; top: 23px; font-weight: bold;  }
 #layout-middle #breaking-news .more:hover, 
 #layout-middle #breaking-news .more:active { background-color: #ad7304; }
 #layout-middle #breaking-news ul { float: left; font-size: 15px; font-weight: bold; left: 36px; margin: -28px 0 -5px -5px; position: relative; top: -8px; }
-#layout-middle #breaking-news a.close { display: block; position: absolute; right: 15px; top: 8px; height: 15px; padding: 5px 12px 5px 5px; background: url("../images/index/breaking-news-close.png") no-repeat scroll 100% 8px transparent; font-size: 12px; font-family: "Lucida Sans Unicode","Lucida Grande","Arial",sans-serif; color: #FFFFFF; z-index: 100; text-transform: uppercase; }
+#layout-middle #breaking-news a.close { display: block; position: absolute; right: 15px; top: 8px; height: 15px; padding: 5px 12px 5px 5px; background: url("../wow/static/images/index/breaking-news-close.png") no-repeat scroll 100% 8px transparent; font-size: 12px; font-family: "Lucida Sans Unicode","Lucida Grande","Arial",sans-serif; color: #FFFFFF; z-index: 100; text-transform: uppercase; }
 #layout-middle #breaking-news div ul li { margin-bottom: 8px; }
-#layout-middle #breaking-news div ul li a { text-decoration: underline; height: auto; line-height: 20px; padding: 0 0 0 21px; position: relative; color: #013F5B; text-transform: none; font-weight: normal; width: 365px; background: url("../images/icons/flame-bullet.png") no-repeat scroll 0 3px transparent; font-size: 13px; display: block; }
+#layout-middle #breaking-news div ul li a { text-decoration: underline; height: auto; line-height: 20px; padding: 0 0 0 21px; position: relative; color: #013F5B; text-transform: none; font-weight: normal; width: 365px; background: url("../wow/static/images/icons/flame-bullet.png") no-repeat scroll 0 3px transparent; font-size: 13px; display: block; }
 #layout-middle #breaking-news div ul li:last-child a { margin-bottom: 5px; }
 #layout-middle #breaking-news div ul li a:hover,
 #layout-middle #breaking-news div ul li a:active { color: #000000; }
 #layout-middle #breaking-news div ul li span { background-image: none; }
 
 /* home */
-ul.kb-articles-list { list-style-image: url("../images/icons/article-arrow.png"); font-size: 14px; line-height: 1.5em; margin-left: 20px; position: relative; top: -10px; left: -5px; }
+ul.kb-articles-list { list-style-image: url("../wow/static/images/icons/article-arrow.png"); font-size: 14px; line-height: 1.5em; margin-left: 20px; position: relative; top: -10px; left: -5px; }
 ul.support-list li, 
 ul.kb-articles-list li { line-height: 1.6em; }
 ul.kb-articles-list li a { padding: 0; display: inline; }
-ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
+ul.support-list li.lock { list-style-image: url("../wow/static/images/icons/lock.png"); }
 #kb-articles { position: relative; min-height: 400px; margin-top: 2px; }
-.on-fire { background: url("../images/index/flame.png") no-repeat scroll 0 0 transparent; font-size: 17px; padding-left: 20px; position: relative; padding-bottom: 10px; }
+.on-fire { background: url("../wow/static/images/index/flame.png") no-repeat scroll 0 0 transparent; font-size: 17px; padding-left: 20px; position: relative; padding-bottom: 10px; }
 .right-block { margin-bottom: 35px; }
 .right-block h3 { margin-bottom: 3px; }
 #find-answers { float: left; margin-top: 25px; margin-left: 8px; width: 620px; }
@@ -763,7 +636,7 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 .category-block.left { margin: 0 11px 0 0; left: -9px; }
 .category-block .top { height: 86px; overflow: hidden; }
 .category-block a .top,
-.category-block li { padding-left:10px; background: url("../images/index/category-box.png") no-repeat top left; }
+.category-block li { padding-left:10px; background: url("../wow/static/images/index/category-box.png") no-repeat top left; }
 .category-block a:hover .top,
 .category-block a:active .top { background-position: top right; }
 .category-block li { background-position: 0 -86px; }
@@ -778,15 +651,15 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 .category-block ul li.more:hover, 
 .category-block ul li.more:active { background-position: -308px -131px; }
 .category-block ul li.more span { font-weight: normal; text-decoration: none; font-size: 11px; }
-.category-block .category-title { background: url("../images/icons/gray-large-arrow.png") no-repeat scroll 100% -26px transparent; }
+.category-block .category-title { background: url("../wow/static/images/icons/gray-large-arrow.png") no-repeat scroll 100% -26px transparent; }
 .category-block a:hover .category-title, 
 .category-block a:active .category-title { background-position: 100% -26px; }
 .category-block a { display: block; cursor: pointer; }
-.support-list { list-style-image: url("../images/index/support-bullet.png"); margin-left: 24px; font-size: 13px; margin-top: 15px; font-weight: bold; }
-.communication { list-style-image: url("../images/icons/communication.png"); }
-.tickets { list-style-image: url("../images/icons/ticket.png"); }
+.support-list { list-style-image: url("../wow/static/images/index/support-bullet.png"); margin-left: 24px; font-size: 13px; margin-top: 15px; font-weight: bold; }
+.communication { list-style-image: url("../wow/static/images/icons/communication.png"); }
+.tickets { list-style-image: url("../wow/static/images/icons/ticket.png"); }
 .tickets a { position: relative; top: -4px; }
-.login { list-style-image: url("../images/icons/lock.png"); }
+.login { list-style-image: url("../wow/static/images/icons/lock.png"); }
 .game-list { margin-left: 50px; position: relative; top: -45px; float: right; }
 .game-list li { float: left; margin-left: 40px; }
 .game-list a { font-weight: bold; color: #363535; }
@@ -798,77 +671,77 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 #layout-middle-hot .home-right-column { margin-top: 30px; }
 .realm-list li, 
 .ticket-list li { line-height: 28px; border-bottom: 1px dotted #c8c6c3; }
-.ticket-list li.unread span { background: url("../images/icons/support-ticket-status.png") no-repeat scroll 0 0 transparent; }
-.ticket-list li.read span { background: url("../images/icons/support-ticket-status.png") no-repeat scroll 0 -30px transparent; }
+.ticket-list li.unread span { background: url("../wow/static/images/icons/support-ticket-status.png") no-repeat scroll 0 0 transparent; }
+.ticket-list li.read span { background: url("../wow/static/images/icons/support-ticket-status.png") no-repeat scroll 0 -30px transparent; }
 .ticket-list li span, 
 .realm-list li span { font-size: 12px; color: #393939; padding-left: 23px; }
 .ticket-list li a { position: relative; top: -1px; font-weight: bold; }
 .realm-list li:last-child,
 .ticket-list li:last-child { border-bottom: none; }
-.realm-list .realm-up span { background: url("../images/icons/realm-status.png") no-repeat scroll 0 0 transparent; }
-.realm-list .realm-down span { background: url("../images/icons/realm-status.png") no-repeat scroll 0 -16px transparent; }
+.realm-list .realm-up span { background: url("../wow/static/images/icons/realm-status.png") no-repeat scroll 0 0 transparent; }
+.realm-list .realm-down span { background: url("../wow/static/images/icons/realm-status.png") no-repeat scroll 0 -16px transparent; }
 .settings-icon { margin-top: 5px; }
 #hot-issues .no-results { text-align: center; padding: 30px; width: 590px; }
 .contactus-logged-out { margin-top: 22px; margin-bottom: 42px; }
 .contactus-logged-out li { margin-bottom: 8px; }
-.contactus-logged-out a { background: url("../images/index/contactus-button.png") no-repeat scroll 0 0 transparent; width: 277px; height: 60px; display: block; letter-spacing: -0.025px; overflow: hidden; }
+.contactus-logged-out a { background: url("../wow/static/images/index/contactus-button.png") no-repeat scroll 0 0 transparent; width: 277px; height: 60px; display: block; letter-spacing: -0.025px; overflow: hidden; }
 .contactus-logged-out a:hover,
 .contactus-logged-out a:active { background-position: 0 100%; }
-.contactus-logged-out .response-time a { background: url("../images/index/contactus-response-box.png") no-repeat scroll 0 0 transparent; height: 82px; }
+.contactus-logged-out .response-time a { background: url("../wow/static/images/index/contactus-response-box.png") no-repeat scroll 0 0 transparent; height: 82px; }
 .contactus-logged-out .response-time a:hover,
 .contactus-logged-out .response-time a:active { background-position: 0 100%; }
-.contactus-logged-out span { display: block; padding-left: 49px; font-size: 16px; font-weight: bold; line-height: 30px; height: 30px; position: relative; left: 17px; top: 15px; overflow: hidden; background: url("../images/index/contactus-sprite.png") no-repeat scroll 0 0 transparent; }
+.contactus-logged-out span { display: block; padding-left: 49px; font-size: 16px; font-weight: bold; line-height: 30px; height: 30px; position: relative; left: 17px; top: 15px; overflow: hidden; background: url("../wow/static/images/index/contactus-sprite.png") no-repeat scroll 0 0 transparent; }
 .contactus-logged-out .ticket { background-position: 0 4px;  }
 .contactus-logged-out .call { background-position: 0 -64px; }
 .contactus-logged-out .login { background-position: 0 -131px; }
 .contactus-logged-out .item-restoration { background-position: 0 -195px; }
 
 .contactus-logged-out .ticket-response-time { left: 66px; letter-spacing: -0.03em; position: relative; top: 2px; font-style: normal; }
-.ticket-response-time .checkmark { padding-right: 28px; background: url("../images/icons/success.png") no-repeat scroll 100% 0 transparent; display: inline; }
+.ticket-response-time .checkmark { padding-right: 28px; background: url("../wow/static/images/icons/success.png") no-repeat scroll 100% 0 transparent; display: inline; }
 .services-logged-out { margin-top: 5px; }
 .services-logged-out li { margin-bottom: 8px; }
-.services-logged-out a { background: url("../images/index/service-button.png") no-repeat scroll 0 0 transparent; width: 277px; height: 40px; display: block; letter-spacing: -0.025px; overflow: hidden; font-size: 12px; font-weight: bold; line-height: 41px; }
+.services-logged-out a { background: url("../wow/static/images/index/service-button.png") no-repeat scroll 0 0 transparent; width: 277px; height: 40px; display: block; letter-spacing: -0.025px; overflow: hidden; font-size: 12px; font-weight: bold; line-height: 41px; }
 .services-logged-out a:hover,
 .services-logged-out a:active { background-position: 0 100%; }
 .services-logged-out a span { padding-left: 46px; line-height: 41px; display: block; }
 #services h3 { font-size: 16px; font-weight: bold; }
 
 /* service icons */
-.item-restoration { background: url("../images/restorations/restore2-small.png") no-repeat scroll 15px 7px transparent; }
+.item-restoration { background: url("../wow/static/images/restorations/restore2-small.png") no-repeat scroll 15px 7px transparent; }
 
 /* category icons */
 .category-icon { height: 25px; left: 15px; position: absolute; top: 10px; width: 25px; }
 .category-icon-empty { width: 1px; }
 .category-icon-large{ height: 50px; left: 15px; position: absolute; top: 24px; width: 50px; }
-.category-icon.wow { background: transparent url("../images/icons/home-icons-sprite.png") 0 0 no-repeat scroll; }
-.category-icon.starcraft2 { background: transparent url("../images/icons/home-icons-sprite.png") 0 -25px no-repeat scroll; }
-.category-icon.hearthstone { background: transparent url("../images/icons/home-icons-sprite.png") 0 -79px no-repeat scroll; }
-.category-icon.wow-large { background: transparent url("../images/icons/wow-large.png") 0 0 no-repeat scroll; }
-.category-icon.starcraft2-large { background: transparent url("../images/icons/starcraft2-large.png") 0 0 no-repeat scroll;  }
-.category-icon.diablo3 { background: transparent url("../images/icons/home-icons-sprite.png") 0 -50px no-repeat scroll; top: 8px; }
-.category-icon.technical-support { background: transparent url("../images/icons/home-icons-sprite.png") -25px 0 no-repeat scroll; }
-.category-icon.accounts-security { background: transparent url("../images/icons/home-icons-sprite.png") -25px -25px no-repeat scroll; }
-.category-icon.payments-services { background: transparent url("../images/icons/home-icons-sprite.png") -25px -50px no-repeat scroll; }
+.category-icon.wow { background: transparent url("../wow/static/images/icons/home-icons-sprite.png") 0 0 no-repeat scroll; }
+.category-icon.starcraft2 { background: transparent url("../wow/static/images/icons/home-icons-sprite.png") 0 -25px no-repeat scroll; }
+.category-icon.hearthstone { background: transparent url("../wow/static/images/icons/home-icons-sprite.png") 0 -79px no-repeat scroll; }
+.category-icon.wow-large { background: transparent url("../wow/static/images/icons/wow-large.png") 0 0 no-repeat scroll; }
+.category-icon.starcraft2-large { background: transparent url("../wow/static/images/icons/starcraft2-large.png") 0 0 no-repeat scroll;  }
+.category-icon.diablo3 { background: transparent url("../wow/static/images/icons/home-icons-sprite.png") 0 -50px no-repeat scroll; top: 8px; }
+.category-icon.technical-support { background: transparent url("../wow/static/images/icons/home-icons-sprite.png") -25px 0 no-repeat scroll; }
+.category-icon.accounts-security { background: transparent url("../wow/static/images/icons/home-icons-sprite.png") -25px -25px no-repeat scroll; }
+.category-icon.payments-services { background: transparent url("../wow/static/images/icons/home-icons-sprite.png") -25px -50px no-repeat scroll; }
 
 /* game filter */
 #kb-articles .active { display: block; }
 .kb-articles-game { position: absolute; display: none; }
 .support-filter { position: relative; text-align: right; top: -34px; height: 0; }
-.support-filter a { color: #FFFFFF; line-height: 9px; margin-left: 3px; padding: 5px 8px 4px; background: transparent url("../images/layout/hot-issue-buttons.png") 0 0 no-repeat scroll; border-radius: 3px; }
+.support-filter a { color: #FFFFFF; line-height: 9px; margin-left: 3px; padding: 5px 8px 4px; background: transparent url("../wow/static/images/layout/hot-issue-buttons.png") 0 0 no-repeat scroll; border-radius: 3px; }
 .support-filter a:hover { background-color: #F4F3F2; border-radius: 3px 3px 3px 3px; background-position: 0 100%; color: #FFFFFF; }
 .support-filter .active,
 .support-filter a.active:hover, 
 .support-filter a.active:active { color: #767472; cursor: default; background: #F4F3F2; }
 
 /* support common search box */
-#support-search-form { background: url("../images/inputs/support-search-box.png") no-repeat scroll 0 -1px transparent; height: 48px; position: relative; left: -4px; }
+#support-search-form { background: url("../wow/static/images/inputs/support-search-box.png") no-repeat scroll 0 -1px transparent; height: 48px; position: relative; left: -4px; }
 #support-search-form.active { background-position: 0 -57px; }
-#support-search-form.long { background: url("../images/inputs/support-search-box-long.png") no-repeat scroll 0 0 transparent; width: 752px; }
+#support-search-form.long { background: url("../wow/static/images/inputs/support-search-box-long.png") no-repeat scroll 0 0 transparent; width: 752px; }
 #support-search-form.long.active { background-position: 0 100%; }
 #support-search-form.long #support-search-field { width: 568px; }
 #support-search-form.long .input-ghost { width: 390px; }
 #support-search-form.long #search-filter-dropdown { right: 165px; }
-#support-search-form.search { background: url("../images/inputs/support-search-box-search.png") no-repeat scroll 0 0 transparent; width: 721px; }
+#support-search-form.search { background: url("../wow/static/images/inputs/support-search-box-search.png") no-repeat scroll 0 0 transparent; width: 721px; }
 #support-search-form.search #support-search-field { width: 544px; }
 #support-search-form.search #search-filter-dropdown { right: 160px; }
 #support-search-form.home { margin-bottom: -10px; margin-top: 0; width: 634px; }
@@ -899,14 +772,14 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 /* support search box */
 #support-search-button { position: absolute; right: 0; top: -1px; }
 #support-search-button span { box-shadow: none; border-radius: none; height: auto; line-height: auto; padding: 0; }
-#support-search-button span span { background: url("../images/inputs/support-search-button.png") no-repeat scroll 0 0 transparent; height: 56px; width: 156px; text-shadow: 1px 1px 1px #444444; color: #FFFFFF; font-size: 15px; line-height: 56px; padding: 0; }
+#support-search-button span span { background: url("../wow/static/images/inputs/support-search-button.png") no-repeat scroll 0 0 transparent; height: 56px; width: 156px; text-shadow: 1px 1px 1px #444444; color: #FFFFFF; font-size: 15px; line-height: 56px; padding: 0; }
 #support-search-button:hover span, 
 #support-search-button:active span { background-position: 0 -56px; }
-#support-search-button.processing span span { background: url("../images/loaders/loader-search.gif") no-repeat scroll 50% 50% transparent; text-indent: -5000px; }
-#support-search-button.processing span { background: url("../images/inputs/support-search-button.png") no-repeat scroll 0 -112px transparent; }
+#support-search-button.processing span span { background: url("../wow/static/images/loaders/loader-search.gif") no-repeat scroll 50% 50% transparent; text-indent: -5000px; }
+#support-search-button.processing span { background: url("../wow/static/images/inputs/support-search-button.png") no-repeat scroll 0 -112px transparent; }
 #search-filter { border: 0 none; color: #AAAAAA; margin-right: 5px; width: 165px; font-size: 13px; }
 #search-filter-dropdown { border-radius: 4px 4px 4px 4px; display: none; float: right; line-height: 18px; position: relative; right: 162px; top: 12px; width: auto; }
-#search-filter-dropdown .ui-search-dropdown .dropdown-toggler { display: block; background: url("../images/inputs/search-cat-selector-bg.png") no-repeat scroll 0 0 transparent; padding: 7px 10px 6px; border-radius: 4px 4px 4px 4px; }
+#search-filter-dropdown .ui-search-dropdown .dropdown-toggler { display: block; background: url("../wow/static/images/inputs/search-cat-selector-bg.png") no-repeat scroll 0 0 transparent; padding: 7px 10px 6px; border-radius: 4px 4px 4px 4px; }
 #search-filter-dropdown .ui-search-dropdown .dropdown-toggler:hover,
 #search-filter-dropdown .opened .dropdown-toggler { background-position: 0 100%; }
 #search-filter-dropdown .ui-search-dropdown .dropdown-toggler:hover span,
@@ -917,14 +790,14 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 .ui-search-dropdown { display: inline; margin-right: 15px; border: 0 none; }
 .ui-search-dropdown a span { color: #8B8B8B; padding-right: 15px; font-family: Lucida Sans; }
 .ui-search-dropdown .dropdown-toggler { border-radius: 5px 5px 5px 5px; color: #EAEAEA; font-size: 14px; padding-right: 0; }
-.ui-search-dropdown .dropdown-toggler span { background: url("../images/icons/search-dropdown-arrow.png") no-repeat scroll 100% 8px transparent; border-bottom-right-radius: 5px; border-top-right-radius: 5px; display: block; overflow: hidden; white-space: nowrap; font-size: 12px; text-align: right; }
+.ui-search-dropdown .dropdown-toggler span { background: url("../wow/static/images/icons/search-dropdown-arrow.png") no-repeat scroll 100% 8px transparent; border-bottom-right-radius: 5px; border-top-right-radius: 5px; display: block; overflow: hidden; white-space: nowrap; font-size: 12px; text-align: right; }
 .ui-search-dropdown .dropdown-wrapper { position: absolute; background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #BBBBBB; padding: 5px 0; width: 100%; z-index: 1; line-height: 13px; min-width: 165px; right: -1px; top: 31px; }
 .ui-search-dropdown .dropdown-wrapper ul li a { color: #5A5A5A; display: block; padding: 5px 10px; }
 .ui-search-dropdown .dropdown-wrapper ul li a:hover, 
 .ui-dropdown .dropdown-wrapper ul li a:focus { background-color: #3399FF; text-decoration: none; color: #FFFFFF; }
 
 /* article */
-.article-comments .comments-link { margin-left: 0; background: url("../images/icons/comment-icon.png") no-repeat scroll 0 3px transparent; }
+.article-comments .comments-link { margin-left: 0; background: url("../wow/static/images/icons/comment-icon.png") no-repeat scroll 0 3px transparent; }
 .article-comments .comments-link:hover,
 .article-comments .comments-link:active { background-position: 0 -57px; }
 .article-games { position: absolute; right: 9px; top: 3px; }
@@ -959,9 +832,9 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 #article-feedback-form .input-right { display: inline-block; }
 #article-results em { font-style: normal; font-weight: bold; }
 #article-results .content em { color: #333333; }
-#feedback-sent { background: url("../images/icons/success.png") no-repeat scroll 5px 9px #E8E7E6; border-radius: 4px 4px 4px 4px; padding: 9px 9px 8px 32px; margin-left: 8px; display: none; line-height: 20px; }
-#feedback-loader { display: none; background: url("../images/loaders/feedback-loader.gif") no-repeat scroll 0 0 transparent; height: 16px; left: 145px; position: relative; top: -23px; width: 16px; }
-#feedback-comment-sent { background: url("../images/icons/arrow-done.png") no-repeat scroll 0 0 transparent; font-size: 25px; padding-left: 85px; line-height: 54px; }
+#feedback-sent { background: url("../wow/static/images/icons/success.png") no-repeat scroll 5px 9px #E8E7E6; border-radius: 4px 4px 4px 4px; padding: 9px 9px 8px 32px; margin-left: 8px; display: none; line-height: 20px; }
+#feedback-loader { display: none; background: url("../wow/static/images/loaders/feedback-loader.gif") no-repeat scroll 0 0 transparent; height: 16px; left: 145px; position: relative; top: -23px; width: 16px; }
+#feedback-comment-sent { background: url("../wow/static/images/icons/arrow-done.png") no-repeat scroll 0 0 transparent; font-size: 25px; padding-left: 85px; line-height: 54px; }
 #article-comment-sent { display: none; }
 #article-comment-failed { display: none; font-size: 25px; }
 .article-info { color: #8D8D8D; font-size: 12px; position: relative; margin-top: 15px; text-align: center; position: relative; top: 0; }
@@ -976,7 +849,7 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 #article-footer { margin-bottom: 75px; }
 .game-icon-small { position: relative; display: inline-block; left: -2px; }
 .print { float: right;}
-.print span { display: block; font-size: 14px; line-height: 22px; padding-left: 24px; background: url("../images/icons/printer.png") no-repeat scroll 0 0 transparent; }
+.print span { display: block; font-size: 14px; line-height: 22px; padding-left: 24px; background: url("../wow/static/images/icons/printer.png") no-repeat scroll 0 0 transparent; }
 .paging-wrapper { float:right; z-index: 2; }
 .paging-wrapper-bottom { margin-top: 7px; }
 .paging-wrapper .article-paging { display: inline-block; }
@@ -985,19 +858,19 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 #extra-keywords-data { display: none; }
 .extra-keywords { cursor: default; }
 #article-content div.collapsible { border: 1px solid #C1C3C2; }
-#article-content div.collapsible-title { background: url("../images/icons/collapse.gif") no-repeat scroll 0 0 transparent; margin-left: 4px; padding-left: 14px; font-weight: bold; cursor: pointer; }
+#article-content div.collapsible-title { background: url("../wow/static/images/icons/collapse.gif") no-repeat scroll 0 0 transparent; margin-left: 4px; padding-left: 14px; font-weight: bold; cursor: pointer; }
 #article-content div.collapsible-title.collapse { background-position: 0 -20px; }
 #article-content div.collapsible-content { display: none; margin: 4px; }
 
 /* layout */
 .categories { margin-top: -11px; margin-bottom: -35px; }
 .relative-container-outer { clear: left; float: left; overflow: hidden; width: 100%; position: relative; top: -35px; }
-.relative-container-middle { clear: left; float: left; position: relative; right: 749px; width: 100%; background: url("../images/layout/left-column-bg.png") repeat-y scroll right 0 transparent; }
+.relative-container-middle { clear: left; float: left; position: relative; right: 749px; width: 100%; background: url("../wow/static/images/layout/left-column-bg.png") repeat-y scroll right 0 transparent; }
 .relative-container-inner { float: left; left: 99px; position: relative; width: 100%; }
 .relative-container-browse-outer { clear: left; float: left; overflow: hidden; width: 100%; }
-.relative-container-browse-middle { clear: left; float: left; position: relative; right: 749px; width: 100%; background: url("../images/layout/left-column-bg.png") repeat-y scroll right 0 transparent; }
+.relative-container-browse-middle { clear: left; float: left; position: relative; right: 749px; width: 100%; background: url("../wow/static/images/layout/left-column-bg.png") repeat-y scroll right 0 transparent; }
 .relative-container-browse-inner { float: left; left: 749px; position: relative; width: 100%; }
-.gradient-header { float: left; left: 621px; overflow: hidden; position: relative; width: 45px; height: 200px; background: url("../images/layout/column-gradient-header.png") no-repeat scroll 0 0 transparent; }
+.gradient-header { float: left; left: 621px; overflow: hidden; position: relative; width: 45px; height: 200px; background: url("../wow/static/images/layout/column-gradient-header.png") no-repeat scroll 0 0 transparent; }
 .support-left-container { clear: left; float: left;  left: 650px; margin-top: 73px; overflow: hidden; position: relative; width: 244px; }
 .support-right-container { float: left; left: 649px; overflow: hidden; position: relative; width: 746px; }
 
@@ -1007,14 +880,14 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 .submit-ticket #submit-ticket-header { margin-bottom: -5px; }
 .submit-ticket button span { padding-left: 10px; }
 .submit-ticket button span span,
-.submit-ticket button:hover span span { background: url("../images/icons/ticket-small-white.png") no-repeat scroll 0 2px transparent; padding-left: 32px; padding-right: 17px; }
+.submit-ticket button:hover span span { background: url("../wow/static/images/icons/ticket-small-white.png") no-repeat scroll 0 2px transparent; padding-left: 32px; padding-right: 17px; }
 
 /* service buttons */
 .service-block { margin-bottom: 30px; }
 
 /* service button icons */
 .item-restoration-service button span span,
-.item-restoration-service button:hover span span { background: url("../images/restorations/restore-small-white.png") no-repeat scroll 0 2px transparent; }
+.item-restoration-service button:hover span span { background: url("../wow/static/images/restorations/restore-small-white.png") no-repeat scroll 0 2px transparent; }
 
 /* category */
 #page-content.article-browse { font-family: Arial, "Trebuchet MS", sans-serif; margin-top: -14px; }
@@ -1043,7 +916,7 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 #categories-container ul.sublevel li a:hover { background-color: #FFFFFF; color: #0072A3; }
 #categories-container ul.sublevel li a.active { background-color: #0078A9; position: relative; color: #FFFFFF; font-weight: normal; }
 #categories-container a.active div,
-#menu-search .item-active div { height: 32px; left: 196px; position: absolute; top: 0; width: 26px; background: url("../images/layout/category-arrow.png") no-repeat scroll 0 0 transparent; }
+#menu-search .item-active div { height: 32px; left: 196px; position: absolute; top: 0; width: 26px; background: url("../wow/static/images/layout/category-arrow.png") no-repeat scroll 0 0 transparent; }
 #categories-container ul.sublevel a.active div { left: 181px; }
 #categories-container ul.toplevel a,
 #categories-container ul.sublevel a { white-space: nowrap; box-shadow: 0 1px 1px #CCCCCC; }
@@ -1055,7 +928,7 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 #category-banner { height: 98px; background: none no-repeat scroll right top transparent; background-position: 100% -5px; position: relative; }
 #category-banner.article-browse .header { top: 35px; }
 #category-banner.article-browse #game-filter { position: relative; top: 50px; }
-#category-banner .truncate-banner { background: url("../images/layout/header-underline-truncator.png") no-repeat scroll 0 0 transparent; position: absolute; height: 1px; right: 0; top: 83px; position: absolute; width: 110px; }
+#category-banner .truncate-banner { background: url("../wow/static/images/layout/header-underline-truncator.png") no-repeat scroll 0 0 transparent; position: absolute; height: 1px; right: 0; top: 83px; position: absolute; width: 110px; }
 #category-banner .truncate-common { top: 93px; }
 #category-tabs { height: 80px; margin-bottom: 15px; background-color: #7f7e7c; color: #FFFFFF; font-size: 19px; border-radius: 4px 4px 4px 4px; }
 #category-tabs { height: 80px; }
@@ -1065,7 +938,7 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 .category-tab-list li:last-child { border-radius: 0 4px 4px 0; }
 .category-tab-list li a { color: #FFFFFF; display: block; width: 153px; height: 80px; text-align: center; vertical-align: middle; display: table-cell; line-height: 1.2em; } 
 .category-tab-list .active { background-color: #535250; }
-#category-banner .header { border-bottom: 1px solid #B2B0AF; height: 48px; overflow: hidden; padding: 0 0 0 56px; position: relative; top: 45px; background: url("../images/layout/category-shadow.png") no-repeat scroll 15px 2px transparent; }
+#category-banner .header { border-bottom: 1px solid #B2B0AF; height: 48px; overflow: hidden; padding: 0 0 0 56px; position: relative; top: 45px; background: url("../wow/static/images/layout/category-shadow.png") no-repeat scroll 15px 2px transparent; }
 #category-banner .header img { border-right: 1px solid #B2B0AF; left: 0; position: absolute; top: 0; }
 #category-dropdown { float: left; }
 .category-tab-link { position: relative; }
@@ -1079,15 +952,15 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 #articles-container ul.browse-articles-list li:active { background-color: #E5E4E3; }
 #articles-container ul.browse-articles-list li.filter-result { min-height: 100px; height: 100%; }
 #articles-container ul.browse-articles-list li:last-child { border-bottom: 1px dotted #b5b3b2; }
-#articles-container ul.browse-articles-list li a.article-link { line-height: 20px; display: block; padding: 10px 0px 9px 20px; background: url("../images/icons/article-bullet.png") no-repeat scroll 1px 12px transparent; width: 500px; margin-left: 3px; float: left; }
+#articles-container ul.browse-articles-list li a.article-link { line-height: 20px; display: block; padding: 10px 0px 9px 20px; background: url("../wow/static/images/icons/article-bullet.png") no-repeat scroll 1px 12px transparent; width: 500px; margin-left: 3px; float: left; }
 #hot-issues ul.browse-articles-list li a.article-link { width: 545px; }
 #hot-issues #articles-container ul.browse-articles-list li:first-child { border-top: none; }
 #articles-container ul.browse-articles-list li a:hover,
 #articles-container ul.browse-articles-list li a:active { background-position: 1px -86px; } 
-#articles-container ul.browse-articles-list li a.hot-issue, div.sidebar-container a.hot-issue-bullet { background: url("../images/icons/flame-bullet.png") no-repeat scroll 0 11px transparent; }
+#articles-container ul.browse-articles-list li a.hot-issue, div.sidebar-container a.hot-issue-bullet { background: url("../wow/static/images/icons/flame-bullet.png") no-repeat scroll 0 11px transparent; }
 #articles-container ul.browse-articles-list li a.hot-issue:hover,
 #articles-container ul.browse-articles-list li a.hot-issue:active { background-position: 0px -131px; }
-#articles-container ul.browse-articles-list li a.comments-link { background: url("../images/icons/comment-icon.png") no-repeat scroll 0 14px transparent; margin-left: 2px; float: right; width: 25px; padding: 11px 6px 11px 17px; }
+#articles-container ul.browse-articles-list li a.comments-link { background: url("../wow/static/images/icons/comment-icon.png") no-repeat scroll 0 14px transparent; margin-left: 2px; float: right; width: 25px; padding: 11px 6px 11px 17px; }
 #articles-container ul.browse-articles-list li a.comments-link:hover,
 #articles-container ul.browse-articles-list li a.comments-link:active { background-position: 0 -46px; }
 #articles-container ul.browse-articles-list .content { margin: 0 0 10px 23px; width: 625px; }
@@ -1112,14 +985,14 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 #facet-filters { margin-bottom: 20px; }
 #facet-filters .keyword-filters { margin-bottom: 6px; }
 #facet-filters .facet { background-color: #558CA3; border-radius: 2px 0 0 2px; color: #FFFFFF; font-weight: bold; line-height: 20px; padding: 6px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#487F96', endColorstr='#5E95AC'); background: -webkit-gradient(linear, left top, left bottom, from(#487F96), to(#5E95AC)); background: -moz-linear-gradient(top,  #487F96,  #5E95AC); line-height: 30px; }
-#facet-filters a.remove { background-color: #225970; line-height: 20px; padding: 6px 10px 6px 9px; font-weight: bold; color: #80B7CE; border-radius: 0 2px 2px 0; margin-right: 5px; background: url("../images/icons/keyword-remove.png") no-repeat scroll 1px 4px #225970; }
+#facet-filters a.remove { background-color: #225970; line-height: 20px; padding: 6px 10px 6px 9px; font-weight: bold; color: #80B7CE; border-radius: 0 2px 2px 0; margin-right: 5px; background: url("../wow/static/images/icons/keyword-remove.png") no-repeat scroll 1px 4px #225970; }
 #support-filter-form { float: left; margin-bottom: 19px; }
-.search-loader { background: url("../images/loaders/loader-medium.gif") no-repeat scroll 0 0 transparent; float: left; line-height: 26px; padding-left: 30px; padding-right: 30px; position: relative; top: 11px; display: none; }
+.search-loader { background: url("../wow/static/images/loaders/loader-medium.gif") no-repeat scroll 0 0 transparent; float: left; line-height: 26px; padding-left: 30px; padding-right: 30px; position: relative; top: 11px; display: none; }
 #game-filter-dropdown { height: 0; left: 805px; position: absolute; top: 56px; width: 250px; z-index: 100; }
 #game-filter-dropdown .ui-dropdown { float: none; }
 #game-filter-dropdown .show-for { font-family: Artial,sans-serif; font-size: 14px; left: -120px; position: relative; top: 28px; } 
 #game-filter-dropdown .dropdown-toggler { border-radius: 0; background: none; background-color: #4D606D; height: 34px; }
-#game-filter-dropdown .dropdown-toggler span { color: #FFFFFF; background: url("../images/icons/account-arrows.png") no-repeat scroll 154px -43px transparent; height: 34px; line-height: 34px; }
+#game-filter-dropdown .dropdown-toggler span { color: #FFFFFF; background: url("../wow/static/images/icons/account-arrows.png") no-repeat scroll 154px -43px transparent; height: 34px; line-height: 34px; }
 #game-filter-dropdown .dropdown-wrapper { z-index: 2; padding: 0; box-shadow: none; border: none; background-color: #4D606D; position: absolute; display: block; }
 #game-filter-dropdown .dropdown-wrapper a:hover,
 #game-filter-dropdown .dropdown-wrapper a:active { background: none; }
@@ -1135,9 +1008,9 @@ ul.support-list li.lock { list-style-image: url("../images/icons/lock.png"); }
 a.comments-link { font-family: Verdana, Arial, sans-serif; font-size: 12px; line-height: 15px; }
 
 /* article search filter */
-#support-filter-form { background: url("../images/inputs/filter-box.png") no-repeat scroll 0 0 transparent; height: 45px; position: relative; left: -10px; width: 245px; }
+#support-filter-form { background: url("../wow/static/images/inputs/filter-box.png") no-repeat scroll 0 0 transparent; height: 45px; position: relative; left: -10px; width: 245px; }
 #support-filter-form #support-filter-field { border: 0 none; margin: 14px 0 0 15px; width: 192px; color: #AAAAAA; }
-.cancel-filter { background: url("../images/icons/cancel.png") no-repeat scroll 0 0 transparent; cursor: pointer; display: none; height: 28px; left: 210px; position: absolute; top: 10px; width: 28px; }
+.cancel-filter { background: url("../wow/static/images/icons/cancel.png") no-repeat scroll 0 0 transparent; cursor: pointer; display: none; height: 28px; left: 210px; position: absolute; top: 10px; width: 28px; }
 
 /* category index pages: games and battle.net */
 #cat-index-container #support-search { margin: 0 auto 100px; width: 756px; }
@@ -1157,20 +1030,20 @@ a.comments-link { font-family: Verdana, Arial, sans-serif; font-size: 12px; line
 .game-promo { left: 6px; top: -95px; width: 239px; height: 392px; display: block; position: absolute; outline: none; border: none; text-align: right; padding: 0; font-size: 16px; -moz-box-shadow: 0 0 20px #000; -webkit-box-shadow: 0 0 10px #1e2023;  -moz-border-radius: 7px; -webkit-border-radius: 7px; border-radius: 7px; }
 .game-promo:hover,
 .game-promo:focus { text-decoration: none; }
-.game-promo span { padding-right: 35px; background: transparent url("../images/games/promo-arrow.gif") 100% -3px no-repeat; }
+.game-promo span { padding-right: 35px; background: transparent url("../wow/static/images/games/promo-arrow.gif") 100% -3px no-repeat; }
 .game-promo .game-tip { position:absolute; top:7px; padding: 8px 25px 5px 5px; width:195px; right: 7px; color:#B2BAC7; }
 .game-promo:hover .game-tip,
 .game-promo:focus .game-tip { color: #fff; border-color: #007db0; background-position: 100% -41px }
-#home-game-starcraft2 .game-promo { background: url("../images/games/starcraft2.png") 0 0 no-repeat; }
+#home-game-starcraft2 .game-promo { background: url("../wow/static/images/games/starcraft2.png") 0 0 no-repeat; }
 #home-game-starcraft2 .game-promo:hover,
 #home-game-starcraft2 .game-promo:focus { background-position: -248px 0; }
-#home-game-wow .game-promo { background: url("../images/games/wow.png") 0 0 no-repeat; }
+#home-game-wow .game-promo { background: url("../wow/static/images/games/wow.png") 0 0 no-repeat; }
 #home-game-wow .game-promo:hover,
 #home-game-wow .game-promo:focus { background-position: -248px 0; }
-#home-game-diablo3 .game-promo { background: url("../images/games/diablo3.png") 0 0 no-repeat; }
+#home-game-diablo3 .game-promo { background: url("../wow/static/images/games/diablo3.png") 0 0 no-repeat; }
 #home-game-diablo3 .game-promo:hover,
 #home-game-diablo3 .game-promo:focus { background-position: -248px 0; }
-#home-game-hearthstone .game-promo { background: url("../images/games/hearthstone.png") 0 0 no-repeat; }
+#home-game-hearthstone .game-promo { background: url("../wow/static/images/games/hearthstone.png") 0 0 no-repeat; }
 #home-game-hearthstone .game-promo:hover,
 #home-game-hearthstone .game-promo:focus { background-position: -248px 0; }
 
@@ -1188,16 +1061,16 @@ a.comments-link { font-family: Verdana, Arial, sans-serif; font-size: 12px; line
 #home-game-diablo3 .game-promo.hover:focus,
 #home-game-hearthstone .game-promo.hover:focus { opacity:1; }
 
-#other-games { margin: 45px auto 30px; background: url("../images/layout/category-shadow.png") no-repeat scroll 54px 130px transparent; height: 170px; width: 850px; }
+#other-games { margin: 45px auto 30px; background: url("../wow/static/images/layout/category-shadow.png") no-repeat scroll 54px 130px transparent; height: 170px; width: 850px; }
 .topic-chooser { display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px; }
 .game-series { float: left; width: 170px; font-size: 13px; line-height: 20px; }
 .game-series h3 { font-size: 14px; font-weight: bold; border-bottom: 2px solid #c4c3c1; margin-bottom: 8px; padding-bottom: 13px; color: #000000; letter-spacing: -0.025em; padding-left: 5px; }
 .game-series a { display: block; padding: 3px 5px; border-radius: 4px 4px 4px 4px; margin-right: 5px; }
 .game-series a:hover { background-color: #E5E4E3; }
-.bnet-category { background: url("../images/layout/bnet-category.png") no-repeat scroll 0 0 transparent; float: left; height: 201px; margin: 0 22px 28px 0; width: 306px; }
+.bnet-category { background: url("../wow/static/images/layout/bnet-category.png") no-repeat scroll 0 0 transparent; float: left; height: 201px; margin: 0 22px 28px 0; width: 306px; }
 .bnet-category a { display: block; height: 196px; width: 303px; cursor: pointer; }
 .bnet-category h3 { font-size: 18px; margin-bottom: 24px; letter-spacing: -0.025em; }
-.bnet-category h3 span { background: url("../images/icons/bnet-link-arrow.png") no-repeat scroll 100% 3px transparent; padding-right: 18px; }
+.bnet-category h3 span { background: url("../wow/static/images/icons/bnet-link-arrow.png") no-repeat scroll 100% 3px transparent; padding-right: 18px; }
 .bnet-category .left { display: block; float: left; height: 195px; width: 60px; }
 .bnet-category .right { float: left; overflow: hidden; width: 229px; margin-left: 14px; margin-top: 29px; }
 .bnet-category .cat-index-icon { display: block; height: 100%; }
@@ -1207,7 +1080,7 @@ a.comments-link { font-family: Verdana, Arial, sans-serif; font-size: 12px; line
 .bnet-category:hover h3 span,
 .bnet-category:active h3 span { background-position: 100% -56px; }
 .bnet-category .bnet-category-list { padding-left: 1.3em; list-style: disc outside none; }
-.shadow-drop { height: 30px; margin-bottom: 30px; background: url("../images/layout/category-shadow.png") no-repeat scroll 54px 0 transparent; } 
+.shadow-drop { height: 30px; margin-bottom: 30px; background: url("../wow/static/images/layout/category-shadow.png") no-repeat scroll 54px 0 transparent; } 
 .kb-articles-list li .search-results { line-height: 16px; margin-bottom: 12px; }
 .kb-articles-list li .search-results a { line-height: 20px; }
 .kb-articles-list li .search-results .content,
@@ -1219,9 +1092,9 @@ a.comments-link { font-family: Verdana, Arial, sans-serif; font-size: 12px; line
 .tooltip-keywords { margin-top: 10px; line-height: 15px; font-weight: normal; font-style: italic; color: #a1adb4; }
 
 /* category icons */
-.bnet-category .cat-index-icon-technical-support { background: url("../images/icons/category-index/technical.png") no-repeat scroll 15px 15px transparent; }
-.bnet-category .cat-index-icon-accounts-security { background: url("../images/icons/category-index/account.png") no-repeat scroll 15px 15px transparent; }
-.bnet-category .cat-index-icon-payments-services { background: url("../images/icons/category-index/payments.png") no-repeat scroll 15px 15px transparent; }
+.bnet-category .cat-index-icon-technical-support { background: url("../wow/static/images/icons/category-index/technical.png") no-repeat scroll 15px 15px transparent; }
+.bnet-category .cat-index-icon-accounts-security { background: url("../wow/static/images/icons/category-index/account.png") no-repeat scroll 15px 15px transparent; }
+.bnet-category .cat-index-icon-payments-services { background: url("../wow/static/images/icons/category-index/payments.png") no-repeat scroll 15px 15px transparent; }
 
 /* comments/discussion */
 .community-share { display: block; border-top: 1px solid #e1e1e1; padding-top: 10px; margin-top: 10px;}
@@ -1235,13 +1108,13 @@ a.comments-link { font-family: Verdana, Arial, sans-serif; font-size: 12px; line
 #article-comments .page-comment-interior h3 span { letter-spacing: 0; }
 .icon-frame img, 
 .avatar-interior img { border-radius: 3px 3px 3px 3px; box-shadow: 0 1px 4px #555555; }
-.context-link { background: url("../images/icons/account-arrows.png") no-repeat scroll 100% -12px transparent; padding-right: 17px; }
-.button3 span { background-image: url("../images/buttons/button-3.gif"); background-repeat: no-repeat; color: #00B4FF; font-size: 11px; height: 30px; line-height: 30px; padding: 0 0 0 13px; }
+.context-link { background: url("../wow/static/images/icons/account-arrows.png") no-repeat scroll 100% -12px transparent; padding-right: 17px; }
+.button3 span { background-image: url("../wow/static/images/buttons/button-3.gif"); background-repeat: no-repeat; color: #00B4FF; font-size: 11px; height: 30px; line-height: 30px; padding: 0 0 0 13px; }
 .button3 span { height: 30px; }
 
 /* form elements */
-.ui-dropdown .dropdown-toggler { background: url("../images/form/dropdown-bg.gif") repeat-x scroll 0 0 transparent; border-radius: 5px 5px 5px 5px; box-shadow: 0 0 5px #B2B2B2; color: #EAEAEA; display: block; font-size: 14px; padding-right: 0; }
-.ui-dropdown .dropdown-toggler span { background: url("../images/form/dropdown-right.gif") no-repeat scroll 100% 0 transparent; border-bottom-right-radius: 5px; border-top-right-radius: 5px; }
+.ui-dropdown .dropdown-toggler { background: url("../wow/static/images/form/dropdown-bg.gif") repeat-x scroll 0 0 transparent; border-radius: 5px 5px 5px 5px; box-shadow: 0 0 5px #B2B2B2; color: #EAEAEA; display: block; font-size: 14px; padding-right: 0; }
+.ui-dropdown .dropdown-toggler span { background: url("../wow/static/images/form/dropdown-right.gif") no-repeat scroll 100% 0 transparent; border-bottom-right-radius: 5px; border-top-right-radius: 5px; }
 .ui-dropdown .dropdown-wrapper { background: none repeat scroll 0 0 #C5C5C5; border: 1px solid #A0A0A0; border-radius: 3px 0 3px 3px; box-shadow: 0 4px 4px #B2B2B2; padding: 5px; min-width: 163px; }
 .ui-dropdown .dropdown-wrapper ul li a { color: #000000; display: block; padding: 5px; }
 .ui-dropdown .dropdown-wrapper ul li a:hover, 
@@ -1254,7 +1127,7 @@ a.comments-link { font-family: Verdana, Arial, sans-serif; font-size: 12px; line
 
 /* pagination */
 .table-options { clear: both; }
-.ui-pagination { display: inline-block; height: 26px; vertical-align: middle; overflow: inherit; text-align: right; background: url("../images/icons/paging.png") no-repeat scroll 0 0 transparent; padding-left: 30px; }
+.ui-pagination { display: inline-block; height: 26px; vertical-align: middle; overflow: inherit; text-align: right; background: url("../wow/static/images/icons/paging.png") no-repeat scroll 0 0 transparent; padding-left: 30px; }
 .ui-pagination li { margin: 0; }
 .ui-pagination li a { height: 23px; padding: 2px 9px 0; background-color: #505050; color: #cecece; text-decoration: none; font-size: 12px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 2px; -moz-box-shadow: #AAA 0 0 2px; -webkit-box-shadow: #AAA 0 0 2px; box-shadow: #AAA 0 0 2px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#575757', endColorstr='#454545'); background: -webkit-gradient(linear, left top, left bottom, from(#575757), to(#454545)); background: -moz-linear-gradient(top,  #575757,  #454545); }
 .ui-pagination li.last-item a, 
@@ -1273,9 +1146,9 @@ a.comments-link { font-family: Verdana, Arial, sans-serif; font-size: 12px; line
 .table-options .ui-pagination li a { height: 22px; }
 
 /* game banners */
-body.wow { background: url("../images/games/banners/wow.jpg") no-repeat scroll 50% 0 #040404; }
-body.starcraft2 { background: url("../images/games/banners/starcraft2.jpg") no-repeat scroll 50% 0 #040404; }
-body.diablo3 { background: url("../images/games/banners/diablo3.jpg") no-repeat scroll 50% 0 #040404; }
+body.wow { background: url("../wow/static/images/games/banners/wow.jpg") no-repeat scroll 50% 0 #040404; }
+body.starcraft2 { background: url("../wow/static/images/games/banners/starcraft2.jpg") no-repeat scroll 50% 0 #040404; }
+body.diablo3 { background: url("../wow/static/images/games/banners/diablo3.jpg") no-repeat scroll 50% 0 #040404; }
 
 /* ticket response time */
 .ticket-response-time { color: #479810; font-size: 13px; }
@@ -1295,7 +1168,7 @@ body.diablo3 { background: url("../images/games/banners/diablo3.jpg") no-repeat 
 /* web chat loading window */
 .ticket-wait { background: none repeat scroll 0 0 #DDDCDA; }
 .ticket-wait .error,
-.ticket-wait .spinner { margin: auto; padding: 230px 0; background: url("../images/icons/loading-light-large.gif") no-repeat 118px 230px; width: 250px; height: 32px; }
+.ticket-wait .spinner { margin: auto; padding: 230px 0; background: url("../wow/static/images/icons/loading-light-large.gif") no-repeat 118px 230px; width: 250px; height: 32px; }
 .ticket-wait .error span,
 .ticket-wait .spinner span { text-align: center; position: relative; top: 50px; width: 250px; display: block; }
 .ticket-wait .error { background: none; display: none; }

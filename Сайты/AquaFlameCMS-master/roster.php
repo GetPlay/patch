@@ -33,6 +33,13 @@ $page_cat = "services";
 <script src="wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
 <script src="wow/static/local-common/js/core.js?v17"></script>
 <script src="wow/static/local-common/js/tooltip.js?v17"></script>
+  <style type="text/css">
+    #content .content-top { background: url("wow/static/images/guild/summary/<?php 
+							$faction_query = mysql_query("SELECT race FROM $server_cdb.guild_member inner join $server_cdb.characters on guild_member.guid = characters.guid WHERE guildid = '".$_GET['guildid']."' LIMIT 1");
+				while($faction = mysql_fetch_assoc($faction_query))		
+							echo''.translateBg($faction['race']).''
+             ?>") left top no-repeat; }
+  </style>
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
 try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}

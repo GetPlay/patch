@@ -8,7 +8,7 @@
 .ui-button-chat.disabled,
 .ui-button-chat.disabled:hover,
 .ui-button-chat.disabled.hover { cursor: default; }
-.button-chat span { background-image: url("../../images/chat/invitation/button-sprite.png"); background-repeat: no-repeat; color: #FFFFFF; font-size: 14px; line-height: 20px; }
+.button-chat span { background-image: url("../wow/static/images/chat/invitation/button-sprite.png"); background-repeat: no-repeat; color: #FFFFFF; font-size: 14px; line-height: 20px; }
 .button-chat .button-left { background-position: 0 0; height: 38px; padding: 0 0 0 17px; border-radius: 5px; }
 .button-chat .button-right { background-position: 100% -122px; height: 38px; line-height: 38px; padding: 0 17px 0 0; }
 .button-chat.hover .button-left, 
@@ -19,11 +19,11 @@
 /*----------------------------------------------
 	Chat Invitation
 ----------------------------------------------*/
-#chat-invitation-frame { background: url("../../images/chat/invitation/invitation-bg.png") no-repeat scroll 0 0 transparent; width: 440px; height: 300px; margin: 10px; position: relative; }
-#chat-invitation-logo { background: url("../../images/chat/invitation/blizzard-large.png") no-repeat scroll 0 0 transparent; position: absolute; top: 31px; left: 160px; width: 123px; height: 64px; }
+#chat-invitation-frame { background: url("../wow/static/images/chat/invitation/invitation-bg.png") no-repeat scroll 0 0 transparent; width: 440px; height: 300px; margin: 10px; position: relative; }
+#chat-invitation-logo { background: url("../wow/static/images/chat/invitation/blizzard-large.png") no-repeat scroll 0 0 transparent; position: absolute; top: 31px; left: 160px; width: 123px; height: 64px; }
 #need-help-title { color: #ffffff; font-size: 30px; line-height: 34px; position: absolute; top: 123px; text-align: center; width: 100%; }
 #need-help-info { color: #fb7632; font-size: 14px; line-height: 18px; position: absolute; top: 161px; text-align: center; width: 100%; }
 #chat-invitation-button { position: absolute; top: 239px; text-align: center; width: 100%; }
-#chat-invitation-close { position: absolute; top: 7px; right: 7px; background: url("../../images/chat/invitation/close-sprite.png") no-repeat scroll 0 0 transparent; width: 16px; height: 16px; cursor: pointer; }
+#chat-invitation-close { position: absolute; top: 7px; right: 7px; background: url("../wow/static/images/chat/invitation/close-sprite.png") no-repeat scroll 0 0 transparent; width: 16px; height: 16px; cursor: pointer; }
 #chat-invitation-close:hover,
 #chat-invitation-close:active { background-position: 0 -16px; }

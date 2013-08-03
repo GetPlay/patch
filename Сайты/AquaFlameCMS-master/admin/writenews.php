@@ -28,6 +28,7 @@ ini_set("default_charset", "iso-8859-1" );    //For special chars
   if (isset($_POST['save'])){
     $title = mysql_real_escape_string($_POST['title']);
     $image = mysql_real_escape_string($_POST['image']);
+    $contentlnk = mysql_real_escape_string($_POST['contentlnk']);
     $content1 = mysql_real_escape_string($_POST['content1']);
     $content2 = $_POST['content2'];
     $content2 = trim($content2);
@@ -38,7 +39,7 @@ ini_set("default_charset", "iso-8859-1" );    //For special chars
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $save_new = mysql_query("INSERT INTO news (author, date, content, title, image) VALUES ('".$login['id']."','".$date."','".$content1."','".addslashes($content2)."','".$title."','".$image."');") or die(mysql_error());
+      $save_new = mysql_query("INSERT INTO news (author, date, content1, content2,contentlnk, title, image) VALUES ('".$login['id']."','".$date."','".$content1."','".addslashes($content2)."','".$contentlnk."','".$title."','".$image."');") or die(mysql_error());
       if ($save_new == true){
         echo '<div class="alert-page" align="center"> The new has been created successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
@@ -157,13 +158,16 @@ function preview(img,event){
         <form method="post" action="" class="styleForm">
           <p><?php echo $admin['Title']; ?><br />
             <input name="title" id="title" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+          </p>
+		             <p>URL<br />
+            <input name="contentlnk" id="contentlnk" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
           </p> 
           <div class="folder">
             <p><?php echo $admin['Image']; ?><br />
             <input id="image" name="image" type="text" value="" class="reg" onfocus="pop('open');" />
             </p>
             <img src="" id="imgLoad" style="display:none;"/>
-            <div  class="pop-image" id="pop" name="pop" onblur="pop('blur');" tabindex="1">
+            <div  class="pop-image" id="pop">
               <div class="note">
                 <table border=0>
                 <?php

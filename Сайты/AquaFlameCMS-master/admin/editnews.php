@@ -181,7 +181,7 @@ function preview(img,event){
             <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
             </p>
             <img src="<?php echo '../news/'.$new['image'].'.jpg'; ?>" id="imgLoad" />
-            <div  class="pop-image" id="pop" name="pop" onblur="pop('blur');" tabindex="1">
+            <div  class="pop-image" id="pop">
               <div class="note">
                 <table border=0>
                 <?php       

@@ -29,8 +29,9 @@ if (isset($_GET['ticketId'])){
 <link rel="stylesheet" media="all" href="../wow/static/css/management/wow/dashboard.css" />
 <link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/support/chatinvitation.css?v122" />
 <link rel="stylesheet" type="text/css" media="print" href="../wow/static/css/support/support-print.css?v122" />
-<link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/support/tickets.css?v122" />  
-<script src="../wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/support/tickets.css?v122" />
+  <link rel="stylesheet" type="text/css" media="all" href="../wow/static/css/support/threads.css?v122" />
+  <script src="../wow/static/local-common/js/third-party/jquery-1.4.4-p1.min.js"></script>
 <script src="../wow/static/local-common/js/core.js"></script>
 <script src="../wow/static/local-common/js/tooltip.js"></script>
 <script src="../wow/static/local-common/js/third-party/swfobject.js?v37"></script>
@@ -100,197 +101,153 @@ return false;
 </div>
   <div id="layout-middle">
     <div class="wrapper"> 
-      <div id="content">
+      <div id="content"> 
         <div class="page-header" id="page-header"> 
-          <h3 class="headline">Состояние запросов</h3>
+          <br/>
+          <h3 class="headline">
+            World Of Warcraft - Моя проблема с покупкой или оплатой не указана выше.  <span class="caption">(Запрос № EU33242898)</span>
+          </h3>
         </div>
         <div id="page-content">
-          <div class="ticket-filters">
-            <span class="create-ticket">
-              <a class="ui-button button1 " href="/support/ru/ticket/submit" id="create-ticket" tabindex="1" >
+          <div class="columns-2 thread-actions">
+            <div class="column thread-buttons">
+              <a class="ui-button button1 button-icon " href="/support/ru/ticket/status" onmouseover="Tooltip.show(this, 'Вернуться к списку запросов', {'location': 'mouse'});" tabindex="1" >
                 <span>
-                  <span>Подать запрос</span>
+                  <span>
+                    <strong class="icon">
+                      <strong class="icon-16 icon-back-small"></strong>
+                    </strong>
+                  </span>
                 </span>
               </a>
-            </span>
- 
-            <div class="ticket-filter" id="ticket-filter" style="display: none;">
-              <form method="get" action="/support/ru/ticket/status">
-                <span class="input-left">
-                  <label for="filter-select">
-                    <span class="label-text">
-                      Показывать:
-                    </span>
-                    <span class="input-required"></span>
-                  </label>
-                </span>
-                <span class="input-right">
-                  <span class="input-select input-select-extra-small">
-                    <select name="show" id="filter-select" class=" extra-small border-5 glow-shadow-2" tabindex="1">
-                      <option value="active" selected="selected">Открытые запросы</option>
-                      <option value="all">Все запросы</option>
-                    </select>
-                    <span class="inline-message" id="filter-select-message"> </span>
-                  </span>
-                </span>
-                <script type="text/javascript">
-                  //<![CDATA[
-(function() {
-var ticketFilter = document.getElementById('ticket-filter');
-ticketFilter.style.display = 'inline-block';
-})();
-//]]>
-                </script>
-              </form>
             </div>
-            <span class="clear">
-              <!-- -->
-            </span>
+            <div class="column thread-status">
+              <h4 class="caption">
+                Статус: <span class="status-archived">Архив</span>
+              </h4>
+              <p>
+                (статус, присвоенный автоматически)
+                <span class="icon-16 icon-help-small"
+                onmouseover="Tooltip.show(this, 'Если запрос со статусом «Разрешен» не обновляется в течение 3 месяцев, ему автоматически присваивается статус «Архив».'
+, {'location': 'bottomLeft'}
+);"
+></span>
+              </p>
+            </div>
           </div>
-          <table id="ticket-history">
-            <thead>
-              <tr>
-                <th scope="col" class="ticket-id">
-                  <a href="#" class="sort-link">
-                    <span class="arrow">Запрос</span>
-                  </a>
-                </th>
-                <th scope="col" class="ticket-subject">
-                  <a href="#" class="sort-link">
-                    <span class="arrow">Тема</span>
-                  </a>
-                </th>
-                <th scope="col" class="ticket-date">
-                  <a href="#" class="sort-link">
-                    <span class="arrow down">Обновлен</span>
-                  </a>
-                </th>
-                <th scope="col" class="ticket-type">
-                  <a href="#" class="sort-link">
-                    <span class="arrow">Автор</span>
-                  </a>
-                </th>
-                <th scope="col" class="ticket-status">
-                  <a href="#" class="sort-link">
-                    <span class="arrow">Статус</span>
-                  </a>
-                </th>
-              </tr>
-            </thead>
+          <table class="message-thread" id="message-thread">
             <tbody>
-
-
-              <?php
-      mysql_select_db($server_cdb);
-          $ticket_query = mysql_query("SELECT U.guid,U.name,A.title,A.ticketId,A.closedBy FROM characters U, gm_tickets A 
-            WHERE A.guid = U.guid");
-          while ($ticket = mysql_fetch_assoc($ticket_query)){
-          ?>
-              <tr class="ticket-read">
-                <td class="ticket-id" >
-                <a class="ticket-link" href="/<?php echo $ticket['ticketId']; ?>">
-                  <span class="ticket">EU<?php echo $ticket['ticketId']; ?>
-                  </span>
-                </a>
+              <tr class="message-row message-open" id="message-1">
+                <td class="message-status message-toggle">
+                  <span class="icon-16 icon-minimize" id="message-1-status"></span>
                 </td>
-                  <td class="ticket-subject" >
-                <div class="subject">
-                  <div class="subject-line">
-                    <?php echo $ticket['title']; ?>
-                  </div>
-                  <div class="truncate-subject"></div>
-                </div>
-                  </td>
-                <td class="ticket-date" >
-                <span>
-                  <time datetime="">-</time>
-                </span>
+                <td class="message-author message-toggle">
+                  <span>Эд Дергелев</span>
                 </td>
-
-                    <td class="ticket-date" >
-                <div class="subject">
-                  <div class="subject-line">
-                    <?php echo $ticket['name']; ?>
-                  </div>
-                  <div class="truncate-subject"></div>
-                </div>
-                    </td>
-                    <td class="ticket-status" >
-                <?php
-      mysql_select_db($server_cdb);
-          $ticket_query2 = mysql_query("SELECT A.guid,A.name,U.ticketId,U.closedBy FROM gm_tickets U, characters A 
-            WHERE A.guid = U.closedBy limit 1");
-          while ($ticket2 = mysql_fetch_assoc($ticket_query2)){
-          ?>
-                <div class="status status-archived" data-tooltip="
-                  <?php 
-           if ($ticket['closedBy'] > 0) {                         
-            echo 'Ваш запрос был перенесен в архив администратором: ' ;
-            echo $ticket2['name'];
-             }else{
-            echo 'Не просмотрен';
-            }
-         ?>" data-tooltip-options='{"location": "mouse"}'>
-                  <?php 
-           if ($ticket['closedBy'] > 0) {                         
-            echo 'Архив' ;
-             }else{
-            echo 'Открыт';
-            }
-         ?>          <?php
-        }
-        ?>
-                </div>
-                    </td>
-              </tr>
-
-              <?php
-        }
-        ?> 
-              <tr class="no-results">
-                <td class="empty-table" colspan="5">
-                  <div class="no-tickets">
+                <td class="message-content">
+                  <div class="message-summary">
                     <p>
-                      В настоящий момент у вас нет открытых запросов в службу поддержки. Если вы хотите просмотреть свои предыдущие запросы, откройте <a href="" id="filter-link" rel="all">список «Все запросы»</a>.
+                      Добрый день!
+                      после обновление версии аккаунта до стандартной версии в прошлом месяце, на моем кошельке battle.net остались средства.
+                      Тепер
                     </p>
+                    <div class="truncate-summary"></div>
                   </div>
+                  <div class="message-full">
+                    Добрый день!<br/>после обновление версии аккаунта до стандартной версии в прошлом месяце, на моем кошельке battle.net остались средства.<br/>Теперь же,когда срок подписки истек,хотел оплатить подписку. С помощью тех средств,оставшихся в кошельке.<br/>Возник вопрос-это возможно?<br/>при нажатии ссылки &quot;Оплатить подписку&quot;, переводит на страницу выбора способа оплаты.но кошелька battle.net там не увидел.<br/><br/>
+                  </div>
+                </td>
+                <td class="message-meta">
+                  <span class="date-summary">
+                    (<span>
+                      <time datetime="2013-03-24T17:18+03:00">24.03.13 17:18:03 MSK</time>
+                    </span>)
+                  </span>
+                  <a href="#message-1" class="message-link">#1</a>
+                  <span class="date-full">
+                    <span>
+                      <time datetime="2013-03-24T17:18+03:00">24.03.13 17:18:03 MSK</time>
+                    </span>
+                  </span>
+                </td>
+              </tr>
+              <tr class="message-row message-open message-row-gm" id="message-2">
+                <td class="message-status message-toggle">
+                  <span class="icon-16 icon-minimize" id="message-2-status"></span>
+                </td>
+                <td class="message-author message-toggle">
+                  <span>Хананоми</span>
+                  <span class="author-title">
+                    Сотрудник службы поддержки
+                  </span>
+                </td>
+                <td class="message-content">
+                  <div class="message-summary">
+                    <p>
+                      Добрый день!
+                      Спасибо за запрос!
+                      Кошелек Battle.net – это новая функция Battle.net, которая позволяет содержать средства на вашей учетн
+                    </p>
+                    <div class="truncate-summary"></div>
+                  </div>
+                  <div class="message-full">
+                    Добрый день!<br/><br/>Спасибо за запрос!<br/><br/>Кошелек Battle.net – это новая функция Battle.net, которая позволяет содержать средства на вашей учетной записи Battle.net, на которые можно приобретать платные услуги и игры Blizzard Entertainment, включая электронные версии игр Diablo III, StarCraft II, World of Warcraft и дополнения к World of Warcraft.<br/><br/>Замечание: На данный момент покупка товаров в онлайн магазине Blizzard и оплата подписки при помощи кошелька Battle.net невозможна.<br/><br/>Если Вам потребуется наша консультация по какому-либо другому вопросу наш отдел всегда будет рад ответить. <br/><br/>С наилучшими пожеланиями,<br/><br/>Гейм-мастер Хананоми<br/>Служба внутриигровой поддержки<br/>Blizzard Europe
+                  </div>
+                </td>
+                <td class="message-meta">
+                  <span class="date-summary">
+                    (<span>
+                      <time datetime="2013-03-27T17:18+03:00">27.03.13 17:18:27 MSK</time>
+                    </span>)
+                  </span>
+                  <a href="#message-2" class="message-link">#2</a>
+                  <span class="date-full">
+                    <span>
+                      <time datetime="2013-03-27T17:18+03:00">27.03.13 17:18:27 MSK</time>
+                    </span>
+                  </span>
                 </td>
               </tr>
             </tbody>
           </table>
-          <div class="ticket-assistance columns-2"> </div>
+
         </div>
         <script type="text/javascript">
           //<![CDATA[
 $(function() {
-var history = new TicketHistory({
-results: 10
+	var thread = new MessageThread('#message-thread');
+	var attachments = new Attachments();
+	var inputs = new Inputs('#message-editor');
+	var editor = new MessageEditor('#message-editor', {
+	    maxCharacters: 2000
+	});
+	var times = new DateTime();
 });
-});
-//]]>
+        //]]>
         </script>
-        <!--[if IE 6]> <script type="text/javascript" src="/support/static/local-common/js/third-party/DD_belatedPNG.js?v46"></script>
-<script type="text/javascript">
-//<![CDATA[
-DD_belatedPNG.fix('.icon-16');
-DD_belatedPNG.fix('.icon-alert-success');
-DD_belatedPNG.fix('.icon-64');
-DD_belatedPNG.fix('.input-radio');
-DD_belatedPNG.fix('.input-checkbox');
-//]]>
-</script>
+
+        <!--[if IE 6]>		<script type="text/javascript" src="/support/static/local-common/js/third-party/DD_belatedPNG.js?v46"></script>
+        <script type="text/javascript">
+        //<![CDATA[
+			DD_belatedPNG.fix('.icon-16');
+			DD_belatedPNG.fix('.icon-32');
+			DD_belatedPNG.fix('.icon-64');
+			DD_belatedPNG.fix('.input-radio');
+			DD_belatedPNG.fix('.input-checkbox');
+        //]]>
+        </script>
 <![endif]-->
+
         <script type="text/javascript">
           //<![CDATA[
-$(function(){
-});
-//]]>
+		$(function(){
+		});
+        //]]>
         </script>
+
       </div>
     </div>
   </div>
-
-
 
   <div id="layout-bottom">
 <?php include("../functions/footer_man.php"); ?>
