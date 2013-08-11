@@ -120,7 +120,7 @@ $page_cat = "home";
 							<div class="featured">
                 <?php
                 if($articles['contentlnk'] != NULL)
-                echo '<a href="'.$articles['contentlnk'].'" class="more"> ';
+                echo '<a href="http://'.$articles['contentlnk'].'" class="more"> ';
                 else
                 echo '<a href="news.php?id='.$articles['id'].'" class="more"> '?>
                 <span class="featured-img" style="background-image: url('news/<?php echo $articles['image']; ?>.jpg');"></span>
@@ -178,7 +178,7 @@ $page_cat = "home";
 										<p>'. substr(strip_tags($news['content1']),0).'</p>'; //Needed striptags for not closed tags
 										
 										if($news['contentlnk'] != NULL)
-											echo '<a href="'.$news['contentlnk'].'" class="more">'.$More2['More2'].''.$news['contentlnk'].'</a>';
+											echo '<a href="http://'.$news['contentlnk'].'" class="more">'.$More2['More2'].''.$news['contentlnk'].'</a>';
 										else
 											echo '<a href="news.php?id='.$news['id'].'" class="more">'.$More['More'].'</a>';
 											

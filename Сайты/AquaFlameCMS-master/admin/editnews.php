@@ -26,7 +26,7 @@ include("../configs.php");
   
   if (isset($_GET['id'])){
   mysql_select_db($server_db);
-  $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,image,content1,content2 FROM news WHERE id = '".$_GET['id']."'"));
+  $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,image,content1,contentlnk,content2 FROM news WHERE id = '".$_GET['id']."'"));
   if (!$new['id']){
     $error = true;
   }
@@ -37,6 +37,7 @@ include("../configs.php");
 //Begin Post
   if (isset($_POST['save'])){
     $title = mysql_real_escape_string($_POST['title']);
+    $contentlnk = mysql_real_escape_string($_POST['contentlnk']);
     $image = mysql_real_escape_string($_POST['image']);
     $content2 = mysql_real_escape_string($_POST['content2']);
     $content1 = $_POST['content1'];
@@ -56,7 +57,7 @@ include("../configs.php");
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content2 = '".$content2."', content1 = '".addslashes($content1)."', date = '".$date."' WHERE id = '".$_POST['id']."'");
+      $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , contentlnk = '".$contentlnk."' ,  image = '".$image."' , content2 = '".$content2."', content1 = '".addslashes($content1)."', date = '".$date."' WHERE id = '".$_POST['id']."'");
       if ($change_new == true){
         echo '<div class="alert-page" align="center"> The article has been updated successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
@@ -176,6 +177,9 @@ function preview(img,event){
           <p><?php echo $admin['Title']; ?><br />
             <input name="title" type="text" value="<?php echo $new['title']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['title']; ?>'" />
           </p> 
+		   <p><?php echo $admin['URL']; ?><br />
+            <input name="contentlnk" type="text" value="<?php echo $new['contentlnk']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['contentlnk']; ?>'" />
+          </p> 
           <div class="folder">
             <p><?php echo $admin['Image']; ?><br />
             <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
@@ -199,6 +203,12 @@ function preview(img,event){
                 </table>
               </div>
             </div>
+          <p>   
+            <input class="chkl" type="checkbox" name="date" value="checkbox" />Change date to current time
+          </p>
+          <p>   
+            <input class="chkl" type="checkbox" name="author" value="checkbox" />Set me as Author
+          </p>
             <div  id="preview" style="display:none; float:right; position:absolute;left:450px;top:-50px;">
               <img src="" alt="img" id="imgP" />   
             </div>   

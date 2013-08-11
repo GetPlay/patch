@@ -34,7 +34,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title>Админ Панель</title>
+		<title>РђРґРјРёРЅ РџР°РЅРµР»СЊ</title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -94,7 +94,7 @@ $('#checkall').toggleClass('clicked');
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2>Удаление пользователей</h2>
+        <h2>РЈРґР°Р»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№</h2>
 
       </div>
       <div class="pagination">
@@ -118,9 +118,9 @@ $('#checkall').toggleClass('clicked');
       <ul id="lst">
         <li>
           <div class="chk"><a id="checkall"></a> </div>
-			    <p class="editHead"><strong>Удалить</strong></p>
-          <p class="title"><strong>Логин</strong></p>
-          <p class="descripHead">Ник персонажа</p>
+			    <p class="editHead"><strong>РЈРґР°Р»РёС‚СЊ</strong></p>
+          <p class="title"><strong>Р›РѕРіРёРЅ</strong></p>
+          <p class="descripHead">РќРёРє РїРµСЂСЃРѕРЅР°Р¶Р°</p>
         </li>
            <?php
             mysql_select_db($server_db) or die (mysql_error());

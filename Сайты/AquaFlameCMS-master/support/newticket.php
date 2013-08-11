@@ -1,13 +1,32 @@
 <?php
 include("../configs.php");
-$page_cat = 'summary';
- 
-if (isset($_GET['ticketId'])){
- if (!$ticket['ticketId']){
-    $error = true;
-  }
-  }else{
-    $error = true;
+$page_cat = 'summary'; 
+  if (!isset($_SESSION['username'])) {
+        header('Location: ../account_log.php');		
+}
+
+    if (isset($_POST['save'])){
+    $ticketId = mysql_real_escape_string($_POST['ticketId']);
+    $character = mysql_real_escape_string($_POST['name']);
+    $guid = mysql_real_escape_string($_POST['guid']);
+    $message = mysql_real_escape_string($_POST['message']); 
+    $title = $_POST['title'];
+    $title = trim($title);
+
+    $emptytitle = strip_tags($title);
+    if (empty($emptytitle)){                          
+      echo '<font color="red">Возможно, Вы что-то забыли заполнить?!</font>';
+    }else{
+      mysql_select_db($server_cdb);
+      $save_new = mysql_query("INSERT INTO gm_tickets (ticketId, guid, name, message, title) VALUES ('".$ticketId."','".$guid."','".$name."','".$message."','".$title."');") or die(mysql_error());
+      if ($save_new == true){
+        echo 'Ваш запрос отправлен. Как только кто-то из сотрудников освободится, он ответит вам в новом окне чата.';
+        echo '<meta http-equiv="refresh" content="1;url=../account_man.php"/>';
+      }
+      else{
+        echo '<div class="errors" align="center"><font color="red"> An ERROR has occured while saving the post in the database!</font></div>';
+      }
+    }
   }
 ?>
 
@@ -17,7 +36,7 @@ if (isset($_GET['ticketId'])){
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-<title><?php echo $website['title']; ?> - </title>
+<title><?php echo $website['title']; ?> - <?php echo $Support3['Support3']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="../wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
@@ -38,20 +57,7 @@ if (isset($_GET['ticketId'])){
 <script src="../wow/static/js/management/wow/dashboard.js?v23"></script>
 <script src="../wow/static/js/bam.js?v23"></script>
 <script src="../wow/static/local-common/js/tooltip.js?v37"></script>
-<script src="../wow/static/local-common/js/menu.js?v37"></script>
-<script type="text/javascript">
-$(function() {
-Menu.initialize();
-Menu.config.colWidth = 190;
-Locale.dataPath = 'data/i18n.frag.xml';
-});
-</script>
-<!--[if IE 6]> <script type="text/javascript">
-//<![CDATA[
-try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
-//]]>
-</script>
-<![endif]-->
+<script src="../wow/static/local-common/js/menu.js?v37"></script>  
 </head>
 <body class="en-gb logged-in">
 <div id="layout-top">
@@ -59,43 +65,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 <div id="header">
 <?php include("../functions/header_account.php"); ?>
 <?php include("../functions/footer_man_nav.php"); ?>
-</div>
-<div id="warnings-wrapper">
-<!--[if lt IE 8]>
-<div id="browser-warning" class="warning warning-red">
-<div class="warning-inner2">
-You are using an outdated web browser.<br />
-<a href="http://eu.blizzard.com/support/article/browserupdate">Upgrade</a> or <a href="http://www.google.com/chromeframe/?hl=en-GB" id="chrome-frame-link">install Google Chrome Frame</a>.
-<a href="#close" class="warning-close" onclick="App.closeWarning('#browser-warning', 'browserWarning'); return false;"></a>
-</div>
-</div>
-<![endif]-->
-<!--[if lte IE 8]>
-<script type="text/javascript" src="wow/static/local-common/js/third-party/CFInstall.min.js?v22"></script>
-<script type="text/javascript">
-//<![CDATA[
-$(function() {
-var age = 365 * 24 * 60 * 60 * 1000;
-var src = 'https://www.google.com/chromeframe/?hl=en-GB';
-if ('http:' == document.location.protocol) {
-src = 'http://www.google.com/chromeframe/?hl=en-GB';
-}
-document.cookie = "disableGCFCheck=0;path=/;max-age="+age;
-$('#chrome-frame-link').bind({
-'click': function() {
-App.closeWarning('#browser-warning');
-CFInstall.check({
-mode: 'overlay',
-url: src
-});
-return false;
-}
-});
-});
-//]]>
-</script>
-<![endif]-->
-</div>
+</div> 
 </div>
 </div>
   <div id="layout-middle">
@@ -107,149 +77,76 @@ return false;
           </h3>
           <div class="parchment"></div>
         </div>
-        <div id="page-content">
-
- 
-          <br/>
+        <div id="page-content"> 
+        <form method="post" action="" class="styleForm">
           <div id="category-title" class="title-text">
-            <span class="field-name">Тема:</span> 
-          </div>
- 
-          <div id="submit-form">
-            <form method="post" action="/support/ru/ticket/details" id="create-ticket" enctype="multipart/form-data" >
-              <input type="hidden" id="csrftoken" name="csrftoken" value="cb36e0f5-f248-4199-a442-3f386aa7a67c" />
-              <div id="ticket-form-fields">
- 
-                <div id="d3compromised">
-                </div>
-                <div class="editor" id="post-edit">
-                  <div class="input-row input-row-textarea">
+            <span class="field-name">Тема:</span>
+            <input name="title" id="title" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+          </div> 
+          <br />
+          <div id="submit-form"> 
+                <div id="customFields">
+                  <div id = "fields-205" class="custom-fields">
+                    <div class="custom-field-block">  
+                            <span class="input-left input-disabled">
+                              <label for="wow-character-205">
+                                <span class="label-text">
+                                  Персонаж:
+                                </span>
+                                <span class="input-required"></span>
+                              </label>
+                            </span>
+                            <span class="input-right input-disabled">
+                              <span class="input-select input-select-small">
+                                <select name="wow-character-205" id="wow-character-205"  class="small border-5 glow-shadow-2" tabindex="1" >
+                                  <option value="" selected="selected">Выберите персонажа</option>
+                                  <option value="0" data-realm="0">Моего персонажа нет в списке</option>
+			<?php
+			$online = 0;
+			$get_chars = mysql_query("SELECT * FROM $server_cdb.characters WHERE account = '".$account_information['id']."' AND at_login = '0'");
+			//Get chars that doesn't have a current at_login change activated
+      	while($character = mysql_fetch_array($get_chars)){
+					echo '<option value="'.$character['guid'].'">'.$character['name'].'</option>';
+					if($character['online'] == 1) $online = 1;
+				}
+			?>
+                                </select>
+                                <span class="inline-message" id="wow-character-205-message"> </span>
+                              </span>
+                              <span class="input-info-tooltip" data-tooltip=" Если вашего игрового мира или персонажа нет в списке, укажите их в описании проблемы.&lt;/p&gt;" data-tooltip-options='{"location": "mouse"}'>Вашего игрового мира или персонажа нет в списке?</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div> 
 
-
-
-
-
-
-                    <span class="input-left">
-                      <label for="description">
+                <span class="input-left"> 
                         <span class="label-text">
                           Описание:
                         </span>
-                        <span class="input-required">*</span>
-                      </label>
+                        <span class="input-required">*</span> 
                     </span>
                     <span class="input-right">
-                      <span class="input-textarea input-textarea-extra-large">
-                        <textarea name="description" id="description"  class="extra-large border-5 glow-shadow-2" cols="78" rows="8" tabindex="1" required="required" placeholder="Опишите ситуацию как можно точнее и подробнее. Чем яснее и детальнее описание, тем быстрее мы сможем разрешить проблему." maxlength="2000"></textarea>
-                        <span id="description-charcount" class="inline-message">&#160;</span>
-                        <span class="inline-message" id="description-message"> </span>
-                      </span>
-                    </span>
-                  </div>
-                </div>
- 
-              </div>
-              <input type="hidden" id="categoryId" name="categoryId" value = "205" />
-              <input type="hidden" id="categoryIds" name="categoryIds" value = "0,197,205" />
-              <input type="hidden" id="game" name="game" value="1" />
-              <input type="hidden" id="channel" name="channel" value="TICKET" />
+                      <span class="input-textarea input-textarea-extra-large"> 
+                        <div class="txt">
+                        <textarea name="message"  id="input" class="extra-large border-5 glow-shadow-2" cols="78" rows="8" tabindex="1" required="required" placeholder=" ." maxlength="2000"/></textarea>
+                      </div> 
+                         </span>
+                    </span> 
               <div class="submit-row">
-                <div class="input-left"></div>
-                <div class="input-right">
-
-
-                  <button class="ui-button button1 " type="submit" id="form-submit" tabindex="1" >
-                    <span>
-                      <span>Отправить</span>
-                    </span>
-                  </button>
-
-
+                <div class="input-left"></div> 
+                <input name="save" type="submit" value="<?php echo $admin['Save']; ?>" /> 
+                </form>
                   <a class="ui-cancel" href="../account_man.php" tabindex="1">
                     <span>
                       Отмена
                     </span>
-                  </a>
-
+                  </a> 
                 </div>
-              </div>
-              <script type="text/javascript">
-                //<![CDATA[
-	(function() {
-		var questionSubmit = document.getElementById('form-submit');
-		questionSubmit.disabled = 'disabled';
-		questionSubmit.className = questionSubmit.className + ' disabled';
-	})();
-        //]]>
-              </script>
-              <script type="text/javascript">
-                //<![CDATA[
-			var ReplyMsg = {
-				textareaMessage0: 'Осталось {0} симв.',
-				textareaMessage1: 'Осталось {0} симв.',
-				textareaMessage2: '<span class="inline-error">Допустимый объем ответа — не более {0} символов.</span>',
-				parenthesis: '({0})',
-				myLicenses: 'Мои записи игр',
-				myRealms: 'Мои игровые миры',
-				myCharacters: 'Мои персонажи'
-			};
-        //]]>
-              </script>
-            </form>
-          </div>
-          <div id="live-chat-submit-response" class="ticket-submit-response">
-            <p class="ticket-create-received">
-              Ваш запрос отправлен. Как только кто-то из сотрудников освободится, он ответит вам в новом окне чата.
-            </p>
-            <p class="reference-ticket">
-              Номер запроса:
-              <a id="chat-ticket-link" href="#">
-                <span id="chat-ticket-id"></span>
-              </a>
-            </p>
-          </div>
-
+              </div> 
+          </div> 
         </div>
-        <div class="footer-padding">
-        </div>
-        <script type="text/javascript">
-          //<![CDATA[
-$(function() {
-	 
-	var inputs = new Inputs('#create-ticket');
-	var selectionInputs = new Inputs('#select-topic');
-	var details = new TicketDetails(1);
-	var categories = new TicketCategories(details, inputs);
-	details.setCategories(categories);
-	details.selectTicketCategory([0,197,205]);
-	var attachments = new Attachments();
-	isUserAuthenticated = true;
-});
-        //]]>
-        </script>
-
-        <!--[if IE 6]>		<script type="text/javascript" src="/support/static/local-common/js/third-party/DD_belatedPNG.js?v46"></script>
-        <script type="text/javascript">
-        //<![CDATA[
-			DD_belatedPNG.fix('.icon-16');
-			DD_belatedPNG.fix('.icon-32');
-			DD_belatedPNG.fix('.icon-64');
-			DD_belatedPNG.fix('.input-radio');
-			DD_belatedPNG.fix('.input-checkbox');
-			DD_belatedPNG.fix('.parchment');
-        //]]>
-        </script>
-<![endif]-->
-
-        <script type="text/javascript">
-          //<![CDATA[
-		$(function(){
-		});
-        //]]>
-        </script>
-
-      </div>
-    </div>
+        <div class="footer-padding"></div> 
+      </div> 
   </div>
 
 
@@ -357,15 +254,6 @@ other: 'Other'
 }
 };
 //]]>
-</script>
-<script src="wow/static/js/bam.js?v23"></script>
-<script src="wow/static/local-common/js/tooltip.js?v37"></script>
-<script src="wow/static/local-common/js/menu.js?v37"></script>
-<script type="text/javascript" src="wow/static/js/tickets.php/tickets.js?v122"></script>
-<script src="wow/static/local-common/js/third-party/swfobject.js?v37"></script>
-<script src="wow/static/js/management/dashboard.js?v23"></script>
-<script src="wow/static/js/management/wow/dashboard.js?v23"></script>
-
-
+</script> 
 </body>
 </html>

@@ -186,21 +186,15 @@ echo '>'
 <a href="#support" class="service-link service-link-dropdown" tabindex="50" accesskey="4" id="support-link" onclick="return false" style="cursor: progress" rel="javascript"><?php echo $Support['Support']; ?><span class="no-support-tickets" id="support-ticket-count"></span></a>
 <div class="support-menu" id="support-menu" style="display:none;">
 <div class="support-primary">
-<ul class="support-nav">
+<ul class="support-nav"> 
 <li>
-<a href="support/ticketall.php" tabindex="55" class="support-category">
-<strong class="support-caption"><?php echo $Support8['Support8']; ?></strong>
-<?php echo $Support5['Support5']; ?>
-</a>
-</li>
-<li>
-<a href="" tabindex="55" class="support-category">
+<a href="../support/newticket.php" tabindex="55" class="support-category">
 <strong class="support-caption"><?php echo $Support9['Support9']; ?></strong>
 <?php echo $Support6['Support6']; ?>
 </a>
 </li>
 <li>
-<a href="/ticket.php" tabindex="55" class="support-category">
+<a href="../support/ticket.php" tabindex="55" class="support-category">
 <strong class="support-caption"><?php echo $Support10['Support10']; ?></strong>
 <?php echo $Support7['Support7']; ?>
 </a>

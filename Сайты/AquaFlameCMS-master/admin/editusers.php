@@ -81,18 +81,7 @@ include("../configs.php");
 		<link href="css/tooltip.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="css/uniform.defaultstyle3.css" type="text/css" media="screen" />
     <script src="js/jquery-1.4.4.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
- $(document).ready(function(){
-     $('.ddm').hover(
-	   function(){
-		 $('.ddl').slideDown();
-	   },
-	   function(){
-		 $('.ddl').slideUp();
-	   }
-	 );
- });
-</script>
+ 
 </head>
 <body class="bgc">
 	<div id="admin">
@@ -106,14 +95,35 @@ include("../configs.php");
         <div class="heading">
           <h2><?php echo $admin['EditUsers']; ?><?php echo $new2['username']; ?></h2>
         </div>
-        <form method="post" action="" class="styleForm">
-        <input type="hidden" name="id" value="<?php echo $new['id']; ?>" />
-          <p><?php echo $admin['Name']; ?><br />
+		        <form method="post" action="" class="styleForm">
+        <table>
+          <tr>
+            <td width="87%"><p><?php echo $admin['Name']; ?><br />
             <input name="firstName" type="text" value="<?php echo $new['firstName']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['firstName']; ?>'" />
-          </p> 
+          </p> </td>
+            <td rowspan="4" style="vertical-align:middle;">
+              <p align="center"><strong>Персонажи: </strong></p> 
+              <p align="center">
+		   <?php 
+            mysql_select_db($server_cdb) or die (mysql_error());
+            $chars_query = mysql_query("SELECT name,guid FROM characters WHERE account = '".$_GET['id']."'");  
+				while($chars = mysql_fetch_assoc($chars_query))		{
+        ?> 
+        <a href="editchars.php?guid=<?php echo $chars['guid']; ?>" rel="np"><font color="green"><?php echo $chars['name']; ?></font></a>,
+		 <?php
+        }
+        ?>
+			</p> 
+            </td>
+          </tr>
+          <tr><td> 
+        <input type="hidden" name="id" value="<?php echo $new['id']; ?>" />
+
           <p><?php echo $admin['LastName']; ?><br />
             <input name="lastName" type="text" value="<?php echo $new['lastName']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['lastName']; ?>'" />
           </p> 
+		  </td></tr>
+        </table> 
 		  <p><?php echo $admin['Username']; ?><br />
             <input name="username" type="text" value="<?php echo $new2['username']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new2['username']; ?>'" />
           </p> 
@@ -130,7 +140,6 @@ include("../configs.php");
 		  <p><?php echo $admin['banreason']; ?><br />
             <input name="banreason" type="text" value="<?php echo $new['banreason']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['banreason']; ?>'" />
           </p> 
-
           <input name="save" type="submit" value="<?php echo $admin['Save']; ?>" />
           <a href="viewnews.php"><input name="reset" type="reset" value="<?php echo $admin['Cancel']; ?>" /></a>
         </form>

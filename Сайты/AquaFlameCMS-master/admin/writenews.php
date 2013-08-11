@@ -39,7 +39,7 @@ ini_set("default_charset", "iso-8859-1" );    //For special chars
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $save_new = mysql_query("INSERT INTO news (author, date, content1, content2,contentlnk, title, image) VALUES ('".$login['id']."','".$date."','".$content1."','".addslashes($content2)."','".$contentlnk."','".$title."','".$image."');") or die(mysql_error());
+      $save_new = mysql_query("INSERT INTO news (author, date, content1, content2,contentlnk, title, image) VALUES ('".$login['id']."','".$date."','".$content1."','".addslashes($content2)."','http://".$contentlnk."','".$title."','".$image."');") or die(mysql_error());
       if ($save_new == true){
         echo '<div class="alert-page" align="center"> The new has been created successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';

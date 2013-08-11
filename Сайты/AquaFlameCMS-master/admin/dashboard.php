@@ -166,7 +166,7 @@ $('#checkall').toggleClass('clicked');
 				<img src="images/sepLine.png" alt="" class="sepline" />
 			<div class="datalist">
 	      <div class="heading">
-          <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n3']; ?></strong><br/><br/><?php echo $admin['t3']; ?><br /><?php echo $admin['d3']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="viewnews.php"><?php echo $admin['Registered']; ?></a></span><?php echo $admin['Users']; ?></h2>
+          <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n3']; ?></strong><br/><br/><?php echo $admin['t3']; ?><br /><?php echo $admin['d3']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="viewusers.php"><?php echo $admin['Registered']; ?></a></span><?php echo $admin['Users']; ?></h2>
         </div>
         <ul id="lst">
         <li>
