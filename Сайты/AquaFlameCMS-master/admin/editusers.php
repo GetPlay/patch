@@ -15,22 +15,17 @@ include("../configs.php");
   if (isset($_GET['id'])){
   mysql_select_db($server_db);
   $new = mysql_fetch_assoc(mysql_query("SELECT id,firstName,lastName FROM users WHERE id = '".$_GET['id']."'"));
+  mysql_select_db($server_adb);
+  $new2 = mysql_fetch_assoc(mysql_query("SELECT id,username,email FROM account WHERE id = '".$_GET['id']."'")); 
+  mysql_select_db($server_adb);
+  $new3 = mysql_fetch_assoc(mysql_query("SELECT * FROM account_banned WHERE id = '".$_GET['id']."'")); 
   if (!$new['id']){
     $error = true;
   }
   }else{
     $error = true;
   }
-
-    if (isset($_GET['id'])){
-  mysql_select_db($server_adb);
-  $new2 = mysql_fetch_assoc(mysql_query("SELECT id,username,email FROM account WHERE id = '".$_GET['id']."'"));
-  if (!$new2['id']){
-    $error = true;
-  }
-  }else{
-    $error = true;
-  }
+   
   
 //Begin Post
   if (isset($_POST['save'])){
@@ -39,7 +34,7 @@ include("../configs.php");
     $email = mysql_real_escape_string($_POST['email']);
     $AdminLevel = mysql_real_escape_string($_POST['groupId']);
     $unbandate = mysql_real_escape_string($_POST['unbandate']);
-    $banreason = mysql_real_escape_string($_POST['banreason']);
+    $banreason = mysql_real_escape_string($_POST['banreason']); 
     $username = $_POST['username'];
     $username = trim($username);
     if ($_POST['author']){
@@ -54,7 +49,7 @@ include("../configs.php");
 	  mysql_select_db($server_adb);
 	  $change2_new = mysql_query("UPDATE account SET email ='".$email."', username = '".$username."' WHERE id = '".$_POST['id']."'");
 	  mysql_select_db($server_adb);
-	  $change3_new = mysql_query("UPDATE account_banned SET unbandate = '".$unbandate."', bannedby = '".$bannedby."', banreason = '".$banreason."' WHERE id = '".$_POST['id']."'");
+	  $change3_new = mysql_query("UPDATE account_banned SET unbandate = '".$unbandate."', bannedby = '".$bannedby."', banreason = '".$banreason."' WHERE id = '".$_POST['id']."'"); 
       if ($change_new == true){
         echo '<div class="alert-page" align="center"> The article has been updated successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
@@ -129,16 +124,13 @@ include("../configs.php");
           </p> 
 		  <p><?php echo $admin['email']; ?><br />
             <input name="email" type="text" value="<?php echo $new2['email']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new2['email']; ?>'" />
-          </p> 
-		  <p><?php echo $admin['AdminLevel']; ?><br />
-            <input name="AdminLevel" type="text" value="<?php echo $new['AdminLevel']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['AdminLevel']; ?>'" />
-          </p>
+          </p>  
 		  <h3><?php echo $admin['Ban']; ?></h3> 
 		  <p><?php echo $admin['BanAcc']; ?><br />
-            <input name="unbandate" type="text" value="<?php echo $new['unbandate']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['unbandate']; ?>'" />
+            <input name="unbandate" type="text" value="<?php echo $new3['unbandate']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new3['unbandate']; ?>'" />
           </p> 
 		  <p><?php echo $admin['banreason']; ?><br />
-            <input name="banreason" type="text" value="<?php echo $new['banreason']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new['banreason']; ?>'" />
+            <input name="banreason" type="text" value="<?php echo $new3['banreason']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $new3['banreason']; ?>'" />
           </p> 
           <input name="save" type="submit" value="<?php echo $admin['Save']; ?>" />
           <a href="viewnews.php"><input name="reset" type="reset" value="<?php echo $admin['Cancel']; ?>" /></a>

@@ -242,291 +242,43 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
               </div>
             </div>
 
-            <div class="profile-contents">
-
-              <div class="summary">
-
-                <div class="profile-section">
-
-                  <div class="summary-right">
-
-
-                    <div class="summary-characterspecific">
-
-                      <div class="summary-character">
-                        <a class="avatar" href="/wow/ru/character/дракономор/%D0%9A%D0%B8%D1%82%D1%82%D0%BD%D0%B5%D1%81/" rel="np" style="background-image: url('http://eu.battle.net/static-render/eu/fordragon/120/73546616-avatar.jpg?alt=/wow/static/images/2d/avatar/22-1.jpg');"></a>
-                        <div class="rest">
-                          <div class="name">
-                            <a href="/wow/ru/character/дракономор/%D0%9A%D0%B8%D1%82%D1%82%D0%BD%D0%B5%D1%81/" rel="np">Киттнес</a>
-                          </div>
-                          <div class="reputation">
-                            <div class="guild-progress guild-replevel-7">
-                              <span class="description">
-                                Репутация:
-                                <strong>Превознесение</strong>
-                              </span>
-
-
-
-                              <div class="profile-progress border-2 completed" >
-                                <div class="bar border-2 hover" style="width: 100%"></div>
-                                <div class="bar-contents">
-                                  999 / 999 (100%)
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <span class="clear">
-                          <!-- -->
-                        </span>
-                      </div> 
-
-                      <div class="summary-simple-list summary-rewards">
-                        <h3 class="category ">
-                          Недавно полученнные награды
-                        </h3>
-
-                        <div class="profile-box-simple">
-
-                          <ul>
-                            <li>
-                              <a href="/wow/ru/item/62038">
-                                <span class="icon">
-
-
-
-
-                                  <span class="icon-frame frame-27 ">
-                                    <img src="http://media.blizzard.com/wow/icons/36/inv_misc_cape_19.jpg" alt="" width="27" height="27" />
-                                  </span>
-                                </span>
-                                <span class="name color-q7">
-                                  Поношенный плащ каменной горгульи
-                                </span>
-                                <span class="clear">
-                                  <!-- -->
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="/wow/ru/item/62039">
-                                <span class="icon">
-
-
-
-
-                                  <span class="icon-frame frame-27 ">
-                                    <img src="http://media.blizzard.com/wow/icons/36/inv_misc_cape_20.jpg" alt="" width="27" height="27" />
-                                  </span>
-                                </span>
-                                <span class="name color-q7">
-                                  Унаследованная накидка черного барона
-                                </span>
-                                <span class="clear">
-                                  <!-- -->
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="/wow/ru/item/62040">
-                                <span class="icon">
-
-
-
-
-                                  <span class="icon-frame frame-27 ">
-                                    <img src="http://media.blizzard.com/wow/icons/36/inv_misc_cape_05.jpg" alt="" width="27" height="27" />
-                                  </span>
-                                </span>
-                                <span class="name color-q7">
-                                  Древний плащ Кровавой Луны
-                                </span>
-                                <span class="clear">
-                                  <!-- -->
-                                </span>
-                              </a>
-                            </li>
-                          </ul>
-
-                          <div class="profile-linktomore">
-                            <a href="/wow/ru/vault/guild/reward" rel="np">Все награды</a>
-                          </div>
-
-                          <span class="clear">
-                            <!-- -->
-                          </span>
-
-
-                        </div>
-                      </div>
-                      <span class="clear">
-                        <!-- -->
-                      </span>
-
-                    </div>
-
-
+            <div class="profile-contents"> 
+              <div class="summary"> 
+                <div class="profile-section"> 
+                  <div class="summary-right"> 
                     <div class="summary-events">
                       <h3 class="category ">
                         События
-                      </h3>
-
-                      <div class="profile-box-simple">
-
+                      </h3> 
+                      <div class="profile-box-simple"> 
                         Нет событий
                       </div>
                     </div>
-
-
-                    <div class="summary-simple-list summary-perks">
-                      <h3 class="category ">
-                        Бонусы
-                      </h3>
-
-                      <div class="profile-box-simple">
-
-                        <ul> 
-                          <li>
-
-                            <a href="/wow/ru/guild/%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%BE%D1%80/%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%90%D0%B2%D0%B0%D0%BD%D0%B3%D0%B0%D1%80%D0%B4/perk#p9">
-
-                              <span class="icon-wrapper"> 
-                                <span  class="icon-frame frame-36 " style='background-image: url("http://media.blizzard.com/wow/icons/36/achievement_guild_doctorisin.jpg");'>
-                                </span>
-                                <span class="symbol"></span>
-                              </span>
-                              <div class="text">
-                                <strong>Доктора вызывали? </strong>
-                                <span class="desc" title="Эффективность исцеления при применении бинтов увеличивается на 25%. Не работает на аренах и полях боя.">Эффективность исцеления при применении бинтов увеличивается на 25%. Не рабо…</span>
-                              </div>
-
-                              <span class="type">Уровень 10</span>
-                              <span class="clear">
-                                <!-- -->
-                              </span>
-
-                            </a>
-                          </li>
-
-
-                          <li class="locked">
-
-                            <a href="/wow/ru/guild/%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%BE%D1%80/%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%90%D0%B2%D0%B0%D0%BD%D0%B3%D0%B0%D1%80%D0%B4/perk#p10">
-
-                              <span class="icon-wrapper">
-
-
-
-
-
-                                <span  class="icon-frame frame-36 " style='background-image: url("http://media.blizzard.com/wow/icons/36/achievement_guildperk_mobilebanking.jpg");'>
-                                </span>
-                                <span class="symbol"></span>
-                              </span>
-                              <div class="text">
-                                <strong>Мобильный банк </strong>
-                                <span class="desc" title="Вызов гильдейского сундука, с помощью которого можно в течение 5 мин. пользоваться банком гильдии. Для пользования сундуком необходима репутация в гильдии &quot;Дружелюбие&quot; или лучше.">Вызов гильдейского сундука, с помощью которого можно в течение 5 мин. польз…</span>
-                              </div>
-
-                              <span class="type">Уровень 11</span>
-                              <span class="clear">
-                                <!-- -->
-                              </span>
-
-                            </a>
-                          </li> 
-
-                        </ul>
-
-                        <div class="profile-linktomore">
-                          <a href="/wow/ru/guild/%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%BE%D1%80/%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%90%D0%B2%D0%B0%D0%BD%D0%B3%D0%B0%D1%80%D0%B4/perk" rel="np">Все бонусы</a>
-                        </div>
-
-                        <span class="clear">
-                          <!-- -->
-                        </span>
-                      </div>
-                    </div>
-
-
-                    <div class="summary-weekly-contributors">
-                      <h3 class="category ">
-                        Самые активные члены гильдии
-                      </h3>
-
-                      <div class="profile-box-simple">
-
-                        Еженедельные вклады в развитие гильдии еще не учтены.
-
-                      </div>
-                    </div>
-
-
-                  </div>
-
-                  <div class="summary-left">
-
-
-
-
-
+                </div> 
+                  <div class="summary-left"> 
                     <div class="summary-activity">
                       <h3 class="category ">
                         Последние новости
-                      </h3>
-
-                      <div class="profile-box-simple">
-
-                        Нет последних новостей.
-
-
+                      </h3> 
+                      <div class="profile-box-simple"> 
+                        Нет последних новостей. 
                       </div>
-                    </div>
-
-
-                  </div>
-
+                    </div> 
+                  </div> 
                   <span class="clear">
                     <!-- -->
                   </span>
                 </div>
-              </div>
-
-            </div>
-
+              </div> 
+            </div> 
             <span class="clear">
               <!-- -->
             </span>
-          </div>
-
-          <script type="text/javascript">
-            //<![CDATA[
-		$(function() {
-			Profile.url = '/wow/ru/guild/%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%BE%D1%80/%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%90%D0%B2%D0%B0%D0%BD%D0%B3%D0%B0%D1%80%D0%B4/summary';
-		});
-
-			var MsgProfile = {
-				tooltip: {
-					feature: {
-						notYetAvailable: "Эта функция пока недоступна."
-					},
-					vault: {
-						character: "Этот раздел доступен только для авторизованных пользователей.",
-						guild: "Этот раздел доступен, только если вы авторизовались с персонажа — члена данной гильдии."
-					}
-				}
-			};
-        //]]>
-          </script>
-
+          </div>   
         </div>
       </div>
     </div>
-
-
-
-
+ 
     <span class="clear"><!-- --></span>
 	</div>
 

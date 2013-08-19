@@ -1,6 +1,5 @@
 <?php
-include("../configs.php");
-ini_set("default_charset", "iso-8859-1" );    
+include("../configs.php");   
 
 	mysql_select_db($server_adb);
 	$check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
@@ -19,15 +18,23 @@ ini_set("default_charset", "iso-8859-1" );
     $realmid = mysql_real_escape_string($_POST['realmid']);
     $version = mysql_real_escape_string($_POST['version']);
     $drop_rate = mysql_real_escape_string($_POST['drop_rate']);
-    $exp_rate = $_POST['exp_rate'];
-    $exp_rate = trim($exp_rate);
-
-    $emptyexp_rate = strip_tags($exp_rate);
-    if (empty($emptyexp_rate)){                          //Check if content is empty, title will never be empty
+    $exp_rate = mysql_real_escape_string($_POST['exp_rate']);
+    $address = mysql_real_escape_string($_POST['address']);
+    $type = mysql_real_escape_string($_POST['type']);
+    $localAddress = mysql_real_escape_string($_POST['localAddress']);
+    $localSubnetMask = mysql_real_escape_string($_POST['localSubnetMask']);
+    $port = mysql_real_escape_string($_POST['port']); 
+    $name = $_POST['name'];
+    $name = trim($name);
+	
+    $emptyname = strip_tags($name);
+    if (empty($emptyname)){                          //Check if content is empty, title will never be empty
       echo '<font color="red">You have to write something!</font>';
     }else{
       mysql_select_db($server_db);
-      $save_new = mysql_query("INSERT INTO realms (world_db, char_db, realmid, version, drop_rate, exp_rate) VALUES ('".$world_db."','".$char_db."','".$realmid."','".$version."','x".$drop_rate."','x".$exp_rate."');") or die(mysql_error());
+      $save_new = mysql_query("INSERT INTO realms (world_db, char_db, realmid, version, drop_rate, exp_rate, type) VALUES ('".$world_db."', '".$char_db."', '".$realmid."', '".$version."', '".$drop_rate."', '".$exp_rate."', '".$type."');") or die(mysql_error());
+      mysql_select_db($server_adb);
+      $save_new2 = mysql_query("INSERT INTO realmlist (name, address, localAddress, localSubnetMask, port) VALUES ('".$name."', '".$address."', '".$localAddress."', '".$localSubnetMask."', '".$port."');") or die(mysql_error());
       if ($save_new == true){
         echo '<div class="alert-page" align="center"> The new has been created successfully!</div>';
         echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
@@ -43,7 +50,7 @@ ini_set("default_charset", "iso-8859-1" );
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?></title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['infoRate']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -81,6 +88,26 @@ ini_set("default_charset", "iso-8859-1" );
           <h2><?php echo $admin['infoRate']; ?></h2>
         </div>
         <form method="post" action="" class="styleForm">
+          <p><?php echo $admin['name2']; ?><br />
+            <input name="name" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+          </p> 
+
+          <p><?php echo $admin['address']; ?><br />
+            <input name="address" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+          </p> 
+
+          <p><?php echo $admin['localAddress']; ?><br />
+            <input name="localAddress" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+          </p> 
+
+          <p><?php echo $admin['localSubnetMask']; ?><br />
+            <input name="localSubnetMask" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+          </p> 
+
+          <p><?php echo $admin['port']; ?><br />
+            <input name="port" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+          </p>  
+
           <p><?php echo $admin['worldName']; ?><br />
             <input name="world_db" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
           </p> 
@@ -94,7 +121,7 @@ ini_set("default_charset", "iso-8859-1" );
           </p> 
 
           <p><?php echo $admin['Version']; ?><br />
-            <input name="version" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
+             <input name="version" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
           </p> 
 
           <p><?php echo $admin['drop']; ?><br />
@@ -105,6 +132,16 @@ ini_set("default_charset", "iso-8859-1" );
             <input name="exp_rate" type="text" value="" class="reg" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''" />
           </p> 
 
+		    <p>Тип<br />
+		   <select name="type" id="type" class="extra-extra-small border-5 glow-shadow-2" tabindex="1" required="required">
+<option value="0">PvE</option>
+<option value="1">PvP</option>
+<option value="4">PvE</option>
+<option value="6">RP</option>
+<option value="8">RP-PVP</option>
+<option value="16">FFA_PVP</option> 
+</select>
+  </p>  
           
           <input name="save" type="submit" value="<?php echo $admin['Save']; ?>" />
           <input name="reset" type="reset" value="<?php echo $admin['Cancel']; ?>" />

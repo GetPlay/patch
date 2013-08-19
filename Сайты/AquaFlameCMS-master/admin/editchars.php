@@ -89,26 +89,26 @@ include("../configs.php");
     <div id="content">
       <div class="forms">
         <div class="heading">
-          <h2><?php echo $admin['EditUsers']; ?><font color="blue"><?php echo $char['name']; ?></font></h2>
+          <h2><?php echo $admin['EditUsers']; ?><font color="blue"><?php echo $char['name']; ?> <span class="icon-frame frame-64 " data-tooltip="<?php echo $char['race']?>"><img src="../admin/images/icons/big/<?php echo $char['race']?>-<?php echo $char['gender']?>.gif" alt="" width="24" height="24" />  <span class="icon-frame frame-64 " data-tooltip=""><img src="../admin/images/icons/big/<?php echo $char["class"]?>.gif" alt="" width="24" height="24" /></font></h2>
         </div>
         <form method="post" action="" class="styleForm">
         <input type="hidden" name="id" value="<?php echo $new['id']; ?>" /> 
-
+		
+          <p><?php echo $admin['name']; ?><br />
+            <input name="name" type="text" value="<?php echo $char['name']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['name']; ?>'" />
+          </p> 
+          <p><?php echo $admin['level']; ?><br />
+            <input name="level" type="text" value="<?php echo $char['level']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['level']; ?>'" />
+          </p> 
+          <p><?php echo $admin['money']; ?><br />
+            <input name="money" type="text" value="<?php echo $char['money']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['money']; ?>'" />
+          </p>
           <p><?php echo $admin['totalHonorPoints']; ?><br />
             <input name="totalHonorPoints" type="text" value="<?php echo $char['totalHonorPoints']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['totalHonorPoints']; ?>'" />
           </p> 
           <p><?php echo $admin['arenaPoints']; ?><br />
             <input name="arenaPoints" type="text" value="<?php echo $char['arenaPoints']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['arenaPoints']; ?>'" />
-          </p> 
-          <p><?php echo $admin['name']; ?><br />
-            <input name="name" type="text" value="<?php echo $char['name']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['name']; ?>'" />
-          </p> 
-          <p><?php echo $admin['race']; ?><br />
-            <input name="race" type="text" value="<?php echo $char['race']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['race']; ?>'" />
-          </p> 
-          <p><?php echo $admin['class']; ?><br />
-            <input name="class" type="text" value="<?php echo $char['class']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['class']; ?>'" />
-          </p> 
+          </p>  
           <p><?php echo $admin['gender']; ?><br /> 
 		   <select name="gender" id="gender" class="extra-extra-small border-5 glow-shadow-2" tabindex="1" required="required">
 <option value="<?php echo $char['gender']; ?>" selected="selected"><?php  if ($char['gender'] < 1) { echo 'Мужской'; }else{ echo  'Женский';  } ?></option>
@@ -117,12 +117,6 @@ include("../configs.php");
 </select>
 <span class="inline-message" id="dobMonth-message"> </span> 
    </p> 
-          <p><?php echo $admin['level']; ?><br />
-            <input name="level" type="text" value="<?php echo $char['level']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['level']; ?>'" />
-          </p> 
-          <p><?php echo $admin['money']; ?><br />
-            <input name="money" type="text" value="<?php echo $char['money']; ?>" class="reg" onblur="if(this.value=='')this.value='<?php echo $char['money']; ?>'" />
-          </p>
 		   <p><?php echo $admin['at_login']; ?><br />
 <select name="at_login" id="at_login" class="extra-extra-small border-5 glow-shadow-2" tabindex="1" required="required">
 <option value="0" selected="selected">не выбрано</option>

@@ -34,7 +34,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['Viewusers']; ?></title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['infoRate']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -56,8 +56,11 @@ include("../configs.php");
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2><?php echo $admin['Viewusers']; ?></h2>
-
+        <h2><?php echo $admin['infoRate']; ?></h2>
+		        <form method="post" action="" class="pagination">
+          <input type="text" class="pag" name="new_categ" value="" style="margin: 20px 0 0 29px;"/>
+          <a href="info_rate.php"><?php echo $admin['addrate']; ?> </a>
+        </form>
       </div>
       <div class="pagination">
         <?php
@@ -78,35 +81,37 @@ include("../configs.php");
         ?> 
       </div>
       <ul id="lst">
-        <li> 
-			<p class="editHead2"><strong><?php echo $admin['Edit']; ?></strong></p>
-			<p class="editHead2"><strong><?php echo $admin['Username']; ?></strong></p>
-            <p class="title2"><strong><?php echo $admin['Name']; ?></strong></p>
-            <p class="descripHead2"><?php echo $admin['Char']; ?></p>
-            <p class="incHead"><?php echo $admin['Birth']; ?></p>
-            <p class="ip"><?php echo $admin['ip']; ?></p>
+        <li>
+			    <p class="editHead"><strong><?php echo $admin['addotv']; ?> </strong></p>
+          <p class="title"><strong><?php echo $admin['author']; ?></strong></p>
+          <p class="descripHead"><?php echo $admin['Desc']; ?></p>
+          <p class="incHead"><?php echo $admin['Lock']; ?></p>
         </li>
-           <?php
-            mysql_select_db($server_db) or die (mysql_error());
-            $users = mysql_query("SELECT U.id,U.firstName,U.registerIp,U.birth,username FROM users U, $server_adb.account A 
-            WHERE A.id = U.id ORDER BY id DESC LIMIT $start,$size");
-            while ($usercheck = mysql_fetch_assoc($users)){
-            mysql_select_db($server_cdb) or die (mysql_error());
-            $chars = mysql_query("SELECT name FROM characters WHERE account = '".$usercheck['id']."'");
-			      echo '
-            <li> 
-		<p class="edit2"><a href="editusers.php?id='.$usercheck['id'].'"><img src="images/editIco.png" alt="" /></a></p>
-              <p class="edit2">'.$usercheck['username'].'</p>
-	      <p class="title2">'.$usercheck['firstName'].'</p>
-              <p class="descrip2">';
-                while ($charcheck = mysql_fetch_assoc($chars)){
-                  echo $charcheck['name'].', ';
-                }
-              echo '</p>
-              <p class="inc">'.$usercheck['birth'].'</p>
-              <p class="iplist">'.$usercheck['registerIp'].'</p>
-              </li>';
-            }?>
+           <?php 
+$get_realms = mysql_query("SELECT * FROM $server_adb.realmlist");
+while($realm = mysql_fetch_array($get_realms)){
+    $host = $realm['address'];
+    $world_port = $realm['port'];
+    $world = @fsockopen($host, $world_port, $err, $errstr, 2);
+    
+    $realm_config = mysql_fetch_assoc(mysql_query("SELECT * FROM realms WHERE realmid = '".$realm['id']."'"));
+    $server_cdb = $realm_config['char_db'];
+    $server_wdb = $realm_config['world_db'];
+              echo'
+            <li>
+            <p class="edit"><a href="edit_info_rate.php?id='.$realm['id'].'"><img src="images/editIco.png" alt="" /></a></p>
+            <p class="title">'.$realm['name'].'</p>
+            <p class="descrip">'.$website['realm'].'</p>'; 
+			               if (!$world) 
+							echo  '<p class="inc"><font color=red size=2>OFFLINE</font></p>';
+							else
+							echo  '<p class="inc"><font color=#00FF00 size=2>ONLINE</font></p>';
+											
+																				echo' 
+									<span class="clear"><!-- --></span> 
+							</p></li>	';
+
+           } ?>
       </ul>
     </div>
     <img src="images/sepLine.png" alt="" class="sepline" />

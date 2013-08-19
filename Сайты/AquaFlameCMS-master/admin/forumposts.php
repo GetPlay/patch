@@ -10,8 +10,8 @@ include("../configs.php");
 		');
 	}
 	
-  mysql_select_db($server_db) or die (mysql_error());
-  $sql = mysql_query("SELECT id FROM news");
+  mysql_select_db($server_db) or die (mysql_error()); 
+  $sql = mysql_query("SELECT id,name,content,replies FROM forum_threads ORDER BY date");
   //PAGINATION BEGIN
   $size=10; 
   $num_r = mysql_num_rows($sql);
@@ -34,7 +34,7 @@ include("../configs.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['Viewusers']; ?></title>
+		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['viewForum']; ?></title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -56,17 +56,17 @@ include("../configs.php");
 		  <img src="images/sepLine.png" alt="" class="sepline" />
     <div class="datalist"> 
 	     <div class="heading">
-        <h2><?php echo $admin['Viewusers']; ?></h2>
+        <h2><?php echo $admin['viewForum']; ?></h2>
 
       </div>
       <div class="pagination">
         <?php
           if ($num_p > 1){
-         if ($page > 1){echo '<a href="viewusers.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
-         if ($page > 2){echo '<a href="viewusers.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
+         if ($page > 1){echo '<a href="forumposts.php?page='.($page-1).'" style="color:#43ACFB;text-decoration:none;">Prev. </a>|';}
+         if ($page > 2){echo '<a href="forumposts.php?page=1" style="color:#43ACFB;text-decoration:none;"> 1 </a>...';}
          echo $page;
-         if ($page < $num_p-1){echo '...<a href="viewusers.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
-         if ($page < $num_p){echo '|<a href="viewusers.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
+         if ($page < $num_p-1){echo '...<a href="forumposts.php?page='.$num_p.'" style="color:#43ACFB;text-decoration:none;"> '.$num_p.' </a>';}
+         if ($page < $num_p){echo '|<a href="forumposts.php?page='.($page+1).'" style="color:#43ACFB;text-decoration:none;"> Next</a>';}
          echo'
           <form method="get" action="">
             <input type="hidden" name="sort" value="'.$_GET['sort'].'">
@@ -77,37 +77,27 @@ include("../configs.php");
          }
         ?> 
       </div>
-      <ul id="lst">
-        <li> 
-			<p class="editHead2"><strong><?php echo $admin['Edit']; ?></strong></p>
-			<p class="editHead2"><strong><?php echo $admin['Username']; ?></strong></p>
-            <p class="title2"><strong><?php echo $admin['Name']; ?></strong></p>
-            <p class="descripHead2"><?php echo $admin['Char']; ?></p>
-            <p class="incHead"><?php echo $admin['Birth']; ?></p>
-            <p class="ip"><?php echo $admin['ip']; ?></p>
-        </li>
-           <?php
+        <ul id="lst">
+                  <li>
+			<p class="editHead"><strong><?php echo $admin['Edit']; ?>/<?php echo $admin['Delete']; ?></strong></p>
+            <p class="title"><strong><?php echo $admin['Title']; ?></strong></p>
+            <p class="descripHead"><?php echo $admin['Desc']; ?></p>
+            <p class="incHead"><?php echo $admin['Replies']; ?></p>
+          </li>
+
+            <?php
             mysql_select_db($server_db) or die (mysql_error());
-            $users = mysql_query("SELECT U.id,U.firstName,U.registerIp,U.birth,username FROM users U, $server_adb.account A 
-            WHERE A.id = U.id ORDER BY id DESC LIMIT $start,$size");
-            while ($usercheck = mysql_fetch_assoc($users)){
-            mysql_select_db($server_cdb) or die (mysql_error());
-            $chars = mysql_query("SELECT name FROM characters WHERE account = '".$usercheck['id']."'");
-			      echo '
-            <li> 
-		<p class="edit2"><a href="editusers.php?id='.$usercheck['id'].'"><img src="images/editIco.png" alt="" /></a></p>
-              <p class="edit2">'.$usercheck['username'].'</p>
-	      <p class="title2">'.$usercheck['firstName'].'</p>
-              <p class="descrip2">';
-                while ($charcheck = mysql_fetch_assoc($chars)){
-                  echo $charcheck['name'].', ';
-                }
-              echo '</p>
-              <p class="inc">'.$usercheck['birth'].'</p>
-              <p class="iplist">'.$usercheck['registerIp'].'</p>
-              </li>';
-            }?>
-      </ul>
+            $forum = mysql_query("SELECT id,name,content,replies FROM forum_threads ORDER BY date DESC LIMIT 5");
+            while ($fcheck = mysql_fetch_assoc($forum)){
+			echo'
+            <li class="odd" >
+            <p class="edit"><a href="editfor.php?id='.$fcheck['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletefor.php?id='.$fcheck['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
+            <p class="title">'.substr(strip_tags($fcheck['name']),0,15).'...</p>
+            <p class="descrip">'.substr(strip_tags($fcheck['content']),0,90).'</p>
+            <p class="inc">'.$fcheck['replies'].'</p>
+            </li>';
+			}?>
+                </ul> 
     </div>
     <img src="images/sepLine.png" alt="" class="sepline" />
              <!--  <div class="messages">

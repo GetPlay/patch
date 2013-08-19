@@ -279,6 +279,15 @@ tabindex="1">
 <?php echo $Man['Man49']; ?>
 </a>
 </li>
+  <li class="wow-service resurrection-scroll">
+    <a href="options/vost_delet_char.php">
+      <span class="icon glow-shadow-3"></span>
+      <strong>
+        <?php echo $Man['Man79']; ?>
+      </strong>
+      <?php echo $Man['Man80']; ?> 
+    </a>
+  </li>
 </ul>
 </div>
 <div class="content additional-services" id="additional-services">

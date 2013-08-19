@@ -3,22 +3,21 @@ include("../configs.php");
 $page_cat = 'summary'; 
   if (!isset($_SESSION['username'])) {
         header('Location: ../account_log.php');		
-}
-
-    if (isset($_POST['save'])){
-    $ticketId = mysql_real_escape_string($_POST['ticketId']);
-    $character = mysql_real_escape_string($_POST['name']);
-    $guid = mysql_real_escape_string($_POST['guid']);
+}  
+  
+    if (isset($_POST['save'])){ 
+    $name = mysql_real_escape_string($_POST['name']);
+    $guid = $character['guid'];
     $message = mysql_real_escape_string($_POST['message']); 
     $title = $_POST['title'];
     $title = trim($title);
 
     $emptytitle = strip_tags($title);
-    if (empty($emptytitle)){                          
+    if (empty($emptytitle)){  
       echo '<font color="red">Возможно, Вы что-то забыли заполнить?!</font>';
     }else{
       mysql_select_db($server_cdb);
-      $save_new = mysql_query("INSERT INTO gm_tickets (ticketId, guid, name, message, title) VALUES ('".$ticketId."','".$guid."','".$name."','".$message."','".$title."');") or die(mysql_error());
+      $save_new = mysql_query("INSERT INTO gm_tickets (guid, name, message, title) VALUES ('".$guid."','".$name."','".$message."','".$title."');") or die(mysql_error());
       if ($save_new == true){
         echo 'Ваш запрос отправлен. Как только кто-то из сотрудников освободится, он ответит вам в новом окне чата.';
         echo '<meta http-equiv="refresh" content="1;url=../account_man.php"/>';
@@ -98,20 +97,15 @@ $page_cat = 'summary';
                             </span>
                             <span class="input-right input-disabled">
                               <span class="input-select input-select-small">
-                                <select name="wow-character-205" id="wow-character-205"  class="small border-5 glow-shadow-2" tabindex="1" >
-                                  <option value="" selected="selected">Выберите персонажа</option>
-                                  <option value="0" data-realm="0">Моего персонажа нет в списке</option>
-			<?php
-			$online = 0;
-			$get_chars = mysql_query("SELECT * FROM $server_cdb.characters WHERE account = '".$account_information['id']."' AND at_login = '0'");
-			//Get chars that doesn't have a current at_login change activated
+                                <select name="name" id="name" class="extra-extra-small border-5 glow-shadow-2" tabindex="1" required="required"> 
+			<?php 
+			$get_chars = mysql_query("SELECT * FROM $server_cdb.characters WHERE account = '".$account_information['id']."' "); 
       	while($character = mysql_fetch_array($get_chars)){
-					echo '<option value="'.$character['guid'].'">'.$character['name'].'</option>';
-					if($character['online'] == 1) $online = 1;
+					echo '<option value="'.$character['name'].'">'.$character['name'].' ('.$character['guid'].')</option>'; 
 				}
 			?>
                                 </select>
-                                <span class="inline-message" id="wow-character-205-message"> </span>
+                                <span class="inline-message" id="name"> </span>
                               </span>
                               <span class="input-info-tooltip" data-tooltip=" Если вашего игрового мира или персонажа нет в списке, укажите их в описании проблемы.&lt;/p&gt;" data-tooltip-options='{"location": "mouse"}'>Вашего игрового мира или персонажа нет в списке?</span>
                             </span>

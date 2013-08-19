@@ -91,6 +91,7 @@ $More2['More2'] = "Подробнее: ";
 $Retrieve['Retrieve'] = "Восстановление пароля";
 $Find['Find'] = "Найти нас на карте!";
 $or['or'] = "или";
+$or['or2'] = " или ";
 $search['text_bar'] = "Поиск предметов, персонажей, сообщений на форуме...";
 
 // Starting the voting translation
@@ -348,6 +349,8 @@ $Man['Man75'] = "рефералы, оставшиеся.";
 $Man['Man76'] = "Вместе уровень идет быстрее";
 $Man['Man77'] = "Получить награду,если Ваш друг подписался";
 $Man['Man78'] = "Get a unique two-person mount";
+$Man['Man79'] = "Восстановление удаленного персонажа";
+$Man['Man80'] = "Случайно удалили персонажа? Вы можете его восстановить!";
 // Finishing Account Man
 
 // Starting Header acount
@@ -1139,6 +1142,20 @@ $race['7'] = "Изменить";
 $race['8'] = "Отмена";
 //Finish Change Character Race
 
+//start vost char
+$vostChar['1'] = "Восстановление удаленного персонажа"; 
+$vostChar['2'] = "Восстановление удаленного персонажа";
+$vostChar['3'] = "После использования этой функции,так-же будет предложена обязательная смена имени персонажа";
+$vostChar['4'] = "Аккаунт";
+$vostChar['5'] = "Выбор персонажа";
+$vostChar['6'] = "Способ оплаты";
+$vostChar['7'] = "У Вас нет удаленных персонажей";
+$vostChar['8'] = "Восстановить";
+$vostChar['9'] = "Отмена";
+$vostChar['10'] = "Успешно!";
+$vostChar['11'] = "Персонаж успешно восстановлен";
+$vostChar['12'] = "Ошибка!";
+
 //admin
 $admin['AP'] = "Панель администратора";
 $admin['Latest'] = "Последние";
@@ -1241,15 +1258,15 @@ $admin['level'] = "Уровень";
 $admin['money'] = "Деньги";
 $admin['at_login'] = "Флаг на изменение";
 $admin['EditUsers'] = "Изменение персонажа: ";
-$admin[''] = "";
-$admin[''] = "";
-$admin[''] = "";
-$admin[''] = "";
-$admin[''] = "";
-$admin[''] = "";
-$admin[''] = "";
-$admin[''] = "";
-$admin[''] = "";
+$admin['Viewusers'] = "Просмотр пользователей";
+$admin['addrate'] = "Добавить новый мир";
+$admin['name2'] = "Название мира";
+$admin['address'] = "IP адрес";
+$admin['localAddress'] = "IP локальный адрес";
+$admin['localSubnetMask'] = "Local Mask";
+$admin['port'] = "Порт";
+$admin['realmId'] = "ID реалма";
+$admin['viewForum'] = "Просмотр сообщений форума";
 $admin[''] = "";
 $admin[''] = "";
 ?>
