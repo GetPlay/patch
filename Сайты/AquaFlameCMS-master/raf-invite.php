@@ -58,11 +58,10 @@ _gaq.push(['_trackPageview']);
 _gaq.push(['_trackPageLoadTime']);
 //]]>
 </script>
-</head>
-<body class="en-gb logged-in">
-        <div id="layout-top">
-            <div class="wrapper">
-                <div id="header">
+</head><body class="en-gb logged-in">
+<div id="layout-top">
+    <div class="wrapper">
+        <div id="header">
     <?php include("functions/header_account.php"); ?>
 	<?php include("functions/footer_man_nav.php"); ?>
         <div id="layout-middle">
@@ -71,32 +70,28 @@ _gaq.push(['_trackPageLoadTime']);
 	<div class="dashboard service">
 		<div class="primary">
 			<div class="header">
-	<span class="float-right"><span class="form-req">*</span> Required</span>
-    <h2 class="subcategory">Referrals &amp; Rewards</h2>
-    <h3 class="headline">Refer a Friend</h3>
+	<span class="float-right"><span class="form-req">*</span><?php echo $friend['2']; ?></span> 
+    <h3 class="headline"><?php echo $friend['1']; ?></h3>
     <a href=""><img src="wow/static/local-common/images/game-icons/wow.png" alt="World of Warcraft®" width="48" height="48" /></a>
 			</div>
 			<div class="service-wrapper">
     <p class="service-nav">
-            <a href="" class="active">Send Invitations</a>
-            <a href="">History/Status</a>
-            <a href="">How It Works</a>
-            <a href="">Instructions For Recipient</a>
+        <a href="" class="active"><?php echo $friend['5']; ?></a>
+        <a href=""><?php echo $friend['6']; ?></a>
+        <a href=""><?php echo $friend['7']; ?></a>
+        <a href=""><?php echo $friend['8']; ?></a>
     </p>
 	<div class="raf-service-info">
-    You have <a href="">0 friends</a> linked to your account and 20 Referrals remaining.
+    <?php echo $friend['9']; ?><a href=""><?php echo $friend['10']; ?></a><?php echo $friend['11']; ?>
     <ul>
-        <li>Level together and faster</li>
-        <li>Gain rewards if your friend subscribes</li>
-        <li>Get a unique two-person mount</li>
+        <li><?php echo $friend['12']; ?></li>
+        <li><?php echo $friend['13']; ?></li>
+        <li><?php echo $friend['14']; ?></li>
     </ul>
-    <a href="">More details on how it works...</a>
-    <div class="sub-section">
-        You are not allowed to Refer friends who used to or still play,<br> Use the <a href="">Refer a Friend</a> instead!
-    </div>
+    <a href=""><?php echo $friend['15']; ?></a>
 	</div>
 	<div class="service-form">
-    Fill in your friend's information below, along with any custom message you would like to send, and we will send an e-mail containing an invitation to the provided address. You can track the status of each Refer a Friend invitation <a href="">here</a>.
+    <?php echo $friend['20']; ?><a href=""><?php echo $friend['21']; ?></a>.
                 <form method="POST" action="raf-invite.php" id="raf-form">
                     <input type="hidden" name="" value=""/>
                     <input type="hidden" name="" value=""/>
@@ -154,7 +149,7 @@ $ip = getenv('REMOTE_ADDR');
 	}
 	else
 	{
-	
+
 	$check_account2  = mysql_query("SELECT * FROM `$server_adb`.`account` WHERE `username` = '$username' AND `sha_pass_hash` = '$password'") or die(mysql_error());
 	if(mysql_num_rows($check_account2) < 1)
 	{
@@ -162,7 +157,7 @@ $ip = getenv('REMOTE_ADDR');
 	}
 	else
 	{
-	
+
 	$result1  = mysql_query("SELECT * FROM `$server_cdb`.characters, `$server_adb`.account WHERE `$server_adb`.account.id = `$server_cdb`.characters.account AND `$server_cdb`.characters.name='$hero1' AND `$server_adb`.account.username = '$username';") or die(mysql_error());
 	if(mysql_num_rows($result1) < 1)
 	{
@@ -170,7 +165,7 @@ $ip = getenv('REMOTE_ADDR');
 	}
 	else
 	{
-	
+
   $select_character = mysql_query("SELECT name,guid FROM `$server_cdb`.characters WHERE name='$hero1';");
   $fetch_char = mysql_fetch_array($select_character);
   $guid = $fetch_char["guid"];
@@ -194,72 +189,72 @@ mysql_close($link);
 ?>					
 	<div class="form-row required">
 	<label for="name" class="label-full ">
-	<strong>Your Account Name:</strong>
+	<strong><?php echo $friend['22']; ?></strong>
 	<span class="form-required">*</span>
 	</label>				
     <input type="text" name="user" value='<?php echo strtolower($_SESSION['username']); ?>' id="username" class="input border-5 glow-shadow-2 form-disabled" autocomplete="off" tabindex="1" required="required" disabled="disabled" />
 	</div>
 	<div class="form-row required">
 	<label for="email" class="label-full ">
-	<strong>Your Password:</strong>
+	<strong><?php echo $friend['23']; ?></strong>
 	<span class="form-required">*</span>
 	</label>			
     <input type="password" id="email" name="pass" value="" class="input border-5 glow-shadow-2" maxlength="255" tabindex="2"    />
 	</div>
 	<div class="form-row required">
 	<label for="email" class="label-full ">
-	<strong>Friend's Email Address:</strong>
+	<strong><?php echo $friend['24']; ?></strong>
 	<span class="form-required">*</span>
 	</label>			
-    <input type="text" id="email" name="email" value="" class="input border-5 glow-shadow-2 form-disabled" maxlength="255" tabindex="2"  disabled="disabled"  />
-	* Function Unavailable.
+    <input type="text" id="email" name="email" value="" class="input border-5 glow-shadow-2" maxlength="255" tabindex="2"  />
+	<?php echo $friend['Function Unavailable']; ?>
 	</div>
 	<div class="form-row required">
 	<label for="email" class="label-full ">
-	<strong>Your Character:</strong>
+	<strong><?php echo $friend['25']; ?></strong>
 	<span class="form-required">*</span>
 	</label>			
     <input type="text" id="email" name="hero1" value="" class="input border-5 glow-shadow-2" maxlength="255" tabindex="2"    />
 	</div>
 	<div class="form-row-raf required">
     <label class="label-full">
-    <strong>Key Type:</strong>
+    <strong><?php echo $friend['26']; ?></strong>
     <span class="form-required">*</span>
     </label>
     <span>
-    <span class="inline-radio">Russian
+    <span class="inline-radio"><?php echo $friend['27']; ?>
     <input type="radio" name="keyLocale" value="RU"   />
     </span>
-    <span class="inline-radio" style="padding-left:20px;">European
+    <span class="inline-radio" style="padding-left:20px;"><?php echo $friend['28']; ?>
     <input type="radio" name="keyLocale" value="EU" checked="true" />
     </span>
-	<span class="inline-radio" style="padding-left:20px;">American
+	<span class="inline-radio" style="padding-left:20px;"><?php echo $friend['29']; ?>
     <input type="radio" name="keyLocale" value="US"   />
     </span>
     </span>
     </div>
 	<div class="form-row-raf required">
     <label class="label-full">
-    <strong>Method:</strong>
+    <strong><?php echo $friend['30']; ?></strong>
     <span class="form-required">*</span>
     </label>
     <span>
-    <span class="inline-radio" >Manual
+    <span class="inline-radio" ><?php echo $friend['31']; ?>
     <input type="radio" name="SettingKey" value="manual" checked="true" />
     </span>
-	<span class="inline-radio" style="padding-left:20px;">Automatic
+	<span class="inline-radio" style="padding-left:20px;"><?php echo $friend['32']; ?>
     <input type="radio" name="SettingKey" value="auto" class="form-disabled" disabled="disabled" />
     </span>
     </span>
     </div>
-	<p class="special-p">Manual Version is available right now. Automatic Method will be coming in the near future. Stay Tuned at: <a href="https://github.com/Strawberry-Pr0jcts/WoWFailureCMS/commits/">WoWFailureCMS</a> for any updates.</p>
+	<p class="special-p"><?php echo $friend['33']; ?><a href="http://aquaflame.org/">AquaFlameCMS</a><?php echo $friend['34']; ?></p>
         <div class="form-row">
         <label for="customMessage" class="label-full">
-        <strong>Custom Message:</strong>
+        <strong><?php echo $friend['35']; ?></strong>
         <span class="form-required"></span>
         </label> 
-        <textarea rows="8" cols="30" name="customMessage" class="input border-5 glow-shadow-2" id="customMessage" tabindex="3" maxlength="255">Suggestion: Include your realm, guild, and character name so that your friend can contact you in-game.</textarea>
-        <p class="special-p">Your friend will need to follow the instructions in the e-mail in order to create the link between your accounts.  <a href="">View the steps they will take.</a></p>
+        <textarea rows="8" cols="30" name="customMessage" class="input border-5 glow-shadow-2" id="customMessage" tabindex="3" maxlength="255"><?php echo $friend['36']; ?></textarea>
+        <p class="special-p"><?php echo $friend['37']; ?><a href=""><?php echo $friend['38']; ?></a></p>
         </div>
 	<fieldset class="ui-controls " >
 	<button
@@ -269,12 +264,12 @@ mysql_close($link);
 		disabled="disabled"
 		id="submit1">
 		<span>
-			<span>SEND INVITATION</span>
+			<span><?php echo $friend['39']; ?></span>
 		</span>
 	</button>             
 	<a class="ui-cancel "
 		href="">
-		<span>Cancel</span>
+		<span><?php echo $friend['40']; ?></span>
 	</a>
 	</fieldset>
 		<script type="text/javascript">
@@ -305,13 +300,13 @@ var xsToken = 'b213c993-d61d-4957-9141-9da399fd7d54';
 var Msg = {
 support: {
 ticketNew: 'Ticket {0} was created.',
-ticketStatus: 'Ticket {0}'s status changed to {1}.',
+ticketStatus: 'Ticket {0}'s status changed to {1}.',
 ticketOpen: 'Open',
 ticketAnswered: 'Answered',
 ticketResolved: 'Resolved',
 ticketCanceled: 'Cancelled',
 ticketArchived: 'Archived',
-ticketInfo: 'Need Info',
+ticketInfo: 'Need Info',
 ticketAll: 'View All Tickets'
 },
 cms: {
@@ -383,9 +378,9 @@ pet: 'pet'
 };
 //]]>
 </script>
-<script type="text/javascript" src="wow/static/js/bam.js"></script>
-<script type="text/javascript" src="wow/static/local-common/js/tooltip.js?v22"></script>
-<script type="text/javascript" src="wow/static/local-common/js/menu.js?v22"></script>
+<script src="wow/static/js/bam.js"></script>
+<script src="wow/static/local-common/js/tooltip.js?v22"></script>
+<script src="wow/static/local-common/js/menu.js?v22"></script>
 <script type="text/javascript">
 $(function() {
 Menu.initialize();
@@ -397,7 +392,7 @@ Locale.dataPath = 'data/i18n.frag.xml';
 <script type="text/javascript" src="wow/static/local-common/js/third-party/jquery.pngFix.pack.js?v22"></script>
 <script type="text/javascript">$('.png-fix').pngFix();</script>
 <![endif]-->
-<script type="text/javascript" src="wow/static/js/management/wow/raf.js"></script>
+<script src="wow/static/js/management/wow/raf.js"></script>
 <script type="text/javascript">
 //<![CDATA[
 Core.load("wow/static/local-common/js/overlay.js?v22");

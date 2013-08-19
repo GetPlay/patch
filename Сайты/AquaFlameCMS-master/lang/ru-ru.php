@@ -1029,82 +1029,65 @@ $erors['gonenow'] = "Была, да сплыла.";
 $erors['whatelse'] = "(А что еще случается с непослушными страницами?)";
 //Finish erors
 
-//Donation Panel
-$donar['1'] = "Магазин";
-$donar['3'] = "Магазин";
-$donar['4'] = "Donate Via SMS";
-$donar['5'] = "Donate via SMS and receive great rewards";
-$donar['6'] = "Donate Via Paypal";
-$donar['7'] = "Donate via SMS and receive great rewards";
-$donar['8'] = "Voting Store";
-$donar['9'] = "Exchange your points for great rewards";
-$donar['10'] = "Donation Store";
-$donar['11'] = "Exchange your points for great rewards";
-$donar['12'] = "READ TERMS AND CONDITIONS OF DONATION ";
-//Donation Panel
-
 //Start Mail
-$Mail['1'] = "Change your E-Mail";
-$Mail['2'] = "Change E-Mail";
-$Mail['3'] = "Your account MUST be offline to this tool to work. Use this tool to change your email.";
-$Mail['4'] = "Current E-Mail";
-$Mail['5'] = "New E-Mail";
-$Mail['6'] = "Confirm E-Mail";
-$Mail['7'] = "E-Mail Addresses MUST match";
+$Mail['1'] = "Изменение Вашего E-mail'a";
+$Mail['2'] = "Изменение E-Mail";
+$Mail['3'] = "Используйте эту функцию, для того,чтобы изменить Вашу электронную почту.";
+$Mail['4'] = "Текущий E-Mail";
+$Mail['5'] = "Новый E-Mail";
+$Mail['6'] = "Потвердите E-Mail";
+$Mail['7'] = "E-Mail Адреса должны совподать";
 $Mail['8'] = "The new E-Mail address is not a valid E-mail.";
-$Mail['9'] = "Invalid E-Mail address, write your current E-Mail correctly.";
-$Mail['10'] = "The E-Mail for account";
+$Mail['9'] = "Неверный адрес электронной почты!";
 //Finish Mail
 
 //raf-invite
-$friend['1'] = " Refer a Friend";
-$friend['2'] = "Required";
-$friend['3'] = "REFERRALS &amp; REWARDS";
-$friend['4'] = "Refer a Friend";
-$friend['5'] = "Send Invitations";
-$friend['6'] = "History/Status";
-$friend['7'] = "How It Works";
-$friend['8'] = "Instructions For Recipient";
-$friend['9'] = "You have ";
-$friend['10'] = "0 friends";
-$friend['11'] = " linked to your account and 20 Referrals remaining.";
-$friend['12'] = "Level together and faster";
-$friend['13'] = "Gain rewards if your friend subscribes";
-$friend['14'] = "Get a unique two-person mount";
-$friend['15'] = "More details on how it works...";
-$friend['16'] = "You are not allowed to Refer friends who used to or still play,";
-$friend['17'] = " Use the ";
-$friend['18'] = "Refer a Friend";
-$friend['19'] = " instead!";
+$friend['1'] = "Приведи друга";
+$friend['2'] = "Необходимо заполнить"; 
+$friend['5'] = "Отправить приглашение";
+$friend['6'] = "История и состояние";
+$friend['7'] = "Как это работает?";
+$friend['8'] = "Инструкция для приглашенного";
+$friend['9'] = "У вас ";
+$friend['10'] = "0 друзей";
+$friend['11'] = " Связанных с Вашим аккаунтом и 20 еще не использованных приглашений.";
+$friend['12'] = "Уровень когда вы вместе идет быстрее";
+$friend['13'] = "Уникальные награды, если Ваш друг придет в игру";
+$friend['14'] = "После того,как Ваш друг придет в игру-вы получите маунта";
+$friend['15'] = "Подробней о том, как это работает...";
+$friend['16'] = "Вы не можете приглашать друзей, которые раньше играли,";
+$friend['17'] = " Использовать ";
+$friend['18'] = "Приведи друга";
+$friend['19'] = " вместо!";
 $friend['20'] = "Fill in your friend's information below, along with any custom message you would like to send, and we will send an e-mail containing an invitation to the provided address. You can track the status of each Refer a Friend invitation ";
-$friend['21'] = "here";
-$friend['22'] = "Your Account Name:";
-$friend['23'] = "Your Password:";
-$friend['24'] = "Friend's Email Address:";
-$friend['25'] = "Your Character:";
-$friend['26'] = "Key Type:";
-$friend['27'] = "Russian";
-$friend['28'] = "European";
-$friend['29'] = "American";
-$friend['30'] = "Method:";
-$friend['31'] = "Manual";
-$friend['32'] = "Automatic";
+$friend['21'] = "здесь";
+$friend['22'] = "Ваш аккунт:";
+$friend['23'] = "Ваш пароль:";
+$friend['24'] = "E-mail Вашего друга:";
+$friend['25'] = "Ваш персонаж:";
+$friend['26'] = "Местоположение:";
+$friend['27'] = "Россия";
+$friend['28'] = "Европа";
+$friend['29'] = "Америка";
+$friend['30'] = "Метод:";
+$friend['31'] = "Вручную";
+$friend['32'] = "Автоматический";
 $friend['33'] = "Manual Version is available right now. Automatic Method will be coming in the near future. Stay Tuned at: ";
 $friend['34'] = " for any updates.";
-$friend['35'] = "Custom Message:";
+$friend['35'] = "Сообщение для друга:";
 $friend['36'] = "Suggestion: Include your realm, guild, and character name so that your friend can contact you in-game.";
 $friend['37'] = "Your friend will need to follow the instructions in the e-mail in order to create the link between your accounts. ";
 $friend['38'] = "View the steps they will take.";
-$friend['39'] = "SEND INVITATION";
-$friend['40'] = "Cancel";
-$friend['Function Unavailable'] = "* Function Unavailable.";
+$friend['39'] = "Отправить приглашение";
+$friend['40'] = "Отмена";
+$friend['Function Unavailable'] = "* Функция отключена.";
 //Finish raf-invite
 
 //Start Change Character Appearance
 $appear['1'] = "Изменение персонажа";
 $appear['3'] = "Изменение вида персонажа";
-$appear['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
-$appear['5'] = "Remember that Race Change is more powerful than Customization and it allows you to change your appearance too.";
+$appear['4'] = " находиться вне игры для успешного использования функции.";
+$appear['5'] = "Так же эта функция позволяет сменить внешность персонажа.";
 $appear['6'] = "Аккаунт";
 $appear['7'] = "Выбор персонажа";
 $appear['8'] = "Изменить";
@@ -1113,8 +1096,8 @@ $appear['9'] = "Отмена";
 
 //Start Change Character Faction
 $faction['1'] = "Смена фракции";
-$faction['3'] = "Смена фракции пермонажа";
-$faction['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
+$faction['3'] = "Смена фракции персонажа";
+$faction['4'] = " находиться вне игры для успешного использования функции.";
 $faction['5'] = "Аккаунт";
 $faction['6'] = "Выбор персонажа";
 $faction['7'] = "Изменить";
@@ -1124,8 +1107,7 @@ $faction['8'] = "Отмена";
 //Start Change Character Name
 $name['1'] = "Смена имени";
 $name['3'] = "Смена имени персонажа";
-$name['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
-$name['5'] = "Remember that Change name is the less powerful tool, Customization and Race Change allows you to change your Name too.";
+$name['4'] = " находиться вне игры для успешного использования функции.";
 $name['6'] = "Аккаунт";
 $name['7'] = "Выбор персонажа";
 $name['8'] = "Изменить";
@@ -1135,7 +1117,7 @@ $name['9'] = "Отмена";
 //Start Change Character Race
 $race['1'] = "Смена расы";
 $race['3'] = "Смена расы персонажа";
-$race['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
+$race['4'] = " находиться вне игры для успешного использования функции.";
 $race['5'] = "Аккаунт";
 $race['6'] = "Выбор персонажа";
 $race['7'] = "Изменить";
@@ -1155,6 +1137,28 @@ $vostChar['9'] = "Отмена";
 $vostChar['10'] = "Успешно!";
 $vostChar['11'] = "Персонаж успешно восстановлен";
 $vostChar['12'] = "Ошибка!";
+//Finish vost char
+
+//Donation Panel
+$donar['1'] = "Магазин";  
+$donar['4'] = "Купить через SMS";
+$donar['5'] = "Покупайте через SMS и получите дополнительные бонусы!";
+$donar['6'] = "Купить через Paypal";
+$donar['7'] = "Покупайте через Paypal и получайте дополнительные бонусы!";
+$donar['8'] = "Магазин голосов";
+$donar['9'] = "Обменивайте имеющиеся у вас голоса на игровые предметы!";
+$donar['10'] = "Магазин игровых предметов";
+$donar['11'] = "Обменивайте имеющиеся у вас голоса на игровые предметы!";
+$donar['12'] = "Прочтите условия Магазина! ";
+//Donation Panel
+
+// SMS
+$sms['1'] = "SMS Магазин";
+$sms['2'] = "Настройки Магазина";
+$sms['3'] = "SMS Магазин";
+$sms['4'] = "SMS магазин может быть не доступен в некоторых странах!.";
+$sms['5'] = "Прочитайте условия SMS Магазина";
+// SMS
 
 //admin
 $admin['AP'] = "Панель администратора";

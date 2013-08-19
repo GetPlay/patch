@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include("configs.php");
 $page_cat = 'gamesncodes';
 // Check, if username session is NOT set then this page will jump to login page
@@ -78,9 +78,8 @@ _gaq.push(['_trackPageLoadTime']);
     .raf-step5-arrow { position:relative; width:155px; height:57px; background:url('wow/static/images/services/wow/raf/step_5_arrow_b.png') 0 0 no-repeat!important; top:-163px; left:150px; }
      </style>  <![endif]-->
 	<div class="dashboard service">
-			<div class="header">
-				<h2 class="subcategory"><?php echo $donar['2']; ?></h2>
-				<h3 class="headline"><?php echo $donar['3']; ?></h3>
+			<div class="header"> 
+				<h3 class="headline"><?php echo $donar['1']; ?></h3>
 				<a href=""><img src="wow/static/local-common/images/game-icons/wow.png" alt="World of Warcraft" width="48" height="48" /></a>
 			</div>
         </div>
