@@ -1,280 +1,360 @@
 <?php
 include("../configs.php");
-	mysql_select_db($server_adb);
-	$check_query = mysql_query("SELECT gmlevel from account inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
-    $login = mysql_fetch_assoc($check_query);
-	if($login['gmlevel'] < 3)
-	{
-		die('
-<meta http-equiv="refresh" content="2;url=GTFO.php"/>
+mysql_select_db($server_adb);
+$check_query = mysql_query("SELECT gmlevel from account inner join account_access on account.id = account_access.id where username = '" . strtoupper($_SESSION['username']) . "'") or die(mysql_error());
+$login = mysql_fetch_assoc($check_query);
+if ($login['gmlevel'] < 3) {
+    die('
+<meta http-equiv="refresh" content="0;url=wrong.php"/>
 		');
-	}
+}
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 <head>
-		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?></title>
-		<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.uniform.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/tooltip.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="js/DD_roundies_0.0.2a-min.js"></script>
-		<script type="text/javascript" src="js/script-carasoul.js"></script>
-		<link href="css/tooltip.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="css/uniform.defaultstyle3.css" type="text/css" media="screen" />
-		<script type="text/javascript" charset="utf-8">
-      $(function(){
-        $("input, select").uniform();
-      });
-    </script>
-	<script type="text/javascript">
- $(document).ready(function(){
-     $('.ddm').hover(
-	   function(){
-		 $('.ddl').slideDown();
-	   },
-	   function(){
-		 $('.ddl').slideUp();
-	   }
-	 );
- });
-	</script>
-	<script type="text/javascript">
-DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
-	</script>
-	<script type="text/javascript">
-	$(document).ready(function()
-{
-   $( '#checkall' ).live( 'click', function() {
-				
-				$( '.chkl' ).each( function() {
-					$( this ).attr( 'checked', $( this ).is( ':checked' ) ? '' : 'checked' );
-				}).trigger( 'change' );
- 
-			});
-  $('#checkall').click(function(){
-
- $('span').toggleClass('checked');
-$('#checkall').toggleClass('clicked');
-
- }); 
-	});
-	</script>
+  <meta charset="utf-8">
+  <title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?></title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+  <link rel="shortcut icon" href="../wow/static/local-common/images/wow.png">
+  <!---CSS Files-->
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/ui.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!---jQuery Files-->
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/inputs.js"></script>
+  <script src="js/flot.js"></script>
+  <script src="js/functions.js"></script>
 </head>
-<body class="bgc">
-	<div id="admin">
-    <div id="wrap">
-      <div id="head">
-        <?php include('header.php'); ?>
-      </div>
-    <!--Content Start-->
-    <div id="content">
-              <div class="datalist">
-        <div class="heading">
-                  <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n1']; ?></strong><br/><br/><?php echo $admin['t1']; ?><br /><?php echo $admin['d1']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="forumposts.php"><?php echo $admin['Posts']; ?></a></span><?php echo $admin['Forum']; ?></h2>
-                </div>
-        <ul id="lst">
-                  <li>
-			<p class="editHead"><strong><?php echo $admin['Edit']; ?>/<?php echo $admin['Delete']; ?></strong></p>
-            <p class="title"><strong><?php echo $admin['Title']; ?></strong></p>
-            <p class="descripHead"><?php echo $admin['Desc']; ?></p>
-            <p class="incHead"><?php echo $admin['Replies']; ?></p>
-          </li>
+<body>
 
-            <?php
-            mysql_select_db($server_db) or die (mysql_error());
-            $forum = mysql_query("SELECT id,name,content,replies FROM forum_threads ORDER BY date DESC LIMIT 5");
-            while ($fcheck = mysql_fetch_assoc($forum)){
-			echo'
-            <li class="odd" >
-            <p class="edit"><a href="editfor.php?id='.$fcheck['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletefor.php?id='.$fcheck['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.substr(strip_tags($fcheck['name']),0,15).'...</p>
-            <p class="descrip">'.substr(strip_tags($fcheck['content']),0,90).'</p>
-            <p class="inc">'.$fcheck['replies'].'</p>
-            </li>';
-			}?>
-                </ul> 
-				</div>
+  <div id="wrapper">
+    <?php include('header.php'); ?>
+    <!--BEGIN MAIN CONTENT-->
+	<div id="content" class="dashboard-page">
+	<!-- News Section -->
+	<div class="box g16">
+        <h2 class="box-ttl"><?php echo $admin['lastNews']; ?></h2>
+        <div class="box-body no-pad datatable-cont">
+          <div id="example_wrapper" class="dataTables_wrapper" role="grid"><div id="example_length" class="dataTables_length">Show <div class="drop select"><select size="1" name="example_length" aria-controls="example" class="transformed" style="display: none;"><option value="5" selected="selected">5</option><option value="10">10</option><option value="25">25</option></select><ul><li class="sel">5</li><li class="">10</li><li>25</li></ul><span class="opt-sel" data-default-val="5">5</span><span class="arrow">&amp;</span></div> entries</div><div class="dataTables_filter" id="example_filter"><label>Search: <input type="text" aria-controls="example"></label></div><table class="display table dataTable" id="example" aria-describedby="example_info">
+            <thead>
+              <tr role="row">
+              <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 0px;"><font color="green"><?php echo $admin['Title']; ?></font></th>
+              <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 0px;"><font color="green"><?php echo $admin['author']; ?></font></th>
+              <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 0px;"><font color="green"><?php echo $admin['Desc']; ?></font></th>
+              <th class="center sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 0px;"><font color="green"><?php echo $admin['comments']; ?></font></th>
+              <th class="center sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 0px;"><font color="green"><?php echo $admin['Functions']; ?></font></th>
+              </tr>
+            </thead>
+            
+          <tbody role="alert" aria-live="polite" aria-relevant="all">
+		  <?php
+                            mysql_select_db($server_db) or die(mysql_error());
+                            $news = mysql_query("SELECT id,author,content1,title,comments FROM news ORDER BY date DESC LIMIT 5");
+                            while ($fcheck2 = mysql_fetch_assoc($news)) {
+                            $author = mysql_fetch_assoc(mysql_query("SELECT username FROM $server_adb.account WHERE id = '" . $fcheck2['author'] . "'"));
+                            echo'
+								<tr class="gradeX odd">
+								<td class=" sorting_1">' . substr(strip_tags($fcheck2['title']), 0, 36) . '...</td>
+								<td class=" ">' . $author['username'] . '</td>
+								<td class=" ">' . substr(strip_tags($fcheck2['content1']), 0, 36) . '...</td>
+								<td class="center "> ' . $fcheck2['comments'] . '</td>
+								<td class="center "><a href="edtnews.php?id=' . $fcheck2['id'] . '">
+								<button class="btn-m has-icon">
+								<span class="icon">U</span>'.$admin['Edit'].'</button></a>
+								<a href="dltnews.php?id=' . $fcheck2['id'] . '">
+								<button class="btn-m red has-icon">
+								<span class="icon2">X</span>'.$admin['Del'].'</button></a></td>
+								</tr>';
+								}
+                  ?>
+				</tbody></table><div class="dataTables_info" id="example_info">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_full_numbers" id="example_paginate"><a tabindex="0" class="first button" id="example_first">First</a><a tabindex="0" class="previous button" id="example_previous">%</a><span><a tabindex="0" class="button">1</a><a tabindex="0" class="button pressed">2</a><a tabindex="0" class="button">3</a></span><a tabindex="0" class="next button" id="example_next">(</a><a tabindex="0" class="last button" id="example_last">Last</a></div></div>
+        </div></div>
+		<!-- Forum Threads -->
+		<div class="box g16">
+        <h2 class="box-ttl"><?php echo $admin['n1']; ?></h2>
+        <div class="box-body no-pad datatable-cont">
+          <div id="example_wrapper" class="dataTables_wrapper" role="grid"><div id="example_length" class="dataTables_length">Show <div class="drop select"><select size="1" name="example_length" aria-controls="example" class="transformed" style="display: none;"><option value="5" selected="selected">5</option><option value="10">10</option><option value="25">25</option></select><ul><li class="sel">5</li><li class="">10</li><li>25</li></ul><span class="opt-sel" data-default-val="5">5</span><span class="arrow">&amp;</span></div> entries</div><div class="dataTables_filter" id="example_filter"><label>Search: <input type="text" aria-controls="example"></label></div><table class="display table dataTable" id="example" aria-describedby="example_info">
+            <thead>
+              <tr role="row">
+              <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 0px;"><font color="green"><?php echo $admin['Title']; ?></font></th>
+              <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 0px;"><font color="green"><?php echo $admin['author']; ?></font></th>
+              <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 0px;"><font color="green"><?php echo $admin['Desc']; ?></font></th>
+              <th class="center sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 0px;"><font color="green"><?php echo $admin['comments']; ?></font></th>
+              <th class="center sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 0px;"><font color="green"><?php echo $admin['Functions']; ?></font></th>
+              </tr>
+            </thead>
+            
+          <tbody role="alert" aria-live="polite" aria-relevant="all">
+		  <?php
+                            mysql_select_db($server_db) or die(mysql_error());
+                            $forum = mysql_query("SELECT id,name,author,content,replies,views FROM forum_threads ORDER BY date DESC LIMIT 5");
+                            while ($fcheck = mysql_fetch_assoc($forum)) {
+                            $author = mysql_fetch_assoc(mysql_query("SELECT username FROM $server_adb.account WHERE id = '" . $fcheck['author'] . "'"));
+                                echo'
+								<tr class="gradeX odd">
+								<td class=" sorting_1">' . substr(strip_tags($fcheck['name']), 0, 36) . '...</td>
+								<td class=" ">' . $author['username'] . '</td>
+								<td class=" ">' . substr(strip_tags($fcheck['content']), 0, 36) . '...</td>
+								<td class="center "> ' . $fcheck['replies'] . '</td>
+								<td class="center "><a href="edtnews.php?id=' . $fcheck['id'] . '">
+								<button class="btn-m has-icon">
+								<span class="icon">U</span>'.$admin['Edit'].'</button></a>
+								<a href="dltnews.php?id=' . $fcheck['id'] . '">
+								<button class="btn-m red has-icon">
+								<span class="icon2">X</span>'.$admin['Del'].'</button></a></td>
+								</tr>';
+								}
+                  ?>
+				</tbody></table><div class="dataTables_info" id="example_info">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_full_numbers" id="example_paginate"><a tabindex="0" class="first button" id="example_first">First</a><a tabindex="0" class="previous button" id="example_previous">%</a><span><a tabindex="0" class="button">1</a><a tabindex="0" class="button pressed">2</a><a tabindex="0" class="button">3</a></span><a tabindex="0" class="next button" id="example_next">(</a><a tabindex="0" class="last button" id="example_last">Last</a></div></div>
+        </div></div>
+	 
 
-
-								<img src="images/sepLine.png" alt="" class="sepline" />
-				<div class="datalist">
-	   <div class="heading">
-                  <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n4']; ?></strong><br/><br/><?php echo $admin['t4']; ?><br /><?php echo $admin['d4']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="viewtickets.php"><?php echo $admin['tickets']; ?></a></span></h2>
-                </div>
-        <ul id="lst">
-        <li>
-			<p class="editHead"><strong><?php echo $admin['addotv']; ?>/<?php echo $admin['Delete']; ?></strong></p>
-            <p class="title"><?php echo $admin['author']; ?></p>
-            <p class="descripHead"><?php echo $admin['Desc']; ?></p>
-            <p class="incHead"><strong><?php echo $admin['Lock']; ?></strong></p>
-          </li>
-           <?php
-            mysql_select_db($server_cdb) or die (mysql_error());
-            $tick = mysql_query("SELECT ticketId,name,message,closedBy FROM gm_tickets ORDER BY ticketId DESC LIMIT 5");
-            while ($tickets = mysql_fetch_assoc($tick)){
-              echo'
-            <li>
-            <p class="edit"><a href="edittickets.php?ticketId='.$tickets['ticketId'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletetickets.php?ticketId='.$tickets['ticketId'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.substr(strip_tags($tickets['name']),0,15).'</p>
-            <p class="descrip">'.substr(strip_tags($tickets['message']),0,90).'</p> ';
-				   
-													if($tickets['closedBy'] != 0)
-											echo  '<p class="inc"><font color="green">архив</font></p>';
-										else
-											echo  '<p class="inc"><font color="blue">открыт</font></p>';
-											
-																				echo' 
-									<span class="clear"><!-- --></span> 
-							</p></li>	';
-
-            }?>
-                </ul></div>
-
-
-				<img src="images/sepLine.png" alt="" class="sepline" />
-				<div class="datalist">
-	   <div class="heading">
-                  <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n2']; ?></strong><br/><br/><?php echo $admin['t2']; ?><br /><?php echo $admin['d2']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="viewnews.php"><?php echo $admin['News']; ?></a></span></h2>
-                </div>
-        <ul id="lst">
-        <li>
-			<p class="editHead"><strong><?php echo $admin['Edit']; ?>/<?php echo $admin['Delete']; ?></strong></p>
-            <p class="title"><strong><?php echo $admin['Title']; ?></strong></p>
-            <p class="descripHead"><?php echo $admin['Desc']; ?></p>
-            <p class="incHead"><?php echo $admin['Replies']; ?></p>
-          </li>
-           <?php
-            mysql_select_db($server_db) or die (mysql_error());
-            $result = mysql_query("SELECT id,title,content1,comments FROM news ORDER BY date DESC LIMIT 5");
-            while ($new = mysql_fetch_assoc($result)){
-              echo'
-            <li>
-            <p class="edit"><a href="editnews.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.substr(strip_tags($new['title']),0,15).'...</p>
-            <p class="descrip">'.substr(strip_tags($new['content1']),0,90).'</p>
-            <p class="inc">'.$new['comments'].'</p>
-            </li>';
-            }?>
-                </ul></div>
-
-
-
-				<img src="images/sepLine.png" alt="" class="sepline" />
-			<div class="datalist">
-	      <div class="heading">
-          <h2><?php echo $admin['Latest']; ?><span rel="tooltip" title="<strong style='color:red'><?php echo $admin['n3']; ?></strong><br/><br/><?php echo $admin['t3']; ?><br /><?php echo $admin['d3']; ?>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a href="viewusers.php"><?php echo $admin['Registered']; ?></a></span><?php echo $admin['Users']; ?></h2>
+	<div id="users-cont" class="box g16 row1"> <!--USERS LIST-->
+        <div class="scroll">
+          <ul class="scroll-cont ul-grad">
+		  <?php
+                            mysql_select_db($server_db) or die(mysql_error());
+                            $users = mysql_query("SELECT U.id,U.firstName,U.lastName,U.birth,username FROM users U, $server_adb.account A
+            WHERE A.id = U.id ORDER BY id DESC LIMIT 6");
+                            while ($usercheck = mysql_fetch_assoc($users)) {
+                                mysql_select_db($server_cdb) or die(mysql_error());
+                                $chars = mysql_query("SELECT name FROM characters WHERE account = '" . $usercheck['id'] . "'");
+                                echo '<li><span>' . $usercheck['username'] . '</span><span class="users-role">' . $usercheck['firstName'] . ' ' . $usercheck['lastName'] . '</span></li>';
+                                while ($charcheck = mysql_fetch_assoc($chars)) {
+                                }
+                                
+                            }
+                            ?>
+          </ul>
         </div>
-        <ul id="lst">
-        <li>
-			<p class="editHead2"><strong><?php echo $admin['Edit']; ?></strong></p>
-			<p class="editHead2"><strong><?php echo $admin['Username']; ?></strong></p>
-            <p class="title2"><strong><?php echo $admin['Name']; ?></strong></p>
-            <p class="descripHead2"><?php echo $admin['Char']; ?></p>
-            <p class="incHead"><?php echo $admin['Birth']; ?></p>
-            <p class="ip"><?php echo $admin['ip']; ?></p>
-          </li>
-		   <?php
-          mysql_select_db($server_db) or die (mysql_error());
-          $users = mysql_query("SELECT U.id,U.firstName,U.registerIp,U.birth,username FROM users U, $server_adb.account A 
-            WHERE A.id = U.id ORDER BY id DESC LIMIT 5");
-          while ($usercheck = mysql_fetch_assoc($users)){
-            mysql_select_db($server_cdb) or die (mysql_error());
-            $chars = mysql_query("SELECT name FROM characters WHERE account = '".$usercheck['id']."'");
-			      echo '
-              <li>
-		<p class="edit2"><a href="editusers.php?id='.$usercheck['id'].'"><img src="images/editIco.png" alt="" /></a></p>
-              <p class="edit2">'.$usercheck['username'].'</p>
-	      <p class="title2">'.$usercheck['firstName'].'</p>
-              <p class="descrip2">';
-                while ($charcheck = mysql_fetch_assoc($chars)){
-                  echo $charcheck['name'].', ';
-                }
-              echo '</p>
-              <p class="inc">'.$usercheck['birth'].'</p>
-              <p class="iplist">'.$usercheck['registerIp'].'</p>
-              </li>';
-          }
-        ?>
-			</ul>
+        <div class="btn-set-btm full">
+          <button id="add-usr" class="black has-icon"><span class="icon">a</span><?php echo $admin['addUserNew']; ?></button>
+          <button id="mng-usr" class="black has-icon"><span class="icon">C</span><?php echo $admin['ManageUser']; ?></button>
+        </div>
       </div>
-	  
-              <img src="images/sepLine.png" alt="" class="sepline" />
-             <!--  <div class="messages">
-        <div><img src="images/warningIco.png" alt="" />
-                  <p>Warning Message, Lorem ipsum dolor sit amet, consectetur adipiscing elit Pellentesque quis.</p>
-                </div>
-        <div><img src="images/infoIcon.png" alt="" />
-                  <p>Information Message, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-        <div><img src="images/success.png" alt="" />
-                  <p>Success Message, Lorem ipsum dolor sit amet, Nam bibendum sagittis lobortis.consectetur.</p>
-                </div>
-        <div><img src="images/errorIco.png" alt="" />
-                  <p>Error Message, Lorem ipsum dolor sit amet, Nam bibendum sagittis lobortis.consectetur.</p>
-                </div>
-      </div> -->
-              <div id="calen">
-        <div id="yuicalendar1"></div>
-        <script type="text/javascript">
-// BeginWebWidget YUI_Calendar: yuicalendar1 
+       <div id="grid-cont" class="full">
+        <div class="box g16"><span><center>All rights reserved. | Powered by: <a style="color: #CE9109;" href="http://aquaflame.org">AquaFlame CMS</a></center></span></div>
+      </div>
+	</div><!--END MAIN CONTENT-->
+    <?php include('footer.php'); ?>
+  </div><!--END WRAPPER-->
 
-  (function() { 
-    var cn = document.body.className.toString();
-    if (cn.indexOf('yui-skin-sam') == -1) {
-      document.body.className += " yui-skin-sam";
+  <span id="load">
+    <img src="img/load.png"><img src="img/spinner.png" id="spinner">
+  </span>
+
+  <!---jQuery Code-->
+  <script type='text/javascript'>
+
+    // LOAD FUNCTIONS
+
+    $.fn.loadfns( function() {
+      $('#calendar').calEvents();
+      $('#ind-cont #nbill').removeClass('init');
+      if ($('#ind-cont').width() < 500) $('#ind-cont').find('.pie-desc').addClass('overlay');
+      $(window).resize( function() {
+        if ($('body').children('#toast-container').length < 1)
+          toastr.info('If content goes out of place when resizing, just hit refresh');
+      });
+    });
+
+    // CHART PLOTTING
+
+    var d1 = [[0,10], [2,7], [4,10], [6,16], [8,19], [10,23], [12,30], [14,35], [16,40], [18,46], [20,54]];
+        d2 = [[4,0], [8,7], [10,12], [14,14], [16,18], [18,16], [20,20]];
+    $.plot($("#front-chart"), [ { data: d1, color: "#f0a602" }, { data: d2, color: "#71a100" } ], {
+      series: {
+        lines: { show: true, fill: true },
+        points: { show: true },
+        resize: false },
+      xaxis: { ticks: false },
+      yaxis: { ticks: false },
+      grid: { borderWidth: 0, hoverable: true }
+    });
+
+    // USERS TABLE
+
+    $.fn.sortusers = function() {
+      $('#users-cont ul li .sort-handle').remove();
+      $('#users-cont ul li:not(".generated")').append('<div class="icon dark sort-handle">c</div>');
+      $('#users-cont ul').sortable({
+        placeholder: 'sort-placeholder',
+        handle: 'div.sort-handle',
+        containment: 'parent',
+        axis: 'y'
+      }).children('li:not(".generated")').disableSelection();
+    };
+    $.fn.sortusers();
+
+    $.fn.usersnr = function() {
+      var children = $('#users-cont .scroll ul').children('li').length;
+      if (children > 6) {
+        $('#users-cont .scroll').addClass('scroll-active').nanoScroller({ scroll: 'bottom' });
+      } else {
+        $('#users-cont .scroll').removeClass('scroll-active').nanoScroller({ stop: true });
+        $('#users-cont .scroll-cont').removeAttr('style');
+      };
+    };
+
+    $('#add-usr').click( function() {
+      $('#users-cont ul').append('<li class="generated"><span><input type="text" class="name-input" placeholder="Name *"></span><span class="users-role"><input type="text" class="role-input" placeholder="Role"></span><span class="icon cancel">X</span><span class="icon accept">=</span></li>');
+      $('.name-input').focus();
+      $.fn.usersnr();
+      $('.generated span.icon.accept').click( function() {
+        var nameval = $(this).parents('.generated').find('.name-input').val();
+            roleval = $(this).parents('.generated').find('.role-input').val();
+        if (nameval.length > 0) {
+          $(this).parents('.generated').html('<span>'+nameval+'</span><span class="users-role">'+roleval+'</span>').removeAttr('class');
+          $.fn.sortusers();
+          toastr.options = { timeOut: 4000 };
+          toastr.success('New user created successfully.','Hooray');
+        } else { $('.name-input').focus() };
+      });
+      $('.generated span.icon.cancel').click( function() {
+        $(this).parents('.generated').animate({ height:'0', opacity:'0'}, 400, function() {
+          $(this).remove();
+          $.fn.usersnr();
+        });
+      });
+    });
+
+    // DONUT INDICATORS
+
+    $('#pie-1').knob({ 'readOnly': true, 'bgColor':'rgba(255,255,255,0.04)','fgColor':'#d6960b' });
+    $('#pie-2').knob({ 'readOnly': true, 'bgColor':'rgba(255,255,255,0.04)','fgColor':'#658005' });
+
+    // SUPPORT TICKETS
+
+    $('#support-tickets').children('.scroll').nanoScroller();
+    $('#support-tickets .support-msg').append('<a href="editfor.php?id="<?php echo $fcheck["id"]; ?>"><span class="support-full">EDIT</span></a>');
+    $('#support-tickets2 .support-msg2').append('<a href="editnews.php?id="<?php echo $fcheck2["id"]; ?>"><span class="support-full">EDIT</span></a>');
+    
+	$('#support-tickets li').click( function() {
+      var supMsgHeight = $(this).children('.support-msg').height() + 56;
+            contHeight = $('#support-tickets').outerHeight();
+              liPosTop = $(this).position().top;
+      if ( $(this).hasClass('expanded') ) {
+        $(this).removeClass('expanded').removeAttr('style');
+      } else {
+        $(this).addClass('expanded').css('height', supMsgHeight)
+        .siblings('li.expanded').removeClass('expanded').removeAttr('style');
+      };
+      if ( liPosTop + supMsgHeight > contHeight ) {
+        $(this).parents('.scroll-cont').animate({ scrollTop: supMsgHeight }, 600);
+      } else if ( $(this).is(':nth-last-child(-n+3)') ) {
+        $(this).parents('.scroll-cont').animate({ scrollTop: contHeight + 41 }, 600);
+      };
+    }).children('p').click( function(e) { return false; });
+
+    // TODO LIST
+
+    $('#todo-list ul li').click( function() {
+      $(this).toggleClass('done');
+    });
+
+    // CALENDAR
+
+    $('#calendar').glDatePicker({ showAlways: true, position: "static" });
+    $.fn.insertEvent = function( content, time ) {
+      var trParent = $(this).parents('tr');
+             evDay = $(this).text();
+              time = time || '';
+      $('<tr id="day-'+evDay+'" class="cal-event"><td colspan="7">'+content+'<span>'+time+'</span></td></tr>').insertAfter(trParent);
+    };
+    $.fn.calShowEv = function() {
+      $('.gldp-default').find('.has-ev').click( function() {
+        var evDay = $(this).children('div').text();
+           evCont = $(this).parents('tr').siblings('#day-'+evDay+'');
+        if ( $(this).hasClass('selected') ) {
+          $(this).removeClass('selected');
+          $(evCont).removeClass('expanded');
+        } else {
+          $(this).parents('tbody').children('tr').find('td.selected').removeClass('selected');
+          $(this).addClass('selected');
+          $(evCont).addClass('expanded').siblings('.cal-event').removeClass('expanded');
+        }
+      });
+    };
+    //$.fn.calEvents = function() {
+    //  var calDay = $('.gldp-default').find('.gldp-default-day');
+    // $(calDay).eq(0).addClass('has-ev').children('div')
+    //    .append('<span class="cal-event-marker imp"></span>')
+    //    .insertEvent('Payday. Cha-ching.', '8:00 AM');
+    //  $(calDay).eq(3).addClass('has-ev').children('div')
+    //    .append('<span class="cal-event-marker"></span>')
+    //    .insertEvent('Conference. Yay!', '10:00 AM');
+    //  $(calDay).eq(10).addClass('has-ev').children('div')
+    //    .append('<span class="cal-event-marker"></span>')
+    //    .insertEvent('Jury duty. Meh.', '13:30 PM');
+    //  $(calDay).eq(18).addClass('has-ev').children('div')
+    //    .append('<span class="cal-event-marker imp"></span>')
+    //    .insertEvent('Get car serviced.', '14:00 PM');
+    //  $.fn.calShowEv();
+    //};
+
+    // FLUID LAYOUT
+
+    var docWidth = $(document).width();
+    if (docWidth < 1699 && docWidth > 1499) {
+      $('#content')
+        .children('#tb-box').removeClass('g7').addClass('g6');
+    } else if (docWidth < 1700 && docWidth > 1300) {
+      $('#content')
+        .children('#stats-cont').removeClass('g2').addClass('g4')
+        .siblings('#users-cont').removeClass('g4').addClass('g6')
+        .siblings('#chart-box').removeClass('row1').addClass('row2').insertAfter('#recent-conv');
+    } else if (docWidth < 1300 && docWidth > 1063) {
+      $('#content')
+        .children('#stats-cont').removeClass('g2').addClass('g3')
+        .siblings('#bk-mng').removeClass('g4').addClass('g7')
+        .siblings('#users-cont').removeClass('g4').addClass('g6').insertAfter('#bk-mng')
+        .siblings('#chart-box').removeClass('row1').addClass('row2').insertAfter('#users-cont')
+        .siblings('#todo-list').removeClass('g5').addClass('g7').insertAfter('#chart-box')
+        .siblings('#recent-conv').removeClass('g5').addClass('g9').insertAfter('#chart-box')
+        .siblings('#support-tickets').removeClass('g6').addClass('g10').insertAfter('#users-cont')
+        .siblings('#tb-box').insertAfter('#ind-cont');
+    } else if (docWidth < 1064 && docWidth > 799) {
+      $('#content')
+        .children('#ind-cont').insertAfter('#cal-box')
+        .siblings('#tb-box').insertAfter('#ind-cont')
+        .siblings('#chart-box').insertAfter('#users-cont').removeClass('row1').addClass('row2');
+    } else if (docWidth < 817 && docWidth > 680) {
+      $('#content')
+        .children('#bk-mng').insertAfter('#stats-cont');
+    } else if (docWidth < 641) {
+      $('#content')
+        .children('#users-cont').insertAfter('#stats-cont');
+    };
+    if (docWidth < 1081 && docWidth > 1064) {
+      $('#content')
+        .children('#chart-box').removeClass('row2').addClass('row1').insertAfter('#users-cont')
+    };
+
+  </script>
+   <script language="JavaScript">
+    function P91Fadeout(id, geschwindigkeit) {
+  var fps = Math.round(geschwindigkeit / 100); 
+  var tmp = 0;
+    for(i = 100; i >= 0; i--) {
+        setTimeout("P91Fadeout_fade('" + id + "'," + i + ")", (tmp * fps));
+        tmp++;
     }
-  })();
-
-  var inityuicalendar1 = function() {
-    var yuicalendar1 = new YAHOO.widget.Calendar("yuicalendar1");
-
-    // The following event subscribers demonstrate how to handle
-    // YUI Calendar events, specifically when a date cell is 
-    // selected and when it is unselected.
-    //
-    // See: http://developer.yahoo.com/yui/calendar/ for more 
-    // information on the YUI Calendar's configurations and 
-    // events.
-    //
-    // The YUI Calendar API cheatsheet can be found at:
-    // http://yuiblog.com/assets/pdf/cheatsheets/calendar.pdf
-    //
-    //--- begin event subscribers ---//
-    yuicalendar1.selectEvent.subscribe(selectHandler, yuicalendar1, true);
-    yuicalendar1.deselectEvent.subscribe(deselectHandler, yuicalendar1, true);
-    //--- end event subscribers ---//
-
-    yuicalendar1.render();
+}
+function P91Fadeout_fade(id, pas) {
+  var heurix = document.getElementById(id).style;
+  if(pas > 0) {
+    heurix.opacity = (pas / 100);
+    heurix.MozOpacity = (pas / 100);
+    heurix.KhtmlOpacity = (pas / 100);
+    heurix.filter = "alpha(opacity=" + pas + ")"; 
+  } else {
+    heurix.display = "none";
   }
-
-  function selectHandler(event, data) {
-  // The JavaScript function subscribed to yuicalendar1.  It is called when
-  // a date cell is selected.
-  //
-  // alert(event) will show an event type of "Select".
-  // alert(data) will show the selected date as [year, month, date].
-  };
-
-  function deselectHandler(event, data) {
-  // The JavaScript function subscribed to yuicalendar1.  It is called when
-  // a selected date cell is unselected.
-  };    
-
-  // Create the YUI Calendar when the HTML document is usable.
-  YAHOO.util.Event.onDOMReady(inityuicalendar1);
-
-
-// EndWebWidget YUI_Calendar: yuicalendar1 
-    </script> 
-      </div>
-            </div>
-  </div>
-          <div class="push"></div>
-        </div>
-<?php include("footer.php"); ?>
+}
+window.setTimeout("P91Fadeout('toast-container', 2000)", 5000);
+</script>
 </body>
 </html>

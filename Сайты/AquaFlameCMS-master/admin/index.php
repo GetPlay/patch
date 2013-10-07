@@ -2,141 +2,166 @@
 include("../configs.php");
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AquaFlame CMS Admin Panel</title>
-    <link href="font/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
-    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/jquery.uniform.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-      $(function(){
-        $("input").uniform();
-		$('.sign').click(function(){
-			$('.message').fadeIn();
-		})
-		$('.message').click(function(){
-			$('.message').fadeOut();
-		})
-      });
-    </script>
-    <link rel="stylesheet" href="css/uniform.default.css" type="text/css" media="screen" />
-    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
-    </head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><?php echo $website['title']; ?> - <?php echo $admin['AP']; ?> - <?php echo $admin['Login']; ?></title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+  <link rel="shortcut icon" href="../wow/static/local-common/images/wow.png">
+  <!---CSS Files-->
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/ui.css">  
+  <!---jQuery Files-->
+  <script src="js/jquery.js"></script>
+  <script src="js/inputs.js"></script>
+</head>
+<body>
 
-    <body>
-<div id="login">
+  <div id="wrapper">
 
-      <div id="log-Sup">
-   <div id="logWrap">
-
-          <h1><img src="../wow/static/images/logos/wof-logo.png" height="21px" width="260px"/><br />
-        <span>Admin Login Panel</span></h1>
+    <div id="header">
+      <div id="logo"></div>
+      <h1><?php echo $admin['AP']; ?> - <?php echo $admin['Login']; ?></h1>
+    </div>
+	  <?php
+          if (!isset($_SESSION['username'])) {
+            $sessionid = @$_SESSION['id'];
+            if (isset($_POST['accountName'])) {
+              $accountName = mysql_real_escape_string($_POST['accountName']);
+              $accountPass = mysql_real_escape_string($_POST['password']);
+              $sha_pass_hash = sha1(strtoupper($accountName) . ":" . strtoupper($accountPass));
+              $db_setup = mysql_select_db($server_adb, $connection_setup) or die(mysql_error());
+              $login_query = mysql_query("SELECT gmlevel,username,sha_pass_hash from account inner join account_access on account.id = account_access.id where username = '" . strtoupper($accountName) . "'");
+              $login = mysql_fetch_assoc($login_query);
+                //print_r($login);
+              if (strtoupper($login['sha_pass_hash']) === strtoupper($sha_pass_hash) && $login['gmlevel'] >= 3) {
+                $_SESSION['username'] = $accountName;
+    ?>
+                    
+    <div id="body">
+      <div id="head">
+        <span class="icon">K</span>
+        <h2><?php echo $admin['YouLog']; ?></h2>
+        <meta http-equiv="refresh" content="0"/>
+        <br class="clear">
+      </div>
+      <span id="load">
+        <img src="img/load.png"><img src="img/spinner.png" id="spinner">
+      </span>
+    </div>
+            
 		<?php
-  
-  if(!isset($_SESSION['username'])){
-  if(isset($_POST['accountName'])){
-    $accountName = mysql_real_escape_string($_POST['accountName']);
-    $accountPass = mysql_real_escape_string($_POST['password']);
-
-    $sha_pass_hash = sha1(strtoupper($accountName ) . ":" . strtoupper($accountPass));
-
-    $db_setup = mysql_select_db($server_adb,$connection_setup)or die(mysql_error());
-    $login_query = mysql_query("SELECT gmlevel,username,sha_pass_hash from account inner join account_access on account.id = account_access.id where username = '".strtoupper($accountName)."'");
-    $login = mysql_fetch_assoc($login_query);
-	//print_r($login);
-    if(strtoupper($login['sha_pass_hash']) === strtoupper($sha_pass_hash) && $login['gmlevel'] >= 3){
-      ?>
-      <div id="LogPannel">
-      <center><h2>Logging In</h2></center>
-	  <meta http-equiv="refresh" content="2"/>
-	  </div>
-      <!--<div class="loader"></div>-->
-      <?php
-        $_SESSION['username']=$accountName;
-          echo '<meta http-equiv="refresh" content="2;"';
-          echo 'Succesfully';
-      ?>
-      </center>
-      <?php
-    }else{
-      ?>
-      <div id="LogPannel">
-      <center><h2>Wrong Password or Account Name</h2></center>
-	  <meta http-equiv="refresh" content="2"/>
-	  </div>
-      <!--<div class="loader"></div>-->
-      <?php
-    }
-    
+        } else {
     ?>
-    
-    
-    
-  <?php }else{ ?>
-  <div id="LogPannel">
-  <h2>Administrator Login</h2>
-  <form action="?SSID:<?php echo $sessionid; ?>" method="post">
-	<input id="accountName" name="accountName" type="text" value="Username" onfocus="if(this.value=='Username')this.value=''" onblur="if(this.value=='')this.value='Username'" />
-    <input id="password" name="password" type="password" value="password" onfocus="if(this.value=='password')this.value=''" onblur="if(this.value=='')this.value='password'" />
-    <input name="submit" type="submit" data-text="Processing..." value="LOGIN" />        
-    <label>
-    <input type="checkbox" />
-          </label>
-              <p>Remember Me</p>
-              <p><a class="sign">Forgot Password</a>?</p>
-            </form>
-			<div class="message">
-            <p>Just click <strong>login</strong> to go forward.</p>
+		<div id="body">
+			<div id="head">
+				<span class="icon">K</span>
+				<h2><?php echo $admin['WrongPassAccName']; ?></h2>
+				<meta http-equiv="refresh" content="2"/>
+				<br class="clear">
 			</div>
-			</div>
-	<?php } }else{
-	mysql_select_db($server_adb);
-	$check_query = mysql_query("SELECT gmlevel from account inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'") or die(mysql_error());
-    $login = mysql_fetch_assoc($check_query);
-	if($login['gmlevel'] >= 3)
-	{
-    ?>
-    <script>
-    parent.postMessage("{\"action\":\"success\"}", "<?php echo $website['address']; ?>");
-    </script>
-    <?php
-    echo '<div id="LogPannel">
-      <center><h2><font color="green">You are Logged In</font></h2></center>
-	  <meta http-equiv="refresh" content="2;url=dashboard.php"/>
-	  </div>
-      <!--<div class="loader"></div>-->';
-    
-  }else{
-  die('<div id="LogPannel">
-      <center><h2>You are not allowed to be here!</h2></center>
-	  <meta http-equiv="refresh" content="2;url=../index.php"/>
-	  </div></div>
+			<span id="load">
+			 <img src="img/load.png"><img src="img/spinner.png" id="spinner">
+			</span>
+		</div>
+                                
+                                <?php
+                            }
+                            ?>
+							<?php } else { ?>
+    <div id="body">
+      <div id="head">
+        <span class="icon">K</span>
+        <h2><?php echo $admin['EnterCredLog']; ?></h2>
+        <br class="clear">
       </div>
-        
-      <div class="push"></div>
-    </div>
-<div id="foot">
-      <p> All rights reserved.  |  Powered by: <a href="" target="_blank"><font color="#15509E">AquaFlame CMS</font></a></p>
-    </div>
-</body>
-</html>');
-  }} 
-  mysql_select_db($server_db);?>
-        <!--
-            <input type="checkbox" />
-          </label>
-              <p>Remember Me</p>
-              <p><a class="sign">Forgot Password</a>?</p>
-            </form>
-        <div class="message">
-              <p>Just click <strong>login</strong> to go forward.</p>-->
+      <form id="alt-lg-form" method="post" action="?SSID:<?php echo $sessionid; ?>">
+        <div id="middle">
+            <ul id="lg-input">
+              <li id="usr-li">
+                <input type="text" id="accountName" name="accountName" class="required" placeholder="<?php echo $admin['Log']; ?>">
+                <span class="icon">a</span>
+              </li>
+              <li id="psw-li">
+                <input type="password" id="password" name="password" class="required" placeholder="<?php echo $admin['Pass']; ?>">
+                <a href="recoverpass.php" id="forgot-psw"><?php echo $admin['Forgot']; ?></a>
+                <span class="icon">/</span>
+              </li>
+            </ul>
         </div>
-      </div>
-        
-      <div class="push"></div>
+        <div id="bottom">
+          <input type="checkbox" id="rb-check" class="light-bg" checked="checked">
+          <span id="rb-label"><?php echo $admin['RememberMe']; ?></span>
+          <button type="submit" id="lg-submit" class="button inset submit"><?php echo $admin['Login']; ?></button>
+          <br class="clear">
+        </div>
+      </form>
     </div>
-<?php include("footer.php"); ?>
+ 
+
+  </div>
+  <?php
+                        }
+                    } else {
+                        mysql_select_db($server_adb);
+                        $check_query = mysql_query("SELECT gmlevel from account inner join account_access on account.id = account_access.id where username = '" . strtoupper($_SESSION['username']) . "'") or die(mysql_error());
+                        $login = mysql_fetch_assoc($check_query);
+                        if ($login['gmlevel'] >= 3) {
+                            ?>
+                            <script>
+            parent.postMessage("{\"action\":\"success\"}", "<?php echo $website['address']; ?>");
+                            </script>
+                            <?php
+                            echo '<div id="body">
+									<div id="head">
+									<span class="icon">K</span>
+									<h2>'.$admin['YouLog'].'</h2>
+									<meta http-equiv="refresh" content="1;url=dashboard.php"/>
+									<br class="clear">
+									</div>
+									<span id="load">
+									<img src="img/load.png"><img src="img/spinner.png" id="spinner">
+									</span>
+								  </div>';
+                        } else {
+                            die('<div id="body">
+									<div id="head">
+									<span class="icon">K</span>
+									<h2>'.$admin['YouNotHere'].'</h2>
+									<meta http-equiv="refresh" content="2;url=../index.php"/>
+									<br class="clear">
+									</div>
+									<span id="load">
+									<img src="img/load.png"><img src="img/spinner.png" id="spinner">
+									</span>
+								  </div>');
+                        }
+                    }
+                    mysql_select_db($server_db);
+                    ?>
+  <span id="load">
+    <img src="img/load.png"><img src="img/spinner.png" id="spinner">
+  </span>
+
+  <!---jQuery Code-->
+  <script type='text/javascript'>
+    $('#wrapper, .notification, #forgot-psw').hide();
+    $('#load').fadeIn(400);
+    $(window).load( function() {
+      $('#load').fadeOut(400, function() {
+        $('#wrapper').fadeIn(600, function() {
+          $('#welcome.notification').delay(500).fadeIn(400).loginNotif();
+          $('#psw').focus();
+        });
+      });
+    });
+
+    $('#rb-check').flcheck();
+
+    $('#alt-lg-form').validateLogin();
+
+  </script>
 </body>
 </html>
