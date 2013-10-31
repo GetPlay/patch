@@ -1,3 +1,6 @@
+<?php
+require_once("configs.php");
+?>
 <div id="header">
 <div class="search-bar">
 <form action="<?php echo $website['root']; ?>search.php" method="get" autocomplete="off">

@@ -13,7 +13,7 @@ $character = Factory_Armory::createCharacter($_GET['name']);
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-<title><?php echo $website['title']; ?> - Armory</title>
+<title><?php echo $website['title']; ?> - <?php echo $armory['armoryView']; ?><?php echo $character->getObjectInfo()->name;?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="stylesheet" href="wow/static/local-common/css/common.css" />
@@ -50,12 +50,9 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 <span class="breadcrumb-arrow"></span>
 </li>
 <li>
-<a href="services.php" rel="np">Services</a>
-<span class="breadcrumb-arrow"></span>
-</li>
+<li><a href="services.php" rel="np"><?php echo $Services['Services']; ?></a><span class="breadcrumb-arrow"></span></li>
 <li>
-<a href="search.php" rel="np">Search</a>
-<span class="breadcrumb-arrow"></span>
+<a href="search.php" rel="np"><?php echo $Ind['Ind2']; ?></a><span class="breadcrumb-arrow"></span>
 </li>
 <li class="last children"><a href="advanced.php?name=<?php echo $character->getObjectInfo()->name;?>" rel="np"><?php echo $character->getObjectInfo()->name;?> @ <?php echo @$name_realm1['realm']; ?></a>
 </li>
@@ -143,9 +140,9 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 	<a href="advanced.php?name=<?php echo $_GET['name']; ?>" rel="np" class="advanced"><?php echo $armory['advanced']; ?></a></li>
 	</ul>
 	<div class="summary-averageilvl">
-	<div class="rest"><?php echo $armory['itemlevel']; ?><br/>(<span class="equipped">20</span> <?php echo $armory['equipped']; ?>)
+	<div class="rest"><?php echo $armory['itemlevel']; ?><br/>(<span class="equipped">-</span> <?php echo $armory['equipped']; ?>)
 	</div>
-	<div id="summary-averageilvl-best" class="best tip" data-id="averageilvl">20</div>
+	<div id="summary-averageilvl-best" class="best tip" data-id="averageilvl">-</div>
 	</div>
 	</div>
 	<br>
@@ -268,7 +265,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 							</li>
 							<li data-slots="2,15">
 								<span class="tip">
-									span class="number">2</span> <?php echo $armory['unenchanted']; ?>
+									<span class="number">2</span> <?php echo $armory['unenchanted']; ?>
 								</span>
 							</li>
 	                        </ul>
@@ -333,61 +330,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 	<dl>
 	<dd>
 	<a href="achievement#97:14777:a627" data-achievement="627">
-		<!--<span  class="icon-frame frame-18 " style='background-image: url("http://eu.media.blizzard.com/wow/icons/18/achievement_zone_dunmorogh.jpg");'>
-		</span>
-		</a>
-	Earned the achievement <a href="achievement#97:14777:a627" data-achievement="627">Explore Dun Morogh</a> for 10 points.
-    </dd>
-		<dt>17/04/2011</dt>
-	</dl>
-	</li>
-	<li class="ach ">
-	<dl>
-		<dd>
-		<a href="achievement#97:14778:a736" data-achievement="736">
 
-		<span  class="icon-frame frame-18 " style='background-image: url("http://eu.media.blizzard.com/wow/icons/18/achievement_zone_mulgore_01.jpg");'>
-		</span>
-		</a>
-	Earned the achievement <a href="achievement#97:14778:a736" data-achievement="736">Explore Mulgore</a> for 10 points.
-    </dd>
-		<dt>17/04/2011</dt>
-	</dl>
-	</li>
-	<li class="ach ">
-	<dl>
-		<dd>
-		<a href="achievement#97:14778:a750" data-achievement="750">
-		<span  class="icon-frame frame-18 " style='background-image: url("http://eu.media.blizzard.com/wow/icons/18/achievement_zone_barrens_01.jpg");'>
-		</span>
-		</a>
-	Earned the achievement <a href="achievement#97:14778:a750" data-achievement="750">Explore Northern Barrens</a> for 10 points.
-    </dd>
-		<dt>17/04/2011</dt>
-	</dl>
-	</li>
-	<li class="ach ">
-	<dl>
-		<dd>
-		<a href="achievement#97:14777:a768" data-achievement="768">
-		<span  class="icon-frame frame-18 " style='background-image: url("http://eu.media.blizzard.com/wow/icons/18/achievement_zone_tirisfalglades_01.jpg");'>
-		</span>
-		</a>
-	Earned the achievement <a href="achievement#97:14777:a768" data-achievement="768">Explore Tirisfal Glades</a> for 10 points.
-    </dd>
-		<dt>17/04/2011</dt>
-	</dl>
-	</li>
-	<li class="ach ">
-	<dl>
-		<dd>
-		<a href="achievement#97:14777:a769" data-achievement="769">
-		<span  class="icon-frame frame-18 " style='background-image: url("http://eu.media.blizzard.com/wow/icons/18/achievement_zone_silverpine_01.jpg");'>
-		</span>
-		</a>
-	Earned the achievement <a href="achievement#97:14777:a769" data-achievement="769">Explore Silverpine Forest</a> for 10 points.
-    </dd>
-		<dt>17/04/2011</dt>-->
 	</dl>
 	</li>
 	</ul>
@@ -484,7 +427,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 	<div id="summary-stats-advanced" class="summary-stats-advanced">
 	<div class="summary-stats-advanced-base">
 	<div class="summary-stats-column">
-		<h4>Base</h4>
+		<h4><?php echo $armory['Base']; ?></h4>
 		<ul>
 	<li data-id="strength" class="">
 		<span class="name"><?php echo $armory['strength']; ?></span>
@@ -593,7 +536,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 	<span class="clear"><!-- --></span>
 	</li>
 	<li data-id="meleedps" class="">
-		<span class="name">DPS</span>
+		<span class="name"><?php echo $armory['dps'];?></span>
 		<span class="value">--</span>
 	<span class="clear"><!-- --></span>
 	</li>
@@ -639,7 +582,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 	</li>
 
 	<li data-id="rangeddps" class=" no-tooltip">
-		<span class="name">DPS</span>
+		<span class="name"><?php echo $armory['dps'];?></span>
 		<span class="value color-q0"->-</span>
 	<span class="clear"><!-- --></span>
 	</li>
@@ -674,7 +617,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 		<h4><?php echo $armory['Spell']; ?></h4>
 		<ul>
 	<li data-id="spellpower" class="">
-		<span class="name"><?php echo $armory['AP'];?></span>
+		<span class="name"><?php echo $armory['spellP'];?></span>
 		<span class="value"><?php echo $character->getStatInfo()->spellPower; ?></span>
 	<span class="clear"><!-- --></span>
 	</li>
@@ -736,61 +679,6 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 	<li data-id="resilience" class="">
 		<span class="name"><?php echo $armory['Resilience'];?></span>
 		<span class="value">--</span>
-	<span class="clear"><!-- --></span>
-	</li>
-	</ul>
-	</div>
-	<div class="summary-stats-column" style="display: none">
-		<h4><?php echo $armory['Resis']; ?></h4>
-		<ul>
-	<li data-id="arcaneres" class=" has-icon">
-	<span class="icon">
-		<span class="icon-frame frame-12 ">
-			<img src="http://eu.media.blizzard.com/wow/icons/18/resist_arcane.jpg" alt="" width="12" height="12" />
-		</span>
-    </span>
-		<span class="name"><?php echo $armory['Arcane']; ?></span>
-		<span class="value"><?php echo $character->getStatInfo()->resArcane; ?></span>
-	<span class="clear"><!-- --></span>
-	</li>
-	<li data-id="fireres" class=" has-icon">
-		<span class="icon">
-		<span class="icon-frame frame-12 ">
-			<img src="http://eu.media.blizzard.com/wow/icons/18/resist_fire.jpg" alt="" width="12" height="12" />
-		</span>
-        </span>
-		<span class="name"><?php echo $armory['Fire']; ?></span>
-		<span class="value"><?php echo $character->getStatInfo()->resFire; ?></span>
-	<span class="clear"><!-- --></span>
-	</li>
-	<li data-id="frostres" class=" has-icon">
-		<span class="icon">
-		<span class="icon-frame frame-12 ">
-			<img src="http://eu.media.blizzard.com/wow/icons/18/resist_frost.jpg" alt="" width="12" height="12" />
-		</span>
-        </span>
-		<span class="name"><?php echo $armory['Frost']; ?></span>
-		<span class="value"><?php echo $character->getStatInfo()->resFrost; ?></span>
-	<span class="clear"><!-- --></span>
-	</li>
-	<li data-id="natureres" class=" has-icon">
-		<span class="icon">
-		<span class="icon-frame frame-12 ">
-			<img src="http://eu.media.blizzard.com/wow/icons/18/resist_nature.jpg" alt="" width="12" height="12" />
-		</span>
-        </span>
-		<span class="name"><?php echo $armory['Nature']; ?></span>
-		<span class="value"><?php echo $character->getStatInfo()->resNature; ?></span>
-	<span class="clear"><!-- --></span>
-	</li>
-	<li data-id="shadowres" class=" has-icon">
-		<span class="icon">
-		<span class="icon-frame frame-12 ">
-			<img src="http://eu.media.blizzard.com/wow/icons/18/resist_shadow.jpg" alt="" width="12" height="12" />
-		</span>
-        </span>
-		<span class="name"><?php echo $armory['Shadow']; ?></span>
-		<span class="value"><?php echo $character->getStatInfo()->resShadow; ?></span>
 	<span class="clear"><!-- --></span>
 	</li>
 	</ul>
@@ -957,59 +845,13 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 		});
         //]]>
         </script>
-<div class="summary-stats-bottom">
-	<div class="summary-battlegrounds">
-	<ul>
-		<li class="rating"><span class="name">Total Honor</span><span class="value"><?php echo @$honor ?></span><span class="clear"><!-- --></span></li>
-		<li class="kills"><span class="name">Total Conquest</span><span class="value"><?php echo @$conq ?></span><span class="clear"><!-- --></span></li>
-	</ul>
-</div>
-<div class="summary-professions">
-	<ul>
-	<li>
-	<div class="profile-progress border-3" >
-		<div class="bar border-3 hover" style="width: 1%"></div>
-			<div class="bar-contents">						
-			<a class="profession-details" href="">
-			<span class="icon">
-		<span class="icon-frame frame-12 ">
-			<img src="http://eu.media.blizzard.com/wow/icons/18/trade_herbalism.jpg" alt="" width="12" height="12" />
-		</span>
-</span>
-		<span class="name">Herbalism</span>
-		<span class="value">0</span>
-		</a>
-</div>
-	</div>
-	</li>
-	<li>
-	<div class="profile-progress border-3" >
-		<div class="bar border-3 hover" style="width: 1%"></div>
-			<div class="bar-contents">						<a class="profession-details" href="">
-							<span class="icon">
-		<span class="icon-frame frame-12 ">
-			<img src="http://eu.media.blizzard.com/wow/icons/18/inv_pick_02.jpg" alt="" width="12" height="12" />
-		</span>
-</span>
-				<span class="name">Mining</span>
-							<span class="value">0</span>
-							</a>
-</div>
-	</div>
-				</li>
-	</ul>
-							</div>
-	<span class="clear"><!-- --></span>
+
+
 						</div>
 					</div>
 				</div>
-	<span class="clear"><!-- --></span>
-	<span class="clear"><!-- --></span>
-				<div class="summary-lastupdate">Last updated on 09/08/2011</div>
 			</div>
 		</div>
-	<span class="clear"><!-- --></span>
-</div>
         <script type="text/javascript">
         //<![CDATA[
 		$(function() {

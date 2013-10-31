@@ -24,14 +24,14 @@ $serverpass = "";     // MySQL password
 $serverport	= "3306";         // MySQL port (default: 3306)
 
 $server_db = "website";       // website Database name
-$server_cdb = "charactersbeta";   // characters Database name
+$server_cdb = "characterssite";   // characters Database name
 $server_wdb = "worldbeta";        // world Database name
 
 $authaddress = "127.0.0.1";   // Connection address for MySQL. Can be the same as $serveraddress. This is for auth\realmd database
 $authuser = "root";           // MySQL Username
 $authpass = "";       // MySQL password
 $authport	= "3306";         // MySQL port (default: 3306)
-$server_adb = "authbeta";         // auth\realmd Database name
+$server_adb = "authsite";         // auth\realmd Database name
 
 
 
