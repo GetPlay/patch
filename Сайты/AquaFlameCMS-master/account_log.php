@@ -76,7 +76,7 @@ Core.baseUrl = '/login/en/';
       <div class="loader"></div>
      <?php
         $_SESSION['username']=$accountName;
-          echo '<meta http-equiv="refresh" content="2;"';
+          echo '<meta http-equiv="refresh" content="0;"';
           echo 'Succesfully';
       ?>
       </center>
@@ -93,7 +93,7 @@ Core.baseUrl = '/login/en/';
       <center>
       <h3><?php echo $Log['Log5']; ?></h3><br />
       <div class="loader"></div>
-      <meta http-equiv="refresh" content="2"/>
+      <meta http-equiv="refresh" content="0"/>
       </center>
       <?php
     }
@@ -130,7 +130,7 @@ Core.baseUrl = '/login/en/';
     </script>
     <?php
     echo "<h3><font color='green'>".$Log['Log10']."</font></h3>";
-    echo '<meta http-equiv="refresh" content="2;url=account_man.php"';
+    echo '<meta http-equiv="refresh" content="0;url=account_man.php"';
   } ?>
   <ul id="help-links">
       <li class="icon-pass">

@@ -343,7 +343,7 @@ echo '
 						$posterInfo = mysql_fetch_assoc(mysql_query("SELECT * FROM users WHERE id = '".$account_information['id']."'"));
 							switch($posterInfo['class']){
 								case "blizz":
-									echo'<a class="ui-button button1" href="create-topic/?f='.$forumid.'"><span><span>Create Thread</span></span></a>';
+									echo'<a class="ui-button button1" href="create-topic/?f='.$forumid.'"><span><span>'.$Forum['Forum40'].'</span></span></a>';
 									break;
 									
 								case "mvp":
@@ -351,14 +351,14 @@ echo '
 									break;
 									
 								default:
-									echo'<a class="ui-button button1 disabled" href="#"><span><span>Create Thread</span></span></a>';
+									echo'<a class="ui-button button1 disabled" href="#"><span><span>'.$Forum['Forum40'].'</span></span></a>';
 									break;
 							}
 					}else{
-						echo'<a class="ui-button button1" href="create-topic/?f='.$forumid.'"><span><span>Create Thread</span></span></a>';
+						echo'<a class="ui-button button1" href="create-topic/?f='.$forumid.'"><span><span>'.$Forum['Forum40'].'</span></span></a>';
 					}
 				}else{
-					echo '<a class="ui-button button1 disabled"><span><span>Create Thread</span></span></a>';
+					echo '<a class="ui-button button1 disabled"><span><span>'.$Forum['Forum40'].'</span></span></a>';
 				}
 				?>
 				<span class="clear"><!-- --></span>

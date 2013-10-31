@@ -1,4 +1,4 @@
-/*
+﻿/*
 Navicat MySQL Data Transfer
 
 Source Server         : 123
@@ -433,8 +433,6 @@ CREATE TABLE `users` (
   `donation_points` int(10) NOT NULL DEFAULT '0',
   `char_realm` int(10) NOT NULL DEFAULT '1',
   `registerIp` varchar(30) CHARACTER SET latin1 NOT NULL DEFAULT '0-0-0-0',
-  `country` varchar(20) DEFAULT NULL,
-  `birth` date DEFAULT NULL,
   `quest1` int(2) NOT NULL DEFAULT '0',
   `ans1` varchar(50) NOT NULL DEFAULT 'undefined',
   PRIMARY KEY (`id`)
