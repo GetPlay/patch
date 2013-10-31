@@ -289,7 +289,7 @@ var itemPaths = [<?php echo $paths; ?>];
 						}else{
 							echo'
 							 <table class="dynamic-center"><tr><td>
-							 <a class="ui-button button1 " href="?login" onclick="return Login.open(\'../loginframe.php\')"><span><span>Р”РѕР±Р°РІРёС‚СЊ РєРѕРјРјРµРЅС‚Р°СЂРёР№</span></span></a>
+							 <a class="ui-button button1 " href="?login" onclick="return Login.open(\'../loginframe.php\')"><span><span>Добавить комментарий</span></span></a>
 							 </td></tr></table>';
 						}
 						$get_comments = mysql_query("SELECT * FROM media_comments WHERE mediaid = '".$videos['id']."' ORDER BY DATE DESC");

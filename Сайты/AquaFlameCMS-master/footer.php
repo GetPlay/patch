@@ -1,7 +1,4 @@
-﻿<?php
-require_once("configs.php");
-?>
-<div class="wrapper">
+﻿<div class="wrapper">
 <div id="footer">
 <div id="sitemap">
 <div class="column">

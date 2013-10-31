@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once("configs.php");
 ?>
 
@@ -93,7 +93,7 @@ _gaq.push(['_trackPageview']);
 		</div>
 		<div class="step-3">
 			<h1><?php echo $Serv['info8']; ?></h1>
-			<p><?php echo $Serv['info9']; ?></p>
+			<p>Е<?php echo $Serv['info9']; ?></p>
 			<p><?php echo $Serv['info10']; ?></p>
 			<p class="mount"><a class="color-q4" href="/wow/ru/item/83086">Сердце Крыла Ночи</a></p>
 		</div>

@@ -76,7 +76,7 @@ include("header.php");
 						<span class="profiles-search-title"><?php echo $Community['Char']; ?></span>
 						<form action="search_c.php" method="get">
 							<input type="hidden" name="f" value="wowcharacter" />
-							<input type="text" id="wowcharacter" name="search" class="reg" placeholder="<?php echo $Community['name']; ?>"/>
+							<input type="text" id="wowcharacter" name="search" />
 
 	<button class="ui-button button1 " type="submit" >
 		<span>
@@ -90,7 +90,7 @@ include("header.php");
 						<span class="profiles-search-title"><?php echo $Community['Guild']; ?></span>
 						<form action="search_g.php" method="get">
 							<input type="hidden" name="f" value="wowguild" />
-							<input type="text" id="wowguild" name="search" class="reg" placeholder="<?php echo $Community['name']; ?>"/>
+							<input type="text" id="wowguild" name="search" />
 							
 
 	<button class="ui-button button1 " type="submit" >
