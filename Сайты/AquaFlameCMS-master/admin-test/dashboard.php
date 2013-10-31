@@ -117,7 +117,7 @@ if ($login['gmlevel'] < 3) {
           <ul class="scroll-cont ul-grad">
 		  <?php
                             mysql_select_db($server_db) or die(mysql_error());
-                            $users = mysql_query("SELECT U.id,U.firstName,U.lastName,U.birth,username FROM users U, $server_adb.account A
+                            $users = mysql_query("SELECT U.id,U.firstName,U.lastName,username FROM users U, $server_adb.account A
             WHERE A.id = U.id ORDER BY id DESC LIMIT 6");
                             while ($usercheck = mysql_fetch_assoc($users)) {
                                 mysql_select_db($server_cdb) or die(mysql_error());
