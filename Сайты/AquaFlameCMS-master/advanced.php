@@ -17,7 +17,6 @@ $character = Factory_Armory::createCharacter($_GET['name']);
 <meta content="false" http-equiv="imagetoolbar" />
 <link rel="shortcut icon" href="wow/static/local-common/images/favicons/index.ico" type="image/x-icon" />
 <link rel="stylesheet" href="wow/static/local-common/css/common.css" />
-<link title="World of Warcraft - News" href="wow/en/feed/news" type="application/atom+xml" rel="alternate"/>
 <link rel="stylesheet" href="wow/static/css/wow.css" />
 <link rel="stylesheet" href="wow/static/css/view.css" />
 <link rel="stylesheet" href="wow/static/css/character/character.css" />

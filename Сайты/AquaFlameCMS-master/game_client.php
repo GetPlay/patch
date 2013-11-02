@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include("configs.php");
 $page_cat = "gamesncodes";
 ?>

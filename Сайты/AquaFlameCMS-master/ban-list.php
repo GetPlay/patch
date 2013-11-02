@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once("configs.php");
 $page_cat = "gamesncodes";
 ?>
@@ -82,10 +82,9 @@ _gaq.push(['_trackPageLoadTime']);
 <?php
 $con = mysql_connect("$serveraddress", "$serveruser", "$serverpass", "$server_adb") or die(mysql_error());
         mysql_select_db("$server_adb", $con) or die("Error Cant Connect".mysql_error());
-        $query = "SELECT * FROM account_banned WHERE active != '0'";
-
-		$response=mysql_query($query);
-
+        $query = "SELECT id,bandate,unbandate,bannedby,banreason,active FROM account_banned WHERE active != '0'";
+        $response=mysql_query($query);
+    
 $numrows = mysql_num_rows($response);
 if($numrows > 0)
 {
@@ -96,29 +95,31 @@ echo '
 				<tr>
 					<th align="center"><a href="#" class="sort-link numeric"><span class="arrow">'.$BanL['BanL9'].'</span></a></th>
 					<th align="center"><a href="#" class="sort-link numeric"><span class="arrow">'.$BanL['BanL1'].'</span></a></th>
-					<th align="center"><span class="arrow">'.$BanL['BanL2'].'</span></th>
 					<th align="center"><span class="arrow">'.$BanL['BanL3'].'</span></th>
+					<th align="center"><span class="arrow">'.$BanL['BanL2'].'</span></th>
 					<th align="center"><span class="arrow">'.$BanL['BanL4'].'</span></th>
 					</tr>
 				</thead>';
-while($raw = mysql_fetch_array($response)) {
+while($raw = mysql_fetch_array($response))
+{
     if($raw['active'] == "1") {
-        $bantime = "Permanent";
-		$unban= "Never";
+    $bantime =  date("Y-m-d H:i:s", $raw['bandate']);
+		$unban= $BanL['BanL6'];
 		
     }
     else {
         $bantime =  date("Y-m-d H:i:s", $raw['bandate']);
 		$unban = date("Y-m-d H:i:s", $raw['bandate']);
     }
+$banuser= mysql_fetch_assoc(mysql_query("SELECT id,username FROM account WHERE id = '".$raw['id']."'"));
 
 echo '
 <tbody>
 <tr class="parent-row">
-<td valign="top" class="align-center" data-raw="20"><a href="">'.$raw['id'].'</a></span></td>
+<td valign="top" class="align-center" data-raw="20"><a href="">'.$banuser['username'].'</a></span></td>
 <td valign="top" class="align-center" data-raw="20"><a href="">'.$raw['bannedby'].'</a></td>
-<td valign="top" class="align-center" data-raw="20"><span>'.$unban.'</time></span></td>
-<td valign="top" class="align-center" data-raw="20"><strong data-service-id="null">'.$bantime.'</strong></td>
+<td valign="top" class="align-center" data-raw="20"><span>'.$bantime.'</time></span></td>
+<td valign="top" class="align-center" data-raw="20"><strong data-service-id="null">'.$unban.'</strong></td>
 <td valign="top" class="align-center">'.$raw['banreason'].'</td>
 </tbody>';
 }

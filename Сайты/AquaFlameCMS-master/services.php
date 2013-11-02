@@ -71,19 +71,19 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 						<span class="banner-title"><?php echo $Serv['Serv3']; ?></span>
 						<span class="banner-desc"><?php echo $Serv['Serv4']; ?></span>
 					</a>
-					<a href="ban-list.php" class="main-services-banner right-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-2.jpg');">
+					<a href="../ban-list.php" class="main-services-banner right-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-2.jpg');">
 						<span class="banner-title"><?php echo $Serv['Serv5']; ?></span>
 						<span class="banner-desc"><?php echo $Serv['Serv6']; ?></span>
 					</a>
-					<a href="search.php" class="main-services-banner left-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-3.jpg');">
+					<a href=../"search.php" class="main-services-banner left-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-3.jpg');">
 						<span class="banner-title"><?php echo $Serv['Serv7']; ?></span>
 						<span class="banner-desc"><?php echo $Serv['Serv8']; ?><?php echo $website['title']; ?><?php echo $Serv['Serv9']; ?></span>
 					</a>
-					<a href="recruit_a_friend.php" class="main-services-banner right-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-4.jpg');">
+					<a href="../recruit_a_friend.php" class="main-services-banner right-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-4.jpg');">
 						<span class="banner-title"><?php echo $Serv['Serv10']; ?></span>
 						<span class="banner-desc"><?php echo $Serv['Serv11']; ?><?php echo $website['title']; ?>.</span>
 					</a>
-					<a href="#" class="main-services-banner left-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-5.jpg');">
+					<a href="../donation_panel.php" class="main-services-banner left-bnr" style="background-image:url('wow/static/images/services/thumbnails/thumb-main-services-5.jpg');">
 						<span class="banner-title"><?php echo $Serv['Serv12']; ?></span>
 						<span class="banner-desc"><?php echo $Serv['Serv13']; ?></span>
 					</a>
@@ -113,8 +113,8 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 									<span><?php echo $Serv['Serv17']; ?></span>
 								</div>
 								<ul>
-										<!--<li><a href="javascript:;" class="c4-l2"><span>World of Warcraft Magazine</span></a></li>-->
-										<li><a href="javascript:;" class="c4-l3"><span><?php echo $Serv['Serv18']; ?></span></a></li>
+										<li><a href="../donation_panel.php" class="c4-l2"><span><?php echo $Serv['Serv12']; ?> World of Warcraft</span></a></li>
+										<li><a href="../recruit_a_friend.php" class="c4-l3"><span><?php echo $Serv['Serv18']; ?></span></a></li>
 								</ul>					
 							</div>
 							<div class="sub-services-section">
@@ -123,11 +123,9 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 								</div>
 								<ul>
 										<li><a href="javascript:;" class="c3-l1"><span><?php echo $Serv['Serv20']; ?></span></a></li>
-										<li><a href="javascript:;" class="c3-l2"><span><?php echo $Serv['Serv21']; ?></span></a></li>
-										<li><a href="javascript:;" class="c3-l3"><span><?php echo $Serv['Serv22']; ?></span></a></li>
-										<li><a href="javascript:;" class="c3-l4"><span><?php echo $Serv['Serv23']; ?></span></a></li>
-										<!--<li><a href="javascript:;" class="c3-l6"><span>Free Character Migration</span></a></li>-->
-										<!--<li><a href="javascript:;" class="c3-l7"><span>Public Test Realm</span></a></li>-->
+										<li><a href="../options/change_name.php" class="c3-l2"><span><?php echo $Serv['Serv21']; ?></span></a></li>
+										<li><a href="../options/change_race.php" class="c3-l3"><span><?php echo $Serv['Serv22']; ?></span></a></li>
+										<li><a href="../options/change_faction.php" class="c3-l4"><span><?php echo $Serv['Serv23']; ?></span></a></li>
 								</ul>					
 							</div>
 							<div class="sub-services-section">
