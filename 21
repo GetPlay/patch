@@ -6,3 +6,12 @@ DELETE FROM `creature_template2` WHERE `entry` NOT IN (SELECT `entry` FROM `crea
 
 DELETE FROM `creature_model_info1` WHERE `modelid` NOT IN (SELECT `modelid1` FROM `creature_template1`);
 DELETE FROM `creature_template1` WHERE `modelid1` NOT IN (SELECT `modelid` FROM `creature_model_info1`);
+
+
+SELECT
+    table1.name,
+    table1.id,
+    table2.class
+FROM table1
+    LEFT OUTER JOIN table2
+      ON table1.id = table2.id
