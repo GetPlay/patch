@@ -4,6 +4,10 @@ DELETE FROM `table2` WHERE `id` NOT IN (SELECT `id` FROM `table1`);
 DELETE FROM `creature_template1` WHERE `entry` NOT IN (SELECT `entry` FROM `creature_template2`);
 DELETE FROM `creature_template2` WHERE `entry` NOT IN (SELECT `entry` FROM `creature_template1`);
 
+
+DELETE FROM `gameobject_template1` WHERE `entry` NOT IN (SELECT `entry` FROM `gameobject_template2`);
+DELETE FROM `gameobject_template2` WHERE `entry` NOT IN (SELECT `entry` FROM `gameobject_template1`);
+
 UPDATE creature_template1 SET subname = NULL WHERE subname = '0';
 UPDATE creature_template1 SET IconName = NULL WHERE IconName = '0';
 
