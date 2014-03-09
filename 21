@@ -14,7 +14,7 @@ UPDATE creature_template1 SET IconName = NULL WHERE IconName = '0';
 DELETE FROM `creature_model_info1` WHERE `modelid` NOT IN (SELECT `modelid1` FROM `creature_template1`);
 DELETE FROM `creature_template1` WHERE `modelid1` NOT IN (SELECT `modelid` FROM `creature_model_info1`);
 
-SELECT `entry` from `creature_template` WHERE `modelid1` NOT IN (SELECT `modelid` FROM `creature_model_info`);
+SELECT entry, modelid1 from `creature_template` WHERE `modelid1` NOT IN (SELECT `modelid` FROM `creature_model_info`);
 
 SELECT
     table1.name,
